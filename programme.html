@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ce que le programme prévoyait</title>
+<style>
+  :root{
+    --magenta:#E91FCB;
+    --noir:#1A1A1A;
+    --gris:#4A4A4A;
+    --rose:#FCE4F7;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#FFFFFF;
+    color:var(--noir);
+    font-family:Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:56px 40px 120px;}
+
+  header{border-bottom:6px solid var(--magenta);padding-bottom:28px;margin-bottom:40px;}
+  h1{
+    font-size:52px;line-height:1.1;margin:0 0 14px;
+    letter-spacing:-0.5px;color:var(--noir);
+  }
+  .sous{font-size:26px;line-height:1.3;color:var(--magenta);margin:0;font-weight:bold;}
+
+  .barre{
+    position:sticky;top:0;z-index:10;
+    background:#FFFFFF;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:24px;flex-wrap:wrap;
+    padding:18px 0 18px;
+    border-bottom:2px solid var(--rose);
+    margin-bottom:44px;
+  }
+  .compteur{
+    font-size:30px;font-weight:bold;color:var(--noir);
+    background:var(--rose);border-radius:8px;padding:10px 22px;
+  }
+  .compteur b{color:var(--magenta);}
+  button{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:17px;font-weight:bold;
+    color:#FFFFFF;background:var(--magenta);
+    border:none;border-radius:8px;
+    padding:14px 24px;cursor:pointer;
+  }
+  button:hover{background:var(--noir);}
+
+  ol{list-style:none;margin:0;padding:0;counter-reset:pt;}
+  li{
+    counter-increment:pt;
+    display:flex;align-items:flex-start;gap:24px;
+    padding:26px 0 26px;
+    border-bottom:1px solid var(--rose);
+  }
+  .case{
+    flex:0 0 auto;
+    width:42px;height:42px;margin-top:6px;
+    border:4px solid var(--magenta);border-radius:8px;
+    background:#FFFFFF;cursor:pointer;
+    position:relative;
+  }
+  .case::after{
+    content:"";position:absolute;
+    left:10px;top:2px;width:12px;height:22px;
+    border:solid #FFFFFF;border-width:0 6px 6px 0;
+    transform:rotate(45deg);opacity:0;
+  }
+  li.ok .case{background:var(--magenta);}
+  li.ok .case::after{opacity:1;}
+  .corps{flex:1 1 auto;min-width:0;}
+  .num{
+    display:inline-block;min-width:44px;
+    font-size:26px;font-weight:bold;color:var(--magenta);
+  }
+  .num::before{content:counter(pt) ".";}
+  .titre{
+    display:inline;font-size:32px;line-height:1.25;font-weight:bold;color:var(--noir);
+  }
+  li.ok .titre, li.ok .num{color:var(--gris);}
+  .l{
+    font-size:19px;line-height:1.5;color:var(--gris);
+    margin:10px 0 0 44px;padding-left:14px;
+    border-left:3px solid var(--rose);
+  }
+  li.ok .l{opacity:0.55;}
+  footer{margin-top:56px;font-size:17px;color:var(--gris);}
+  @media print{
+    .barre{position:static;}
+    li{page-break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Ce que le programme prévoyait</h1>
+  <p class="sous">Vingt minutes pour tout passer en revue</p>
+</header>
+
+<div class="barre">
+  <div class="compteur" id="compteur"></div>
+  <button type="button" id="reset">Tout décocher</button>
+</div>
+
+<ol id="liste">
+
+<li data-id="p1">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Construire une séquence à l'envers</h2>
+    <p class="l">On part de ce que le participant doit savoir faire à la sortie, puis de la preuve qui le montrera, et le contenu vient en dernier.</p>
+    <p class="l">Le réflexe inverse, partir de ce qu'on sait et chercher un exercice pour occuper la fin, produit des journées où l'on parle beaucoup et où personne ne progresse.</p>
+    <p class="l">À retenir : la sortie d'abord, l'activité ensuite, le contenu au service de l'activité.</p>
+  </div>
+</li>
+
+<li data-id="p2">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Les six éléments d'une unité de travail</h2>
+    <p class="l">Chaque unité porte une intention, une activité, une consigne, une production attendue, un temps annoncé et une restitution.</p>
+    <p class="l">Il suffit qu'un seul des six manque pour que l'unité s'effondre, et c'est presque toujours la consigne ou la restitution qui saute.</p>
+    <p class="l">À retenir : avant de lancer, on vérifie les six, pas cinq.</p>
+  </div>
+</li>
+
+<li data-id="p3">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Vérifier l'alignement en trois questions</h2>
+    <p class="l">Trois questions dans l'ordre : l'objectif est-il un verbe d'action observable, l'activité fait-elle vraiment exercer ce verbe, la preuve demandée mesure-t-elle ce verbe.</p>
+    <p class="l">La rupture la plus fréquente est la troisième, on annonce savoir choisir un outil et on interroge finalement sur les fonctionnalités des outils.</p>
+    <p class="l">À retenir : on mesure ce qu'on a annoncé, pas ce qui est facile à mesurer.</p>
+  </div>
+</li>
+
+<li data-id="p4">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Compter le temps où les gens travaillent vraiment</h2>
+    <p class="l">La part d'atelier doit être largement majoritaire sur une demi journée, et ce comptage se fait sur la ligne de temps réelle, pas sur le programme annoncé.</p>
+    <p class="l">Écrire, manipuler, tester, échanger sur une consigne précise et préparer une restitution comptent, alors qu'écouter, regarder une démonstration ou suivre un tour de table ne comptent pas.</p>
+    <p class="l">À retenir : le compte se refait chez soi, minute par minute, et il est impitoyable.</p>
+  </div>
+</li>
+
+<li data-id="p5">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Transformer un exposé en atelier</h2>
+    <p class="l">Quatre gestes suffisent : faire chercher avant de dire, faire trier plutôt qu'écouter, faire produire sur son propre poste, faire relire par un binôme.</p>
+    <p class="l">Quand la part d'atelier est trop faible, on ne rallonge pas la journée, on change la nature de ce qui existe déjà.</p>
+    <p class="l">À retenir : la liste que vous alliez énoncer, le groupe la produit d'abord.</p>
+  </div>
+</li>
+
+<li data-id="p6">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Reprendre la régie de la journée client simulée</h2>
+    <p class="l">La journée client jouée hier tenait en deux blocs de trois heures, les fondations de l'IA et le cadre le matin, le panorama des outils et la prise en main l'après-midi.</p>
+    <p class="l">Le programme vendu au client fixe les contenus, les durées et les livrables, mais il ne fixe ni l'ordre interne d'un module, ni le minutage, ni les transitions.</p>
+    <p class="l">À retenir : ce qui est listé se couvre, tout le reste est un choix d'animation qui se discute.</p>
+  </div>
+</li>
+
+<li data-id="p7">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Un budget de temps calculé, pas estimé</h2>
+    <p class="l">On pose les horaires réels, on retire l'accueil, les pauses et la clôture, et on répartit ce qui reste entre les blocs avant d'écrire quoi que ce soit.</p>
+    <p class="l">Une journée déborde presque toujours pour la même raison, le minutage a été estimé de tête et jamais posé noir sur blanc.</p>
+    <p class="l">À retenir : un module sans minutage écrit déborde, sans exception.</p>
+  </div>
+</li>
+
+<li data-id="p8">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Les charnières, là où une journée se perd</h2>
+    <p class="l">Les charnières sont les quelques bascules d'une journée : l'ouverture, le passage d'un module à l'autre, la reprise après le déjeuner, le lancement d'un atelier, la clôture.</p>
+    <p class="l">Ce sont elles qui décident du climat de la salle, et ce sont justement celles qu'on improvise le plus souvent.</p>
+    <p class="l">À retenir : préparez vos charnières mot pour mot, le reste tient beaucoup mieux tout seul.</p>
+  </div>
+</li>
+
+<li data-id="p9">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Observer et décrire des faits</h2>
+    <p class="l">Une observation utile dit ce qui s'est passé et à quel moment, sans adjectif : la consigne a été donnée à l'oral et jamais affichée.</p>
+    <p class="l">Une impression du type il n'était pas clair ne se discute pas, ne se corrige pas, et déclenche immédiatement la défense de celui qui l'entend.</p>
+    <p class="l">À retenir : le fait d'abord, l'interprétation après, jamais l'inverse.</p>
+  </div>
+</li>
+
+<li data-id="p10">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Observer à deux, avec les mêmes repères</h2>
+    <p class="l">Deux personnes suivent la même animation avec les six domaines d'observation en main, puis comparent ce qu'elles ont noté.</p>
+    <p class="l">Les écarts entre les deux disent presque toujours qu'un repère est mal formulé, et non que l'un des deux a mal regardé.</p>
+    <p class="l">À retenir : quand deux regards divergent, on interroge le repère avant d'interroger les personnes.</p>
+  </div>
+</li>
+
+<li data-id="p11">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Donner un retour qui se reçoit</h2>
+    <p class="l">Le retour se donne en trois temps : ce qui a fonctionné et pourquoi, un seul point de progrès, puis la manière concrète de le traiter la prochaine fois.</p>
+    <p class="l">Un retour qui empile cinq axes de progrès n'en fait passer aucun et laisse la personne à plat pour le reste de la journée.</p>
+    <p class="l">À retenir : un point de progrès unique, formulé comme un geste précis et datable.</p>
+  </div>
+</li>
+
+<li data-id="p12">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Le retour croisé à trois angles</h2>
+    <p class="l">Trois regards sur une même animation, celui de l'animateur en premier et sans interruption, celui des pairs ensuite, celui de l'observateur en dernier.</p>
+    <p class="l">L'information utile n'est dans aucun angle pris isolément, elle est dans l'écart entre les trois, surtout quand l'animateur se voit mieux que les autres ne l'ont vu.</p>
+    <p class="l">À retenir : pas d'anonymat, rien sur la personne, rien qui n'ait été réellement observé.</p>
+  </div>
+</li>
+
+<li data-id="p13">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Tenir un rythme en changeant de régime</h2>
+    <p class="l">Le rythme n'est pas la vitesse de parole, c'est l'alternance des régimes demandés au groupe : exposé court, démonstration, travail seul, binôme, sous-groupe, restitution, test.</p>
+    <p class="l">Chaque régime a sa limite et son signal d'usure, et une demi journée sans alternance paraît longue même quand elle est courte.</p>
+    <p class="l">À retenir : quand le groupe décroche, on n'accélère pas, on change de régime.</p>
+  </div>
+</li>
+
+<li data-id="p14">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Ce qui casse un rythme sans qu'on le voie</h2>
+    <p class="l">Quatre habitudes tuent la participation : la consigne dite mais jamais affichée, la démonstration qui déborde, la question lancée à la cantonade, et le formateur qui répond à sa propre question.</p>
+    <p class="l">La dernière est la plus fréquente chez celui qui maîtrise son sujet, et elle apprend au groupe qu'il n'a plus besoin de répondre.</p>
+    <p class="l">À retenir : affichez vos consignes et laissez le silence travailler pour vous.</p>
+  </div>
+</li>
+
+<li data-id="p15">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">L'anecdote qui sert à quelque chose</h2>
+    <p class="l">Une anecdote se raconte en quatre temps, le contexte, la tension, la bascule, l'enseignement, et tient en quatre-vingt-dix secondes.</p>
+    <p class="l">Elle sert à fixer un point technique difficile en lui donnant un support mémoriel, ce n'est pas une pause dans le déroulé.</p>
+    <p class="l">À retenir : jamais de client identifiable, jamais de chute où le formateur a raison, jamais de vécu inventé.</p>
+  </div>
+</li>
+
+<li data-id="p16">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Six profils à préparer avant d'entrer en salle</h2>
+    <p class="l">Six situations reviennent : celui qui conteste le sujet, celui qui monopolise la parole, celui qui décroche en silence, le sceptique technique, celui qui a été inscrit sans son accord, et le groupe aux niveaux très inégaux.</p>
+    <p class="l">La règle des deux niveaux règle la moitié des incidents, ce qui concerne le groupe se traite devant le groupe, ce qui concerne une personne se traite à la pause.</p>
+    <p class="l">À retenir : recadrer quelqu'un en public, c'est lui offrir des alliés.</p>
+  </div>
+</li>
+
+<li data-id="p17">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Les trois objections qui reviennent toujours</h2>
+    <p class="l">Trois phrases reviennent dans presque toutes les sessions du programme client : on nous forme à l'outil qui va nous remplacer, où vont nos données, ça raconte n'importe quoi.</p>
+    <p class="l">Elles se préparent par écrit en trois phrases et se testent sur un pair, elles ne s'improvisent pas, surtout celle des données qui appelle une réponse précise.</p>
+    <p class="l">À retenir : donner raison sur le constat, puis déplacer la discussion sur la méthode.</p>
+  </div>
+</li>
+
+<li data-id="p18">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Tenir son carnet de formateur</h2>
+    <p class="l">Le carnet est une mémoire d'animation tournée vers la décision : votre identité d'animateur, les séquences animées, les retours reçus mot pour mot, et ce que vous changez ensuite.</p>
+    <p class="l">Il s'ouvre aujourd'hui, il s'alimente à chaque immersion, et il vous appartient : seule sa tenue est regardée, jamais son contenu.</p>
+    <p class="l">À retenir : écrire à chaud le jour même, dater chaque entrée, poser le fait avant l'interprétation.</p>
+  </div>
+</li>
+
+<li data-id="p19">
+  <div class="case" role="checkbox" tabindex="0" aria-checked="false"></div>
+  <div class="corps">
+    <span class="num"></span><h2 class="titre">Expliciter ses choix devant le groupe</h2>
+    <p class="l">La régie ouverte consiste à dire à voix haute pourquoi vous faites ce que vous faites, par exemple je coupe cet exposé parce que la salle a besoin de manipuler maintenant.</p>
+    <p class="l">Devant de futurs formateurs, ce qui s'apprend n'est pas seulement le contenu, c'est la décision qui vient d'être prise et la raison qui la fonde.</p>
+    <p class="l">À retenir : nommer le geste au moment où vous le faites, c'est ce qui rend la journée réutilisable.</p>
+  </div>
+</li>
+
+</ol>
+
+<footer>Passez en revue, cochez, avancez.</footer>
+
+</div>
+
+<script>
+(function(){
+  var CLE = "programme-20min-lyon";
+  var liste = document.getElementById("liste");
+  var items = Array.prototype.slice.call(liste.querySelectorAll("li"));
+  var compteur = document.getElementById("compteur");
+
+  function lire(){
+    try{
+      var brut = window.localStorage.getItem(CLE);
+      if(!brut){ return {}; }
+      var obj = JSON.parse(brut);
+      return (obj && typeof obj === "object") ? obj : {};
+    }catch(e){
+      return {};
+    }
+  }
+
+  function ecrire(etat){
+    try{
+      window.localStorage.setItem(CLE, JSON.stringify(etat));
+    }catch(e){
+      /* stockage indisponible, la page reste utilisable */
+    }
+  }
+
+  var etat = lire();
+
+  function majCompteur(){
+    var n = 0;
+    for(var i = 0; i < items.length; i++){
+      if(items[i].classList.contains("ok")){ n++; }
+    }
+    compteur.innerHTML = "<b>" + n + "</b> points cochés sur " + items.length;
+  }
+
+  function appliquer(li, coche){
+    if(coche){ li.classList.add("ok"); } else { li.classList.remove("ok"); }
+    var c = li.querySelector(".case");
+    if(c){ c.setAttribute("aria-checked", coche ? "true" : "false"); }
+  }
+
+  function basculer(li){
+    var id = li.getAttribute("data-id");
+    var coche = !li.classList.contains("ok");
+    appliquer(li, coche);
+    if(coche){ etat[id] = 1; } else { delete etat[id]; }
+    ecrire(etat);
+    majCompteur();
+  }
+
+  items.forEach(function(li){
+    appliquer(li, etat[li.getAttribute("data-id")] === 1);
+    var c = li.querySelector(".case");
+    c.addEventListener("click", function(){ basculer(li); });
+    c.addEventListener("keydown", function(ev){
+      if(ev.key === " " || ev.key === "Enter"){
+        ev.preventDefault();
+        basculer(li);
+      }
+    });
+  });
+
+  document.getElementById("reset").addEventListener("click", function(){
+    etat = {};
+    ecrire(etat);
+    items.forEach(function(li){ appliquer(li, false); });
+    majCompteur();
+  });
+
+  majCompteur();
+})();
+</script>
+</body>
+</html>
