@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Ma journée demain, vendredi 11 septembre 2026, Lyon</title>
+<style>
+  :root{
+    --magenta:#E91FCB;
+    --noir:#1A1A1A;
+    --blanc:#FFFFFF;
+    --gris:#4A4A4A;
+    --rose:#FCE4F7;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--noir);
+    background:var(--blanc);
+    font-size:16px;
+    line-height:1.5;
+  }
+  header.top{
+    background:var(--noir);
+    color:var(--blanc);
+    padding:18px 28px;
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  header.top h1{
+    margin:0 0 4px 0;
+    font-size:20px;
+    color:var(--blanc);
+  }
+  header.top .sous{
+    color:#cfcfcf;
+    font-size:13px;
+    margin-bottom:12px;
+  }
+  nav{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  nav a{
+    background:var(--magenta);
+    color:var(--blanc);
+    text-decoration:none;
+    padding:8px 14px;
+    border-radius:4px;
+    font-size:14px;
+    font-weight:bold;
+    border:2px solid var(--magenta);
+  }
+  nav a:hover{
+    background:var(--noir);
+    border-color:var(--blanc);
+  }
+  main{
+    max-width:1100px;
+    margin:0 auto;
+    padding:24px 28px 80px 28px;
+  }
+  section{
+    margin-bottom:56px;
+    scroll-margin-top:140px;
+  }
+  h2{
+    color:var(--magenta);
+    border-bottom:3px solid var(--magenta);
+    padding-bottom:8px;
+    font-size:24px;
+  }
+  h3{
+    color:var(--noir);
+    font-size:18px;
+    margin-top:28px;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:14px 0;
+    background:var(--blanc);
+  }
+  th, td{
+    border:1px solid #ddd;
+    padding:10px 12px;
+    text-align:left;
+    vertical-align:top;
+    font-size:14px;
+  }
+  th{
+    background:var(--noir);
+    color:var(--blanc);
+  }
+  tr:nth-child(even) td{
+    background:var(--rose);
+  }
+  .encadre{
+    background:var(--rose);
+    border-left:5px solid var(--magenta);
+    padding:16px 20px;
+    margin:18px 0;
+    font-size:14px;
+  }
+  .alerte{
+    background:var(--blanc);
+    border:3px solid var(--magenta);
+    padding:18px 22px;
+    margin:20px 0;
+    border-radius:6px;
+  }
+  .alerte h3{
+    margin-top:0;
+    color:var(--magenta);
+  }
+  .phrase{
+    background:var(--rose);
+    border:1px solid var(--magenta);
+    border-radius:6px;
+    padding:14px 16px;
+    margin:12px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:14px;
+  }
+  .phrase p{
+    margin:0;
+    font-style:italic;
+    flex:1;
+  }
+  button.copier{
+    background:var(--magenta);
+    color:var(--blanc);
+    border:none;
+    padding:8px 14px;
+    border-radius:4px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+  }
+  button.copier:hover{
+    background:var(--noir);
+  }
+  button.copier.ok{
+    background:var(--gris);
+  }
+  details{
+    background:var(--blanc);
+    border:1px solid var(--magenta);
+    border-radius:6px;
+    margin:10px 0;
+    padding:10px 16px;
+  }
+  details summary{
+    cursor:pointer;
+    font-weight:bold;
+    color:var(--magenta);
+    font-size:15px;
+    padding:6px 0;
+  }
+  details[open] summary{
+    color:var(--noir);
+  }
+  details .ligne{
+    margin:8px 0;
+    font-size:14px;
+  }
+  details .ligne strong{
+    color:var(--magenta);
+  }
+  .checklist{
+    list-style:none;
+    padding:0;
+    margin:14px 0;
+  }
+  .checklist li{
+    padding:8px 10px;
+    border-bottom:1px solid #eee;
+    font-size:14px;
+  }
+  .checklist input{
+    margin-right:10px;
+    transform:scale(1.2);
+  }
+  pre.code{
+    background:var(--noir);
+    color:var(--rose);
+    padding:16px;
+    border-radius:6px;
+    overflow-x:auto;
+    font-size:12px;
+    line-height:1.6;
+  }
+  .score-table input{
+    width:60px;
+    border:1px solid #ccc;
+    padding:4px;
+    text-align:center;
+  }
+  .badge{
+    display:inline-block;
+    background:var(--magenta);
+    color:var(--blanc);
+    font-size:12px;
+    padding:2px 8px;
+    border-radius:10px;
+    font-weight:bold;
+    margin-left:8px;
+  }
+  .save-note{
+    font-size:12px;
+    color:var(--gris);
+    margin-top:6px;
+  }
+  footer{
+    text-align:center;
+    color:var(--gris);
+    font-size:12px;
+    padding:20px;
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>Ma journée demain, vendredi 11 septembre 2026, Lyon</h1>
+  <div class="sous">15 participants, page locale de suivi, à garder ouverte à côté de l'ordinateur</div>
+  <nav>
+    <a href="#partie1">1. Le déroulé</a>
+    <a href="#partie2">2. Jury tournant</a>
+    <a href="#partie3">3. Les huit démonstrations</a>
+    <a href="#partie4">4. Signaux d'alerte</a>
+  </nav>
+</header>
+
+<main>
+
+<section id="partie1">
+  <h2>Partie 1 : le déroulé de la journée</h2>
+
+  <h3>Matin, 9h00 à 12h30, 210 minutes</h3>
+  <table>
+    <thead><tr><th>Heure</th><th>Durée</th><th>Séquence</th></tr></thead>
+    <tbody>
+      <tr><td>9h00</td><td>5 min</td><td>Ouverture, émargement, annonce de ce qui a bougé et pourquoi</td></tr>
+      <tr><td>9h05</td><td>68 min</td><td>Bloc pédagogie, le jury tournant</td></tr>
+      <tr><td>10h13</td><td>15 min</td><td>Pause</td></tr>
+      <tr><td>10h28</td><td>82 min</td><td>Les huit démonstrations d'outils, environ 9 minutes chacune</td></tr>
+      
+      <tr><td>11h50</td><td>35 min</td><td>Ils prennent la main : premiers essais sur les outils qu'ils ont choisis</td></tr>
+      <tr><td>12h25</td><td>5 min</td><td>Clôture du matin, émargement</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Après-midi, 13h30 à 17h00, 210 minutes</h3>
+  <table>
+    <thead><tr><th>Heure</th><th>Durée</th><th>Séquence</th></tr></thead>
+    <tbody>
+      <tr><td>13h30</td><td>5 min</td><td>Émargement, ouverture</td></tr>
+      <tr><td>13h35</td><td>20 min</td><td>Retour croisé : chacun donne son retour à la personne qu'il observait hier</td></tr>
+      <tr><td>13h55</td><td>80 min</td><td>Pratique sur leurs propres cas de poste, seul ou en binôme, au choix</td></tr>
+      <tr><td>15h15</td><td>15 min</td><td>Pause</td></tr>
+      <tr><td>15h30</td><td>30 min</td><td>Suite de la pratique, puis restitution courte de deux ou trois cas</td></tr>
+      <tr><td>16h00</td><td>30 min</td><td><b>Le quiz des 30 questions</b>, en groupe, avec débat sur les pièges</td></tr>
+      <tr><td>16h30</td><td>30 min</td><td>Tour de table, ce que chacun retient, clôture</td></tr>
+  </table>
+
+  <div class="encadre">
+    <strong>Chaque passage évalué dure 7 minutes</strong>, soit 6 minutes d'animation, 30 secondes d'explicitation de régie et 30 secondes de bascule.
+    La grille d'analyse pédagogique se remplit par un pair PENDANT ces passages, en même temps que Clément remplit la grille Qualiopi.
+  </div>
+</section>
+
+<section id="partie2">
+  <h2>Partie 2 : le bloc pédagogie, le jury tournant</h2>
+
+  <p>
+    3 tables de 5 personnes, mélangées pour qu'aucune table ne soit que des formateurs. Un cas est projeté, 60 secondes de réponse
+    écrite seul, 90 secondes de débat à la table, 45 secondes de porte-parole, le rôle tourne à chaque cas. Les anciens formateurs
+    de la salle sont le JURY, pas les répondants. Barème : 2 points si la nature de l'objection est bien identifiée (fait ou
+    valeur), 2 points si le geste correspond à la méthode, 1 point bonus pour un exemple vécu plutôt qu'un principe. Chrono
+    visible, sonnerie à 45 secondes restantes.
+  </p>
+
+  <h3>Les trois phrases à dire</h3>
+
+  <div class="phrase">
+    <p>« Ce matin je ne vous apprends rien, je récolte ce que vous savez déjà. Les anciens formateurs dans la salle sont mon jury, pas mes élèves. »</p>
+    <button class="copier" data-texte="Ce matin je ne vous apprends rien, je récolte ce que vous savez déjà. Les anciens formateurs dans la salle sont mon jury, pas mes élèves.">Copier</button>
+  </div>
+  <div class="phrase">
+    <p>« Avant que je tranche, [prénom], toi qui as formé pendant des années, tu l'aurais géré comment, ce cas-là, en vrai, pas en théorie ? »</p>
+    <button class="copier" data-texte="Avant que je tranche, [prénom], toi qui as formé pendant des années, tu l'aurais géré comment, ce cas-là, en vrai, pas en théorie ?">Copier</button>
+  </div>
+  <div class="phrase">
+    <p>« Je note ta réponse en bonus si tu me donnes un exemple vécu, pas un principe. »</p>
+    <button class="copier" data-texte="Je note ta réponse en bonus si tu me donnes un exemple vécu, pas un principe.">Copier</button>
+  </div>
+
+  <h3>Les huit cas</h3>
+
+  <details>
+    <summary>1. Hallucination</summary>
+    <div class="ligne"><strong>La situation :</strong> un participant dit « ça invente des choses, je ne peux pas m'y fier ».</div>
+    <div class="ligne"><strong>Le piège :</strong> répondre par une promesse générale, « ça s'améliore ».</div>
+    <div class="ligne"><strong>Ce que dit la méthode :</strong> objection de FAIT, elle se traite par la preuve, démonstration en direct d'une hallucination repérée puis de la méthode de vérification, source et recoupement.</div>
+  </details>
+
+  <details>
+    <summary>2. Perte du poste</summary>
+    <div class="ligne"><strong>La situation :</strong> « ça va supprimer mon poste ».</div>
+    <div class="ligne"><strong>Le piège :</strong> rassurer par une formule vague, « l'IA ne remplace pas l'humain ».</div>
+    <div class="ligne"><strong>Ce que dit la méthode :</strong> objection de FAIT, cas d'usage précis sur le métier de la personne, ce qui est automatisable face à ce qui reste humain.</div>
+  </details>
+
+  <details>
+    <summary>3. Argument écologique</summary>
+    <div class="ligne"><strong>La situation :</strong> « l'IA consomme trop d'énergie, c'est une aberration écologique ».</div>
+    <div class="ligne"><strong>Le piège :</strong> minimiser ou se justifier.</div>
+    <div class="ligne"><strong>Ce que dit la méthode :</strong> objection de VALEUR, reconnaître le désaccord, donner les chiffres vérifiés (6 à 10 fois plus d'électricité qu'une recherche web, 460 à 1000 TWh pour les data centers, environ 0,5 litre d'eau pour 10 à 50 requêtes), ne pas chercher à convaincre que c'est acceptable.</div>
+  </details>
+
+  <details>
+    <summary>4. Principe du remplacement</summary>
+    <div class="ligne"><strong>La situation :</strong> « je ne veux pas être remplacé par une machine, c'est une question de principe ».</div>
+    <div class="ligne"><strong>Le piège :</strong> argumenter sur l'efficacité, qui n'est pas le sujet.</div>
+    <div class="ligne"><strong>Ce que dit la méthode :</strong> objection de VALEUR, reconnaître la position sans la réfuter.</div>
+  </details>
+
+  <details>
+    <summary>5. Téléphone sorti</summary>
+    <div class="ligne"><strong>La situation :</strong> un participant sort son téléphone en pleine séquence.</div>
+    <div class="ligne"><strong>Le piège :</strong> une remarque publique, qui aggrave le décrochage.</div>
+    <div class="ligne"><strong>Ce que dit la méthode :</strong> réintégrer par une tâche courte et nominative, jamais en public.</div>
+  </details>
+
+  <details>
+    <summary>6. Silence collectif</summary>
+    <div class="ligne"><strong>La situation :</strong> le groupe entier se tait après une question ouverte.</div>
+    <div class="ligne"><strong>Le piège :</strong> répéter la question plus fort, ou y répondre soi-même.</div>
+    <div class="ligne"><strong>Ce que dit la méthode :</strong> passer en binômes deux minutes, le silence collectif ne résiste pas au binôme. Phrase : « On va faire un tour en binôme deux minutes, pas besoin de lever la main pour parler. »</div>
+  </details>
+
+  <details>
+    <summary>7. Manager inhibant</summary>
+    <div class="ligne"><strong>La situation :</strong> un manager présent empêche son équipe de s'exprimer.</div>
+    <div class="ligne"><strong>Le piège :</strong> ignorer et continuer, l'équipe s'autocensure toute la session.</div>
+    <div class="ligne"><strong>Ce que dit la méthode :</strong> proposer une séquence sans hiérarchie, ou un recueil écrit anonyme.</div>
+  </details>
+
+  <details>
+    <summary>8. Expert auto-proclamé</summary>
+    <div class="ligne"><strong>La situation :</strong> un participant très compétent prend la place du formateur avec des cas hors sujet.</div>
+    <div class="ligne"><strong>Le piège :</strong> l'ignorer ou le minimiser, il cherche alors des alliés contre le formateur.</div>
+    <div class="ligne"><strong>Ce que dit la méthode :</strong> nommer son expertise à voix haute, puis la remettre au service du groupe.</div>
+  </details>
+
+  <h3>Tableau de score, 3 tables x 8 cas <span class="badge">sauvegarde automatique</span></h3>
+  <div class="save-note">Les scores tapés ici restent dans ce navigateur (localStorage), même après fermeture de la page.</div>
+  <table class="score-table" id="scoreTable">
+    <thead>
+      <tr><th>Cas</th><th>Table 1</th><th>Table 2</th><th>Table 3</th></tr>
+    </thead>
+    <tbody id="scoreBody"></tbody>
+  </table>
+</section>
+
+<section id="partie3">
+  <h2>Partie 3 : les huit démonstrations</h2>
+
+  <h3>À faire ce soir <span class="badge">sauvegarde automatique</span></h3>
+  <ul class="checklist" id="checklistSoir">
+    <li><label><input type="checkbox" data-key="soir-1"> Créer les comptes gratuits Ideogram, Synthesia, Otter.ai et Make.com</label></li>
+    <li><label><input type="checkbox" data-key="soir-2"> Construire et tester le scénario Make</label></li>
+    <li><label><input type="checkbox" data-key="soir-3"> Générer une vidéo Synthesia de secours</label></li>
+    <li><label><input type="checkbox" data-key="soir-4"> Générer un audio NotebookLM de secours</label></li>
+    <li><label><input type="checkbox" data-key="soir-5"> Préparer les captures Midjourney et Microsoft 365 Copilot</label></li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr><th>Bloc</th><th>Ce que je montre</th><th>Durée</th><th>Le repli si ça coince</th><th>Le piège</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1. Assistants généraux, ChatGPT, Claude, Gemini</td>
+        <td>Le même prompt posé aux trois en direct, comparer le ton et la structure</td>
+        <td>8 min</td>
+        <td>Aucun, c'est le bloc le plus sûr</td>
+        <td>Changer le prompt d'un outil à l'autre, la comparaison ne prouve alors rien</td>
+      </tr>
+      <tr>
+        <td>2. Recherche augmentée, Perplexity</td>
+        <td>Une recherche factuelle avec sources cliquables, montrer les citations</td>
+        <td>6 min</td>
+        <td>Capture d'une recherche déjà faite avec ses sources visibles</td>
+        <td>Le plan gratuit ne donne que 3 à 5 recherches avancées par jour, ne pas les brûler en testant le matin</td>
+      </tr>
+      <tr>
+        <td>3. Bureautique, Notion AI</td>
+        <td>Générer un plan de réunion ou réécrire un paragraphe</td>
+        <td>5 min</td>
+        <td>Captures officielles</td>
+        <td>Microsoft 365 Copilot n'a AUCUNE version gratuite pour un particulier sans licence Business, le dire clairement au groupe plutôt que de le découvrir à l'écran</td>
+      </tr>
+      <tr>
+        <td>4. Création visuelle, Ideogram et Canva</td>
+        <td>Le même prompt sur les deux, montrer l'écart de rendu</td>
+        <td>8 min</td>
+        <td>Images générées à l'avance</td>
+        <td>Midjourney n'a plus d'essai gratuit depuis avril 2023, ne jamais l'annoncer comme gratuit, un participant le vérifiera sur son téléphone</td>
+      </tr>
+      <tr>
+        <td>5. Vidéo et avatar, Synthesia</td>
+        <td>Générer une courte vidéo avatar à partir d'un script de dix lignes, filigrane assumé</td>
+        <td>7 min</td>
+        <td>Vidéo générée la veille</td>
+        <td>Lancer la génération puis parler dans le vide, préparer ce qu'on raconte pendant le rendu</td>
+      </tr>
+      <tr>
+        <td>6. Voix et audio, NotebookLM et ElevenLabs</td>
+        <td>Charger un PDF, générer l'audio, jouer les 30 premières secondes</td>
+        <td>8 min</td>
+        <td>Un audio généré en amont</td>
+        <td>Seulement 3 générations par jour, ne pas les user en testant deux fois avant la salle</td>
+      </tr>
+      <tr>
+        <td>7. Automatisation, Make.com</td>
+        <td>Un scénario minimal, déclencheur vers un tableur</td>
+        <td>9 min</td>
+        <td>Un scénario déjà construit, rejoué</td>
+        <td>Improviser sans avoir testé la veille, le connecteur peut demander une authentification longue</td>
+      </tr>
+      <tr>
+        <td>8. Transcription de réunion, Otter.ai</td>
+        <td>Enregistrer 3 minutes de discussion du groupe, montrer la transcription puis le résumé</td>
+        <td>8 min</td>
+        <td>Une transcription déjà générée</td>
+        <td>Enregistrer sans prévenir, demander le consentement du groupe avant de lancer</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Prompt structuré en JSON</h3>
+  <div class="phrase" style="align-items:center;">
+    <p style="font-style:normal;">Bloc de code à copier tel quel pour la démonstration visuelle.</p>
+    <button class="copier" id="copierJson">Copier</button>
+  </div>
+  <pre class="code" id="jsonBlock">{"subject": "une formatrice devant un groupe de 15 personnes, tableau blanc en fond", "setting": "salle de formation moderne, lumiere naturelle", "camera": {"shot": "plan large", "angle": "leger contre-plongee", "movement": "fixe"}, "lighting": "lumiere douce venant de la fenetre a gauche", "style": "photo realiste, rendu editorial", "mood": "dynamique, professionnel", "negative_prompt": "flou, texte deforme, mains difformes", "aspect_ratio": "16:9"}</pre>
+</section>
+
+<section id="partie4">
+  <h2>Partie 4 : les deux signaux d'alerte</h2>
+
+  <div class="alerte">
+    <h3>10h15</h3>
+    <p>
+      Si le débat du bloc pédagogie n'a pas convergé vers une synthèse écrite au tableau, dire
+      « Je note ce point et on tranche à la pause », l'écrire visiblement, et ne pas relancer.
+    </p>
+  </div>
+
+  <div class="alerte">
+    <h3>11h00</h3>
+    <p>
+      Si moins de trois démonstrations sur huit sont terminées, annoncer à voix haute
+      « les trois suivantes en trois minutes chacune, le reste en lien partagé », et s'y tenir.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>Page locale, générée pour la journée du 11 septembre 2026, Lyon.</footer>
+
+<script>
+(function(){
+  // Boutons copier generiques (phrases)
+  function copierTexte(txt, btn){
+    var reussi = false;
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(txt);
+        reussi = true;
+      }
+    }catch(e){ reussi = false; }
+
+    if(!reussi){
+      try{
+        var ta = document.createElement("textarea");
+        ta.value = txt;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        reussi = true;
+      }catch(e2){ reussi = false; }
+    }
+
+    if(btn){
+      var original = btn.textContent;
+      btn.textContent = reussi ? "Copié" : "Erreur";
+      btn.classList.add("ok");
+      setTimeout(function(){
+        btn.textContent = original;
+        btn.classList.remove("ok");
+      }, 1500);
+    }
+  }
+
+  document.querySelectorAll(".copier[data-texte]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      copierTexte(btn.getAttribute("data-texte"), btn);
+    });
+  });
+
+  var btnJson = document.getElementById("copierJson");
+  if(btnJson){
+    btnJson.addEventListener("click", function(){
+      var bloc = document.getElementById("jsonBlock");
+      copierTexte(bloc ? bloc.textContent : "", btnJson);
+    });
+  }
+
+  // Checklist "a faire ce soir", sauvegarde locale
+  try{
+    var savedSoir = JSON.parse(localStorage.getItem("j5-checklist-soir") || "{}");
+  }catch(e){ var savedSoir = {}; }
+
+  document.querySelectorAll("#checklistSoir input[type=checkbox]").forEach(function(cb){
+    var key = cb.getAttribute("data-key");
+    if(savedSoir[key]) cb.checked = true;
+    cb.addEventListener("change", function(){
+      try{
+        var current = JSON.parse(localStorage.getItem("j5-checklist-soir") || "{}");
+        current[key] = cb.checked;
+        localStorage.setItem("j5-checklist-soir", JSON.stringify(current));
+      }catch(e){}
+    });
+  });
+
+  // Tableau de score, 3 tables x 8 cas, sauvegarde locale
+  var casNoms = [
+    "1. Hallucination",
+    "2. Perte du poste",
+    "3. Argument écologique",
+    "4. Principe du remplacement",
+    "5. Téléphone sorti",
+    "6. Silence collectif",
+    "7. Manager inhibant",
+    "8. Expert auto-proclamé"
+  ];
+
+  var scoreBody = document.getElementById("scoreBody");
+  var scoresSauvegardes = {};
+  try{
+    scoresSauvegardes = JSON.parse(localStorage.getItem("j5-scores-jury") || "{}");
+  }catch(e){ scoresSauvegardes = {}; }
+
+  function sauvegarderScore(id, valeur){
+    try{
+      var current = JSON.parse(localStorage.getItem("j5-scores-jury") || "{}");
+      current[id] = valeur;
+      localStorage.setItem("j5-scores-jury", JSON.stringify(current));
+    }catch(e){}
+  }
+
+  if(scoreBody){
+    casNoms.forEach(function(nom, i){
+      var tr = document.createElement("tr");
+      var tdNom = document.createElement("td");
+      tdNom.textContent = nom;
+      tr.appendChild(tdNom);
+      for(var t = 1; t <= 3; t++){
+        var td = document.createElement("td");
+        var input = document.createElement("input");
+        var id = "cas" + (i+1) + "-table" + t;
+        input.type = "text";
+        input.setAttribute("data-id", id);
+        input.placeholder = "/5";
+        if(scoresSauvegardes[id]) input.value = scoresSauvegardes[id];
+        input.addEventListener("input", function(){
+          sauvegarderScore(this.getAttribute("data-id"), this.value);
+        });
+        td.appendChild(input);
+        tr.appendChild(td);
+      }
+      scoreBody.appendChild(tr);
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
