@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu des outils</title>
+<style>
+  :root {
+    --magenta: #E91FCB;
+    --noir: #1A1A1A;
+    --blanc: #FFFFFF;
+    --gris: #4A4A4A;
+    --rose-pale: #FCE4F7;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--blanc);
+    color: var(--noir);
+  }
+
+  header {
+    padding: 48px 60px 32px 60px;
+    text-align: center;
+    border-bottom: 4px solid var(--magenta);
+  }
+
+  header h1 {
+    font-size: 56px;
+    margin: 0 0 16px 0;
+    color: var(--noir);
+    letter-spacing: -1px;
+  }
+
+  header p.tagline {
+    font-size: 30px;
+    color: var(--magenta);
+    font-weight: bold;
+    margin: 0 0 24px 0;
+  }
+
+  .barre-controle {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 24px;
+  }
+
+  #compteur {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--blanc);
+    background: var(--magenta);
+    padding: 14px 32px;
+    border-radius: 50px;
+  }
+
+  .bouton {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 14px 28px;
+    border-radius: 50px;
+    border: 3px solid var(--magenta);
+    background: var(--blanc);
+    color: var(--magenta);
+    cursor: pointer;
+  }
+
+  .bouton:hover {
+    background: var(--rose-pale);
+  }
+
+  main {
+    padding: 40px 60px 60px 60px;
+  }
+
+  .famille {
+    margin-bottom: 56px;
+  }
+
+  .famille h2 {
+    font-size: 34px;
+    color: var(--noir);
+    border-left: 10px solid var(--magenta);
+    padding-left: 20px;
+    margin-bottom: 28px;
+  }
+
+  .grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .carte {
+    border: 3px solid var(--gris);
+    border-radius: 18px;
+    padding: 24px;
+    background: var(--blanc);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    position: relative;
+  }
+
+  .carte:hover {
+    border-color: var(--magenta);
+  }
+
+  .carte.choisie {
+    background: var(--rose-pale);
+    border-color: var(--magenta);
+    border-width: 4px;
+  }
+
+  .carte .coche {
+    display: none;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--magenta);
+    color: var(--blanc);
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carte.choisie .coche {
+    display: flex;
+  }
+
+  .carte a.nom-outil {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--noir);
+    text-decoration: none;
+  }
+
+  .carte a.nom-outil:hover {
+    color: var(--magenta);
+    text-decoration: underline;
+  }
+
+  .carte .description {
+    font-size: 19px;
+    color: var(--gris);
+    margin: 14px 0 18px 0;
+    line-height: 1.4;
+  }
+
+  .pastille {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 50px;
+    color: var(--blanc);
+  }
+
+  .pastille.gratuit { background: var(--noir); }
+  .pastille.limite { background: var(--gris); }
+  .pastille.payant { background: var(--magenta); }
+
+  .encadre-top3 {
+    background: var(--rose-pale);
+    border: 4px solid var(--magenta);
+    border-radius: 20px;
+    padding: 40px 50px;
+    margin-top: 20px;
+  }
+
+  .encadre-top3 h2 {
+    font-size: 38px;
+    color: var(--magenta);
+    margin: 0 0 28px 0;
+    text-align: center;
+  }
+
+  .top3-liste {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+  }
+
+  .top3-item {
+    background: var(--blanc);
+    border-radius: 14px;
+    padding: 26px;
+    border: 2px solid var(--magenta);
+  }
+
+  .top3-item .top3-nom {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--noir);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .top3-item .top3-raison {
+    font-size: 19px;
+    color: var(--gris);
+    line-height: 1.4;
+  }
+
+  [hidden] { display: none !important; }
+
+  @media (max-width: 700px) {
+    header { padding: 30px 20px; }
+    header h1 { font-size: 38px; }
+    header p.tagline { font-size: 22px; }
+    main { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Menu des outils</h1>
+  <p class="tagline">Choisissez ce que vous voulez voir. On le fait en direct.</p>
+  <div class="barre-controle">
+    <span id="compteur">0 outils choisis</span>
+    <button class="bouton" id="btn-choisis">Voir seulement les choisis</button>
+    <button class="bouton" id="btn-tous">Tout afficher</button>
+    <button class="bouton" id="btn-effacer">Effacer les choix</button>
+  </div>
+</header>
+
+<main>
+
+<div class="famille" data-famille="fabriquer">
+  <h2>Fabriquer un site ou une appli en parlant</h2>
+  <div class="grille">
+    <div class="carte" data-id="lovable">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://lovable.dev" target="_blank" rel="noopener">Lovable</a>
+      <p class="description">Décrivez une appli à l'oral, elle la construit et la déploie.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="bolt">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://bolt.new" target="_blank" rel="noopener">Bolt.new</a>
+      <p class="description">Génère une appli web complète depuis une simple description.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="v0">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://v0.dev" target="_blank" rel="noopener">v0</a>
+      <p class="description">Crée des interfaces web prêtes à coder depuis un texte.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+  </div>
+</div>
+
+<div class="famille" data-famille="image">
+  <h2>Image</h2>
+  <div class="grille">
+    <div class="carte" data-id="ideogram">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://ideogram.ai" target="_blank" rel="noopener">Ideogram</a>
+      <p class="description">Génère des images avec du texte lisible intégré dedans.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="krea">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://www.krea.ai" target="_blank" rel="noopener">Krea</a>
+      <p class="description">Génère et retouche des images en temps réel à l'écran.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="midjourney">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://www.midjourney.com" target="_blank" rel="noopener">Midjourney</a>
+      <p class="description">Génère des images très artistiques à partir d'un texte.</p>
+      <span class="pastille payant">PAYANT</span>
+    </div>
+    <div class="carte" data-id="freepik">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://fr.freepik.com" target="_blank" rel="noopener">Freepik</a>
+      <p class="description">Banque d'images et générateur d'images par IA intégré.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+  </div>
+</div>
+
+<div class="famille" data-famille="video">
+  <h2>Vidéo et avatar</h2>
+  <div class="grille">
+    <div class="carte" data-id="synthesia">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://app.synthesia.io" target="_blank" rel="noopener">Synthesia</a>
+      <p class="description">Un avatar IA présente une vidéo à partir d'un texte écrit.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="heygen">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://www.heygen.com" target="_blank" rel="noopener">HeyGen</a>
+      <p class="description">Crée des vidéos avec avatar parlant et clonage de voix.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="kling">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://app.klingai.com" target="_blank" rel="noopener">Kling</a>
+      <p class="description">Génère des vidéos réalistes depuis un texte ou une image.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="runway">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://app.runwayml.com" target="_blank" rel="noopener">Runway</a>
+      <p class="description">Génère et monte des vidéos IA depuis texte ou image.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="higgsfield">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://higgsfield.ai" target="_blank" rel="noopener">Higgsfield</a>
+      <p class="description">Génère des vidéos IA avec des mouvements de caméra avancés.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+  </div>
+</div>
+
+<div class="famille" data-famille="voix">
+  <h2>Voix</h2>
+  <div class="grille">
+    <div class="carte" data-id="elevenlabs">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://elevenlabs.io" target="_blank" rel="noopener">ElevenLabs</a>
+      <p class="description">Transforme un texte en voix ultra réaliste, clonable.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="deevid">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://deevid.ai" target="_blank" rel="noopener">Deevid</a>
+      <p class="description">Génère des voix off et des vidéos courtes par IA.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+  </div>
+</div>
+
+<div class="famille" data-famille="documents">
+  <h2>Lire et résumer des documents</h2>
+  <div class="grille">
+    <div class="carte" data-id="notebooklm">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM</a>
+      <p class="description">Transforme vos documents en podcast audio généré par IA.</p>
+      <span class="pastille gratuit">GRATUIT</span>
+    </div>
+    <div class="carte" data-id="chatpdf">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://www.chatpdf.com" target="_blank" rel="noopener">ChatPDF</a>
+      <p class="description">Discutez directement avec le contenu d'un PDF importe.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="perplexity">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://www.perplexity.ai" target="_blank" rel="noopener">Perplexity</a>
+      <p class="description">Moteur de recherche IA qui cite ses sources précisément.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+  </div>
+</div>
+
+<div class="famille" data-famille="automatiser">
+  <h2>Automatiser</h2>
+  <div class="grille">
+    <div class="carte" data-id="make">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://www.make.com" target="_blank" rel="noopener">Make</a>
+      <p class="description">Relie vos outils entre eux pour automatiser des tâches.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="n8n">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://app.n8n.cloud" target="_blank" rel="noopener">n8n</a>
+      <p class="description">Crée des automatisations visuelles entre vos applications.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="zapier">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://zapier.com" target="_blank" rel="noopener">Zapier</a>
+      <p class="description">Connecte des milliers d'applis pour automatiser vos tâches.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+  </div>
+</div>
+
+<div class="famille" data-famille="presentations">
+  <h2>Présentations et documents</h2>
+  <div class="grille">
+    <div class="carte" data-id="gamma">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://gamma.app" target="_blank" rel="noopener">Gamma</a>
+      <p class="description">Génère des présentations complètes depuis un simple texte.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="beautifulai">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://www.beautiful.ai" target="_blank" rel="noopener">Beautiful.ai</a>
+      <p class="description">Crée des slides qui se mettent en page automatiquement.</p>
+      <span class="pastille payant">PAYANT</span>
+    </div>
+    <div class="carte" data-id="gptexcel">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://gptexcel.uk" target="_blank" rel="noopener">GPT Excel</a>
+      <p class="description">Génère des formules et scripts Excel à partir d'un texte.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+  </div>
+</div>
+
+<div class="famille" data-famille="agents">
+  <h2>Agents qui travaillent seuls</h2>
+  <div class="grille">
+    <div class="carte" data-id="manus">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://manus.im" target="_blank" rel="noopener">Manus</a>
+      <p class="description">Agent autonome qui exécute des tâches longues tout seul.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="genspark">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://www.genspark.ai" target="_blank" rel="noopener">Genspark</a>
+      <p class="description">Agent IA qui recherche, rédige et produit des livrables.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="scout">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://scout.new" target="_blank" rel="noopener">Scout</a>
+      <p class="description">Agent autonome qui code et livre un projet de bout en bout.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+  </div>
+</div>
+
+<div class="famille" data-famille="modeles">
+  <h2>Les grands modèles de conversation</h2>
+  <div class="grille">
+    <div class="carte" data-id="claude">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
+      <p class="description">Assistant IA d'Anthropic, fort en écrit et en raisonnement.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="chatgpt">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a>
+      <p class="description">L'assistant IA d'OpenAI, le plus connu du grand public.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="gemini">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://gemini.google.com" target="_blank" rel="noopener">Gemini</a>
+      <p class="description">L'assistant IA de Google, intégré à ses outils maison.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="mistral">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://chat.mistral.ai" target="_blank" rel="noopener">Mistral Le Chat</a>
+      <p class="description">L'assistant IA français, rapide et respectueux des données.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="grok">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://grok.com" target="_blank" rel="noopener">Grok</a>
+      <p class="description">L'assistant IA de xAI, connecté en direct au réseau X.</p>
+      <span class="pastille limite">GRATUIT LIMITE</span>
+    </div>
+    <div class="carte" data-id="deepseek">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://chat.deepseek.com" target="_blank" rel="noopener">DeepSeek</a>
+      <p class="description">Modèle chinois open source, puissant et entièrement gratuit.</p>
+      <span class="pastille gratuit">GRATUIT</span>
+    </div>
+    <div class="carte" data-id="kimi">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://www.kimi.com" target="_blank" rel="noopener">Kimi</a>
+      <p class="description">Modèle chinois gratuit, très à l'aise sur les longs documents.</p>
+      <span class="pastille gratuit">GRATUIT</span>
+    </div>
+    <div class="carte" data-id="qwen">
+      <span class="coche">&#10003;</span>
+      <a class="nom-outil" href="https://chat.qwen.ai" target="_blank" rel="noopener">Qwen</a>
+      <p class="description">Modèle chinois d'Alibaba, gratuit et multilingue.</p>
+      <span class="pastille gratuit">GRATUIT</span>
+    </div>
+  </div>
+</div>
+
+<div class="encadre-top3">
+  <h2>Les trois à ne pas rater</h2>
+  <div class="top3-liste">
+    <div class="top3-item">
+      <span class="top3-nom">Lovable</span>
+      <p class="top3-raison">Parce qu'on fabrique une appli en parlant, et que c'est le seul moment où la salle fait ah.</p>
+    </div>
+    <div class="top3-item">
+      <span class="top3-nom">NotebookLM</span>
+      <p class="top3-raison">Parce qu'un PDF devient un podcast de cinq minutes, en un clic.</p>
+    </div>
+    <div class="top3-item">
+      <span class="top3-nom">Make</span>
+      <p class="top3-raison">Parce que c'est le passage de l'outil qu'on utilise à l'outil qui travaille tout seul.</p>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script>
+(function() {
+  var STORAGE_KEY = 'menu-outils-choix';
+  var cartes = document.querySelectorAll('.carte');
+  var compteurEl = document.getElementById('compteur');
+  var btnChoisis = document.getElementById('btn-choisis');
+  var btnTous = document.getElementById('btn-tous');
+  var btnEffacer = document.getElementById('btn-effacer');
+  var modeFiltre = false;
+
+  function chargerChoix() {
+    try {
+      var data = localStorage.getItem(STORAGE_KEY);
+      return data ? JSON.parse(data) : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function sauvegarderChoix(choix) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(choix));
+    } catch (e) {
+      // stockage indisponible, on continue sans persister
+    }
+  }
+
+  var choix = chargerChoix();
+
+  function appliquerEtat() {
+    var total = 0;
+    cartes.forEach(function(carte) {
+      var id = carte.getAttribute('data-id');
+      if (choix[id]) {
+        carte.classList.add('choisie');
+        total++;
+      } else {
+        carte.classList.remove('choisie');
+      }
+      if (modeFiltre && !choix[id]) {
+        carte.setAttribute('hidden', '');
+      } else {
+        carte.removeAttribute('hidden');
+      }
+    });
+    compteurEl.textContent = total + (total <= 1 ? ' outil choisi' : ' outils choisis');
+
+    document.querySelectorAll('.famille').forEach(function(fam) {
+      if (!modeFiltre) {
+        fam.removeAttribute('hidden');
+        return;
+      }
+      var visible = fam.querySelectorAll('.carte:not([hidden])').length;
+      if (visible === 0) {
+        fam.setAttribute('hidden', '');
+      } else {
+        fam.removeAttribute('hidden');
+      }
+    });
+  }
+
+  cartes.forEach(function(carte) {
+    carte.addEventListener('click', function(evt) {
+      if (evt.target.tagName === 'A' || evt.target.closest('a')) {
+        return;
+      }
+      var id = carte.getAttribute('data-id');
+      choix[id] = !choix[id];
+      sauvegarderChoix(choix);
+      appliquerEtat();
+    });
+  });
+
+  btnChoisis.addEventListener('click', function() {
+    modeFiltre = true;
+    appliquerEtat();
+  });
+
+  btnTous.addEventListener('click', function() {
+    modeFiltre = false;
+    appliquerEtat();
+  });
+
+  btnEffacer.addEventListener('click', function() {
+    choix = {};
+    sauvegarderChoix(choix);
+    modeFiltre = false;
+    appliquerEtat();
+  });
+
+  appliquerEtat();
+})();
+</script>
+
+</body>
+</html>
