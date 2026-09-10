@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quiz Semaine 1, 40 questions</title>
+<title>Quiz Semaine 1, 50 questions</title>
 <style>
 :root{
   --magenta:#E91FCB;
@@ -136,7 +136,7 @@ a{color:var(--magenta);}
 <body>
 
 <div class="bandeau">
-  <strong>Quiz de la Semaine 1</strong>, 40 questions, version finale du 11 septembre 2026.
+  <strong>Quiz de la Semaine 1</strong>, 50 questions, version finale du 11 septembre 2026.
 </div>
 
 <div class="wrap">
@@ -144,7 +144,7 @@ a{color:var(--magenta);}
   <!-- ACCUEIL -->
   <div id="accueil">
     <h1>Quiz de la Semaine 1</h1>
-    <p class="sous">40 questions, une à la fois. Jour 1 à Jour 5 du parcours, les outils et leurs fonctionnalités, ce que les modèles savent et ne savent pas faire, l'actualité d'août 2026, plus cinq questions de raisonnement de formateur.</p>
+    <p class="sous">50 questions, une à la fois. Jour 1 à Jour 5 du parcours, les outils et leurs fonctionnalités, ce que les modèles savent et ne savent pas faire, l'actualité d'août 2026, cinq questions de raisonnement de formateur, plus cinq questions sur l'histoire de l'intelligence artificielle et cinq de culture générale.</p>
     <p style="font-size:15px;margin-bottom:8px;"><b>Prénom et nom</b></p>
     <input type="text" id="champNom" placeholder="Prénom Nom" autocomplete="off">
     <div class="nav">
@@ -252,6 +252,27 @@ var QUESTIONS = [
   "plus": "La conséquence pratique est qu'une correction utile doit être réécrite à chaque nouvelle conversation, ou consignée quelque part : une instruction personnalisée, un projet, un document de référence. Les mécanismes de mémoire des différents outils servent exactement à cela, et ils agissent sur le contexte fourni au modèle, jamais sur ses poids."
  },
  {
+  "jour": "Culture générale",
+  "piege": true,
+  "q": "Un système expert des années 1980, qui applique des règles écrites à la main par des spécialistes, est-il de l'intelligence artificielle ?",
+  "opts": [
+   "Oui. L'apprentissage automatique est une partie de l'intelligence artificielle, l'apprentissage profond une partie de l'apprentissage automatique, et un système à base de règles est de l'IA sans être de l'apprentissage automatique.",
+   "Non, seuls les systèmes qui apprennent à partir de données méritent le nom d'intelligence artificielle.",
+   "Non, l'intelligence artificielle commence avec l'apprentissage profond et les réseaux de neurones.",
+   "Les trois termes désignent la même chose, seul l'usage a changé selon les époques."
+  ],
+  "bonne": 0,
+  "pourquoi": "Les trois termes sont emboîtés, du plus large au plus étroit : intelligence artificielle, puis apprentissage automatique à l'intérieur, puis apprentissage profond à l'intérieur encore. Un système à base de règles vit dans la première couronne seulement : il ne tire rien de l'expérience, donc ce n'est pas de l'apprentissage automatique, mais il reste de l'intelligence artificielle. La définition de système d'IA retenue par le règlement européen ne réclame d'ailleurs aucun apprentissage, seulement un système qui infère des sorties à partir d'entrées avec un certain degré d'autonomie.",
+  "pieges": [
+   "C'est la confusion la plus fréquente en salle : on prend la partie la plus récente pour le tout. L'IA symbolique, à base de règles, a existé trente ans avant que l'apprentissage automatique ne domine.",
+   "L'apprentissage profond n'est qu'une famille de méthodes d'apprentissage automatique, popularisée à partir de 2012. Faire commencer l'IA là revient à effacer soixante ans d'histoire.",
+   "Ce sont trois périmètres distincts, pas trois synonymes. Un formateur qui les emploie indifféremment perdra le premier participant qui a lu la norme."
+  ],
+  "src": "Culture générale, périmètres IA, apprentissage automatique et apprentissage profond, définition de l'article 3 du règlement européen sur l'IA",
+  "lien": "https://artificialintelligenceact.eu/article/3/",
+  "plus": "La norme ISO/IEC 22989, publiée en 2022, fixe le vocabulaire de ce champ et définit l'apprentissage automatique comme un processus qui améliore ses performances par l'expérience. C'est le critère qui sépare proprement un système expert d'un modèle entraîné, et c'est la référence à citer quand un participant conteste vos définitions."
+ },
+ {
   "jour": "Outils",
   "piege": false,
   "q": "Vous devez livrer un module de trois minutes dans lequel un porte-parole explique à l'écran la nouvelle procédure, en français, sans tournage, sans caméra et sans comédien. Quel outil ?",
@@ -336,6 +357,27 @@ var QUESTIONS = [
   "plus": "La question à poser avant tout scénario est celle de la panne : que se passe-t-il si l'étape trois échoue à trois heures du matin ? Un scénario sans gestion d'erreur ni alerte fabrique des trous silencieux dans les données, et c'est ce qui coûte cher, pas la construction."
  },
  {
+  "jour": "Histoire de l'IA",
+  "piege": true,
+  "q": "Qui a forgé le terme « intelligence artificielle », et dans quel document ?",
+  "opts": [
+   "Alan Turing, dans son article de 1950 sur le jeu de l'imitation.",
+   "Norbert Wiener, en 1948, en fondant la cybernétique.",
+   "John McCarthy, dans la proposition d'atelier de Dartmouth, datée du 31 août 1955.",
+   "Marvin Minsky, dans ses travaux au laboratoire d'IA du MIT au début des années 1960."
+  ],
+  "bonne": 2,
+  "pourquoi": "Le terme apparaît dans la proposition rédigée le 31 août 1955 pour l'atelier d'été de Dartmouth, qui s'est tenu l'été suivant, en 1956, au Dartmouth College de Hanover. La proposition porte quatre signatures : John McCarthy, alors à Dartmouth, Marvin Minsky, Nathaniel Rochester d'IBM et Claude Shannon des Bell Labs. C'est McCarthy qui a choisi l'expression, en partie pour démarquer le projet de la cybernétique de Wiener.",
+  "pieges": [
+   "Turing n'emploie jamais cette expression. Son article de 1950 parle de machines qui pensent et de jeu de l'imitation, et il précède le terme de cinq ans.",
+   "Wiener a fondé la cybernétique, un champ voisin et concurrent. Le choix d'un nom neuf par McCarthy visait justement à s'en distinguer.",
+   "Minsky a bien cosigné la proposition de 1955, mais il n'en est pas l'auteur principal et le terme n'est pas de lui."
+  ],
+  "src": "Histoire de l'IA, proposition de l'atelier de Dartmouth du 31 août 1955, republiée par AI Magazine",
+  "lien": "https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/1904",
+  "plus": "L'atelier était prévu pour durer deux mois avec une dizaine de participants, et sa proposition tenait en quelques pages annonçant qu'une avancée significative était possible en un été si un groupe soigneusement choisi y travaillait ensemble. Cette phrase est aujourd'hui citée comme le premier exemple documenté d'optimisme de calendrier en IA."
+ },
+ {
   "jour": "Jour 2",
   "piege": true,
   "q": "Une équipe dépose ses procédures internes dans un assistant documentaire. Le modèle a-t-il désormais appris ces procédures ?",
@@ -357,26 +399,26 @@ var QUESTIONS = [
   "plus": "La question à poser à un fournisseur est donc double : que faites-vous de mes documents au moment de répondre, et vous en servez-vous par ailleurs pour entraîner un modèle ? Les deux réponses sont indépendantes l'une de l'autre, et seule la seconde engage durablement les données de l'entreprise."
  },
  {
- "jour": "Capacités et limites",
- "piege": true,
- "q": "Un modèle traite un problème complexe sans faiblir, puis se trompe sur une multiplication à deux chiffres. Quelle est la cause la mieux documentée ?",
- "opts": [
-  "Le modèle n'a jamais vu de multiplications pendant son entraînement, le calcul lui est étranger.",
-  "Les nombres sont découpés en tokens optimisés pour la fréquence des mots et non pour la structure des chiffres : un grand nombre se retrouve fragmenté de façon incohérente avant même le calcul.",
-  "Le calcul est volontairement bridé par l'éditeur, pour éviter la concurrence avec les tableurs.",
-  "Le modèle arrondit systématiquement les résultats afin d'accélérer sa réponse."
- ],
- "bonne": 1,
- "pourquoi": "La cause est en amont du raisonnement, dans le découpage. Les nombres sont découpés en tokens optimisés pour la fréquence des mots, pas pour la structure des chiffres : un grand nombre arrive fragmenté de façon incohérente, et le calcul part déjà faussé. Le paradoxe apparent, échouer sur une opération simple tout en tenant un raisonnement complexe, s'explique donc par la tokenisation.",
- "pieges": [
-  "Les données d'entraînement contiennent au contraire énormément de calcul écrit, ce n'est pas un manque d'exposition.",
-  "Aucun bridage commercial de ce type n'existe, et il n'expliquerait pas des erreurs variables selon la taille des nombres.",
-  "Il ne s'agit pas d'un arrondi de confort : le résultat est faux, pas approché."
- ],
- "src": "Capacités et limites",
- "lien": "https://arxiv.org/pdf/2402.00157",
- "plus": "En salle, cela donne une consigne simple et vérifiable : on ne demande jamais un chiffre à un modèle, on lui demande la méthode et on laisse le calcul à un tableur ou à un outil de calcul. C'est aussi la meilleure démonstration à faire en direct, parce qu'elle est reproductible devant le groupe et qu'elle vaccine durablement."
-},
+  "jour": "Capacités et limites",
+  "piege": true,
+  "q": "Un modèle traite un problème complexe sans faiblir, puis se trompe sur une multiplication à deux chiffres. Quelle est la cause la mieux documentée ?",
+  "opts": [
+   "Le modèle n'a jamais vu de multiplications pendant son entraînement, le calcul lui est étranger.",
+   "Les nombres sont découpés en tokens optimisés pour la fréquence des mots et non pour la structure des chiffres : un grand nombre se retrouve fragmenté de façon incohérente avant même le calcul.",
+   "Le calcul est volontairement bridé par l'éditeur, pour éviter la concurrence avec les tableurs.",
+   "Le modèle arrondit systématiquement les résultats afin d'accélérer sa réponse."
+  ],
+  "bonne": 1,
+  "pourquoi": "La cause est en amont du raisonnement, dans le découpage. Les nombres sont découpés en tokens optimisés pour la fréquence des mots, pas pour la structure des chiffres : un grand nombre arrive fragmenté de façon incohérente, et le calcul part déjà faussé. Le paradoxe apparent, échouer sur une opération simple tout en tenant un raisonnement complexe, s'explique donc par la tokenisation.",
+  "pieges": [
+   "Les données d'entraînement contiennent au contraire énormément de calcul écrit, ce n'est pas un manque d'exposition.",
+   "Aucun bridage commercial de ce type n'existe, et il n'expliquerait pas des erreurs variables selon la taille des nombres.",
+   "Il ne s'agit pas d'un arrondi de confort : le résultat est faux, pas approché."
+  ],
+  "src": "Capacités et limites",
+  "lien": "https://arxiv.org/pdf/2402.00157",
+  "plus": "En salle, cela donne une consigne simple et vérifiable : on ne demande jamais un chiffre à un modèle, on lui demande la méthode et on laisse le calcul à un tableur ou à un outil de calcul. C'est aussi la meilleure démonstration à faire en direct, parce qu'elle est reproductible devant le groupe et qu'elle vaccine durablement."
+ },
  {
   "jour": "Outils",
   "piege": true,
@@ -397,6 +439,27 @@ var QUESTIONS = [
   "src": "Menu des outils de la formation, Ideogram",
   "lien": "https://ideogram.ai/",
   "plus": "Le texte dans l'image reste le point de vigilance de tous les générateurs : au delà de quelques mots, les erreurs de lettres reviennent. Pour une affiche à diffuser, la pratique sûre consiste à générer le fond avec Ideogram puis à poser le texte par dessus dans un outil de mise en page."
+ },
+ {
+  "jour": "Histoire de l'IA",
+  "piege": true,
+  "q": "Dans son article de 1950, Alan Turing décrit le jeu de l'imitation. Que mesure-t-il exactement ?",
+  "opts": [
+   "La capacité de la machine à répondre juste à des questions de connaissance générale.",
+   "Le fait qu'un interrogateur humain, en échangeant par écrit, n'arrive pas à distinguer de façon fiable la machine de l'humain.",
+   "Le degré de conscience de soi que la machine manifeste.",
+   "La vitesse à laquelle la machine calcule, comparée à celle d'un être humain."
+  ],
+  "bonne": 1,
+  "pourquoi": "Turing ouvre son article en écartant la question « les machines peuvent-elles penser », qu'il juge trop ambiguë pour être discutée, et il la remplace par une question observable : une machine peut-elle bien jouer au jeu de l'imitation. Le critère est donc purement comportemental et conversationnel, et il porte sur l'incapacité de l'interrogateur à trancher, jamais sur ce qui se passe dans la machine. Turing chiffrait même sa prédiction : vers l'an 2000, un interrogateur moyen ne devrait pas avoir plus de soixante-dix pour cent de chances d'identifier correctement son interlocuteur après cinq minutes d'échange.",
+  "pieges": [
+   "Le test ne mesure aucune connaissance. Une machine qui répondrait juste à tout se trahirait immédiatement, et Turing note qu'une bonne machine devra parfois se tromper en arithmétique pour rester crédible.",
+   "La conscience est précisément ce que Turing met de côté. Il consacre une section entière à répondre à cette objection, dite argument de la conscience.",
+   "La vitesse de calcul n'entre pas dans le jeu. Le dispositif est textuel et anonyme justement pour neutraliser tout ce qui n'est pas la conversation."
+  ],
+  "src": "Histoire de l'IA, Alan Turing, Computing Machinery and Intelligence, revue Mind, 1950",
+  "lien": "https://www.cs.mcgill.ca/~dprecup/courses/AI/Materials/turing1950.pdf",
+  "plus": "La configuration d'origine du jeu compte trois joueurs et n'a rien d'une machine : un homme, une femme et un interrogateur qui doit deviner qui est qui. Turing remplace ensuite l'un des deux humains par une machine. Ce détail explique pourquoi le test porte sur l'imitation d'un rôle et non sur une mesure d'intelligence, et c'est un bon garde-fou quand un participant affirme que tel outil « a passé le test de Turing »."
  },
  {
   "jour": "Jour 1",
@@ -462,6 +525,27 @@ var QUESTIONS = [
   "plus": "La bascule utile avec ce type d'outil est celle du temps : le gain se fait sur la mise en page, pas sur la structure du propos. Une présentation générée à partir d'un texte mal construit reste mal construite, simplement plus jolie."
  },
  {
+  "jour": "Culture générale",
+  "piege": true,
+  "q": "Vous corrigez une erreur d'un assistant conversationnel en plein échange, et il vous remercie. Que s'est-il passé dans le modèle ?",
+  "opts": [
+   "Rien dans le modèle. Ses paramètres sont figés pendant l'utilisation, votre correction ne vit que dans la fenêtre de contexte de cette conversation.",
+   "Le modèle est corrigé pour tous ses utilisateurs dans la minute qui suit.",
+   "Le modèle réapprend en direct et gardera cette correction lors de vos prochaines conversations.",
+   "La correction est écrite dans la base de connaissances interne du modèle."
+  ],
+  "bonne": 0,
+  "pourquoi": "Il faut séparer deux moments qui n'ont rien à voir. L'entraînement fabrique les paramètres du modèle, il est long, coûteux et se fait une fois. L'inférence est l'usage quotidien : les paramètres y sont figés, et le modèle ne retient rien d'un tour à l'autre en dehors du texte qu'on lui renvoie. Votre correction est donc un simple bout de texte présent dans la fenêtre de contexte, et elle disparaît avec la conversation.",
+  "pieges": [
+   "Aucun modèle en production ne se met à jour à chaud sur la remarque d'un utilisateur. Ce serait par ailleurs une faille béante, ouverte au premier venu.",
+   "C'est la croyance la plus répandue en salle. Ce qui donne cette impression, ce sont les mémoires persistantes de certains outils, qui sont un carnet de notes réinjecté dans le contexte, pas une modification des paramètres.",
+   "Un modèle de langage n'a pas de base de connaissances consultable et modifiable. Ses connaissances sont diffuses dans ses paramètres, et rien n'y est écrit à l'unité."
+  ],
+  "src": "Culture générale, distinction entrainement et inférence, documentation éditeur sur l'usage des données",
+  "lien": "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training",
+  "plus": "Les conversations peuvent servir plus tard à entraîner une version future, selon les réglages du compte et l'offre souscrite, mais c'est un traitement différé et hors ligne, sans rapport avec un apprentissage en direct. La question à poser en formation est donc double : est-ce que mes données sortent, et est-ce qu'elles servent à entraîner. Les deux réponses se lisent dans les paramètres du compte, jamais dans le comportement du modèle."
+ },
+ {
   "jour": "Inédite",
   "piege": true,
   "q": "Pourquoi un formateur qui répond à sa propre question perd-il le groupe ?",
@@ -483,26 +567,26 @@ var QUESTIONS = [
   "plus": "Le silence après une question est un investissement, pas un échec. Compter jusqu'à sept dans sa tête avant de reprendre la parole change à lui seul le taux de réponse d'un groupe, et c'est l'un des rares gestes d'animation dont l'effet se voit dès la séance suivante."
  },
  {
- "jour": "Actualité",
- "piege": true,
- "q": "Un participant vous demande d'ouvrir « le DALL-E de ChatGPT » pour générer une image. Que lui répondez-vous fin août 2026 ?",
- "opts": [
-  "Que ce GPT dédié a été retiré de ChatGPT le 30 août 2026 : le nom reste très connu du grand public, mais il ne désigne plus l'interface de génération d'image active.",
-  "Qu'il faut d'abord activer DALL-E dans les réglages du compte, l'option étant désactivée par défaut.",
-  "Que DALL-E n'a jamais existé dans ChatGPT et qu'il confond avec un autre éditeur.",
-  "Que DALL-E est réservé aux comptes professionnels depuis le 30 août 2026."
- ],
- "bonne": 0,
- "pourquoi": "Le GPT dédié à la génération d'images dans ChatGPT, connu sous le nom DALL-E, a été retiré de ChatGPT le 30 août 2026. C'est exactement le genre d'écart qui piège en salle : le nom est resté dans le langage courant bien après que l'outil a cessé d'être l'interface de génération active.",
- "pieges": [
-  "Il ne s'agit pas d'une option à activer, mais d'un retrait.",
-  "DALL-E a bien existé dans ChatGPT, et c'est même ce qui explique la persistance du nom.",
-  "Aucune restriction aux comptes professionnels n'a été annoncée : l'outil a été retiré, pas réservé."
- ],
- "src": "Actualité, août 2026",
- "lien": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
- "plus": "Le réflexe à installer chez un formateur est de nommer la fonction plutôt que la marque : on dit « la génération d'images dans ChatGPT », pas le nom d'un GPT qui peut disparaître entre deux sessions. Un support construit sur des noms de produits vieillit en semaines, un support construit sur des fonctions tient un an."
-},
+  "jour": "Actualité",
+  "piege": true,
+  "q": "Un participant vous demande d'ouvrir « le DALL-E de ChatGPT » pour générer une image. Que lui répondez-vous fin août 2026 ?",
+  "opts": [
+   "Que ce GPT dédié a été retiré de ChatGPT le 30 août 2026 : le nom reste très connu du grand public, mais il ne désigne plus l'interface de génération d'image active.",
+   "Qu'il faut d'abord activer DALL-E dans les réglages du compte, l'option étant désactivée par défaut.",
+   "Que DALL-E n'a jamais existé dans ChatGPT et qu'il confond avec un autre éditeur.",
+   "Que DALL-E est réservé aux comptes professionnels depuis le 30 août 2026."
+  ],
+  "bonne": 0,
+  "pourquoi": "Le GPT dédié à la génération d'images dans ChatGPT, connu sous le nom DALL-E, a été retiré de ChatGPT le 30 août 2026. C'est exactement le genre d'écart qui piège en salle : le nom est resté dans le langage courant bien après que l'outil a cessé d'être l'interface de génération active.",
+  "pieges": [
+   "Il ne s'agit pas d'une option à activer, mais d'un retrait.",
+   "DALL-E a bien existé dans ChatGPT, et c'est même ce qui explique la persistance du nom.",
+   "Aucune restriction aux comptes professionnels n'a été annoncée : l'outil a été retiré, pas réservé."
+  ],
+  "src": "Actualité, août 2026",
+  "lien": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+  "plus": "Le réflexe à installer chez un formateur est de nommer la fonction plutôt que la marque : on dit « la génération d'images dans ChatGPT », pas le nom d'un GPT qui peut disparaître entre deux sessions. Un support construit sur des noms de produits vieillit en semaines, un support construit sur des fonctions tient un an."
+ },
  {
   "jour": "Jour 1",
   "piege": true,
@@ -544,6 +628,27 @@ var QUESTIONS = [
   "src": "Menu des outils de la formation, ElevenLabs",
   "lien": "https://elevenlabs.io/",
   "plus": "Cloner une voix réelle change complètement le régime juridique : il faut le consentement écrit de la personne, et l'AI Act impose par ailleurs de signaler les contenus générés. Pour un module interne, une voix du catalogue évite tout ce dossier."
+ },
+ {
+  "jour": "Histoire de l'IA",
+  "piege": true,
+  "q": "Qu'est-ce qui a provoqué le premier hiver de l'IA, au milieu des années 1970 ?",
+  "opts": [
+   "Le manque de données d'entraînement, trop rares pour les algorithmes de l'époque.",
+   "L'écart entre les promesses des chercheurs et les résultats obtenus, qui a poussé les financeurs à couper les budgets, notamment après le rapport Lighthill de 1973 au Royaume-Uni.",
+   "L'absence de processeurs graphiques, qui rendait tout entraînement impossible.",
+   "Une interdiction réglementaire de la recherche en IA dans les universités américaines."
+  ],
+  "bonne": 1,
+  "pourquoi": "Les hivers de l'IA sont des faits de financement avant d'être des faits techniques. Le rapport remis en 1973 par le mathématicien James Lighthill au Science Research Council britannique conclut que les résultats ne tiennent pas les promesses, en pointant l'explosion combinatoire dès qu'on quitte les problèmes jouets. La conséquence est immédiate : le financement de la recherche en IA est coupé dans la quasi-totalité des universités britanniques. Aux États-Unis, le rapport ALPAC de novembre 1966 avait déjà produit le même effet sur la traduction automatique.",
+  "pieges": [
+   "Personne ne raisonnait alors en volume de données. Le diagnostic de l'époque portait sur les méthodes et sur les délais annoncés, pas sur des corpus manquants.",
+   "Le manque de puissance de calcul est une explication rétrospective, écrite depuis 2012. Ce n'est pas ce que disent les rapports qui ont déclenché les coupes.",
+   "Aucune interdiction de ce type n'a jamais existé. Ce sont des arbitrages budgétaires de financeurs publics, pas des décisions réglementaires."
+  ],
+  "src": "Histoire de l'IA, rapport Lighthill, Artificial Intelligence, a General Survey, 1973, et rapport ALPAC de 1966",
+  "lien": "https://en.wikipedia.org/wiki/Lighthill_report",
+  "plus": "On compte habituellement deux hivers : celui du milieu des années 1970, et celui de la fin des années 1980, provoqué par l'effondrement du marché des machines LISP et des systèmes experts. La leçon utile en formation n'est pas historique, elle est commerciale : ce qui tue un projet d'IA, ce n'est presque jamais la technique, c'est l'écart entre ce qui a été promis au financeur et ce qui a été livré."
  },
  {
   "jour": "Fonctionnalités",
@@ -588,26 +693,26 @@ var QUESTIONS = [
   "plus": "Poser la question c'est clair échoue par construction : elle ne coûte rien à approuver et personne ne veut être celui qui ralentit le groupe. Faire reformuler déplace la charge de la preuve du groupe vers la consigne, ce qui est la bonne place."
  },
  {
- "jour": "Actualité",
- "piege": true,
- "q": "Un client paie un abonnement ChatGPT et vous dit : tant que je paie, le modèle auquel mon équipe s'est habituée restera disponible. Que répondez-vous ?",
- "opts": [
-  "Qu'il a raison : un abonnement payant garantit le maintien des modèles auxquels on a accès le jour de la souscription.",
-  "Que non : OpenAI retire ses anciens modèles de ChatGPT sur un calendrier fixe annoncé à l'avance, avec une période de transition, et cela vaut aussi pour les utilisateurs payants.",
-  "Que les retraits se décident sans préavis, du jour au lendemain, sans aucune période de transition.",
-  "Que seuls les comptes gratuits subissent des retraits, les comptes payants conservant tout l'historique du catalogue."
- ],
- "bonne": 1,
- "pourquoi": "OpenAI retire ses anciens modèles de ChatGPT selon un calendrier fixe, annoncé à l'avance, assorti d'une période de transition. Le fait de payer ne met pas à l'abri du retrait. Beaucoup de professionnels croient l'inverse et construisent des procédures internes sur un modèle précis, comme si l'abonnement figeait le catalogue.",
- "pieges": [
-  "L'abonnement donne accès à un service, pas à une version figée du catalogue.",
-  "Les retraits sont au contraire annoncés à l'avance, avec une période de transition : c'est ce qui permet de préparer la bascule.",
-  "Le statut payant ne change pas le principe du retrait, il change seulement le confort de la transition."
- ],
- "src": "Actualité, août 2026",
- "lien": "https://help.openai.com/en/articles/9624314-model-release-notes",
- "plus": "Concrètement, une procédure interne ne se rédige jamais autour du nom d'un modèle, mais autour d'un résultat attendu et d'un test de recette. Le jour du retrait, on rejoue le test sur ce qui remplace, et l'on sait en une heure si la procédure tient, au lieu de découvrir la panne par les utilisateurs."
-},
+  "jour": "Actualité",
+  "piege": true,
+  "q": "Un client paie un abonnement ChatGPT et vous dit : tant que je paie, le modèle auquel mon équipe s'est habituée restera disponible. Que répondez-vous ?",
+  "opts": [
+   "Qu'il a raison : un abonnement payant garantit le maintien des modèles auxquels on a accès le jour de la souscription.",
+   "Que non : OpenAI retire ses anciens modèles de ChatGPT sur un calendrier fixe annoncé à l'avance, avec une période de transition, et cela vaut aussi pour les utilisateurs payants.",
+   "Que les retraits se décident sans préavis, du jour au lendemain, sans aucune période de transition.",
+   "Que seuls les comptes gratuits subissent des retraits, les comptes payants conservant tout l'historique du catalogue."
+  ],
+  "bonne": 1,
+  "pourquoi": "OpenAI retire ses anciens modèles de ChatGPT selon un calendrier fixe, annoncé à l'avance, assorti d'une période de transition. Le fait de payer ne met pas à l'abri du retrait. Beaucoup de professionnels croient l'inverse et construisent des procédures internes sur un modèle précis, comme si l'abonnement figeait le catalogue.",
+  "pieges": [
+   "L'abonnement donne accès à un service, pas à une version figée du catalogue.",
+   "Les retraits sont au contraire annoncés à l'avance, avec une période de transition : c'est ce qui permet de préparer la bascule.",
+   "Le statut payant ne change pas le principe du retrait, il change seulement le confort de la transition."
+  ],
+  "src": "Actualité, août 2026",
+  "lien": "https://help.openai.com/en/articles/9624314-model-release-notes",
+  "plus": "Concrètement, une procédure interne ne se rédige jamais autour du nom d'un modèle, mais autour d'un résultat attendu et d'un test de recette. Le jour du retrait, on rejoue le test sur ce qui remplace, et l'on sait en une heure si la procédure tient, au lieu de découvrir la panne par les utilisateurs."
+ },
  {
   "jour": "Jour 1",
   "piege": true,
@@ -630,26 +735,47 @@ var QUESTIONS = [
   "plus": "La classification en haut risque déclenche un chantier, pas un arrêt : documentation, traçabilité des données, supervision humaine, information des personnes. Le rôle tenu compte autant que la catégorie, un déployeur n'a pas les mêmes obligations qu'un fournisseur."
  },
  {
- "jour": "Capacités et limites",
- "piege": true,
- "q": "Une équipe dépose un document très long dans un assistant à très grande fenêtre de contexte. Que disent les évaluations sur la lecture de ce document ?",
- "opts": [
-  "La lecture est uniforme : à partir du moment où le document tient dans la fenêtre, la position de l'information n'a plus d'effet.",
-  "Seule la fin du document est réellement exploitée, le début étant systématiquement écarté.",
-  "Les évaluations montrent une chute de précision quand l'information cherchée se situe au milieu du document plutôt qu'au début ou à la fin, effet documenté sous le nom d'effet du milieu perdu.",
-  "La précision augmente avec la longueur du document, le modèle disposant de plus de contexte."
- ],
- "bonne": 2,
- "pourquoi": "Une très grande fenêtre de contexte n'assure pas une lecture uniforme. Les évaluations mesurent une chute de précision lorsque l'information recherchée se trouve au milieu du document plutôt qu'au début ou à la fin. Cet effet est documenté sous le nom d'effet du milieu perdu.",
- "pieges": [
-  "Tenir dans la fenêtre et être exploité de façon fiable sont deux choses distinctes, et c'est tout l'enjeu de cet effet.",
-  "Le début et la fin sont au contraire les positions les mieux traitées, l'affaiblissement porte sur le milieu.",
-  "Allonger le document ne rend pas la lecture plus fine, cela étire au contraire la zone fragile."
- ],
- "src": "Capacités et limites",
- "lien": "https://arxiv.org/abs/2503.00353",
- "plus": "La parade est concrète et se montre en salle : placer la question et les passages décisifs au début ou à la fin, découper les gros dossiers, et poser des questions ciblées plutôt que de tout déposer d'un bloc. C'est aussi l'argument qui justifie un dispositif de recherche documentaire quand le volume dépasse quelques dizaines de pages."
-},
+  "jour": "Culture générale",
+  "piege": true,
+  "q": "Un modèle est publié « en poids ouverts ». Qu'est-ce que cela garantit ?",
+  "opts": [
+   "Que les données d'entraînement sont publiées et vérifiables par n'importe qui.",
+   "Que les paramètres du modèle sont téléchargeables et exécutables chez vous, sans que cela implique la publication des données d'entraînement ni une licence libre au sens de l'Open Source Initiative.",
+   "Que le modèle est sous une licence libre approuvée par l'Open Source Initiative.",
+   "Que le modèle est gratuit pour tout usage, y compris commercial et sans aucune limite."
+  ],
+  "bonne": 1,
+  "pourquoi": "Poids ouverts veut dire une seule chose : les paramètres numériques issus de l'entraînement sont téléchargeables, donc le modèle peut tourner sur vos machines. Cela ne dit rien du code d'entraînement, rien des données, et rien de la licence, qui peut poser des restrictions bien réelles. La confusion avec le logiciel libre est si courante que l'Open Source Initiative a publié le 28 octobre 2024 une définition de l'IA open source, qui exige en plus une information suffisante sur les données pour qu'un tiers puisse reconstruire un système équivalent.",
+  "pieges": [
+   "C'est justement ce que les poids ouverts ne donnent pas. La composition des corpus d'entraînement reste le secret le mieux gardé du secteur, y compris chez les éditeurs les plus ouverts sur le reste.",
+   "Plusieurs licences de modèles très diffusés ne sont pas reconnues comme libres. La licence communautaire de Meta pour Llama, par exemple, impose un accord préalable au-delà de sept cents millions d'utilisateurs mensuels et restreint certains usages.",
+   "Gratuit et libre sont deux choses différentes. Un modèle peut être gratuit à télécharger tout en interdisant contractuellement certains usages commerciaux ou certaines catégories d'utilisateurs."
+  ],
+  "src": "Culture générale, poids ouverts contre logiciel libre, définition de l'IA open source de l'Open Source Initiative, version 1.0",
+  "lien": "https://opensource.org/blog/the-open-source-initiative-announces-the-release-of-the-industrys-first-open-source-ai-definition",
+  "plus": "L'intérêt réel des poids ouverts pour un client n'est pas idéologique, il est opérationnel : le modèle peut tourner dans son infrastructure, donc les données ne sortent pas. C'est l'argument qui compte dans une discussion de souveraineté, et il tient même quand la licence n'est pas libre. En revanche, promettre à un client qu'un modèle en poids ouverts est open source vous expose à une correction en réunion."
+ },
+ {
+  "jour": "Capacités et limites",
+  "piege": true,
+  "q": "Une équipe dépose un document très long dans un assistant à très grande fenêtre de contexte. Que disent les évaluations sur la lecture de ce document ?",
+  "opts": [
+   "La lecture est uniforme : à partir du moment où le document tient dans la fenêtre, la position de l'information n'a plus d'effet.",
+   "Seule la fin du document est réellement exploitée, le début étant systématiquement écarté.",
+   "Les évaluations montrent une chute de précision quand l'information cherchée se situe au milieu du document plutôt qu'au début ou à la fin, effet documenté sous le nom d'effet du milieu perdu.",
+   "La précision augmente avec la longueur du document, le modèle disposant de plus de contexte."
+  ],
+  "bonne": 2,
+  "pourquoi": "Une très grande fenêtre de contexte n'assure pas une lecture uniforme. Les évaluations mesurent une chute de précision lorsque l'information recherchée se trouve au milieu du document plutôt qu'au début ou à la fin. Cet effet est documenté sous le nom d'effet du milieu perdu.",
+  "pieges": [
+   "Tenir dans la fenêtre et être exploité de façon fiable sont deux choses distinctes, et c'est tout l'enjeu de cet effet.",
+   "Le début et la fin sont au contraire les positions les mieux traitées, l'affaiblissement porte sur le milieu.",
+   "Allonger le document ne rend pas la lecture plus fine, cela étire au contraire la zone fragile."
+  ],
+  "src": "Capacités et limites",
+  "lien": "https://arxiv.org/abs/2503.00353",
+  "plus": "La parade est concrète et se montre en salle : placer la question et les passages décisifs au début ou à la fin, découper les gros dossiers, et poser des questions ciblées plutôt que de tout déposer d'un bloc. C'est aussi l'argument qui justifie un dispositif de recherche documentaire quand le volume dépasse quelques dizaines de pages."
+ },
  {
   "jour": "Jour 2",
   "piege": true,
@@ -672,26 +798,26 @@ var QUESTIONS = [
   "plus": "Le repère utile pour une équipe est celui de la place de l'information dans le document : un détail isolé au milieu d'un très long fichier est le cas le plus fragile. La parade est pratique, découper le dossier et poser des questions ciblées plutôt que de tout déposer d'un bloc."
  },
  {
- "jour": "Actualité",
- "piege": true,
- "q": "Le 4 août 2026, Mistral publie Shieldstral, un classificateur de sécurité multimodal. Quel est le point le plus notable de cette publication ?",
- "opts": [
-  "Il est réservé aux clients grands comptes de l'éditeur, sous contrat spécifique.",
-  "Il ne traite que du texte, la modération de l'image restant hors de son périmètre.",
-  "Il est publié en poids ouverts sous licence Apache 2.0, alors que l'on associe spontanément la sécurité de l'IA à des systèmes propriétaires fermés.",
-  "Il s'agit d'un service en ligne payant à l'appel, sans possibilité d'installation."
- ],
- "bonne": 2,
- "pourquoi": "Shieldstral a été publié le 4 août 2026 en poids ouverts, sous licence Apache 2.0. Le contre-pied est là : la couche de sécurité et de modération est justement celle que les éditeurs gardent d'ordinaire fermée, et c'est un acteur européen qui l'ouvre.",
- "pieges": [
-  "Des poids ouverts sous Apache 2.0 sont l'inverse d'une réservation contractuelle à quelques clients.",
-  "Le classificateur est multimodal, il ne se limite donc pas au texte.",
-  "Une publication en poids ouverts permet précisément l'installation, ce que ne permet pas un service fermé facturé à l'appel."
- ],
- "src": "Actualité, août 2026",
- "lien": "https://mistral.ai/news/regional-inference-open-models-new-compute/",
- "plus": "Pour une organisation qui doit filtrer des contenus sans les envoyer à l'extérieur, un classificateur en poids ouverts change la conversation avec la direction informatique : la modération peut tourner à l'intérieur du système d'information. C'est un argument concret à garder en réserve quand on vous oppose la confidentialité des contenus analysés."
-},
+  "jour": "Actualité",
+  "piege": true,
+  "q": "Le 4 août 2026, Mistral publie Shieldstral, un classificateur de sécurité multimodal. Quel est le point le plus notable de cette publication ?",
+  "opts": [
+   "Il est réservé aux clients grands comptes de l'éditeur, sous contrat spécifique.",
+   "Il ne traite que du texte, la modération de l'image restant hors de son périmètre.",
+   "Il est publié en poids ouverts sous licence Apache 2.0, alors que l'on associe spontanément la sécurité de l'IA à des systèmes propriétaires fermés.",
+   "Il s'agit d'un service en ligne payant à l'appel, sans possibilité d'installation."
+  ],
+  "bonne": 2,
+  "pourquoi": "Shieldstral a été publié le 4 août 2026 en poids ouverts, sous licence Apache 2.0. Le contre-pied est là : la couche de sécurité et de modération est justement celle que les éditeurs gardent d'ordinaire fermée, et c'est un acteur européen qui l'ouvre.",
+  "pieges": [
+   "Des poids ouverts sous Apache 2.0 sont l'inverse d'une réservation contractuelle à quelques clients.",
+   "Le classificateur est multimodal, il ne se limite donc pas au texte.",
+   "Une publication en poids ouverts permet précisément l'installation, ce que ne permet pas un service fermé facturé à l'appel."
+  ],
+  "src": "Actualité, août 2026",
+  "lien": "https://mistral.ai/news/regional-inference-open-models-new-compute/",
+  "plus": "Pour une organisation qui doit filtrer des contenus sans les envoyer à l'extérieur, un classificateur en poids ouverts change la conversation avec la direction informatique : la modération peut tourner à l'intérieur du système d'information. C'est un argument concret à garder en réserve quand on vous oppose la confidentialité des contenus analysés."
+ },
  {
   "jour": "Jour 2",
   "piege": true,
@@ -712,6 +838,27 @@ var QUESTIONS = [
   "src": "Jour 2, après-midi, mini-cas télétravail, familles d'erreurs récupération et génération",
   "lien": "",
   "plus": "Distinguer récupération et génération n'est pas un raffinement théorique, c'est ce qui désigne le responsable de la correction. Une erreur de récupération se règle du côté de la base documentaire, versions et indexation. Une erreur de génération se règle du côté du prompt et des garde-fous."
+ },
+ {
+  "jour": "Histoire de l'IA",
+  "piege": false,
+  "q": "En 2012, un réseau appelé AlexNet remporte le concours ImageNet avec 15,3 pour cent d'erreur, contre 26,2 pour cent au deuxième. Qu'est-ce qui bascule à ce moment ?",
+  "opts": [
+   "Les chercheurs abandonnent les réseaux de neurones au profit des systèmes experts à base de règles.",
+   "Une architecture entièrement nouvelle apparaît, sans aucun lien avec les travaux antérieurs sur les réseaux de neurones.",
+   "Les données annotées sont abandonnées au profit d'un apprentissage sans exemple.",
+   "Une idée ancienne, le réseau de neurones profond, devient enfin praticable grâce à un très grand jeu d'images annotées et à l'entraînement sur cartes graphiques."
+  ],
+  "bonne": 3,
+  "pourquoi": "Rien n'est inventé en 2012 sur le plan des idées : les réseaux de neurones datent des années 1950 et la rétropropagation des années 1980. Ce qui change, ce sont les deux ingrédients qui manquaient. D'un côté ImageNet, un jeu de plus d'un million d'images annotées sur mille catégories. De l'autre l'entraînement sur cartes graphiques, qui rend le calcul abordable. Alex Krizhevsky, Ilya Sutskever et Geoffrey Hinton assemblent les deux, et l'écart de près de onze points avec le deuxième rend le débat sans objet.",
+  "pieges": [
+   "C'est l'inverse exact. Les systèmes experts avaient décliné vingt ans plus tôt, et 2012 marque le retour en force de l'approche par apprentissage.",
+   "L'architecture d'AlexNet est un réseau convolutif, une famille étudiée depuis la fin des années 1980. La rupture est de moyens, pas de concept.",
+   "ImageNet est au contraire un jeu massivement annoté à la main, et c'est précisément cette annotation qui rend le résultat possible."
+  ],
+  "src": "Histoire de l'IA, Krizhevsky, Sutskever et Hinton, ImageNet Classification with Deep Convolutional Neural Networks, 2012",
+  "lien": "https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf",
+  "plus": "La suite de l'histoire tient en deux dates utiles à connaître. L'architecture Transformer, qui porte tous les modèles de langage actuels, est publiée le 12 juin 2017 dans l'article Attention Is All You Need. Et la bascule grand public arrive le 30 novembre 2022, avec l'ouverture publique de ChatGPT. Entre l'idée et le grand public, il s'est donc écoulé cinq ans, ce qui remet à sa place l'impression que tout serait arrivé d'un coup."
  },
  {
   "jour": "Jour 3",
@@ -735,26 +882,26 @@ var QUESTIONS = [
   "plus": "La conséquence pour un devis est nette : le poste qui pèse est le modèle et la machine, pas le logiciel d'exécution, qui est le plus souvent gratuit. Une déception sur la qualité se traite en changeant de modèle ou de taille de modèle, ou en revoyant la mémoire disponible."
  },
  {
- "jour": "Capacités et limites",
- "piege": true,
- "q": "Vous voulez une affiche générée portant un titre lisible. Que dit la documentation officielle du générateur d'images ?",
- "opts": [
-  "Que le texte dans l'image reste hors de portée des générateurs actuels, quel que soit le libellé de la consigne.",
-  "Que le texte est ajouté automatiquement dès qu'un titre figure dans la consigne, sans autre précaution.",
-  "Que le texte n'est rendu correctement qu'en anglais, toute autre langue étant déformée.",
-  "Que le modèle sait produire du texte lisible dans l'image, mais seulement si la consigne le demande explicitement, une consigne ambiguë pouvant produire du texte sans image, ou l'inverse."
- ],
- "bonne": 3,
- "pourquoi": "La documentation officielle est explicite : le générateur sait produire du texte lisible dans l'image, à condition que la consigne le demande explicitement. Sur une consigne ambiguë, le modèle peut ne produire que du texte sans image, ou une image sans le texte attendu. Le contre-pied est double, on croit encore les générateurs incapables d'écrire, et l'on sous-estime le rôle de la formulation.",
- "pieges": [
-  "C'est une croyance héritée des premières générations d'outils, que la documentation actuelle contredit.",
-  "Rien n'est automatique : c'est précisément le caractère explicite de la demande qui fait la différence.",
-  "La documentation ne pose pas de restriction de ce type, elle pose une exigence de formulation."
- ],
- "src": "Capacités et limites",
- "lien": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/gemini-image-generation-limitations",
- "plus": "En atelier, cela donne une consigne à faire réécrire par les participants : dire où va le texte, quel texte exactement, et qu'il doit apparaître dans l'image. La comparaison entre la consigne vague et la consigne explicite, faite en direct sur le même sujet, vaut mieux que dix minutes d'explication."
-},
+  "jour": "Capacités et limites",
+  "piege": true,
+  "q": "Vous voulez une affiche générée portant un titre lisible. Que dit la documentation officielle du générateur d'images ?",
+  "opts": [
+   "Que le texte dans l'image reste hors de portée des générateurs actuels, quel que soit le libellé de la consigne.",
+   "Que le texte est ajouté automatiquement dès qu'un titre figure dans la consigne, sans autre précaution.",
+   "Que le texte n'est rendu correctement qu'en anglais, toute autre langue étant déformée.",
+   "Que le modèle sait produire du texte lisible dans l'image, mais seulement si la consigne le demande explicitement, une consigne ambiguë pouvant produire du texte sans image, ou l'inverse."
+  ],
+  "bonne": 3,
+  "pourquoi": "La documentation officielle est explicite : le générateur sait produire du texte lisible dans l'image, à condition que la consigne le demande explicitement. Sur une consigne ambiguë, le modèle peut ne produire que du texte sans image, ou une image sans le texte attendu. Le contre-pied est double, on croit encore les générateurs incapables d'écrire, et l'on sous-estime le rôle de la formulation.",
+  "pieges": [
+   "C'est une croyance héritée des premières générations d'outils, que la documentation actuelle contredit.",
+   "Rien n'est automatique : c'est précisément le caractère explicite de la demande qui fait la différence.",
+   "La documentation ne pose pas de restriction de ce type, elle pose une exigence de formulation."
+  ],
+  "src": "Capacités et limites",
+  "lien": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/gemini-image-generation-limitations",
+  "plus": "En atelier, cela donne une consigne à faire réécrire par les participants : dire où va le texte, quel texte exactement, et qu'il doit apparaître dans l'image. La comparaison entre la consigne vague et la consigne explicite, faite en direct sur le même sujet, vaut mieux que dix minutes d'explication."
+ },
  {
   "jour": "Jour 1",
   "piege": true,
@@ -798,26 +945,47 @@ var QUESTIONS = [
   "plus": "Le quatrième type, la question hors périmètre, est celui qu'on oublie le plus souvent et celui qui produit les incidents visibles. Un assistant qui répond aimablement à côté de son domaine donne l'impression d'une compétence qu'il n'a pas, et c'est ce que les utilisateurs raconteront ensuite."
  },
  {
- "jour": "Actualité",
- "piege": false,
- "q": "Début août 2026, Mistral lance les European Compute Units. De quoi s'agit-il ?",
- "opts": [
-  "D'une structure d'engagements d'entreprise à long terme visant à financer jusqu'à un gigawatt de capacité de calcul européenne d'ici 2030.",
-  "D'une nouvelle unité de mesure de la consommation énergétique des requêtes IA, destinée au bilan carbone.",
-  "D'un label européen certifiant qu'un modèle a été entraîné sans données personnelles.",
-  "D'une offre d'abonnement à tarif réduit réservée aux administrations européennes."
- ],
- "bonne": 0,
- "pourquoi": "Les European Compute Units sont une structure d'engagements d'entreprise sur le long terme, destinée à financer jusqu'à un gigawatt de capacité de calcul européenne d'ici 2030. L'enseignement est stratégique : le frein de l'IA européenne n'est pas le savoir-faire logiciel, il est la puissance de calcul effectivement disponible sur le sol européen.",
- "pieges": [
-  "Ce n'est pas une unité de mesure, mais un mécanisme de financement de capacité.",
-  "Aucun label de certification sur les données d'entraînement n'est en jeu ici.",
-  "Il ne s'agit pas d'une grille tarifaire, mais d'engagements d'achat servant à financer des infrastructures."
- ],
- "src": "Actualité, août 2026",
- "lien": "https://mistral.ai/news/regional-inference-open-models-new-compute/",
- "plus": "C'est le chaînon que l'on oublie dans les discussions sur la souveraineté : héberger en Europe suppose des machines en Europe, et ces machines se commandent des années à l'avance. Quand une direction demande pourquoi l'offre européenne est plus rare ou plus chère, la réponse tient souvent à cette contrainte physique, pas à la compétence des équipes."
-},
+  "jour": "Culture générale",
+  "piege": true,
+  "q": "Vous branchez un modèle sur la base documentaire d'un client par un dispositif de RAG. Qu'est-ce que cela règle, et qu'est-ce que cela ne règle pas ?",
+  "opts": [
+   "Cela supprime les hallucinations, puisque le modèle ne répond plus qu'à partir des documents fournis.",
+   "Cela réentraîne le modèle sur les documents du client.",
+   "Cela donne accès à des documents à jour et propriétaires, avec une source citable, mais cela réduit les hallucinations sans les supprimer.",
+   "Cela ne change rien à ce que le modèle sait, le RAG ne sert qu'à accélérer les réponses."
+  ],
+  "bonne": 2,
+  "pourquoi": "Le RAG consiste à retrouver des passages pertinents dans une base documentaire, puis à les donner au modèle en même temps que la question. Il répond donc à un problème précis : les connaissances récentes ou privées, absentes des paramètres, et la possibilité de montrer d'où vient une affirmation. Mais il laisse intacte la faiblesse de fond, parce que le modèle continue de générer du texte : si les passages récupérés sont incomplets, contradictoires ou hors sujet, il comblera le trou.",
+  "pieges": [
+   "C'est la promesse commerciale la plus répandue, et elle est fausse. Une étude de Stanford sur des outils juridiques adossés à du RAG relève encore entre dix-sept et trente-trois pour cent de réponses hallucinées.",
+   "Rien n'est réentraîné. Les paramètres du modèle ne bougent pas, les documents sont simplement placés dans le contexte au moment de la question.",
+   "Le RAG ne fait pas gagner de temps, il en coûte : il ajoute une étape de recherche avant la génération. Ce qu'il apporte, c'est l'accès à des documents que le modèle n'a jamais vus."
+  ],
+  "src": "Culture générale, Lewis et coauteurs, Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks, 2020",
+  "lien": "https://proceedings.neurips.cc/paper/2020/file/6b493230205f780e1bc26945df7481e5-Paper.pdf",
+  "plus": "La bonne phrase à donner à un client est celle-ci : le RAG ne rend pas le modèle honnête, il rend ses réponses vérifiables. Le gain réel est la citation, parce qu'elle permet à un humain de contrôler en quelques secondes. Un dispositif de RAG livré sans affichage des passages sources perd donc l'essentiel de sa valeur."
+ },
+ {
+  "jour": "Actualité",
+  "piege": false,
+  "q": "Début août 2026, Mistral lance les European Compute Units. De quoi s'agit-il ?",
+  "opts": [
+   "D'une structure d'engagements d'entreprise à long terme visant à financer jusqu'à un gigawatt de capacité de calcul européenne d'ici 2030.",
+   "D'une nouvelle unité de mesure de la consommation énergétique des requêtes IA, destinée au bilan carbone.",
+   "D'un label européen certifiant qu'un modèle a été entraîné sans données personnelles.",
+   "D'une offre d'abonnement à tarif réduit réservée aux administrations européennes."
+  ],
+  "bonne": 0,
+  "pourquoi": "Les European Compute Units sont une structure d'engagements d'entreprise sur le long terme, destinée à financer jusqu'à un gigawatt de capacité de calcul européenne d'ici 2030. L'enseignement est stratégique : le frein de l'IA européenne n'est pas le savoir-faire logiciel, il est la puissance de calcul effectivement disponible sur le sol européen.",
+  "pieges": [
+   "Ce n'est pas une unité de mesure, mais un mécanisme de financement de capacité.",
+   "Aucun label de certification sur les données d'entraînement n'est en jeu ici.",
+   "Il ne s'agit pas d'une grille tarifaire, mais d'engagements d'achat servant à financer des infrastructures."
+  ],
+  "src": "Actualité, août 2026",
+  "lien": "https://mistral.ai/news/regional-inference-open-models-new-compute/",
+  "plus": "C'est le chaînon que l'on oublie dans les discussions sur la souveraineté : héberger en Europe suppose des machines en Europe, et ces machines se commandent des années à l'avance. Quand une direction demande pourquoi l'offre européenne est plus rare ou plus chère, la réponse tient souvent à cette contrainte physique, pas à la compétence des équipes."
+ },
  {
   "jour": "Jour 5",
   "piege": true,
@@ -883,26 +1051,47 @@ var QUESTIONS = [
   "indice": "Indice : commencez par qualifier la donnée elle-même, pas l'organisation qui la détient."
  },
  {
- "jour": "Capacités et limites",
- "piege": true,
- "q": "Vous demandez trois images en une seule requête à un générateur. Que dit la documentation officielle sur ce nombre ?",
- "opts": [
-  "Que le nombre exact demandé n'est pas garanti : le modèle peut ne pas créer le nombre d'images demandé.",
-  "Que le nombre demandé est une contrainte stricte, toujours respectée à l'unité près.",
-  "Que le nombre est plafonné à deux images par requête, toute demande supérieure étant refusée.",
-  "Que le nombre demandé est respecté uniquement si les images sont de tailles identiques."
- ],
- "bonne": 0,
- "pourquoi": "La documentation officielle précise que le modèle peut ne pas créer le nombre d'images demandé. Une consigne aussi simple que « génère trois images » est donc traitée comme une préférence, pas comme une contrainte stricte, ce qui surprend toujours en salle.",
- "pieges": [
-  "C'est l'attente naturelle, et c'est exactement ce que la documentation refuse de garantir.",
-  "Aucun plafond de ce type n'est posé : le point documenté porte sur la garantie, pas sur une limite chiffrée.",
-  "La taille des images n'est pas le critère évoqué par la documentation."
- ],
- "src": "Capacités et limites",
- "lien": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/gemini-image-generation-limitations",
- "plus": "La conséquence pratique vaut pour toute automatisation : un enchaînement qui suppose exactement trois fichiers en sortie casse le jour où il en arrive deux. On compte ce qui est réellement produit avant de passer à l'étape suivante, et l'on relance si le compte n'y est pas."
-},
+  "jour": "Histoire de l'IA",
+  "piege": true,
+  "q": "Les systèmes experts des années 1980 encodaient des règles écrites par des spécialistes. Quelle est la raison principale de leur déclin ?",
+  "opts": [
+   "Ils se trompaient nettement plus souvent que les experts humains de leur domaine.",
+   "Ils ont été interdits dans les usages professionnels après plusieurs accidents.",
+   "Chaque règle devait être extraite d'un expert puis maintenue à la main, si bien que la base devenait vite trop coûteuse à tenir à jour, sans jamais rien généraliser hors de son domaine.",
+   "Le matériel informatique des années 1980 ne permettait pas de les faire fonctionner."
+  ],
+  "bonne": 2,
+  "pourquoi": "Le point de blocage porte un nom dans la littérature : le goulot d'acquisition des connaissances. Chaque règle coûte des heures d'entretien avec un expert, puis se périme, puis entre en conflit avec une autre. Une base de plusieurs milliers de règles devient impossible à maintenir, et elle ne sait rien faire d'un cas légèrement en dehors de ce qui a été prévu. Le contraste avec l'apprentissage automatique tient tout entier là : dans un cas on écrit les règles, dans l'autre on les fait dériver d'exemples.",
+  "pieges": [
+   "MYCIN, développé à Stanford pour le diagnostic d'infections bactériennes, obtenait au contraire des résultats comparables ou supérieurs à ceux de spécialistes en évaluation. Il n'a jamais été déployé en clinique, pour des raisons de responsabilité et d'intégration, pas de performance.",
+   "Aucune interdiction de ce genre n'a existé. Certains systèmes ont au contraire tourné en production pendant des années, comme XCON chez Digital Equipment Corporation pour configurer des commandes de machines.",
+   "Le matériel suffisait largement. Ces systèmes tournaient en production, et l'effondrement du marché des machines LISP à la fin des années 1980 est une conséquence du déclin, pas sa cause."
+  ],
+  "src": "Histoire de l'IA, systèmes experts, MYCIN à Stanford et XCON chez Digital Equipment Corporation",
+  "lien": "https://en.wikipedia.org/wiki/Mycin",
+  "plus": "Le cas MYCIN reste le plus instructif pour un formateur : un système qui fonctionne techniquement et qui ne se déploie jamais, parce que personne ne veut porter la responsabilité d'une prescription. Quarante ans plus tard, c'est exactement le point qui bloque la plupart des projets d'IA en santé et en droit, et il ne se règle pas par un meilleur modèle."
+ },
+ {
+  "jour": "Capacités et limites",
+  "piege": true,
+  "q": "Vous demandez trois images en une seule requête à un générateur. Que dit la documentation officielle sur ce nombre ?",
+  "opts": [
+   "Que le nombre exact demandé n'est pas garanti : le modèle peut ne pas créer le nombre d'images demandé.",
+   "Que le nombre demandé est une contrainte stricte, toujours respectée à l'unité près.",
+   "Que le nombre est plafonné à deux images par requête, toute demande supérieure étant refusée.",
+   "Que le nombre demandé est respecté uniquement si les images sont de tailles identiques."
+  ],
+  "bonne": 0,
+  "pourquoi": "La documentation officielle précise que le modèle peut ne pas créer le nombre d'images demandé. Une consigne aussi simple que « génère trois images » est donc traitée comme une préférence, pas comme une contrainte stricte, ce qui surprend toujours en salle.",
+  "pieges": [
+   "C'est l'attente naturelle, et c'est exactement ce que la documentation refuse de garantir.",
+   "Aucun plafond de ce type n'est posé : le point documenté porte sur la garantie, pas sur une limite chiffrée.",
+   "La taille des images n'est pas le critère évoqué par la documentation."
+  ],
+  "src": "Capacités et limites",
+  "lien": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/gemini-image-generation-limitations",
+  "plus": "La conséquence pratique vaut pour toute automatisation : un enchaînement qui suppose exactement trois fichiers en sortie casse le jour où il en arrive deux. On compte ce qui est réellement produit avant de passer à l'étape suivante, et l'on relance si le compte n'y est pas."
+ },
  {
   "jour": "Jour 2",
   "piege": true,
@@ -944,6 +1133,27 @@ var QUESTIONS = [
   "src": "Jour 3, matin, séquence Chain-of-thought et Tree-of-thought",
   "lien": "",
   "plus": "Le raisonnement affiché sert d'abord à l'audit humain : il rend visible l'étape où la conclusion a dérapé. C'est un outil de relecture, pas une preuve. Un raisonnement peut être impeccable dans sa forme et partir d'une prémisse fausse, ce qui est exactement le cas le plus difficile à repérer."
+ },
+ {
+  "jour": "Culture générale",
+  "piege": true,
+  "q": "Pourquoi un modèle de langage invente-t-il parfois une référence complète, avec auteur, revue, année et numéro de page ?",
+  "opts": [
+   "Parce que sa base documentaire interne contient des références erronées.",
+   "Parce qu'il a mal cherché la source sur le web avant de répondre.",
+   "Parce que les références exactes sont volontairement floutées pour des raisons de droit d'auteur.",
+   "Parce qu'il ne consulte aucun document quand il répond de mémoire : il produit la suite de mots la plus plausible, et une référence plausible a exactement la forme d'une vraie."
+  ],
+  "bonne": 3,
+  "pourquoi": "Un modèle qui répond sans outil ne va rien chercher nulle part. Il enchaîne des mots selon ce qui est le plus probable au vu de ses paramètres, et ses paramètres ne contiennent aucune trace de provenance : pas de lien vers un document, pas d'identifiant de source, seulement des régularités statistiques. Une référence bibliographique est un objet très régulier, avec un nom, une revue, une année et des chiffres. Le modèle en produit donc une qui a la bonne forme, ce qui est précisément ce qui la rend indétectable à l'oeil.",
+  "pieges": [
+   "Il n'existe pas de base documentaire interne. Rien n'est stocké à l'unité et rien n'est consultable, ce qui explique aussi qu'on ne puisse pas effacer un fait précis d'un modèle.",
+   "Sans outil de recherche activé, il n'y a aucune recherche du tout. C'est une confusion très fréquente entre un assistant branché sur le web et un modèle qui répond de mémoire.",
+   "Aucun floutage volontaire n'est en cause. Le phénomène apparaît aussi bien sur des sources libres de droit et anciennes que sur des publications récentes."
+  ],
+  "src": "Culture générale, absence de trace de provenance dans les paramètres d'un modèle de langage",
+  "lien": "https://bluejar.ai/llm-citation-tracking/",
+  "plus": "La seule façon d'obtenir une citation vérifiable est d'ajouter un mécanisme externe, outil de recherche ou base documentaire, qui rattache le passage produit à un document réellement récupéré. En formation, la consigne opérationnelle tient en une phrase : toute référence donnée sans lien cliquable se vérifie avant d'être reprise, et cette règle vaut aussi pour les citations de textes de loi et les numéros d'articles."
  },
  {
   "jour": "Jour 3",
@@ -1032,7 +1242,7 @@ var QUESTIONS = [
 ];
 
 /* ---------- Etat ---------- */
-var CLE = "quiz-40-lyon-2026-09";
+var CLE = "quiz-50-lyon-2026-09";
 var etat = { nom:"", i:0, reponses:[], fini:false };
 for (var z=0; z<QUESTIONS.length; z++){ etat.reponses.push(null); }
 
@@ -1370,7 +1580,7 @@ function ouvrirAnimateur(){
   cache($("quiz")); cache($("accueil")); cache($("final"));
 
   var h = document.createElement("h1");
-  h.textContent = "Mode animateur, les 40 questions et toutes les réponses";
+  h.textContent = "Mode animateur, les 50 questions et toutes les réponses";
   a.appendChild(h);
   var s = document.createElement("p");
   s.className = "sous";
