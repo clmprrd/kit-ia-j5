@@ -3,970 +3,1556 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quiz Semaine 1 · Référent IA</title>
+<title>Quiz Semaine 1, 40 questions</title>
 <style>
 :root{
   --magenta:#E91FCB;
   --noir:#1A1A1A;
-  --blanc:#FFFFFF;
   --gris:#4A4A4A;
   --rose:#FCE4F7;
   --vert:#1F7A4D;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--blanc);
+  font-family:Arial, Helvetica, sans-serif;
+  background:#FFFFFF;
   color:var(--noir);
-  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
 }
-.wrap{max-width:1280px;margin:0 auto;padding:18px 28px 60px}
+.bandeau{
+  background:var(--noir);
+  color:#FFFFFF;
+  padding:10px 18px;
+  font-size:13px;
+  letter-spacing:0.2px;
+}
+.bandeau strong{color:var(--magenta);}
+.wrap{max-width:900px;margin:0 auto;padding:24px 18px 80px 18px;}
+h1{font-size:26px;margin:0 0 6px 0;}
+h2{font-size:20px;margin:0 0 10px 0;}
+.sous{color:var(--gris);font-size:14px;margin:0 0 22px 0;}
 
-header{
-  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
-  border-bottom:4px solid var(--magenta);
-  padding-bottom:14px;margin-bottom:26px;
+.barre{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+  border-bottom:3px solid var(--magenta);
+  padding-bottom:12px;margin-bottom:20px;
 }
-.marque{font-size:20px;font-weight:bold;color:var(--magenta);letter-spacing:.5px}
-.marque span{color:var(--gris);font-weight:normal}
-.spacer{flex:1}
-.score{
-  font-size:26px;font-weight:bold;color:var(--noir);
-  background:var(--rose);border:2px solid var(--magenta);
-  padding:6px 18px;border-radius:6px;white-space:nowrap;
+.pastille{
+  background:var(--rose);color:var(--noir);
+  padding:6px 12px;border-radius:20px;font-size:13px;font-weight:bold;
 }
-.score small{font-size:14px;color:var(--gris);font-weight:normal}
-button{font-family:Arial,Helvetica,sans-serif;cursor:pointer}
+.pastille.sombre{background:var(--noir);color:#FFFFFF;}
+.spacer{flex:1 1 auto;}
+
+button{font-family:Arial, Helvetica, sans-serif;cursor:pointer;}
 .btn{
-  background:var(--blanc);color:var(--noir);
-  border:2px solid var(--gris);
-  padding:10px 20px;font-size:16px;border-radius:6px;font-weight:bold;
+  background:var(--magenta);color:#FFFFFF;border:none;
+  padding:11px 20px;font-size:15px;font-weight:bold;border-radius:6px;
 }
-.btn:hover{border-color:var(--magenta);color:var(--magenta)}
-.btn-plein{background:var(--magenta);color:var(--blanc);border-color:var(--magenta)}
-.btn-plein:hover{background:var(--noir);border-color:var(--noir);color:var(--blanc)}
-.btn:disabled{opacity:.3;cursor:default}
-.btn:disabled:hover{border-color:var(--gris);color:var(--noir)}
+.btn:disabled{background:#CFCFCF;color:#7A7A7A;cursor:not-allowed;}
+.btn.sec{background:#FFFFFF;color:var(--noir);border:2px solid var(--noir);}
+.btn.petit{padding:7px 13px;font-size:13px;}
 
-.meta{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:16px}
-.num{font-size:22px;font-weight:bold;color:var(--magenta)}
-.jour{
-  font-size:16px;font-weight:bold;color:var(--gris);
-  border-left:3px solid var(--magenta);padding-left:12px;
+input[type=text]{
+  font-family:Arial, Helvetica, sans-serif;font-size:16px;
+  padding:12px;border:2px solid var(--gris);border-radius:6px;width:100%;max-width:420px;
 }
-.piege{
-  background:var(--magenta);color:var(--blanc);
-  font-size:15px;font-weight:bold;letter-spacing:2px;
-  padding:4px 14px;border-radius:4px;
-}
+input[type=text]:focus{outline:none;border-color:var(--magenta);}
 
-.question{
-  font-size:38px;line-height:1.28;font-weight:bold;
-  color:var(--noir);margin:0 0 30px;max-width:1150px;
-}
+.qtexte{font-size:21px;font-weight:bold;margin:0 0 8px 0;}
+.qsrc{font-size:13px;color:var(--gris);margin:0 0 18px 0;font-style:italic;}
 
-.options{display:flex;flex-direction:column;gap:14px;max-width:1150px}
 .opt{
-  display:flex;align-items:flex-start;gap:16px;width:100%;text-align:left;
-  background:var(--blanc);border:3px solid var(--gris);
-  border-radius:8px;padding:18px 22px;font-size:24px;line-height:1.35;
-  color:var(--noir);
+  display:block;width:100%;text-align:left;
+  background:#FFFFFF;border:2px solid var(--noir);color:var(--noir);
+  padding:14px 16px;font-size:16px;border-radius:6px;margin-bottom:10px;
 }
-.opt:hover{border-color:var(--magenta)}
-.opt .lettre{
-  flex:0 0 auto;font-weight:bold;color:var(--magenta);
-  border:2px solid var(--magenta);border-radius:5px;
-  width:40px;height:40px;display:flex;align-items:center;justify-content:center;
-  font-size:20px;
-}
-.repondu .opt{cursor:default}
-.repondu .opt:hover{border-color:var(--gris)}
-.opt.juste{background:var(--vert);border-color:var(--vert);color:var(--blanc)}
-.opt.juste .lettre{border-color:var(--blanc);color:var(--blanc)}
-.opt.juste:hover{border-color:var(--vert)}
-.opt.faux{background:#F0F0F0;border-color:#C8C8C8;color:var(--gris)}
-.opt.faux .lettre{border-color:var(--gris);color:var(--gris)}
-.opt.faux:hover{border-color:#C8C8C8}
-.opt.choisi-faux{border-color:var(--noir);border-width:4px}
+.opt:hover:enabled{border-color:var(--magenta);}
+.opt .lettre{font-weight:bold;color:var(--magenta);margin-right:10px;}
+.opt.juste{background:var(--vert);border-color:var(--vert);color:#FFFFFF;}
+.opt.juste .lettre{color:#FFFFFF;}
+.opt.rate{background:#D6D6D6;border-color:#B5B5B5;color:var(--gris);}
+.opt.rate .lettre{color:var(--gris);}
+.opt.neutre{opacity:0.55;}
+.opt:disabled{cursor:default;}
 
 .expl{
-  margin-top:26px;max-width:1150px;
-  background:var(--rose);border-left:10px solid var(--magenta);
-  border-radius:6px;padding:22px 26px;
+  background:var(--rose);border-left:6px solid var(--magenta);
+  padding:16px 18px;border-radius:0 6px 6px 0;margin-top:16px;
 }
-.expl h3{font-size:19px;color:var(--magenta);margin-bottom:10px;letter-spacing:1px}
-.expl p{font-size:20px;line-height:1.5;margin-bottom:14px}
-.expl .lbl{font-weight:bold;color:var(--noir)}
-.expl ul{list-style:none;margin:0 0 14px}
-.expl li{font-size:19px;line-height:1.45;margin-bottom:9px;padding-left:26px;position:relative}
-.expl li:before{content:"";position:absolute;left:0;top:9px;width:14px;height:3px;background:var(--magenta)}
-.src{font-size:14px;color:var(--gris);font-style:italic;border-top:1px solid #E0C0DA;padding-top:10px}
+.expl .titre{font-weight:bold;margin:0 0 8px 0;color:var(--noir);}
+.expl p{margin:0 0 10px 0;font-size:15px;}
+.expl ul{margin:6px 0 0 0;padding-left:20px;}
+.expl li{font-size:14px;color:var(--gris);margin-bottom:7px;}
+.expl li b{color:var(--noir);}
 
-.nav{display:flex;gap:14px;align-items:center;margin-top:34px;flex-wrap:wrap}
-.progress{flex:1;min-width:180px;height:8px;background:#EEE;border-radius:4px;overflow:hidden}
-.progress div{height:100%;background:var(--magenta);width:0}
+.nav{display:flex;gap:10px;margin-top:24px;align-items:center;}
 
-.final h1{font-size:44px;color:var(--magenta);margin-bottom:10px}
-.gros{font-size:96px;font-weight:bold;color:var(--noir);line-height:1}
-.gros small{font-size:32px;color:var(--gris)}
-.parjour{display:flex;gap:16px;flex-wrap:wrap;margin:26px 0}
-.carte{background:var(--rose);border:2px solid var(--magenta);border-radius:8px;padding:16px 24px;min-width:190px}
-.carte b{display:block;font-size:15px;color:var(--gris);letter-spacing:1px;margin-bottom:6px}
-.carte span{font-size:34px;font-weight:bold;color:var(--noir)}
-.rate{border-left:8px solid var(--magenta);padding:16px 22px;margin-bottom:20px;background:#FAFAFA;border-radius:0 6px 6px 0;max-width:1150px}
-.rate h4{font-size:22px;margin-bottom:10px}
-.rate .bonne{font-size:19px;color:var(--vert);font-weight:bold;margin-bottom:10px}
+.final .score{font-size:52px;font-weight:bold;color:var(--magenta);line-height:1;}
+.carte{border:2px solid var(--noir);border-radius:8px;padding:16px 18px;margin-bottom:14px;}
+.carte h3{margin:0 0 6px 0;font-size:16px;}
+.carte .donne{font-size:14px;color:var(--gris);margin:0 0 8px 0;}
+.zonecopie{width:100%;height:180px;font-family:Arial, Helvetica, sans-serif;font-size:13px;padding:10px;border:2px solid var(--gris);border-radius:6px;}
 
-.anim .bloc{border-bottom:2px solid #EEE;padding:26px 0;max-width:1150px}
-.anim .q{font-size:24px;font-weight:bold;margin:8px 0 12px}
-.anim .o{font-size:18px;margin:5px 0;padding-left:20px}
-.anim .o.ok{color:var(--vert);font-weight:bold}
-.anim .titre-jour{
-  font-size:28px;color:var(--magenta);font-weight:bold;
-  border-bottom:3px solid var(--magenta);padding:24px 0 10px;margin-bottom:6px;
+/* Mode animateur */
+.anim .bloc{border-bottom:1px solid #DDDDDD;padding:16px 0;}
+.anim .num{color:var(--magenta);font-weight:bold;}
+.anim .ligne{font-size:15px;margin:3px 0;}
+.anim .ok{color:var(--vert);font-weight:bold;}
+
+/* Mode projection */
+#projection{
+  position:fixed;top:0;left:0;right:0;bottom:0;background:#FFFFFF;
+  z-index:50;padding:3vh 4vw;overflow:auto;
 }
-.masque{display:none}
-@media print{.nav,header .btn,.progress{display:none}}
+#projection .pq{font-size:4.0vw;font-weight:bold;line-height:1.25;margin:0 0 3vh 0;}
+#projection .po{font-size:2.6vw;border:3px solid var(--noir);border-radius:10px;padding:1.6vh 2vw;margin-bottom:1.6vh;}
+#projection .po .lettre{color:var(--magenta);font-weight:bold;margin-right:1.4vw;}
+#projection .haut{display:flex;align-items:center;gap:16px;margin-bottom:2vh;}
+#projection .cpt{font-size:1.6vw;color:var(--gris);font-weight:bold;}
+@media (max-width:800px){
+  #projection .pq{font-size:26px;}
+  #projection .po{font-size:18px;}
+  #projection .cpt{font-size:14px;}
+}
+.indice{
+  background:#FFFFFF;border:2px dashed var(--magenta);color:var(--noir);
+  padding:10px 14px;border-radius:6px;font-size:15px;margin:0 0 16px 0;
+}
+.plus{
+  background:#FFFFFF;border:2px solid var(--magenta);
+  padding:14px 16px;border-radius:6px;margin-top:14px;
+}
+.plus .titre{font-weight:bold;margin:0 0 6px 0;color:var(--magenta);font-size:14px;text-transform:uppercase;letter-spacing:0.5px;}
+.plus p{margin:0;font-size:15px;color:var(--gris);}
+a{color:var(--magenta);}
+.qsrc a{color:var(--magenta);font-style:normal;font-weight:bold;}
+#projection .pi{font-size:1.9vw;border:3px dashed var(--magenta);border-radius:10px;padding:1.2vh 2vw;margin-bottom:2vh;}
+@media (max-width:800px){ #projection .pi{font-size:15px;} }
+.cache{display:none;}
 </style>
 </head>
 <body>
+
+<div class="bandeau">
+  <strong>Quiz de la Semaine 1</strong>, 40 questions, version finale du 11 septembre 2026.
+</div>
+
 <div class="wrap">
 
-<header>
-  <div class="marque">Quiz Semaine 1 <span>· Référent IA · Lyon</span></div>
-  <div class="spacer"></div>
-  <div class="score" id="score">0 <small>/ 30</small></div>
-  <button class="btn" id="btnAnim" type="button">Mode animateur</button>
-  <button class="btn" id="btnReset" type="button">Recommencer</button>
-</header>
-
-<main id="ecranQuiz">
-  <div class="meta">
-    <div class="num" id="num">Question 1 sur 30</div>
-    <div class="jour" id="jour"></div>
-    <div class="piege masque" id="badgePiege">PIÈGE</div>
+  <!-- ACCUEIL -->
+  <div id="accueil">
+    <h1>Quiz de la Semaine 1</h1>
+    <p class="sous">40 questions, une à la fois. Jour 1 à Jour 5 du parcours, les outils et leurs fonctionnalités, ce que les modèles savent et ne savent pas faire, l'actualité d'août 2026, plus cinq questions de raisonnement de formateur.</p>
+    <p style="font-size:15px;margin-bottom:8px;"><b>Prénom et nom</b></p>
+    <input type="text" id="champNom" placeholder="Prénom Nom" autocomplete="off">
+    <div class="nav">
+      <button class="btn" id="btnDemarrer" disabled>Démarrer le quiz</button>
+      <button class="btn sec" id="btnAnimAccueil">Mode animateur</button>
+    </div>
   </div>
-  <h2 class="question" id="question"></h2>
-  <div class="options" id="options"></div>
-  <div class="expl masque" id="expl"></div>
-  <div class="nav">
-    <button class="btn" id="btnPrec" type="button">Précédent</button>
-    <button class="btn btn-plein" id="btnSuiv" type="button">Suivant</button>
-    <div class="progress"><div id="barre"></div></div>
-  </div>
-</main>
 
-<main id="ecranFinal" class="final masque"></main>
-<main id="ecranAnim" class="anim masque"></main>
+  <!-- QUIZ -->
+  <div id="quiz" class="cache">
+    <div class="barre">
+      <span class="pastille sombre" id="hNom">.</span>
+      <span class="pastille" id="hNum">.</span>
+      <span class="pastille" id="hScore">.</span>
+      <span class="pastille" id="hJour">.</span>
+      <span class="spacer"></span>
+      <button class="btn sec petit" id="btnProj">Mode projection</button>
+      <button class="btn sec petit" id="btnAnim">Mode animateur</button>
+    </div>
+    <p class="qtexte" id="qTexte">.</p>
+    <p class="qsrc" id="qSrc">.</p>
+    <div id="zoneIndice"></div>
+    <div id="zoneOpts"></div>
+    <div id="zoneExpl"></div>
+    <div class="nav">
+      <button class="btn sec" id="btnPrec">Précédent</button>
+      <button class="btn" id="btnSuiv">Suivant</button>
+    </div>
+  </div>
+
+  <!-- FINAL -->
+  <div id="final" class="cache final"></div>
+
+  <!-- ANIMATEUR -->
+  <div id="animateur" class="cache anim"></div>
 
 </div>
 
+<!-- PROJECTION -->
+<div id="projection" class="cache"></div>
+
 <script>
 var QUESTIONS = [
-
-/* ================= JOUR 1 ================= */
-{
- jour:"Jour 1",
- piege:false,
- q:"Par quel mécanisme un grand modèle de langage produit-il sa réponse ?",
- opts:[
-  "Il comprend le sens des mots grâce à une modélisation sémantique profonde.",
-  "Il prédit, étape après étape, le token suivant le plus probable.",
-  "Il va chercher une phrase toute faite dans une base de connaissances encyclopédique.",
-  "Il applique une modélisation logique du monde réel avant de rédiger."
+ {
+  "jour": "Culture générale",
+  "piege": false,
+  "q": "En IA générative, qu'est-ce qu'un token ?",
+  "opts": [
+   "Un morceau de texte, souvent un mot courant entier, parfois seulement une syllabe ou un fragment de mot rare.",
+   "Un mot, toujours un mot, quelle que soit la langue.",
+   "Un caractère, lettre, chiffre ou espace.",
+   "Une question posée au modèle, l'unité qui sert à facturer les abonnements."
+  ],
+  "bonne": 0,
+  "pourquoi": "Le modèle ne lit pas des mots, il lit des tokens : des morceaux de texte issus d'un découpage statistique. Un mot fréquent tient en général dans un seul token, un mot rare, un nom propre ou un terme technique sont découpés en plusieurs. C'est l'unité qui sert à mesurer la fenêtre de contexte et à facturer les API.",
+  "pieges": [
+   "Le découpage ne suit pas les mots. Le français, avec ses accents et ses élisions, consomme d'ailleurs davantage de tokens que l'anglais pour un même texte.",
+   "Le découpage caractère par caractère serait beaucoup trop coûteux. Le token est un compromis entre la lettre et le mot.",
+   "La facturation se fait bien en tokens, mais un token n'est pas une question : une seule question peut en consommer des milliers."
+  ],
+  "src": "Culture générale IA",
+  "lien": "",
+  "plus": "C'est ce découpage qui explique pourquoi un modèle compte mal les lettres d'un mot : il ne voit pas les lettres, il voit des blocs. La même mécanique explique qu'un texte en français coûte plus cher qu'un texte équivalent en anglais, à peu près trente pour cent de tokens en plus."
+ },
+ {
+  "jour": "Outils",
+  "piege": true,
+  "q": "Vous devez répondre en dix minutes à la question « où en est la réglementation sur ce sujet », avec des sources vérifiables que votre direction pourra ouvrir elle-même. Quel outil ?",
+  "opts": [
+   "NotebookLM, qui répond en citant précisément ses sources.",
+   "Perplexity, un moteur de réponse qui va chercher sur le web et affiche les liens utilisés.",
+   "Ideogram, qui illustrera la synthèse.",
+   "Synthesia, qui présentera la réponse en vidéo."
+  ],
+  "bonne": 1,
+  "pourquoi": "Deux exigences se cumulent : aller chercher de l'information récente sur le web, et rendre des liens ouvrables. C'est le positionnement de Perplexity, qui affiche les sources sous la réponse.",
+  "pieges": [
+   "NotebookLM cite bien ses sources, et c'est ce qui rend le piège crédible, mais uniquement les documents que vous avez déposés. Il ne va pas chercher sur le web ce que vous n'avez pas.",
+   "Ideogram produit une image. Il n'apporte aucune information.",
+   "Synthesia met en scène une réponse déjà écrite. Il ne la trouve pas."
+  ],
+  "src": "Menu des outils de la formation, Perplexity",
+  "lien": "https://www.perplexity.ai/",
+  "plus": "Citer une source n'est pas la même chose que la respecter : il faut ouvrir au moins les deux ou trois liens qui portent le chiffre décisif. L'erreur la plus fréquente en formation consiste à recopier une réponse sourcée sans jamais cliquer, ce qui laisse passer les sources périmées ou hors sujet."
+ },
+ {
+  "jour": "Jour 1",
+  "piege": true,
+  "q": "Une collègue dit : je corrige l'IA quand elle se trompe, comme ça elle apprend et ne refera pas l'erreur. A-t-elle raison ?",
+  "opts": [
+   "Oui, chaque conversation nourrit l'entraînement du modèle.",
+   "Non, parce que le modèle est incapable de reconnaître qu'il s'est trompé.",
+   "Oui, mais seulement si l'on active la mémoire entre conversations.",
+   "Non : quand on discute avec l'outil on est en phase d'inférence, le modèle applique ce qu'il a déjà appris et ne réapprend pas."
+  ],
+  "bonne": 3,
+  "pourquoi": "Le support sépare nettement deux phases. L'entraînement est long, extrêmement coûteux en énergie, réalisé en amont une fois pour toutes. L'inférence est le moment où vous écrivez un prompt et où le modèle prépare sa réponse. Corriger le modèle en conversation n'écrit rien dans le modèle.",
+  "pieges": [
+   "C'est la confusion que la séquence entraînement contre inférence sert précisément à lever. L'image du support : le cuisinier qui a appris pendant des années, opposé au même cuisinier qui prépare votre plat au moment où vous le commandez.",
+   "Le modèle peut parfaitement reconnaître une erreur dans l'échange en cours. Le problème n'est pas là : c'est que cette correction ne survit pas à un entraînement déjà figé.",
+   "La mémoire entre conversations conserve du contexte pour vous, elle ne modifie pas le modèle lui-même. Ce sont deux choses différentes."
+  ],
+  "src": "Jour 1, matinée, séquence Entraînement et inférence",
+  "lien": "",
+  "plus": "La conséquence pratique est qu'une correction utile doit être réécrite à chaque nouvelle conversation, ou consignée quelque part : une instruction personnalisée, un projet, un document de référence. Les mécanismes de mémoire des différents outils servent exactement à cela, et ils agissent sur le contexte fourni au modèle, jamais sur ses poids."
+ },
+ {
+  "jour": "Outils",
+  "piege": false,
+  "q": "Vous devez livrer un module de trois minutes dans lequel un porte-parole explique à l'écran la nouvelle procédure, en français, sans tournage, sans caméra et sans comédien. Quel outil ?",
+  "opts": [
+   "ElevenLabs, une voix de synthèse posée sur votre script.",
+   "Synthesia, un avatar vidéo qui prononce à l'écran le script que vous avez écrit.",
+   "Canva, un montage vidéo à partir de gabarits animés.",
+   "Ideogram, une illustration générée pour accompagner le propos."
+  ],
+  "bonne": 1,
+  "pourquoi": "Le besoin comporte une personne visible à l'écran. C'est exactement la promesse de Synthesia : on écrit un script, on choisit un avatar et une langue, l'outil produit la vidéo. Aucun des trois autres ne fabrique un présentateur.",
+  "pieges": [
+   "ElevenLabs traite le son, très bien, mais il ne produit aucune image. Il faudrait encore filmer ou animer quelqu'un.",
+   "Canva anime des gabarits, du texte et des images. Il ne fait parler personne.",
+   "Ideogram produit une image fixe. On est deux crans en dessous du besoin."
+  ],
+  "src": "Menu des outils de la formation, Synthesia",
+  "lien": "https://www.synthesia.io/",
+  "plus": "Le vrai coût d'un avatar n'est pas la génération, il est dans le script : une vidéo de trois minutes correspond à peu près à quatre cents mots, et chaque correction impose une regénération complète. Beaucoup d'équipes finissent par réserver l'avatar aux contenus stables, procédures et accueil, et par garder la voix seule pour ce qui bouge souvent."
+ },
+ {
+  "jour": "Jour 4",
+  "piege": true,
+  "q": "Un modèle donne une réponse complètement fausse avec un aplomb total. Est-ce un bug ?",
+  "opts": [
+   "Oui, c'est à signaler à l'éditeur.",
+   "Non, c'est son fonctionnement normal : il cherche la suite la plus plausible et non la plus vraie.",
+   "Oui, c'est un défaut de formulation du prompt, une meilleure consigne supprime le phénomène.",
+   "Non, mais cela disparaît dès qu'on branche le modèle sur une base documentaire."
+  ],
+  "bonne": 1,
+  "pourquoi": "Ce n'est pas un bug, c'est le fonctionnement normal. Le modèle produit la suite la plus plausible, pas la plus vraie. L'aplomb n'est pas un signe de fiabilité : la formulation assurée fait partie de ce qui est statistiquement probable dans un texte. C'est pour cela que la vérification reste à la charge de l'utilisateur.",
+  "pieges": [
+   "Signaler à l'éditeur suppose un dysfonctionnement. Ici le système fait exactement ce pour quoi il est conçu.",
+   "Un meilleur prompt réduit la fréquence, il ne supprime pas le mécanisme. Aucune formulation ne rend le modèle capable de savoir qu'il ignore.",
+   "Une base documentaire réduit fortement le risque mais ne l'annule pas : le modèle peut encore mal lire ou extrapoler au delà des documents."
+  ],
+  "src": "Jour 4, simulation du Jour 1 client",
+  "lien": "",
+  "plus": "Le mot hallucination est trompeur parce qu'il suggère un accident. Une formulation plus juste en salle est celle de la génération plausible : le système produit ce qui ressemble à une bonne réponse, et la ressemblance n'est pas la vérité. C'est ce qui justifie de ne jamais déléguer la vérification à l'outil qui a produit le texte."
+ },
+ {
+  "jour": "Fonctionnalités",
+  "piege": true,
+  "q": "Un Audio Overview de NotebookLM restitue vos documents. Quelle est la nature exacte de ce fichier audio ?",
+  "opts": [
+   "Une lecture à voix haute du document, fidèle mot à mot.",
+   "Une conversation générée entre deux voix IA qui discutent et résument les documents déposés, donc une reformulation qui peut déformer un détail.",
+   "Un enregistrement réalisé par des voix humaines à partir de votre document.",
+   "Une transcription audio des annotations que vous avez laissées dans le document."
+  ],
+  "bonne": 1,
+  "pourquoi": "L'Audio Overview n'est pas une lecture, c'est une discussion fabriquée : deux voix IA échangent et résument les documents. La conséquence pratique est directe, un détail peut être déformé au passage, et il faut écouter avant de diffuser.",
+  "pieges": [
+   "Une lecture fidèle serait une synthèse vocale du texte. Ce n'est pas ce que fait la fonctionnalité.",
+   "Aucune voix humaine n'intervient. Les deux voix sont générées.",
+   "L'audio porte sur le contenu des documents, pas sur vos annotations."
+  ],
+  "src": "Blog officiel Google, présentation des Audio Overviews de NotebookLM",
+  "lien": "https://blog.google/",
+  "plus": "Le format est redoutablement convaincant, et c'est exactement le risque : un résumé oral fluide se vérifie beaucoup moins spontanément qu'un texte. Avant de faire écouter un Audio Overview à un groupe, il faut l'écouter en entier, document ouvert à côté."
+ },
+ {
+  "jour": "Outils",
+  "piege": false,
+  "q": "Chaque matin, une réponse au formulaire d'inscription doit créer une ligne dans un tableur, puis déclencher un mail de confirmation, sans que personne n'y touche et sans écrire de code. Quel outil ?",
+  "opts": [
+   "Gamma, qui met en forme automatiquement le résultat.",
+   "Perplexity, qui interroge le web et cite ses sources.",
+   "Make, un outil d'automatisation qui relie des applications entre elles par scénarios.",
+   "Canva, qui produit les gabarits de la campagne."
+  ],
+  "bonne": 2,
+  "pourquoi": "Le besoin n'est pas de produire du contenu, il est d'enchaîner des actions entre plusieurs logiciels, avec un déclencheur et des étapes. C'est la définition d'un scénario Make, construit visuellement et sans développement.",
+  "pieges": [
+   "Gamma fabrique des présentations et des documents. Il ne surveille aucun formulaire.",
+   "Perplexity est un moteur de recherche. Il ne déclenche rien dans vos outils.",
+   "Canva est un outil de création graphique. Il n'automatise pas de flux."
+  ],
+  "src": "Menu des outils de la formation, Make",
+  "lien": "https://www.make.com/",
+  "plus": "La question à poser avant tout scénario est celle de la panne : que se passe-t-il si l'étape trois échoue à trois heures du matin ? Un scénario sans gestion d'erreur ni alerte fabrique des trous silencieux dans les données, et c'est ce qui coûte cher, pas la construction."
+ },
+ {
+  "jour": "Jour 2",
+  "piege": true,
+  "q": "Une équipe dépose ses procédures internes dans un assistant documentaire. Le modèle a-t-il désormais appris ces procédures ?",
+  "opts": [
+   "Oui, les documents déposés deviennent des connaissances internes du modèle.",
+   "Non : le RAG fournit les documents au modèle au moment de répondre, il ne les transforme pas en connaissances internes.",
+   "Oui, mais uniquement après un délai de réindexation de la base.",
+   "Non, car un assistant documentaire ne peut pas exploiter des documents internes."
+  ],
+  "bonne": 1,
+  "pourquoi": "Le support consacre une section entière à cette distinction : le RAG n'est pas l'entraînement du modèle. L'entraînement modifie les connaissances et les comportements du modèle. Le RAG met des informations à sa disposition au moment de la réponse, et rien de plus.",
+  "pieges": [
+   "C'est la confusion la plus courante, et elle a des conséquences concrètes, notamment sur ce que l'on croit avoir transmis à un fournisseur. Ajouter un document à une base ne réentraîne pas le modèle.",
+   "L'indexation rend les passages retrouvables, elle n'inscrit rien dans le modèle. Le délai ne change pas la nature de l'opération.",
+   "C'est exactement ce qu'un RAG sait faire : répondre à partir de vos connaissances, pas seulement des siennes."
+  ],
+  "src": "Jour 2, fiche pratique RAG, section RAG n'est pas l'entraînement du modèle",
+  "lien": "",
+  "plus": "La question à poser à un fournisseur est donc double : que faites-vous de mes documents au moment de répondre, et vous en servez-vous par ailleurs pour entraîner un modèle ? Les deux réponses sont indépendantes l'une de l'autre, et seule la seconde engage durablement les données de l'entreprise."
+ },
+ {
+ "jour": "Capacités et limites",
+ "piege": true,
+ "q": "Un modèle traite un problème complexe sans faiblir, puis se trompe sur une multiplication à deux chiffres. Quelle est la cause la mieux documentée ?",
+ "opts": [
+  "Le modèle n'a jamais vu de multiplications pendant son entraînement, le calcul lui est étranger.",
+  "Les nombres sont découpés en tokens optimisés pour la fréquence des mots et non pour la structure des chiffres : un grand nombre se retrouve fragmenté de façon incohérente avant même le calcul.",
+  "Le calcul est volontairement bridé par l'éditeur, pour éviter la concurrence avec les tableurs.",
+  "Le modèle arrondit systématiquement les résultats afin d'accélérer sa réponse."
  ],
- bonne:1,
- pourquoi:"Un LLM est entraîné sur des quantités massives de texte pour prédire la suite la plus probable d'une séquence. La réponse émerge token par token, en tenant compte de tout ce qui précède, sans qu'aucune compréhension véritable n'intervienne.",
- pieges:[
-  "La compréhension sémantique profonde est exactement ce que le modèle ne fait pas. Le support le dit sans détour : il ne comprend pas ce qu'il raconte.",
-  "Le modèle ne cherche pas une phrase toute faite dans une base : il génère sa réponse au fur et à mesure, mot après mot.",
-  "Aucune modélisation logique du monde réel n'intervient. Ce sont des régularités statistiques tirées des textes lus pendant l'entraînement."
+ "bonne": 1,
+ "pourquoi": "La cause est en amont du raisonnement, dans le découpage. Les nombres sont découpés en tokens optimisés pour la fréquence des mots, pas pour la structure des chiffres : un grand nombre arrive fragmenté de façon incohérente, et le calcul part déjà faussé. Le paradoxe apparent, échouer sur une opération simple tout en tenant un raisonnement complexe, s'explique donc par la tokenisation.",
+ "pieges": [
+  "Les données d'entraînement contiennent au contraire énormément de calcul écrit, ce n'est pas un manque d'exposition.",
+  "Aucun bridage commercial de ce type n'existe, et il n'expliquerait pas des erreurs variables selon la taille des nombres.",
+  "Il ne s'agit pas d'un arrondi de confort : le résultat est faux, pas approché."
  ],
- src:"Jour 1, matinée, séquence Comprendre les LLM"
+ "src": "Capacités et limites",
+ "lien": "https://arxiv.org/pdf/2402.00157",
+ "plus": "En salle, cela donne une consigne simple et vérifiable : on ne demande jamais un chiffre à un modèle, on lui demande la méthode et on laisse le calcul à un tableur ou à un outil de calcul. C'est aussi la meilleure démonstration à faire en direct, parce qu'elle est reproductible devant le groupe et qu'elle vaccine durablement."
 },
-{
- jour:"Jour 1",
- piege:true,
- q:"Un collaborateur écrit un prompt de 100 mots. Peut-il en conclure qu'il consomme 100 tokens ?",
- opts:[
-  "Oui, un token correspond à un mot, c'est la définition.",
-  "Non, il en consomme forcément moins, le modèle compresse les mots courants.",
-  "Non : un token peut être un mot, une syllabe ou un seul caractère, et un mot accentué ou un nom propre en vaut souvent plusieurs.",
-  "La question n'a pas de sens, les tokens ne concernent que la réponse du modèle, pas le prompt."
+ {
+  "jour": "Outils",
+  "piege": true,
+  "q": "Vous préparez l'affiche d'un atelier interne : un visuel généré, avec le titre de l'atelier et la date écrits proprement dans l'image. Quel outil vise ce besoin précis ?",
+  "opts": [
+   "Ideogram, un générateur d'images réputé pour le rendu du texte à l'intérieur de l'image.",
+   "NotebookLM, qui produit une synthèse à partir de vos documents.",
+   "Make, qui déclenche des chaînes d'actions entre vos logiciels.",
+   "ElevenLabs, qui génère la voix de la campagne."
+  ],
+  "bonne": 0,
+  "pourquoi": "Le point dur de la demande est le texte lisible dans l'image, longtemps le défaut des générateurs. C'est précisément le terrain sur lequel Ideogram s'est fait connaître. Les trois autres ne produisent pas d'image du tout.",
+  "pieges": [
+   "NotebookLM travaille sur les documents que vous déposez et rend du texte ou de l'audio, jamais une affiche.",
+   "Make automatise des enchaînements entre outils. Il pourrait déclencher une génération, il ne la fait pas lui-même.",
+   "ElevenLabs est un outil de voix. Aucun rapport avec un visuel."
+  ],
+  "src": "Menu des outils de la formation, Ideogram",
+  "lien": "https://ideogram.ai/",
+  "plus": "Le texte dans l'image reste le point de vigilance de tous les générateurs : au delà de quelques mots, les erreurs de lettres reviennent. Pour une affiche à diffuser, la pratique sûre consiste à générer le fond avec Ideogram puis à poser le texte par dessus dans un outil de mise en page."
+ },
+ {
+  "jour": "Jour 1",
+  "piege": true,
+  "q": "Une direction annonce : nos requêtes IA sont neutres en carbone grâce à nos achats de compensation, donc notre usage est sans impact. Que répond le référent IA ?",
+  "opts": [
+   "C'est exact, le CO2 est le seul indicateur qui compte pour un usage numérique.",
+   "Le CO2 n'est qu'un indicateur parmi d'autres : restent l'eau de refroidissement, les matières premières, la fabrication des équipements et les déchets électroniques.",
+   "C'est exact pour l'inférence, mais pas pour l'entraînement du modèle.",
+   "L'impact est négligeable dès lors que les data centers sont situés en France."
+  ],
+  "bonne": 1,
+  "pourquoi": "Le support décompose l'impact en quatre étages : matières premières, fabrication des équipements et des data centers, utilisation avec électricité et refroidissement, puis renouvellement du matériel et déchets électroniques. La phrase à retenir est que le CO2 n'est qu'un indicateur parmi d'autres, et que la vraie question n'est pas « est-ce que l'IA peut le faire » mais « est-ce que son usage est pertinent ici ».",
+  "pieges": [
+   "Réduire l'impact au seul CO2 est précisément l'erreur que la séquence sur l'impact environnemental sert à corriger.",
+   "La distinction entraînement contre inférence est réelle, et l'entraînement est extrêmement coûteux, mais l'inférence consomme elle aussi des ressources. Elle ne dédouane pas l'usage courant.",
+   "Un mix électrique moins carboné réduit les émissions liées à l'électricité, il ne touche ni au refroidissement en eau, ni aux métaux, ni aux déchets."
+  ],
+  "src": "Jour 1, matinée, séquences Impact environnemental et Technolucidité",
+  "lien": "",
+  "plus": "L'eau est l'indicateur qui manque le plus souvent aux communications d'entreprise, alors qu'il est celui qui pose problème localement, autour des centres de données. Le référent IA n'a pas besoin de chiffres précis pour rendre le débat honnête : il lui suffit de rappeler qu'un seul indicateur ne résume pas un impact."
+ },
+ {
+  "jour": "Fonctionnalités",
+  "piege": true,
+  "q": "Chez OpenAI, un collègue crée un Project pour son dossier d'appel d'offres et s'étonne que l'assistant ait oublié ses préférences de rédaction, pourtant enregistrées en mémoire. Que s'est-il passé ?",
+  "opts": [
+   "La mémoire et les Projects sont le même mécanisme, la préférence a simplement été effacée.",
+   "Un Project ne peut pas contenir d'instructions, il ne stocke que des fichiers.",
+   "Ce sont deux mécanismes distincts, et un Project peut être réglé pour n'utiliser que sa propre mémoire, sans aller chercher les souvenirs enregistrés en dehors.",
+   "La mémoire ne fonctionne jamais dans un Project, quel que soit le réglage."
+  ],
+  "bonne": 2,
+  "pourquoi": "Ce sont bien deux mécanismes séparés : la mémoire retient des préférences à travers toutes les conversations, un Project cloisonne les fichiers, les instructions et les fils liés à une tâche. Et un Project peut être réglé en mémoire de projet uniquement : dans ce cas il ignore volontairement les souvenirs enregistrés hors du Project.",
+  "pieges": [
+   "Ce sont deux dispositifs différents, avec des réglages différents. Rien n'a été effacé.",
+   "Un Project porte au contraire ses propres instructions, c'est même l'une de ses raisons d'être.",
+   "Ce n'est pas une impossibilité, c'est un réglage. Par défaut le comportement n'est pas celui décrit ici."
+  ],
+  "src": "Centre d'aide OpenAI, article sur la mémoire et les Projects",
+  "lien": "https://help.openai.com/en/articles/10169521",
+  "plus": "Ce cloisonnement est une fonctionnalité, pas un défaut : sur un dossier confidentiel, il évite qu'un souvenir pris ailleurs vienne contaminer les réponses. La bonne pratique est de vérifier le réglage du Project au moment de le créer, plutôt que de s'étonner ensuite."
+ },
+ {
+  "jour": "Outils",
+  "piege": false,
+  "q": "Vous avez un texte de deux pages qui tient debout et il vous faut une présentation structurée, mise en page, pour demain matin. Quel outil est fait pour ce point de départ ?",
+  "opts": [
+   "Make, qui enchaînera les étapes de production.",
+   "ElevenLabs, qui portera le propos à la voix.",
+   "NotebookLM, qui résumera le texte en fiches.",
+   "Gamma, qui transforme un texte en présentation structurée et mise en page."
+  ],
+  "bonne": 3,
+  "pourquoi": "Le point de départ est un texte, l'arrivée est une présentation. C'est exactement ce que fait Gamma : il découpe le propos en pages et l'habille, là où un outil graphique classique attend que vous ayez déjà fait le découpage.",
+  "pieges": [
+   "Make relie des applications. Il ne met rien en page.",
+   "ElevenLabs produit du son. Le besoin est visuel.",
+   "NotebookLM condense et interroge vos documents. Il ne rend pas un support projetable."
+  ],
+  "src": "Menu des outils de la formation, Gamma",
+  "lien": "https://gamma.app/",
+  "plus": "La bascule utile avec ce type d'outil est celle du temps : le gain se fait sur la mise en page, pas sur la structure du propos. Une présentation générée à partir d'un texte mal construit reste mal construite, simplement plus jolie."
+ },
+ {
+  "jour": "Inédite",
+  "piege": true,
+  "q": "Pourquoi un formateur qui répond à sa propre question perd-il le groupe ?",
+  "opts": [
+   "Parce qu'il perd du temps sur un déroulé déjà serré.",
+   "Parce qu'il donne l'impression de mal maîtriser son sujet.",
+   "Il enseigne que ses questions sont rhétoriques, donc plus personne ne prend le risque de répondre aux suivantes.",
+   "Parce qu'il empêche les participants timides de s'exprimer sur cette question-là."
+  ],
+  "bonne": 2,
+  "pourquoi": "Le coût n'est pas sur la question posée, il est sur toutes celles d'après. Le groupe apprend en une ou deux fois que s'il attend trois secondes, la réponse arrive toute seule. À partir de là, se taire devient la stratégie rationnelle, et la journée bascule en descendant sans que personne n'ait décidé de le faire. C'est aussi pour cela que le silence après une question doit être tenu plus longtemps qu'il n'est confortable.",
+  "pieges": [
+   "Le temps gagné est réel mais minuscule, et il se paie par une salle muette pour le reste de la journée.",
+   "L'effet sur la crédibilité est marginal : le groupe ne se dit pas que vous maîtrisez mal, il se dit que vos questions ne sont pas de vraies questions.",
+   "L'effet ne se limite pas aux timides ni à cette question. Il porte sur tout le groupe et sur toutes les questions suivantes."
+  ],
+  "src": "Question de raisonnement, hors support",
+  "lien": "",
+  "plus": "Le silence après une question est un investissement, pas un échec. Compter jusqu'à sept dans sa tête avant de reprendre la parole change à lui seul le taux de réponse d'un groupe, et c'est l'un des rares gestes d'animation dont l'effet se voit dès la séance suivante."
+ },
+ {
+ "jour": "Actualité",
+ "piege": true,
+ "q": "Un participant vous demande d'ouvrir « le DALL-E de ChatGPT » pour générer une image. Que lui répondez-vous fin août 2026 ?",
+ "opts": [
+  "Que ce GPT dédié a été retiré de ChatGPT le 30 août 2026 : le nom reste très connu du grand public, mais il ne désigne plus l'interface de génération d'image active.",
+  "Qu'il faut d'abord activer DALL-E dans les réglages du compte, l'option étant désactivée par défaut.",
+  "Que DALL-E n'a jamais existé dans ChatGPT et qu'il confond avec un autre éditeur.",
+  "Que DALL-E est réservé aux comptes professionnels depuis le 30 août 2026."
  ],
- bonne:2,
- pourquoi:"Avant de prédire quoi que ce soit, le modèle découpe le texte en tokens. Un mot courant vaut environ 1 token, un mot accentué 2 à 3 tokens, un nom propre ou technique 3 à 4 tokens. Un texte français accentué consomme donc davantage de tokens que son nombre de mots.",
- pieges:[
-  "C'est le raccourci le plus répandu, et il est faux : le support insiste sur le fait qu'un LLM ne lit pas vraiment des mots.",
-  "Le découpage ne compresse rien, il fragmente. Le compte va vers le haut, pas vers le bas, dès qu'il y a des accents ou des noms propres.",
-  "La tokenisation s'applique à l'entrée comme à la sortie. Le prompt est découpé avant tout traitement."
+ "bonne": 0,
+ "pourquoi": "Le GPT dédié à la génération d'images dans ChatGPT, connu sous le nom DALL-E, a été retiré de ChatGPT le 30 août 2026. C'est exactement le genre d'écart qui piège en salle : le nom est resté dans le langage courant bien après que l'outil a cessé d'être l'interface de génération active.",
+ "pieges": [
+  "Il ne s'agit pas d'une option à activer, mais d'un retrait.",
+  "DALL-E a bien existé dans ChatGPT, et c'est même ce qui explique la persistance du nom.",
+  "Aucune restriction aux comptes professionnels n'a été annoncée : l'outil a été retiré, pas réservé."
  ],
- src:"Jour 1, matinée, séquence Tokenisation, démonstration sur le tokenizer OpenAI"
+ "src": "Actualité, août 2026",
+ "lien": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+ "plus": "Le réflexe à installer chez un formateur est de nommer la fonction plutôt que la marque : on dit « la génération d'images dans ChatGPT », pas le nom d'un GPT qui peut disparaître entre deux sessions. Un support construit sur des noms de produits vieillit en semaines, un support construit sur des fonctions tient un an."
 },
-{
- jour:"Jour 1",
- piege:true,
- q:"Une collègue dit : je corrige l'IA quand elle se trompe, comme ça elle apprend et ne refera pas l'erreur. A-t-elle raison ?",
- opts:[
-  "Oui, chaque conversation nourrit l'entraînement du modèle.",
-  "Non, parce que le modèle est incapable de reconnaître qu'il s'est trompé.",
-  "Oui, mais seulement si l'on active la mémoire entre conversations.",
-  "Non : quand on discute avec l'outil on est en phase d'inférence, le modèle applique ce qu'il a déjà appris et ne réapprend pas."
+ {
+  "jour": "Jour 1",
+  "piege": true,
+  "q": "Un projet a été validé par le juriste au titre du RGPD. Peut-on considérer que la conformité IA est traitée ?",
+  "opts": [
+   "Oui, le RGPD est le texte le plus exigeant, il absorbe les obligations de l'AI Act.",
+   "Non, mais seulement si le projet traite des données de santé.",
+   "Non : les deux textes répondent à des questions différentes et peuvent s'appliquer en même temps à une même situation.",
+   "Oui, l'AI Act ne s'applique qu'aux fournisseurs de modèles, jamais aux projets internes."
+  ],
+  "bonne": 2,
+  "pourquoi": "L'AI Act demande quel risque présente cet usage de l'IA. Le RGPD demande ce que l'on fait des données personnelles : finalité, base légale, minimisation, droits des personnes. Le support prend l'exemple d'une IA de présélection de candidats, qui relève de l'AI Act pour l'usage RH et du RGPD pour les données des candidats, en même temps.",
+  "pieges": [
+   "Aucun des deux textes n'absorbe l'autre. Ils ne posent tout simplement pas la même question.",
+   "Le cumul ne dépend pas de la nature sensible des données. Il vaut dès qu'il y a à la fois un usage d'IA qualifiable et des données personnelles.",
+   "Le déployeur, c'est-à-dire l'entreprise qui utilise le système dans son activité, est explicitement visé par l'AI Act."
+  ],
+  "src": "Jour 1, après-midi, séquence RGPD n'est pas l'AI Act",
+  "lien": "",
+  "plus": "Le RGPD parle de données personnelles, l'AI Act parle de systèmes et de risques. Un même projet peut être irréprochable au regard du premier et concerné par le second, ou l'inverse. En pratique, le référent IA gagne à faire tenir les deux analyses dans le même dossier, chacune avec sa propre conclusion."
+ },
+ {
+  "jour": "Outils",
+  "piege": true,
+  "q": "Votre script d'e-learning est écrit, validé mot à mot par le service juridique. Il faut la narration audio en français, avec deux voix différentes, sans studio. Quel outil ?",
+  "opts": [
+   "ElevenLabs, une synthèse vocale qui lit exactement le texte fourni, avec plusieurs voix.",
+   "NotebookLM, qui génère un échange audio à deux voix à partir de vos documents.",
+   "Synthesia, qui produit une vidéo d'avatar.",
+   "Canva, qui assemble les éléments du module."
+  ],
+  "bonne": 0,
+  "pourquoi": "La contrainte décisive est le mot à mot validé. ElevenLabs lit le texte que vous fournissez, sans le réécrire, et propose plusieurs voix. C'est le seul des quatre à garantir que le texte diffusé est bien celui qui a été validé.",
+  "pieges": [
+   "NotebookLM produit bien un audio à deux voix, et le piège est là : ce sont deux voix qui discutent d'un document et reformulent librement. Le texte validé ne serait pas prononcé tel quel.",
+   "Synthesia répondrait au besoin de voix mais impose une vidéo et un avatar, ce que la demande ne réclame pas.",
+   "Canva assemble, il ne synthétise pas de voix."
+  ],
+  "src": "Menu des outils de la formation, ElevenLabs",
+  "lien": "https://elevenlabs.io/",
+  "plus": "Cloner une voix réelle change complètement le régime juridique : il faut le consentement écrit de la personne, et l'AI Act impose par ailleurs de signaler les contenus générés. Pour un module interne, une voix du catalogue évite tout ce dossier."
+ },
+ {
+  "jour": "Fonctionnalités",
+  "piege": false,
+  "q": "Dans Perplexity, à quoi sert un Space ?",
+  "opts": [
+   "C'est un espace de travail persistant qui combine des fichiers déposés et la recherche web, avec des instructions personnalisées appliquées à chaque nouveau fil.",
+   "C'est un forum où les utilisateurs partagent leurs meilleures recherches.",
+   "C'est le nom du mode qui désactive la recherche web pour ne travailler que hors ligne.",
+   "C'est un quota d'espace de stockage attaché à l'abonnement."
+  ],
+  "bonne": 0,
+  "pourquoi": "Un Space est un espace de travail qui dure : on y dépose des fichiers, on y écrit des instructions personnalisées, et ces instructions s'appliquent à chaque nouveau fil ouvert dans l'espace. La recherche web reste disponible, combinée aux fichiers.",
+  "pieges": [
+   "Le partage existe, mais ce n'est pas la définition de la fonctionnalité, qui est d'abord un espace de travail.",
+   "Un Space ne coupe pas le web, il l'ajoute aux documents déposés.",
+   "Ce n'est pas une unité de stockage, c'est un contenant de travail."
+  ],
+  "src": "Centre d'aide Perplexity, article What are Spaces",
+  "lien": "https://www.perplexity.ai/help-center",
+  "plus": "L'intérêt en formation est de préparer un Space par thème, avec les instructions de ton et de format déjà écrites : les participants ouvrent un fil et obtiennent un cadrage identique sans avoir à recopier un prompt. C'est la version partageable de ce qu'un prompt système fait pour une seule personne."
+ },
+ {
+  "jour": "Inédite",
+  "piege": true,
+  "q": "Comment vérifier en trente secondes qu'une consigne a été comprise, sans demander c'est clair pour tout le monde ?",
+  "opts": [
+   "On demande qui n'a pas compris de lever la main.",
+   "On relit la consigne une deuxième fois, plus lentement.",
+   "On l'affiche à l'écran pendant tout l'exercice.",
+   "On fait reformuler la consigne par quelqu'un, ou on les fait commencer et on regarde."
+  ],
+  "bonne": 3,
+  "pourquoi": "Les deux seules méthodes qui donnent une information sont celles où quelqu'un produit quelque chose : une reformulation, ou les trente premières secondes de travail. Toutes les autres testent le confort du groupe, pas sa compréhension. Regarder démarrer est même la plus rapide : au bout de vingt secondes, on voit quelles tables ont commencé et lesquelles se regardent.",
+  "pieges": [
+   "Lever la main pour dire qu'on n'a pas compris coûte socialement cher. Personne ne la lève, et le silence est lu comme un accord.",
+   "Relire plus lentement rejoue le même texte. Si l'ambiguïté est dans la consigne, elle sera exactement aussi ambiguë la deuxième fois.",
+   "Afficher la consigne est utile pendant l'exercice, mais cela ne vérifie rien au moment où vous en avez besoin, c'est-à-dire avant qu'ils partent."
+  ],
+  "src": "Question de raisonnement, hors support",
+  "lien": "",
+  "plus": "Poser la question c'est clair échoue par construction : elle ne coûte rien à approuver et personne ne veut être celui qui ralentit le groupe. Faire reformuler déplace la charge de la preuve du groupe vers la consigne, ce qui est la bonne place."
+ },
+ {
+ "jour": "Actualité",
+ "piege": true,
+ "q": "Un client paie un abonnement ChatGPT et vous dit : tant que je paie, le modèle auquel mon équipe s'est habituée restera disponible. Que répondez-vous ?",
+ "opts": [
+  "Qu'il a raison : un abonnement payant garantit le maintien des modèles auxquels on a accès le jour de la souscription.",
+  "Que non : OpenAI retire ses anciens modèles de ChatGPT sur un calendrier fixe annoncé à l'avance, avec une période de transition, et cela vaut aussi pour les utilisateurs payants.",
+  "Que les retraits se décident sans préavis, du jour au lendemain, sans aucune période de transition.",
+  "Que seuls les comptes gratuits subissent des retraits, les comptes payants conservant tout l'historique du catalogue."
  ],
- bonne:3,
- pourquoi:"Le support sépare nettement deux phases. L'entraînement est long, extrêmement coûteux en énergie, réalisé en amont une fois pour toutes. L'inférence est le moment où vous écrivez un prompt et où le modèle prépare sa réponse. Corriger le modèle en conversation n'écrit rien dans le modèle.",
- pieges:[
-  "C'est la confusion que la séquence entraînement contre inférence sert précisément à lever. L'image du support : le cuisinier qui a appris pendant des années, opposé au même cuisinier qui prépare votre plat au moment où vous le commandez.",
-  "Le modèle peut parfaitement reconnaître une erreur dans l'échange en cours. Le problème n'est pas là : c'est que cette correction ne survit pas à un entraînement déjà figé.",
-  "La mémoire entre conversations conserve du contexte pour vous, elle ne modifie pas le modèle lui-même. Ce sont deux choses différentes."
+ "bonne": 1,
+ "pourquoi": "OpenAI retire ses anciens modèles de ChatGPT selon un calendrier fixe, annoncé à l'avance, assorti d'une période de transition. Le fait de payer ne met pas à l'abri du retrait. Beaucoup de professionnels croient l'inverse et construisent des procédures internes sur un modèle précis, comme si l'abonnement figeait le catalogue.",
+ "pieges": [
+  "L'abonnement donne accès à un service, pas à une version figée du catalogue.",
+  "Les retraits sont au contraire annoncés à l'avance, avec une période de transition : c'est ce qui permet de préparer la bascule.",
+  "Le statut payant ne change pas le principe du retrait, il change seulement le confort de la transition."
  ],
- src:"Jour 1, matinée, séquence Entraînement et inférence"
+ "src": "Actualité, août 2026",
+ "lien": "https://help.openai.com/en/articles/9624314-model-release-notes",
+ "plus": "Concrètement, une procédure interne ne se rédige jamais autour du nom d'un modèle, mais autour d'un résultat attendu et d'un test de recette. Le jour du retrait, on rejoue le test sur ce qui remplace, et l'on sait en une heure si la procédure tient, au lieu de découvrir la panne par les utilisateurs."
 },
-{
- jour:"Jour 1",
- piege:false,
- q:"Que désigne le biais de confirmation dans l'usage d'une IA générative ?",
- opts:[
-  "L'IA confirme systématiquement la véracité des informations qu'elle produit.",
-  "L'IA est conçue pour confirmer les préjugés de ses développeurs.",
-  "La tendance à privilégier les informations qui valident ce que l'on pense déjà, l'IA devenant un miroir de nos certitudes.",
-  "L'IA confirme la conformité légale des actions qu'elle recommande."
+ {
+  "jour": "Jour 1",
+  "piege": true,
+  "q": "Un dirigeant demande : notre outil de tri de candidatures est classé haut risque par l'AI Act, faut-il l'arrêter ?",
+  "opts": [
+   "Oui, haut risque signifie usage interdit dans l'Union européenne.",
+   "La question ne se pose pas : l'AI Act classe des outils, pas des usages, et aucun outil du marché n'est classé haut risque.",
+   "Non, l'AI Act ne concerne que les fournisseurs, jamais les entreprises utilisatrices.",
+   "Non : haut risque n'est pas une interdiction, l'usage reste autorisé avec des obligations renforcées de gouvernance, de documentation et de supervision humaine."
+  ],
+  "bonne": 3,
+  "pourquoi": "L'AI Act repose sur un principe de proportionnalité : plus un usage présente de risques, plus il est encadré. Un système haut risque n'est pas interdit, il doit respecter des obligations renforcées : gestion des risques documentée, gouvernance des données, documentation et traçabilité, supervision humaine effective, robustesse et cybersécurité.",
+  "pieges": [
+   "L'interdiction est une catégorie distincte et beaucoup plus étroite, avec par exemple la reconnaissance des émotions au travail. Le tri de candidatures est cité comme exemple de haut risque, pas d'usage interdit.",
+   "C'est l'inverse : l'AI Act qualifie un usage, pas simplement un outil. Le même outil peut relever de catégories différentes selon le contexte de déploiement.",
+   "L'entreprise qui utilise le système est déployeur, et le déployeur est responsable de l'usage qu'il en fait. Le fournisseur, lui, répond de la conformité du système."
+  ],
+  "src": "Jour 1, après-midi, AI Act, catégories de risque et rôles fournisseur et déployeur",
+  "lien": "",
+  "plus": "La classification en haut risque déclenche un chantier, pas un arrêt : documentation, traçabilité des données, supervision humaine, information des personnes. Le rôle tenu compte autant que la catégorie, un déployeur n'a pas les mêmes obligations qu'un fournisseur."
+ },
+ {
+ "jour": "Capacités et limites",
+ "piege": true,
+ "q": "Une équipe dépose un document très long dans un assistant à très grande fenêtre de contexte. Que disent les évaluations sur la lecture de ce document ?",
+ "opts": [
+  "La lecture est uniforme : à partir du moment où le document tient dans la fenêtre, la position de l'information n'a plus d'effet.",
+  "Seule la fin du document est réellement exploitée, le début étant systématiquement écarté.",
+  "Les évaluations montrent une chute de précision quand l'information cherchée se situe au milieu du document plutôt qu'au début ou à la fin, effet documenté sous le nom d'effet du milieu perdu.",
+  "La précision augmente avec la longueur du document, le modèle disposant de plus de contexte."
  ],
- bonne:2,
- pourquoi:"La démonstration du support le montre en direct : une question neutre puis une question orientée sur le même sujet produisent deux argumentaires convaincants et opposés. L'IA amplifie la direction qu'on lui donne, donc elle confirme ce que la question suppose déjà.",
- pieges:[
-  "L'IA ne vérifie rien avant de générer. Un LLM prédit le token le plus probable, pas le plus exact.",
-  "Le biais de confirmation est un biais de l'utilisateur, pas une intention des concepteurs. À ne pas confondre avec les biais présents dans les données d'entraînement, qui sont un autre sujet.",
-  "Rien dans le fonctionnement d'un LLM ne vérifie la légalité d'une action."
+ "bonne": 2,
+ "pourquoi": "Une très grande fenêtre de contexte n'assure pas une lecture uniforme. Les évaluations mesurent une chute de précision lorsque l'information recherchée se trouve au milieu du document plutôt qu'au début ou à la fin. Cet effet est documenté sous le nom d'effet du milieu perdu.",
+ "pieges": [
+  "Tenir dans la fenêtre et être exploité de façon fiable sont deux choses distinctes, et c'est tout l'enjeu de cet effet.",
+  "Le début et la fin sont au contraire les positions les mieux traitées, l'affaiblissement porte sur le milieu.",
+  "Allonger le document ne rend pas la lecture plus fine, cela étire au contraire la zone fragile."
  ],
- src:"Jour 1, matinée, séquence Biais algorithmiques, démonstration de la question orientée"
+ "src": "Capacités et limites",
+ "lien": "https://arxiv.org/abs/2503.00353",
+ "plus": "La parade est concrète et se montre en salle : placer la question et les passages décisifs au début ou à la fin, découper les gros dossiers, et poser des questions ciblées plutôt que de tout déposer d'un bloc. C'est aussi l'argument qui justifie un dispositif de recherche documentaire quand le volume dépasse quelques dizaines de pages."
 },
-{
- jour:"Jour 1",
- piege:false,
- q:"Quelle est la parade la plus efficace et la plus immédiatement applicable contre les hallucinations ?",
- opts:[
-  "Fournir le document source, et autoriser explicitement le « je ne sais pas ».",
-  "Reformuler la question jusqu'à obtenir deux fois la même réponse.",
-  "Utiliser uniquement les outils les plus récents du marché.",
-  "Demander au modèle de deviner quand l'information lui manque."
+ {
+  "jour": "Jour 2",
+  "piege": true,
+  "q": "Un assistant annonce une fenêtre de contexte pouvant aller jusqu'à 1 million de tokens. Que peut-on en conclure sur un gros dossier déposé en entier ?",
+  "opts": [
+   "Que tous les détails du dossier seront exploités de manière fiable.",
+   "Rien de tel : l'éditeur indique explicitement qu'une fenêtre plus grande ne garantit pas que le modèle exploitera parfaitement tous les détails dispersés dans de gros fichiers.",
+   "Que la fenêtre de contexte remplace un dispositif de recherche documentaire.",
+   "Que le dossier sera mémorisé d'une conversation à l'autre."
+  ],
+  "bonne": 1,
+  "pourquoi": "La fiche comparative signale une fenêtre allant jusqu'à 1 million de tokens sur certaines offres, et cite dans la foulée l'avertissement de l'éditeur : une fenêtre plus grande ne garantit pas l'exploitation parfaite de tous les détails dispersés dans de gros fichiers. La taille de la fenêtre est une capacité d'entrée, pas une garantie de qualité de lecture.",
+  "pieges": [
+   "C'est la conclusion que l'argument commercial invite à tirer, et c'est précisément celle que l'éditeur refuse d'endosser.",
+   "Une grande fenêtre et un dispositif de recherche documentaire ne répondent pas au même besoin. Le second sélectionne les passages utiles et permet de citer les sources.",
+   "La fenêtre de contexte concerne une conversation. La mémoire entre conversations est une fonction distincte, disponible selon le compte, l'offre et les réglages."
+  ],
+  "src": "Jour 2, fiche comparative des assistants IA, page 2, contexte et documents",
+  "lien": "",
+  "plus": "Le repère utile pour une équipe est celui de la place de l'information dans le document : un détail isolé au milieu d'un très long fichier est le cas le plus fragile. La parade est pratique, découper le dossier et poser des questions ciblées plutôt que de tout déposer d'un bloc."
+ },
+ {
+ "jour": "Actualité",
+ "piege": true,
+ "q": "Le 4 août 2026, Mistral publie Shieldstral, un classificateur de sécurité multimodal. Quel est le point le plus notable de cette publication ?",
+ "opts": [
+  "Il est réservé aux clients grands comptes de l'éditeur, sous contrat spécifique.",
+  "Il ne traite que du texte, la modération de l'image restant hors de son périmètre.",
+  "Il est publié en poids ouverts sous licence Apache 2.0, alors que l'on associe spontanément la sécurité de l'IA à des systèmes propriétaires fermés.",
+  "Il s'agit d'un service en ligne payant à l'appel, sans possibilité d'installation."
  ],
- bonne:0,
- pourquoi:"Le support classe cette parade comme la plus efficace et la plus simple à appliquer tout de suite : on donne le document, l'extrait, les chiffres réels, et on ajoute au prompt que si l'information n'y figure pas, le modèle doit le dire plutôt que deviner. Sans cette instruction, il comble les lacunes sans prévenir.",
- pieges:[
-  "Deux réponses identiques ne prouvent rien : le modèle peut se tromper deux fois de la même façon, avec la même assurance.",
-  "La nouveauté d'un outil ne supprime pas le mécanisme d'hallucination, qui tient à la prédiction elle-même.",
-  "C'est l'inverse exact du réflexe à acquérir. Autoriser la devinette, c'est fabriquer l'hallucination."
+ "bonne": 2,
+ "pourquoi": "Shieldstral a été publié le 4 août 2026 en poids ouverts, sous licence Apache 2.0. Le contre-pied est là : la couche de sécurité et de modération est justement celle que les éditeurs gardent d'ordinaire fermée, et c'est un acteur européen qui l'ouvre.",
+ "pieges": [
+  "Des poids ouverts sous Apache 2.0 sont l'inverse d'une réservation contractuelle à quelques clients.",
+  "Le classificateur est multimodal, il ne se limite donc pas au texte.",
+  "Une publication en poids ouverts permet précisément l'installation, ce que ne permet pas un service fermé facturé à l'appel."
  ],
- src:"Jour 1, matinée, séquence Hallucinations, les 3 réflexes"
+ "src": "Actualité, août 2026",
+ "lien": "https://mistral.ai/news/regional-inference-open-models-new-compute/",
+ "plus": "Pour une organisation qui doit filtrer des contenus sans les envoyer à l'extérieur, un classificateur en poids ouverts change la conversation avec la direction informatique : la modération peut tourner à l'intérieur du système d'information. C'est un argument concret à garder en réserve quand on vous oppose la confidentialité des contenus analysés."
 },
-{
- jour:"Jour 1",
- piege:true,
- q:"Une direction annonce : nos requêtes IA sont neutres en carbone grâce à nos achats de compensation, donc notre usage est sans impact. Que répond le référent IA ?",
- opts:[
-  "C'est exact, le CO2 est le seul indicateur qui compte pour un usage numérique.",
-  "Le CO2 n'est qu'un indicateur parmi d'autres : restent l'eau de refroidissement, les matières premières, la fabrication des équipements et les déchets électroniques.",
-  "C'est exact pour l'inférence, mais pas pour l'entraînement du modèle.",
-  "L'impact est négligeable dès lors que les data centers sont situés en France."
+ {
+  "jour": "Jour 2",
+  "piege": true,
+  "q": "La politique RH en vigueur autorise 3 jours de télétravail. L'assistant répond « deux jours par semaine » et cite la Politique télétravail de septembre 2024. De quelle erreur s'agit-il ?",
+  "opts": [
+   "D'une hallucination : le modèle a inventé le chiffre.",
+   "Il est impossible de trancher à partir de ces éléments.",
+   "D'une erreur de l'utilisateur, qui a mal formulé sa question.",
+   "D'une erreur de récupération : le système a remonté une version obsolète du document."
+  ],
+  "bonne": 3,
+  "pourquoi": "La réponse est sourcée et cohérente, et pourtant fausse : le document cité n'était pas la version en vigueur. L'erreur se situe au maillon de la recherche documentaire, pas de la génération. Le support insiste : une mauvaise réponse ne signifie pas forcément que le modèle hallucine, et cette distinction est essentielle pour un référent IA.",
+  "pieges": [
+   "Une hallucination est une information inventée. Ici le chiffre existe bien, il figure dans un document réel, simplement périmé. Rien n'a été inventé.",
+   "Les éléments suffisent au contraire à trancher : la source citée porte une date antérieure à la politique en vigueur.",
+   "La question était correctement posée. Déplacer la faute sur l'utilisateur empêche de corriger la vraie cause, qui est la présence d'une ancienne version dans la base."
+  ],
+  "src": "Jour 2, après-midi, mini-cas télétravail, familles d'erreurs récupération et génération",
+  "lien": "",
+  "plus": "Distinguer récupération et génération n'est pas un raffinement théorique, c'est ce qui désigne le responsable de la correction. Une erreur de récupération se règle du côté de la base documentaire, versions et indexation. Une erreur de génération se règle du côté du prompt et des garde-fous."
+ },
+ {
+  "jour": "Jour 3",
+  "piege": true,
+  "q": "Une équipe installe un exécuteur de modèles en local et trouve la qualité décevante. Faut-il changer d'outil d'exécution ?",
+  "opts": [
+   "Oui, un autre outil local donnera de meilleures réponses sur la même machine.",
+   "Non : ces outils n'apportent pas de modèle, ils exécutent des modèles ouverts téléchargés. La qualité dépend du modèle choisi et de la machine, pas de l'exécuteur.",
+   "Oui, à condition de passer sur un outil orienté questions-réponses documentaires.",
+   "Non, la qualité d'un modèle local égale celle des modèles en ligne, le problème vient forcément du prompt."
+  ],
+  "bonne": 1,
+  "pourquoi": "Le point commun aux trois familles présentées, Ollama, LocalAI et PrivateGPT, est qu'elles n'apportent aucun modèle. Elles exécutent des modèles ouverts que l'on télécharge. Ce qui les sépare vraiment, c'est la couche à laquelle elles se branchent : un poste de travail, une application, ou un usage documentaire. Choisir entre elles, c'est répondre à « qui appelle le modèle ».",
+  "pieges": [
+   "Changer d'exécuteur ne change pas le modèle exécuté. La comparaison porte sur l'intégration, pas sur la qualité des réponses.",
+   "Un outil de questions-réponses documentaires résout un autre problème : interroger un corpus sans qu'il sorte. Il n'améliore pas le modèle sous-jacent.",
+   "Le support est net : un modèle exécutable sur une machine de bureau reste nettement en deçà des modèles de premier plan accessibles en ligne. Ce n'est pas une raison de renoncer, c'est une donnée d'entrée de la décision."
+  ],
+  "src": "Jour 3, après-midi, comparatif Ollama, LocalAI, PrivateGPT",
+  "lien": "",
+  "plus": "La conséquence pour un devis est nette : le poste qui pèse est le modèle et la machine, pas le logiciel d'exécution, qui est le plus souvent gratuit. Une déception sur la qualité se traite en changeant de modèle ou de taille de modèle, ou en revoyant la mémoire disponible."
+ },
+ {
+ "jour": "Capacités et limites",
+ "piege": true,
+ "q": "Vous voulez une affiche générée portant un titre lisible. Que dit la documentation officielle du générateur d'images ?",
+ "opts": [
+  "Que le texte dans l'image reste hors de portée des générateurs actuels, quel que soit le libellé de la consigne.",
+  "Que le texte est ajouté automatiquement dès qu'un titre figure dans la consigne, sans autre précaution.",
+  "Que le texte n'est rendu correctement qu'en anglais, toute autre langue étant déformée.",
+  "Que le modèle sait produire du texte lisible dans l'image, mais seulement si la consigne le demande explicitement, une consigne ambiguë pouvant produire du texte sans image, ou l'inverse."
  ],
- bonne:1,
- pourquoi:"Le support décompose l'impact en quatre étages : matières premières, fabrication des équipements et des data centers, utilisation avec électricité et refroidissement, puis renouvellement du matériel et déchets électroniques. La phrase à retenir est que le CO2 n'est qu'un indicateur parmi d'autres, et que la vraie question n'est pas « est-ce que l'IA peut le faire » mais « est-ce que son usage est pertinent ici ».",
- pieges:[
-  "Réduire l'impact au seul CO2 est précisément l'erreur que la séquence sur l'impact environnemental sert à corriger.",
-  "La distinction entraînement contre inférence est réelle, et l'entraînement est extrêmement coûteux, mais l'inférence consomme elle aussi des ressources. Elle ne dédouane pas l'usage courant.",
-  "Un mix électrique moins carboné réduit les émissions liées à l'électricité, il ne touche ni au refroidissement en eau, ni aux métaux, ni aux déchets."
+ "bonne": 3,
+ "pourquoi": "La documentation officielle est explicite : le générateur sait produire du texte lisible dans l'image, à condition que la consigne le demande explicitement. Sur une consigne ambiguë, le modèle peut ne produire que du texte sans image, ou une image sans le texte attendu. Le contre-pied est double, on croit encore les générateurs incapables d'écrire, et l'on sous-estime le rôle de la formulation.",
+ "pieges": [
+  "C'est une croyance héritée des premières générations d'outils, que la documentation actuelle contredit.",
+  "Rien n'est automatique : c'est précisément le caractère explicite de la demande qui fait la différence.",
+  "La documentation ne pose pas de restriction de ce type, elle pose une exigence de formulation."
  ],
- src:"Jour 1, matinée, séquences Impact environnemental et Technolucidité"
+ "src": "Capacités et limites",
+ "lien": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/gemini-image-generation-limitations",
+ "plus": "En atelier, cela donne une consigne à faire réécrire par les participants : dire où va le texte, quel texte exactement, et qu'il doit apparaître dans l'image. La comparaison entre la consigne vague et la consigne explicite, faite en direct sur le même sujet, vaut mieux que dix minutes d'explication."
 },
-{
- jour:"Jour 1",
- piege:true,
- q:"Un dirigeant demande : notre outil de tri de candidatures est classé haut risque par l'AI Act, faut-il l'arrêter ?",
- opts:[
-  "Oui, haut risque signifie usage interdit dans l'Union européenne.",
-  "La question ne se pose pas : l'AI Act classe des outils, pas des usages, et aucun outil du marché n'est classé haut risque.",
-  "Non, l'AI Act ne concerne que les fournisseurs, jamais les entreprises utilisatrices.",
-  "Non : haut risque n'est pas une interdiction, l'usage reste autorisé avec des obligations renforcées de gouvernance, de documentation et de supervision humaine."
+ {
+  "jour": "Jour 1",
+  "piege": true,
+  "q": "Un éditeur affirme : notre solution IA est hébergée en Europe. Peut-on en conclure qu'elle est souveraine ?",
+  "opts": [
+   "Oui, l'hébergement en Europe est le critère qui définit la souveraineté.",
+   "Oui, dès lors que l'éditeur communique une certification de sécurité.",
+   "Non : il faut aussi savoir qui contrôle le service, à quelles juridictions il est soumis, quels tiers interviennent et quelles garanties contractuelles existent.",
+   "Non, seule une solution installée sur les serveurs de l'entreprise peut être qualifiée de souveraine."
+  ],
+  "bonne": 2,
+  "pourquoi": "La souveraineté est un faisceau de critères, pas un lieu. La grille du support pose quatre questions : qui contrôle l'outil, où les données sont stockées et traitées, qui d'autre intervient, et quelles garanties existent. Une filiale européenne d'un groupe américain reste soumise à la loi américaine, et le CLOUD Act permet aux autorités d'accéder aux données détenues par des entreprises américaines, même en Europe.",
+  "pieges": [
+   "Le support écrit noir sur blanc qu'un hébergement en Europe ne suffit pas, à lui seul, à rendre une solution souveraine. Il ajoute que « entreprise européenne », « données hébergées en Europe » et « toutes les données restent en Europe » sont trois affirmations différentes.",
+   "Une certification répond à la question des garanties, qui n'est qu'une des quatre. À noter : SecNumCloud est une qualification de sécurité délivrée par l'ANSSI à des offres cloud précises, alors que Gaia-X n'est pas un hébergeur mais une initiative de règles communes.",
+   "L'on-premise offre le contrôle maximal, mais la souveraineté se lit sur les quatre questions de la grille, pas sur ce seul mode de déploiement. Le lieu de traitement peut d'ailleurs différer du lieu de stockage."
+  ],
+  "src": "Jour 1, après-midi, grille de souveraineté en 4 questions, repères CNIL et ANSSI SecNumCloud",
+  "lien": "",
+  "plus": "Les quatre questions de la grille se posent dans l'ordre et se répondent par écrit, dans le contrat : qui héberge, qui contrôle, quelles juridictions, quels tiers. Une réponse orale rassurante sur l'une des quatre ne vaut rien tant que les trois autres restent ouvertes."
+ },
+ {
+  "jour": "Jour 2",
+  "piege": false,
+  "q": "Avant de déployer un assistant métier, quels types de questions faut-il impérativement tester ?",
+  "opts": [
+   "Uniquement le cas d'usage principal, puisque c'est celui pour lequel il a été conçu.",
+   "Les seules questions posées par la direction, qui valide le déploiement.",
+   "Le plus grand nombre possible de questions, sans critères particuliers.",
+   "Une question normale, une question ambiguë, une question dont l'information est absente des documents, et une question hors périmètre."
+  ],
+  "bonne": 3,
+  "pourquoi": "Le support impose quatre types de tests, et chacun vérifie une compétence différente : répondre correctement au cas principal, demander une clarification sur une question ambiguë, reconnaître qu'une information n'est pas dans ses documents, et refuser poliment en orientant quand la question sort du périmètre. La formule à retenir : un bon assistant n'est pas seulement celui qui sait répondre, c'est aussi celui qui sait quand il ne doit pas répondre.",
+  "pieges": [
+   "Tester le seul cas nominal laisse passer les trois défaillances les plus coûteuses en production.",
+   "La validation hiérarchique n'est pas un protocole de test. Elle ne dit rien du comportement de l'assistant face à un trou documentaire.",
+   "Le volume ne remplace pas la couverture. Cent questions normales ne testent qu'un des quatre comportements."
+  ],
+  "src": "Jour 2, après-midi, séquence Tester avant de déployer",
+  "lien": "",
+  "plus": "Le quatrième type, la question hors périmètre, est celui qu'on oublie le plus souvent et celui qui produit les incidents visibles. Un assistant qui répond aimablement à côté de son domaine donne l'impression d'une compétence qu'il n'a pas, et c'est ce que les utilisateurs raconteront ensuite."
+ },
+ {
+ "jour": "Actualité",
+ "piege": false,
+ "q": "Début août 2026, Mistral lance les European Compute Units. De quoi s'agit-il ?",
+ "opts": [
+  "D'une structure d'engagements d'entreprise à long terme visant à financer jusqu'à un gigawatt de capacité de calcul européenne d'ici 2030.",
+  "D'une nouvelle unité de mesure de la consommation énergétique des requêtes IA, destinée au bilan carbone.",
+  "D'un label européen certifiant qu'un modèle a été entraîné sans données personnelles.",
+  "D'une offre d'abonnement à tarif réduit réservée aux administrations européennes."
  ],
- bonne:3,
- pourquoi:"L'AI Act repose sur un principe de proportionnalité : plus un usage présente de risques, plus il est encadré. Un système haut risque n'est pas interdit, il doit respecter des obligations renforcées : gestion des risques documentée, gouvernance des données, documentation et traçabilité, supervision humaine effective, robustesse et cybersécurité.",
- pieges:[
-  "L'interdiction est une catégorie distincte et beaucoup plus étroite, avec par exemple la reconnaissance des émotions au travail. Le tri de candidatures est cité comme exemple de haut risque, pas d'usage interdit.",
-  "C'est l'inverse : l'AI Act qualifie un usage, pas simplement un outil. Le même outil peut relever de catégories différentes selon le contexte de déploiement.",
-  "L'entreprise qui utilise le système est déployeur, et le déployeur est responsable de l'usage qu'il en fait. Le fournisseur, lui, répond de la conformité du système."
+ "bonne": 0,
+ "pourquoi": "Les European Compute Units sont une structure d'engagements d'entreprise sur le long terme, destinée à financer jusqu'à un gigawatt de capacité de calcul européenne d'ici 2030. L'enseignement est stratégique : le frein de l'IA européenne n'est pas le savoir-faire logiciel, il est la puissance de calcul effectivement disponible sur le sol européen.",
+ "pieges": [
+  "Ce n'est pas une unité de mesure, mais un mécanisme de financement de capacité.",
+  "Aucun label de certification sur les données d'entraînement n'est en jeu ici.",
+  "Il ne s'agit pas d'une grille tarifaire, mais d'engagements d'achat servant à financer des infrastructures."
  ],
- src:"Jour 1, après-midi, AI Act, catégories de risque et rôles fournisseur et déployeur"
+ "src": "Actualité, août 2026",
+ "lien": "https://mistral.ai/news/regional-inference-open-models-new-compute/",
+ "plus": "C'est le chaînon que l'on oublie dans les discussions sur la souveraineté : héberger en Europe suppose des machines en Europe, et ces machines se commandent des années à l'avance. Quand une direction demande pourquoi l'offre européenne est plus rare ou plus chère, la réponse tient souvent à cette contrainte physique, pas à la compétence des équipes."
 },
-{
- jour:"Jour 1",
- piege:true,
- q:"Un projet a été validé par le juriste au titre du RGPD. Peut-on considérer que la conformité IA est traitée ?",
- opts:[
-  "Oui, le RGPD est le texte le plus exigeant, il absorbe les obligations de l'AI Act.",
-  "Non, mais seulement si le projet traite des données de santé.",
-  "Non : les deux textes répondent à des questions différentes et peuvent s'appliquer en même temps à une même situation.",
-  "Oui, l'AI Act ne s'applique qu'aux fournisseurs de modèles, jamais aux projets internes."
+ {
+  "jour": "Jour 5",
+  "piege": true,
+  "q": "Pourquoi le sandwich compliment, critique, compliment est-il banni du retour ?",
+  "opts": [
+   "Parce qu'il prend trop de temps sur une journée déjà dense.",
+   "Parce que les compliments entre pairs sont mal reçus dans un groupe professionnel.",
+   "Parce qu'il faut toujours commencer par ce qui ne va pas, sinon on n'y revient jamais.",
+   "Il dilue le message : l'observateur cherche son compliment d'ouverture au lieu d'observer, et le destinataire n'entend plus que la couche du milieu."
+  ],
+  "bonne": 3,
+  "pourquoi": "Le sandwich abîme les deux côtés du retour. Côté observateur, il transforme l'observation en recherche d'un compliment d'ouverture présentable, donc il détourne l'attention de ce qui se passe réellement. Côté destinataire, le rituel est connu : les deux tranches sont ignorées et il ne reste que la couche du milieu, entendue comme la seule chose sincère. Un retour utile est direct et adossé à un fait observé.",
+  "pieges": [
+   "Le temps n'est pas le problème : un sandwich se fait en trente secondes. Ce qui est en cause, c'est ce qu'il fait au message.",
+   "Les compliments ne sont pas le problème non plus. Un retour positif précis et factuel est parfaitement utile, c'est l'emballage rituel qui ne l'est pas.",
+   "Commencer par le négatif est une autre recette mécanique, et elle produit ses propres dégâts. Ce qu'on vise, c'est un retour adossé à un fait, pas un ordre imposé."
+  ],
+  "src": "Jour 5, ingénierie pédagogique",
+  "lien": "",
+  "plus": "Le format qui fonctionne tient en deux temps : ce que j'ai vu, ce que je ferais autrement. Il est descriptif, daté, rattaché à un moment précis de la séance. Un retour qui commence par vous êtes plutôt que par j'ai vu est déjà sorti de l'observation."
+ },
+ {
+  "jour": "Jour 4",
+  "piege": true,
+  "q": "En pleine animation, on vous pose une question technique dont vous n'avez pas la réponse.",
+  "opts": [
+   "On donne une réponse plausible et on vérifie après.",
+   "On explique que la question sort du périmètre de la formation.",
+   "On dit qu'on ne sait pas, on note la question, on répond avant la fin de la journée.",
+   "On renvoie immédiatement la question au groupe pour gagner du temps."
+  ],
+  "bonne": 2,
+  "pourquoi": "On dit qu'on ne sait pas, on note la question par écrit devant le groupe, et on y répond avant la fin de la journée. Les trois gestes comptent : l'aveu protège la crédibilité, la note prouve que la question ne sera pas perdue, et la réponse dans la journée ferme la boucle. Un formateur qui fait cela une fois gagne le droit d'être cru le reste du temps.",
+  "pieges": [
+   "La réponse plausible est exactement ce qu'on reproche à la machine. Si elle est fausse, la crédibilité tombe sur tout le reste de la journée.",
+   "Renvoyer au périmètre est perçu comme une esquive, surtout quand la question est légitime et sur le sujet.",
+   "Renvoyer au groupe est un bon réflexe pédagogique, mais utilisé ici comme échappatoire, il se voit, et personne ne répond à votre place sur une question technique."
+  ],
+  "src": "Jour 4, simulation du Jour 1 client",
+  "lien": "",
+  "plus": "Noter la question devant le groupe fait la moitié du travail : cela montre que la réponse viendra. L'autre moitié est de tenir le délai annoncé, y compris quand la réponse est je n'ai pas trouvé de source fiable, ce qui est une réponse tout à fait acceptable."
+ },
+ {
+  "jour": "Jour 3",
+  "piege": true,
+  "q": "Une collectivité veut un assistant sur ses procédures internes, déjà publiées sur son intranet. Que dit la matrice ?",
+  "opts": [
+   "On-prem requis, une collectivité est soumise à une obligation de souveraineté.",
+   "Cloud souverain, par principe de précaution sur le secteur public.",
+   "Cloud public adapté : les procédures sont déjà publiées, donc de niveau N1, et aucun veto ne se déclenche.",
+   "Hybride, avec routage des procédures les plus sensibles vers un modèle local."
+  ],
+  "bonne": 2,
+  "pourquoi": "C'est le cas 3 de l'atelier, construit exactement pour ce réflexe. Le mot « collectivité » déclenche une intuition de souveraineté obligatoire, alors que les procédures sont déjà publiées sur l'intranet, donc classées N1, publiques. Le support ajoute qu'une journée sur la souveraineté qui ne conclut jamais « cloud public » est une journée militante, pas une journée de formation.",
+  "pieges": [
+   "L'appartenance au secteur public ne crée pas à elle seule une contrainte de localisation. Le veto V-A se déclenche sur un texte, pas sur un statut.",
+   "Le principe de précaution n'est pas un critère de la matrice. Les sept critères sont nommés, et la sensibilité de la donnée est le premier.",
+   "L'hybride se justifie sur des données de niveaux mixtes, ou quand les deux vetos se déclenchent ensemble. Ici, tout est de niveau N1."
+  ],
+  "src": "Jour 3, après-midi, atelier matrice, cas 3 collectivité, niveaux de sensibilité N1 à N4",
+  "lien": "",
+  "plus": "Le niveau de sensibilité se raisonne sur la donnée, pas sur l'organisation : une collectivité peut être en N1 sur ses procédures publiées et en N4 sur ses dossiers d'aide sociale, dans le même mois et avec le même prestataire. C'est pour cela que la matrice s'applique par cas d'usage et non par client.",
+  "indice": "Indice : commencez par qualifier la donnée elle-même, pas l'organisation qui la détient."
+ },
+ {
+ "jour": "Capacités et limites",
+ "piege": true,
+ "q": "Vous demandez trois images en une seule requête à un générateur. Que dit la documentation officielle sur ce nombre ?",
+ "opts": [
+  "Que le nombre exact demandé n'est pas garanti : le modèle peut ne pas créer le nombre d'images demandé.",
+  "Que le nombre demandé est une contrainte stricte, toujours respectée à l'unité près.",
+  "Que le nombre est plafonné à deux images par requête, toute demande supérieure étant refusée.",
+  "Que le nombre demandé est respecté uniquement si les images sont de tailles identiques."
  ],
- bonne:2,
- pourquoi:"L'AI Act demande quel risque présente cet usage de l'IA. Le RGPD demande ce que l'on fait des données personnelles : finalité, base légale, minimisation, droits des personnes. Le support prend l'exemple d'une IA de présélection de candidats, qui relève de l'AI Act pour l'usage RH et du RGPD pour les données des candidats, en même temps.",
- pieges:[
-  "Aucun des deux textes n'absorbe l'autre. Ils ne posent tout simplement pas la même question.",
-  "Le cumul ne dépend pas de la nature sensible des données. Il vaut dès qu'il y a à la fois un usage d'IA qualifiable et des données personnelles.",
-  "Le déployeur, c'est-à-dire l'entreprise qui utilise le système dans son activité, est explicitement visé par l'AI Act."
+ "bonne": 0,
+ "pourquoi": "La documentation officielle précise que le modèle peut ne pas créer le nombre d'images demandé. Une consigne aussi simple que « génère trois images » est donc traitée comme une préférence, pas comme une contrainte stricte, ce qui surprend toujours en salle.",
+ "pieges": [
+  "C'est l'attente naturelle, et c'est exactement ce que la documentation refuse de garantir.",
+  "Aucun plafond de ce type n'est posé : le point documenté porte sur la garantie, pas sur une limite chiffrée.",
+  "La taille des images n'est pas le critère évoqué par la documentation."
  ],
- src:"Jour 1, après-midi, séquence RGPD n'est pas l'AI Act"
+ "src": "Capacités et limites",
+ "lien": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/gemini-image-generation-limitations",
+ "plus": "La conséquence pratique vaut pour toute automatisation : un enchaînement qui suppose exactement trois fichiers en sortie casse le jour où il en arrive deux. On compte ce qui est réellement produit avant de passer à l'étape suivante, et l'on relance si le compte n'y est pas."
 },
-{
- jour:"Jour 1",
- piege:false,
- q:"Que prévoit l'article 4 de l'AI Act sur la maîtrise de l'IA ?",
- opts:[
-  "Chaque salarié doit suivre une formation certifiante identique, quel que soit son poste.",
-  "Fournisseurs et déployeurs doivent prendre des mesures concrètes pour développer la maîtrise de l'IA des personnes qui utilisent ces systèmes pour leur compte, adaptées au profil et au contexte.",
-  "L'obligation ne pèse que sur le fournisseur du modèle.",
-  "L'obligation n'est pas encore exigible, elle entrera en vigueur avec l'application intégrale du règlement."
- ],
- bonne:1,
- pourquoi:"L'article 4 impose aux fournisseurs comme aux déployeurs des mesures ajustées à quatre paramètres : le niveau de connaissance des personnes, le système utilisé, le contexte d'usage, et les personnes concernées par les décisions. Il est applicable depuis le 2 février 2025. Tout le monde n'a pas besoin du même niveau de maîtrise, mais chaque organisation doit pouvoir le justifier.",
- pieges:[
-  "Le texte demande l'inverse d'un traitement uniforme : les mesures s'ajustent au profil. Le support oppose les équipes RH qui construisent un système de scoring à celles qui génèrent du contenu pour les réseaux sociaux.",
-  "Le déployeur est visé au même titre que le fournisseur, c'est explicite dans l'article.",
-  "L'article 4 est applicable depuis le 2 février 2025, date citée dans le support de la journée."
- ],
- src:"Jour 1, après-midi, AI Act article 4, applicable depuis le 2 février 2025"
-},
-{
- jour:"Jour 1",
- piege:true,
- q:"Un éditeur affirme : notre solution IA est hébergée en Europe. Peut-on en conclure qu'elle est souveraine ?",
- opts:[
-  "Oui, l'hébergement en Europe est le critère qui définit la souveraineté.",
-  "Oui, dès lors que l'éditeur communique une certification de sécurité.",
-  "Non : il faut aussi savoir qui contrôle le service, à quelles juridictions il est soumis, quels tiers interviennent et quelles garanties contractuelles existent.",
-  "Non, seule une solution installée sur les serveurs de l'entreprise peut être qualifiée de souveraine."
- ],
- bonne:2,
- pourquoi:"La souveraineté est un faisceau de critères, pas un lieu. La grille du support pose quatre questions : qui contrôle l'outil, où les données sont stockées et traitées, qui d'autre intervient, et quelles garanties existent. Une filiale européenne d'un groupe américain reste soumise à la loi américaine, et le CLOUD Act permet aux autorités d'accéder aux données détenues par des entreprises américaines, même en Europe.",
- pieges:[
-  "Le support écrit noir sur blanc qu'un hébergement en Europe ne suffit pas, à lui seul, à rendre une solution souveraine. Il ajoute que « entreprise européenne », « données hébergées en Europe » et « toutes les données restent en Europe » sont trois affirmations différentes.",
-  "Une certification répond à la question des garanties, qui n'est qu'une des quatre. À noter : SecNumCloud est une qualification de sécurité délivrée par l'ANSSI à des offres cloud précises, alors que Gaia-X n'est pas un hébergeur mais une initiative de règles communes.",
-  "L'on-premise offre le contrôle maximal, mais la souveraineté se lit sur les quatre questions de la grille, pas sur ce seul mode de déploiement. Le lieu de traitement peut d'ailleurs différer du lieu de stockage."
- ],
- src:"Jour 1, après-midi, grille de souveraineté en 4 questions, repères CNIL et ANSSI SecNumCloud"
-},
-
-/* ================= JOUR 2 ================= */
-{
- jour:"Jour 2",
- piege:false,
- q:"Quel est le principe d'un système RAG ?",
- opts:[
-  "Remplacer le modèle de langage par une base de données interne.",
-  "Accélérer la vitesse de génération des réponses du modèle.",
-  "Entraîner un modèle de langage sur les données propriétaires de l'organisation.",
-  "Rechercher des informations pertinentes dans une base documentaire, puis les transmettre au modèle comme contexte pour construire sa réponse."
- ],
- bonne:3,
- pourquoi:"RAG signifie Retrieval-Augmented Generation, en français génération augmentée par récupération d'informations. La chaîne est : question, recherche dans les documents, sélection des passages utiles, envoi au modèle, réponse. L'image du support : c'est comme donner un classeur à l'IA avant qu'elle réponde.",
- pieges:[
-  "Le modèle n'est pas remplacé, il reste l'étage qui rédige. La base documentaire l'alimente, elle ne le supplante pas.",
-  "Le RAG ajoute une étape de recherche avant la génération. Il n'a jamais été présenté comme un gain de vitesse.",
-  "Le RAG n'entraîne pas le modèle, il lui fournit des informations au moment où il doit répondre."
- ],
- src:"Jour 2, après-midi, séquence RAG, principe et cas d'usage"
-},
-{
- jour:"Jour 2",
- piege:true,
- q:"Une équipe dépose ses procédures internes dans un assistant documentaire. Le modèle a-t-il désormais appris ces procédures ?",
- opts:[
-  "Oui, les documents déposés deviennent des connaissances internes du modèle.",
-  "Non : le RAG fournit les documents au modèle au moment de répondre, il ne les transforme pas en connaissances internes.",
-  "Oui, mais uniquement après un délai de réindexation de la base.",
-  "Non, car un assistant documentaire ne peut pas exploiter des documents internes."
- ],
- bonne:1,
- pourquoi:"Le support consacre une section entière à cette distinction : le RAG n'est pas l'entraînement du modèle. L'entraînement modifie les connaissances et les comportements du modèle. Le RAG met des informations à sa disposition au moment de la réponse, et rien de plus.",
- pieges:[
-  "C'est la confusion la plus courante, et elle a des conséquences concrètes, notamment sur ce que l'on croit avoir transmis à un fournisseur. Ajouter un document à une base ne réentraîne pas le modèle.",
-  "L'indexation rend les passages retrouvables, elle n'inscrit rien dans le modèle. Le délai ne change pas la nature de l'opération.",
-  "C'est exactement ce qu'un RAG sait faire : répondre à partir de vos connaissances, pas seulement des siennes."
- ],
- src:"Jour 2, fiche pratique RAG, section RAG n'est pas l'entraînement du modèle"
-},
-{
- jour:"Jour 2",
- piege:false,
- q:"Comment un système RAG retrouve-t-il l'information pertinente dans une base documentaire ?",
- opts:[
-  "Il relit intégralement tous les documents à chaque question posée.",
-  "Il effectue une recherche par mots-clés exacts.",
-  "Les documents sont découpés en passages, et le système retient ceux dont le sens est le plus proche de la question.",
-  "Il demande à l'utilisateur de désigner lui-même le document à utiliser."
- ],
- bonne:2,
- pourquoi:"Le support décrit la chaîne : les documents sont ajoutés à la base, découpés en passages, le système recherche les passages les plus proches du sens de la question, les transmet au modèle, qui rédige. C'est une recherche sémantique, sur le sens, pas sur la forme.",
- pieges:[
-  "Le support précise explicitement que le système ne relit généralement pas l'intégralité des documents à chaque question. Ce serait inexploitable à l'échelle d'un corpus réel.",
-  "Une recherche par mots-clés exacts raterait toute reformulation. La recherche compare des sens, pas des chaînes de caractères.",
-  "L'intérêt du dispositif est justement que l'utilisateur n'ait pas à savoir dans quel document se trouve la réponse."
- ],
- src:"Jour 2, après-midi, séquence Comment retrouve-t-il la bonne information"
-},
-{
- jour:"Jour 2",
- piege:true,
- q:"La politique RH en vigueur autorise 3 jours de télétravail. L'assistant répond « deux jours par semaine » et cite la Politique télétravail de septembre 2024. De quelle erreur s'agit-il ?",
- opts:[
-  "D'une hallucination : le modèle a inventé le chiffre.",
-  "Il est impossible de trancher à partir de ces éléments.",
-  "D'une erreur de l'utilisateur, qui a mal formulé sa question.",
-  "D'une erreur de récupération : le système a remonté une version obsolète du document."
- ],
- bonne:3,
- pourquoi:"La réponse est sourcée et cohérente, et pourtant fausse : le document cité n'était pas la version en vigueur. L'erreur se situe au maillon de la recherche documentaire, pas de la génération. Le support insiste : une mauvaise réponse ne signifie pas forcément que le modèle hallucine, et cette distinction est essentielle pour un référent IA.",
- pieges:[
-  "Une hallucination est une information inventée. Ici le chiffre existe bien, il figure dans un document réel, simplement périmé. Rien n'a été inventé.",
-  "Les éléments suffisent au contraire à trancher : la source citée porte une date antérieure à la politique en vigueur.",
-  "La question était correctement posée. Déplacer la faute sur l'utilisateur empêche de corriger la vraie cause, qui est la présence d'une ancienne version dans la base."
- ],
- src:"Jour 2, après-midi, mini-cas télétravail, familles d'erreurs récupération et génération"
-},
-{
- jour:"Jour 2",
- piege:true,
- q:"Un assistant répond que tous les frais internationaux sont remboursés jusqu'à 1000 euros par jour, en citant le guide des dépenses du comité de direction et la politique de remboursement des frais d'événements clients. Où est l'erreur ?",
- opts:[
-  "Uniquement dans la récupération : les deux documents cités sont hors périmètre.",
-  "Uniquement dans la génération : le modèle a inventé le plafond.",
-  "Les deux : récupération de documents trop spécifiques, puis généralisation abusive de ces règles à tous les salariés.",
-  "Il n'y a pas d'erreur : la réponse cite ses sources, elle est donc traçable et valide."
- ],
- bonne:2,
- pourquoi:"Le corrigé du support identifie deux erreurs cumulées. Récupération : les documents remontés sont pertinents sur le thème mais hors contexte, l'un vise le comité de direction, l'autre les événements clients. Génération : le modèle a synthétisé ces règles spécifiques comme si elles s'appliquaient à tous. Le résultat est plausible et incorrect.",
- pieges:[
-  "La récupération est bien fautive, mais s'arrêter là manque la seconde faute : rien dans les documents ne disait que ces règles valaient pour tout le monde, c'est le modèle qui l'a étendu.",
-  "Le plafond de 1000 euros n'est pas inventé, il figure dans la politique des événements clients. Il est sorti de son périmètre, ce qui est différent.",
-  "C'est le piège central du bloc fiabilité : une réponse claire, cohérente et même sourcée peut être incorrecte. Citer une source ne rend pas la réponse juste."
- ],
- src:"Jour 2, après-midi, mini-atelier frais de déplacement et son corrigé"
-},
-{
- jour:"Jour 2",
- piege:false,
- q:"Parmi les quatre réflexes de contrôle d'une réponse, lequel permet de s'assurer que l'assistant n'a pas ajouté d'information absente des sources ?",
- opts:[
-  "Vérifier que la source citée est la bonne.",
-  "Contrôler que le document est à jour.",
-  "Relire le passage source et vérifier qu'il dit réellement ce qui est affirmé.",
-  "Regarder ce que fait l'assistant quand l'information manque."
- ],
- bonne:2,
- pourquoi:"Les quatre réflexes couvrent quatre défaillances différentes. Seul le troisième compare la réponse au passage utilisé, et c'est donc le seul qui détecte un ajout, une interprétation abusive ou l'oubli d'une exception. Le réflexe du référent IA : ne pas vérifier uniquement la réponse, vérifier aussi ce sur quoi elle repose.",
- pieges:[
-  "Vérifier que la source est la bonne détecte un document hors périmètre, pas une déformation de son contenu.",
-  "Vérifier la date détecte une version obsolète, comme dans le cas du télétravail, mais pas une phrase ajoutée.",
-  "Ce réflexe teste le comportement de l'assistant en cas de trou documentaire. Il est important, mais il n'audite pas une réponse déjà produite."
- ],
- src:"Jour 2, après-midi et fiche pratique RAG, les 4 réflexes pour contrôler une réponse"
-},
-{
- jour:"Jour 2",
- piege:true,
- q:"Un assistant annonce une fenêtre de contexte pouvant aller jusqu'à 1 million de tokens. Que peut-on en conclure sur un gros dossier déposé en entier ?",
- opts:[
-  "Que tous les détails du dossier seront exploités de manière fiable.",
-  "Rien de tel : l'éditeur indique explicitement qu'une fenêtre plus grande ne garantit pas que le modèle exploitera parfaitement tous les détails dispersés dans de gros fichiers.",
-  "Que la fenêtre de contexte remplace un dispositif de recherche documentaire.",
-  "Que le dossier sera mémorisé d'une conversation à l'autre."
- ],
- bonne:1,
- pourquoi:"La fiche comparative signale une fenêtre allant jusqu'à 1 million de tokens sur certaines offres, et cite dans la foulée l'avertissement de l'éditeur : une fenêtre plus grande ne garantit pas l'exploitation parfaite de tous les détails dispersés dans de gros fichiers. La taille de la fenêtre est une capacité d'entrée, pas une garantie de qualité de lecture.",
- pieges:[
-  "C'est la conclusion que l'argument commercial invite à tirer, et c'est précisément celle que l'éditeur refuse d'endosser.",
-  "Une grande fenêtre et un dispositif de recherche documentaire ne répondent pas au même besoin. Le second sélectionne les passages utiles et permet de citer les sources.",
-  "La fenêtre de contexte concerne une conversation. La mémoire entre conversations est une fonction distincte, disponible selon le compte, l'offre et les réglages."
- ],
- src:"Jour 2, fiche comparative des assistants IA, page 2, contexte et documents"
-},
-{
- jour:"Jour 2",
- piege:false,
- q:"Sur la fiche comparative des assistants, comment la mémoire entre conversations est-elle présentée ?",
- opts:[
-  "Comme une fonction active par défaut et identique chez tous les assistants.",
-  "Comme une fonction absente des offres professionnelles.",
-  "Comme une fonction présente chez les cinq assistants comparés, mais dépendant de l'offre, du compte et des réglages de l'organisation.",
-  "Comme une fonction réservée aux assistants européens."
- ],
- bonne:2,
- pourquoi:"La fiche coche la mémoire pour les cinq assistants comparés, mais toujours avec une réserve : selon le compte et les réglages, selon les fonctionnalités activées, selon la licence. La colonne « à regarder en entreprise » porte d'ailleurs sur l'offre utilisée et les paramètres de données, pas sur la marque.",
- pieges:[
-  "L'uniformité est justement ce que la fiche refuse d'affirmer. Chaque ligne est assortie d'une condition.",
-  "La mémoire existe bien en contexte professionnel, elle est simplement soumise aux politiques de l'organisation.",
-  "L'origine géographique de l'éditeur n'a aucun rapport avec la disponibilité de cette fonction."
- ],
- src:"Jour 2, fiche comparative des assistants IA, lignes Mémoire entre conversations et À regarder en entreprise"
-},
-{
- jour:"Jour 2",
- piege:false,
- q:"Quand privilégier un assistant préconfiguré, du type GPT personnalisé, plutôt qu'un espace de projet ?",
- opts:[
-  "Quand on répète le même type de tâche sur des contenus différents, et que l'on veut figer une méthode réutilisable.",
-  "Quand on travaille dans la durée sur le même dossier client, avec ses documents et ses échanges.",
-  "Quand on souhaite réentraîner un modèle sur ses propres données.",
-  "Quand on veut éviter d'avoir à rédiger des instructions."
- ],
- bonne:0,
- pourquoi:"Le tableau du support oppose deux logiques. L'assistant préconfiguré est une méthode réutilisable : les règles restent stables et s'appliquent à chaque nouvelle demande, par exemple analyser chaque nouvelle fiche de poste selon les mêmes critères. L'espace de projet est un contexte de travail qui évolue dans la durée autour d'un sujet.",
- pieges:[
-  "C'est exactement le cas d'usage de l'espace de projet, cité dans le support avec l'exemple d'un audit client.",
-  "Aucune des deux approches ne réentraîne un modèle. Les deux fournissent instructions et documents au moment de répondre.",
-  "Les instructions sont au contraire le cœur de la configuration : rôle, tâches attendues, règles à respecter, format de réponse."
- ],
- src:"Jour 2, après-midi, tableau Custom GPT ou Project"
-},
-{
- jour:"Jour 2",
- piege:false,
- q:"Avant de déployer un assistant métier, quels types de questions faut-il impérativement tester ?",
- opts:[
-  "Uniquement le cas d'usage principal, puisque c'est celui pour lequel il a été conçu.",
-  "Les seules questions posées par la direction, qui valide le déploiement.",
-  "Le plus grand nombre possible de questions, sans critères particuliers.",
-  "Une question normale, une question ambiguë, une question dont l'information est absente des documents, et une question hors périmètre."
- ],
- bonne:3,
- pourquoi:"Le support impose quatre types de tests, et chacun vérifie une compétence différente : répondre correctement au cas principal, demander une clarification sur une question ambiguë, reconnaître qu'une information n'est pas dans ses documents, et refuser poliment en orientant quand la question sort du périmètre. La formule à retenir : un bon assistant n'est pas seulement celui qui sait répondre, c'est aussi celui qui sait quand il ne doit pas répondre.",
- pieges:[
-  "Tester le seul cas nominal laisse passer les trois défaillances les plus coûteuses en production.",
-  "La validation hiérarchique n'est pas un protocole de test. Elle ne dit rien du comportement de l'assistant face à un trou documentaire.",
-  "Le volume ne remplace pas la couverture. Cent questions normales ne testent qu'un des quatre comportements."
- ],
- src:"Jour 2, après-midi, séquence Tester avant de déployer"
-},
-
-/* ================= JOUR 3 ================= */
-{
- jour:"Jour 3",
- piege:false,
- q:"Dans l'anatomie d'un prompt en six composants, quel est celui que les frameworks du marché omettent le plus souvent, et qui devient obligatoire dans la bibliothèque ?",
- opts:[
-  "Le rôle.",
-  "Le contexte.",
-  "Le format de sortie.",
-  "Le critère de succès."
- ],
- bonne:3,
- pourquoi:"Le sixième composant répond à la question « à quoi voit-on que c'est bon ». Sans lui, impossible de dire s'il faut corriger le prompt ou simplement relancer l'exécution. Le support le rend obligatoire dans le gabarit de fiche : sans critère de succès, une fiche de prompt n'est pas maintenable.",
- pieges:[
-  "Le rôle figure dans les trois frameworks étudiés, sous le R de RICCE et le R de RACE.",
-  "Le contexte est présent partout : C de RICCE, C de CO-STAR, C de RACE.",
-  "Le format de sortie est couvert, notamment par le E d'exemple dans RICCE et le R de Response dans CO-STAR."
- ],
- src:"Jour 3, matin, anatomie d'un prompt en six composants et gabarit de fiche"
-},
-{
- jour:"Jour 3",
- piege:false,
- q:"Le format de sortie attendu est compliqué à décrire mais facile à montrer. Quel framework choisir ?",
- opts:[
-  "RICCE, parce qu'il est le seul des trois à exiger un exemple de sortie attendue.",
-  "CO-STAR, parce qu'il sépare le style et le ton.",
-  "RACE, parce qu'il tient en quatre blocs et se mémorise.",
-  "Aucun des trois, un format complexe relève nécessairement d'un prompt système."
- ],
- bonne:0,
- pourquoi:"Le tableau de choix du support est explicite : format de sortie complexe ou inhabituel, on prend RICCE, parce que l'exemple vaut mieux qu'une description. C'est la force propre de ce framework, le E d'exemple.",
- pieges:[
-  "CO-STAR est recommandé pour un écrit destiné à un lecteur précis, grâce à la séparation du style, du ton et de l'audience. Ce n'est pas le problème posé ici.",
-  "RACE est recommandé pour l'usage quotidien et la mémorisation par une équipe qui débute. Sa force est la brièveté, pas la précision de format.",
-  "Le prompt système sert à poser des règles permanentes pour un agent. Le tableau ne l'oriente pas vers les formats complexes ponctuels."
- ],
- src:"Jour 3, matin, séquence Trois grammaires RICCE, CO-STAR, RACE, tableau de choix"
-},
-{
- jour:"Jour 3",
- piege:true,
- q:"Un participant active le raisonnement pas à pas et obtient une réponse dont chaque étape est détaillée et cohérente. Que peut-il en conclure ?",
- opts:[
-  "Que la conclusion est vérifiée, puisque le raisonnement est explicite.",
-  "Que la technique est inutile, puisqu'elle ne fait qu'allonger la réponse.",
-  "Que le modèle a consulté des sources externes pour construire chaque étape.",
-  "Que la réponse est auditable : on voit à quelle étape elle a dérapé, mais un raisonnement cohérent peut mener à une conclusion fausse."
- ],
- bonne:3,
- pourquoi:"Le chain-of-thought apporte une sortie auditable : quand le résultat est faux, on voit à quelle étape il a dérapé, ce qui rend le prompt corrigible. Il coûte une sortie plus longue, et le support demande de marteler que le raisonnement affiché n'est pas une garantie de vérité.",
- pieges:[
-  "C'est le piège exact que la séquence signale. Un raisonnement lisible et cohérent peut conduire à une conclusion fausse.",
-  "L'allongement est réel, mais le gain d'auditabilité est ce qui rend le prompt corrigible. La technique a une valeur, elle n'a simplement pas celle qu'on lui prête.",
-  "Expliciter les étapes ne déclenche aucune consultation de source. Pour ancrer la réponse, il faut fournir le document, ce qui est une autre technique."
- ],
- src:"Jour 3, matin, séquence Chain-of-thought et Tree-of-thought"
-},
-{
- jour:"Jour 3",
- piege:false,
- q:"Dans la structure d'un prompt système en six sections, laquelle est le plus souvent oubliée et produit le plus d'hallucinations en production ?",
- opts:[
-  "L'identité et le périmètre de l'agent.",
-  "Les règles de sortie : format, longueur, langue.",
-  "La conduite en cas d'incertitude, formulée mot pour mot.",
-  "L'escalade vers un humain."
- ],
- bonne:2,
- pourquoi:"C'est la section 5 de la structure recommandée, et le support dit que c'est celle que l'on oublie et celle qui produit le plus d'hallucinations en production. La formulation type donnée au groupe : « Si l'information ne figure pas dans les sources fournies, réponds exactement : information non disponible dans les documents fournis. N'invente aucune valeur. »",
- pieges:[
-  "L'identité et le périmètre forment la première section, et c'est généralement celle que tout le monde écrit spontanément.",
-  "Les règles de sortie sont rarement oubliées, parce que leur absence se voit immédiatement à la lecture de la réponse.",
-  "L'escalade est la sixième section. Elle est souvent négligée, mais son absence ne fabrique pas d'information fausse."
- ],
- src:"Jour 3, matin, séquence Le prompt système d'un agent, six sections"
-},
-{
- jour:"Jour 3",
- piege:true,
- q:"Parmi les six techniques anti-hallucination, laquelle élimine le risque ?",
- opts:[
-  "Ancrer la réponse sur une source fournie.",
-  "L'auto-critique du modèle en second passage.",
-  "La vérification croisée par un autre modèle.",
-  "Aucune : elles réduisent le risque et le rendent détectable, la seule parade complète reste la relecture humaine sur ce qui engage."
- ],
- bonne:3,
- pourquoi:"Le message central de la séquence est qu'aucune des six techniques n'élimine le risque. Elles le réduisent et le rendent détectable. C'est la position à tenir devant un groupe qui espère une solution technique définitive.",
- pieges:[
-  "Ancrer sur une source fournie est peu coûteux et très efficace, mais cela ne règle pas les erreurs de lecture du document lui-même.",
-  "L'auto-critique par le même modèle a un angle mort : il relit avec les biais qui ont produit la réponse.",
-  "La vérification croisée est la technique la plus coûteuse, et deux modèles peuvent se tromper de la même façon."
- ],
- src:"Jour 3, matin, séquence Anti-hallucination, itération et auto-critique, six techniques"
-},
-{
- jour:"Jour 3",
- piege:true,
- q:"Une direction décide d'héberger son IA en interne pour être en règle avec le RGPD. Que répond le référent IA ?",
- opts:[
-  "L'hébergement interne satisfait effectivement l'obligation RGPD.",
-  "Héberger soi-même ne dispense d'aucune obligation RGPD : cela déplace la responsabilité vers l'organisation.",
-  "Le RGPD ne s'applique pas aux traitements exécutés sur une infrastructure interne.",
-  "L'hébergement interne suffit à condition que le serveur soit situé en France."
- ],
- bonne:1,
- pourquoi:"C'est la deuxième des trois idées fausses sur l'on-premise traitées l'après-midi : « on-prem égale conforme » est faux. Les deux autres sont « on-prem égale gratuit », faux car le coût se déplace vers le matériel, l'électricité et le temps d'exploitation interne, et « on-prem égale même qualité », faux également.",
- pieges:[
-  "Aucune obligation n'est levée. Finalité, base légale, minimisation, droits des personnes restent entiers, et c'est désormais l'organisation qui en répond seule.",
-  "Le RGPD suit la donnée personnelle, pas le lieu du serveur. Un traitement interne reste un traitement.",
-  "La localisation française ne crée aucune dispense. Elle peut répondre à une contrainte de localisation, ce qui est une autre question."
- ],
- src:"Jour 3, après-midi, Trois idées fausses sur l'on-premise"
-},
-{
- jour:"Jour 3",
- piege:true,
- q:"Une équipe installe un exécuteur de modèles en local et trouve la qualité décevante. Faut-il changer d'outil d'exécution ?",
- opts:[
-  "Oui, un autre outil local donnera de meilleures réponses sur la même machine.",
-  "Non : ces outils n'apportent pas de modèle, ils exécutent des modèles ouverts téléchargés. La qualité dépend du modèle choisi et de la machine, pas de l'exécuteur.",
-  "Oui, à condition de passer sur un outil orienté questions-réponses documentaires.",
-  "Non, la qualité d'un modèle local égale celle des modèles en ligne, le problème vient forcément du prompt."
- ],
- bonne:1,
- pourquoi:"Le point commun aux trois familles présentées, Ollama, LocalAI et PrivateGPT, est qu'elles n'apportent aucun modèle. Elles exécutent des modèles ouverts que l'on télécharge. Ce qui les sépare vraiment, c'est la couche à laquelle elles se branchent : un poste de travail, une application, ou un usage documentaire. Choisir entre elles, c'est répondre à « qui appelle le modèle ».",
- pieges:[
-  "Changer d'exécuteur ne change pas le modèle exécuté. La comparaison porte sur l'intégration, pas sur la qualité des réponses.",
-  "Un outil de questions-réponses documentaires résout un autre problème : interroger un corpus sans qu'il sorte. Il n'améliore pas le modèle sous-jacent.",
-  "Le support est net : un modèle exécutable sur une machine de bureau reste nettement en deçà des modèles de premier plan accessibles en ligne. Ce n'est pas une raison de renoncer, c'est une donnée d'entrée de la décision."
- ],
- src:"Jour 3, après-midi, comparatif Ollama, LocalAI, PrivateGPT"
-},
-{
- jour:"Jour 3",
- piege:true,
- q:"Sur les sept critères de la matrice, six poussent vers l'on-prem, mais personne n'est identifié pour exploiter, mettre à jour et superviser le dispositif. Quel est le verdict ?",
- opts:[
-  "On-prem, puisque six critères sur sept l'emportent largement.",
-  "Le veto V-B s'applique : l'on-prem est interdit, quel que soit le score des critères.",
-  "On calcule une moyenne pondérée des sept critères pour départager.",
-  "Le veto V-A s'applique et impose un cloud souverain."
- ],
- bonne:1,
- pourquoi:"La matrice ne calcule pas de moyenne, elle applique des règles de veto, parce qu'une moyenne masque exactement les cas qui comptent. Le veto V-B interdit l'on-prem quand aucune personne n'est identifiée pour exploiter et superviser dans la durée : un serveur que personne ne maintient est un risque, pas une protection. C'est le veto que les groupes oublient, et le plus fréquent en pratique.",
- pieges:[
-  "Un score ne bat jamais un veto. C'est toute la raison d'être de la structure en deux étages de la matrice.",
-  "Aucune moyenne n'est calculée, et c'est un choix assumé : une moyenne noierait le critère bloquant dans les six autres.",
-  "V-A est le veto déclenché par une contrainte réglementaire ou contractuelle de localisation, ce qui n'est pas le cas ici. Les deux vetos peuvent d'ailleurs se déclencher ensemble et se contredire, et la matrice donne alors la question à poser au responsable de la conformité."
- ],
- src:"Jour 3, après-midi, matrice de décision, vetos V-A et V-B"
-},
-{
- jour:"Jour 3",
- piege:true,
- q:"Une collectivité veut un assistant sur ses procédures internes, déjà publiées sur son intranet. Que dit la matrice ?",
- opts:[
-  "On-prem requis, une collectivité est soumise à une obligation de souveraineté.",
-  "Cloud souverain, par principe de précaution sur le secteur public.",
-  "Cloud public adapté : les procédures sont déjà publiées, donc de niveau N1, et aucun veto ne se déclenche.",
-  "Hybride, avec routage des procédures les plus sensibles vers un modèle local."
- ],
- bonne:2,
- pourquoi:"C'est le cas 3 de l'atelier, construit exactement pour ce réflexe. Le mot « collectivité » déclenche une intuition de souveraineté obligatoire, alors que les procédures sont déjà publiées sur l'intranet, donc classées N1, publiques. Le support ajoute qu'une journée sur la souveraineté qui ne conclut jamais « cloud public » est une journée militante, pas une journée de formation.",
- pieges:[
-  "L'appartenance au secteur public ne crée pas à elle seule une contrainte de localisation. Le veto V-A se déclenche sur un texte, pas sur un statut.",
-  "Le principe de précaution n'est pas un critère de la matrice. Les sept critères sont nommés, et la sensibilité de la donnée est le premier.",
-  "L'hybride se justifie sur des données de niveaux mixtes, ou quand les deux vetos se déclenchent ensemble. Ici, tout est de niveau N1."
- ],
- src:"Jour 3, après-midi, atelier matrice, cas 3 collectivité, niveaux de sensibilité N1 à N4"
-},
-{
- jour:"Jour 3",
- piege:true,
- q:"Pendant la démonstration, le formateur coupe le réseau et le modèle local répond quand même. Qu'est-ce que cela prouve ?",
- opts:[
-  "Que le dispositif est conforme au RGPD.",
-  "Que le modèle local est de qualité équivalente à un modèle en ligne.",
-  "Que l'installation passera à l'échelle pour un service de cinquante personnes.",
-  "Uniquement que la donnée n'est pas sortie du poste."
- ],
- bonne:3,
- pourquoi:"La coupure du réseau est le cœur pédagogique de la démonstration : c'est le seul moment de la journée où la souveraineté cesse d'être une notion et devient une observation. Mais le support énumère explicitement ce que cette scène ne prouve pas, et la conformité en fait partie : elle prouve seulement que la donnée n'est pas sortie.",
- pieges:[
-  "La conformité se démontre par des obligations tenues, pas par une prise réseau débranchée. L'hébergement interne ne dispense d'aucune obligation.",
-  "Le formateur pose au contraire la même question à un modèle en ligne pour montrer que le modèle local est visiblement moins bon.",
-  "Un poste de travail n'est pas un service partagé. Le passage à l'échelle est nommément exclu de ce que la démonstration établit."
- ],
- src:"Jour 3, après-midi, démonstration d'installation locale, étape 4 et « Ce que la démonstration ne prouve pas »"
-}
+ {
+  "jour": "Jour 2",
+  "piege": true,
+  "q": "Un assistant répond que tous les frais internationaux sont remboursés jusqu'à 1000 euros par jour, en citant le guide des dépenses du comité de direction et la politique de remboursement des frais d'événements clients. Où est l'erreur ?",
+  "opts": [
+   "Uniquement dans la récupération : les deux documents cités sont hors périmètre.",
+   "Uniquement dans la génération : le modèle a inventé le plafond.",
+   "Les deux : récupération de documents trop spécifiques, puis généralisation abusive de ces règles à tous les salariés.",
+   "Il n'y a pas d'erreur : la réponse cite ses sources, elle est donc traçable et valide."
+  ],
+  "bonne": 2,
+  "pourquoi": "Le corrigé du support identifie deux erreurs cumulées. Récupération : les documents remontés sont pertinents sur le thème mais hors contexte, l'un vise le comité de direction, l'autre les événements clients. Génération : le modèle a synthétisé ces règles spécifiques comme si elles s'appliquaient à tous. Le résultat est plausible et incorrect.",
+  "pieges": [
+   "La récupération est bien fautive, mais s'arrêter là manque la seconde faute : rien dans les documents ne disait que ces règles valaient pour tout le monde, c'est le modèle qui l'a étendu.",
+   "Le plafond de 1000 euros n'est pas inventé, il figure dans la politique des événements clients. Il est sorti de son périmètre, ce qui est différent.",
+   "C'est le piège central du bloc fiabilité : une réponse claire, cohérente et même sourcée peut être incorrecte. Citer une source ne rend pas la réponse juste."
+  ],
+  "src": "Jour 2, après-midi, mini-atelier frais de déplacement et son corrigé",
+  "lien": "",
+  "plus": "C'est le cas le plus dur à détecter parce que la réponse est bien sourcée : les documents cités existent vraiment. Le défaut porte sur leur périmètre, pas sur leur existence. Une bonne série de tests inclut toujours une question posée par une population à laquelle la règle citée ne s'applique pas."
+ },
+ {
+  "jour": "Jour 3",
+  "piege": true,
+  "q": "Un participant active le raisonnement pas à pas et obtient une réponse dont chaque étape est détaillée et cohérente. Que peut-il en conclure ?",
+  "opts": [
+   "Que la conclusion est vérifiée, puisque le raisonnement est explicite.",
+   "Que la technique est inutile, puisqu'elle ne fait qu'allonger la réponse.",
+   "Que le modèle a consulté des sources externes pour construire chaque étape.",
+   "Que la réponse est auditable : on voit à quelle étape elle a dérapé, mais un raisonnement cohérent peut mener à une conclusion fausse."
+  ],
+  "bonne": 3,
+  "pourquoi": "Le chain-of-thought apporte une sortie auditable : quand le résultat est faux, on voit à quelle étape il a dérapé, ce qui rend le prompt corrigible. Il coûte une sortie plus longue, et le support demande de marteler que le raisonnement affiché n'est pas une garantie de vérité.",
+  "pieges": [
+   "C'est le piège exact que la séquence signale. Un raisonnement lisible et cohérent peut conduire à une conclusion fausse.",
+   "L'allongement est réel, mais le gain d'auditabilité est ce qui rend le prompt corrigible. La technique a une valeur, elle n'a simplement pas celle qu'on lui prête.",
+   "Expliciter les étapes ne déclenche aucune consultation de source. Pour ancrer la réponse, il faut fournir le document, ce qui est une autre technique."
+  ],
+  "src": "Jour 3, matin, séquence Chain-of-thought et Tree-of-thought",
+  "lien": "",
+  "plus": "Le raisonnement affiché sert d'abord à l'audit humain : il rend visible l'étape où la conclusion a dérapé. C'est un outil de relecture, pas une preuve. Un raisonnement peut être impeccable dans sa forme et partir d'une prémisse fausse, ce qui est exactement le cas le plus difficile à repérer."
+ },
+ {
+  "jour": "Jour 3",
+  "piege": true,
+  "q": "Pendant la démonstration, le formateur coupe le réseau et le modèle local répond quand même. Qu'est-ce que cela prouve ?",
+  "opts": [
+   "Que le dispositif est conforme au RGPD.",
+   "Que le modèle local est de qualité équivalente à un modèle en ligne.",
+   "Que l'installation passera à l'échelle pour un service de cinquante personnes.",
+   "Uniquement que la donnée n'est pas sortie du poste."
+  ],
+  "bonne": 3,
+  "pourquoi": "La coupure du réseau est le cœur pédagogique de la démonstration : c'est le seul moment de la journée où la souveraineté cesse d'être une notion et devient une observation. Mais le support énumère explicitement ce que cette scène ne prouve pas, et la conformité en fait partie : elle prouve seulement que la donnée n'est pas sortie.",
+  "pieges": [
+   "La conformité se démontre par des obligations tenues, pas par une prise réseau débranchée. L'hébergement interne ne dispense d'aucune obligation.",
+   "Le formateur pose au contraire la même question à un modèle en ligne pour montrer que le modèle local est visiblement moins bon.",
+   "Un poste de travail n'est pas un service partagé. Le passage à l'échelle est nommément exclu de ce que la démonstration établit."
+  ],
+  "src": "Jour 3, après-midi, démonstration d'installation locale, étape 4 et « Ce que la démonstration ne prouve pas »",
+  "lien": "",
+  "plus": "La démonstration prouve l'absence de sortie réseau, rien de plus. Elle ne dit rien de la qualité du modèle, ni de la sécurité du poste, ni de ce qui arrive quand un utilisateur copie une réponse dans un outil en ligne. Ce sont trois questions distinctes, à traiter séparément."
+ },
+ {
+  "jour": "Inédite",
+  "piege": true,
+  "q": "Deux participants donnent deux réponses contradictoires et se tournent vers vous pour trancher.",
+  "opts": [
+   "On fait reformuler à chacun ce que dit l'autre avant de trancher, sinon le formateur devient l'arbitre et le groupe se polarise.",
+   "On tranche tout de suite et clairement, c'est ce qu'ils attendent.",
+   "On les renvoie dos à dos en disant que les deux positions se valent.",
+   "On met la question au vote du groupe pour dépersonnaliser le désaccord."
+  ],
+  "bonne": 0,
+  "pourquoi": "Faire reformuler produit trois effets d'un coup. La moitié des contradictions apparentes se dissout, parce que les deux ne parlaient pas de la même chose. Celles qui restent deviennent précises, donc arbitrables sur un fait. Et surtout, le groupe ne vous installe pas comme juge : si vous tranchez à chaud, chaque désaccord suivant remontera vers vous, et la salle se rangera derrière des camps.",
+  "pieges": [
+   "Trancher à chaud vous installe comme arbitre. Tous les désaccords suivants vous seront remontés, et le perdant du jour aura un motif de se taire.",
+   "Le dos à dos a l'air diplomate mais c'est une fuite : les deux savent qu'ils ne peuvent pas avoir raison en même temps, et vous perdez sur la compétence.",
+   "Le vote transforme une question de fait en question de popularité. Une majorité peut parfaitement se tromper, et le minoritaire est humilié pour rien."
+  ],
+  "src": "Question de raisonnement, hors support",
+  "lien": "",
+  "plus": "L'enjeu n'est pas la bonne réponse, il est la place que prend le formateur. Trancher immédiatement crée un arbitre, et un arbitre transforme chaque désaccord suivant en recours. Faire reformuler l'autre position désamorce, et fait souvent apparaître que les deux parlaient de deux cas différents."
+ },
+ {
+  "jour": "Inédite",
+  "piege": true,
+  "q": "Tous les groupes terminent l'exercice en même temps et en avance. Quel est le problème ?",
+  "opts": [
+   "Il n'y avait rien à décider : la consigne était trop fermée et l'exercice n'avait qu'une seule issue.",
+   "Aucun problème, un groupe en avance est un groupe qui a bien travaillé.",
+   "Le temps alloué était trop long, il suffira de le raccourcir la prochaine fois.",
+   "Les groupes ont bâclé, il faut leur demander de reprendre en approfondissant."
+  ],
+  "bonne": 0,
+  "pourquoi": "La simultanéité est le signal, plus encore que l'avance. Des groupes qui délibèrent vraiment ne finissent jamais ensemble, parce qu'ils ne butent pas sur les mêmes choses. Quand tout le monde termine au même moment, c'est que l'exercice n'avait qu'un chemin et une seule issue : les participants l'ont exécuté au lieu de le résoudre. Le correctif est dans la consigne, il faut y remettre un arbitrage.",
+  "pieges": [
+   "Un groupe en avance peut être bon signe. Tous les groupes en avance et ensemble ne l'est pas : c'est la signature d'une tâche sans décision.",
+   "Raccourcir le temps rendra l'exercice plus pressé sans le rendre plus riche. Le problème n'est pas la durée, c'est l'absence de choix à faire.",
+   "Accuser les groupes d'avoir bâclé retourne contre eux un défaut de conception, et c'est le meilleur moyen de tuer l'énergie de l'atelier suivant."
+  ],
+  "src": "Question de raisonnement, hors support",
+  "lien": "",
+  "plus": "Un exercice bien calibré produit des fins de travail échelonnées, parce que les groupes n'arbitrent pas tous au même rythme. Terminer ensemble et en avance signale une consigne qui n'ouvrait aucun choix, donc un atelier qui était en réalité une application."
+ },
+ {
+  "jour": "Inédite",
+  "piege": true,
+  "q": "Un participant vous contredit devant tout le monde, et il a raison sur le fond.",
+  "opts": [
+   "On lui donne raison explicitement et vite, puis on reprend la main sur le temps.",
+   "On nuance sa remarque pour ne pas perdre la face devant le groupe.",
+   "On le remercie et on reporte la discussion à la pause.",
+   "On demande au groupe ce qu'il en pense, pour ne pas trancher seul."
+  ],
+  "bonne": 0,
+  "pourquoi": "Deux choses se jouent en même temps, et il ne faut pas les confondre. Sur le fond, la reconnaissance doit être explicite et immédiate : elle vous coûte une phrase et elle vaut plus que trois heures d'autorité affichée, parce que le groupe voit que vous êtes vérifiable. Sur la forme, vous restez maître du temps : vous reconnaissez, vous intégrez la correction, et vous rendez la séquence à son déroulé. Reconnaître n'est pas laisser filer.",
+  "pieges": [
+   "Nuancer quand l'autre a raison s'entend très bien. Le groupe enregistre que vous défendez votre position plutôt que l'exactitude, et il cesse de vous croire sur le reste.",
+   "Reporter à la pause laisse la salle avec une information fausse pendant une heure, et prive tout le monde de la correction.",
+   "Renvoyer au groupe une question dont vous connaissez déjà la réponse est une esquive visible, et cela fait peser sur un tiers un arbitrage qui vous revient."
+  ],
+  "src": "Question de raisonnement, hors support",
+  "lien": "",
+  "plus": "Donner raison vite coûte beaucoup moins cher que de négocier : le groupe a déjà vu. Ce qui se joue ensuite est le temps, et c'est là que le formateur reprend la main, en actant la correction et en enchaînant plutôt qu'en s'expliquant."
+ }
 ];
 
-/* ---------------- État ---------------- */
-var CLE = "quiz-s1-lyon-11-09";
-var etat = { i:0, reponses:[], fini:false };
-for (var k=0;k<QUESTIONS.length;k++){ etat.reponses.push(null); }
+/* ---------- Etat ---------- */
+var CLE = "quiz-40-lyon-2026-09";
+var etat = { nom:"", i:0, reponses:[], fini:false };
+for (var z=0; z<QUESTIONS.length; z++){ etat.reponses.push(null); }
 
+var LETTRES = ["A","B","C","D"];
+
+function $(id){ return document.getElementById(id); }
+function vide(el){ while(el.firstChild){ el.removeChild(el.firstChild); } }
+function montre(el){ el.className = el.className.replace(/\s*cache\s*/g," ").replace(/\s+$/,""); }
+function cache(el){ if(el.className.indexOf("cache")<0){ el.className = el.className + " cache"; } }
+
+function sauver(){
+  try{
+    window.localStorage.setItem(CLE, JSON.stringify(etat));
+  }catch(e){ /* stockage indisponible, on continue sans */ }
+}
 function charger(){
   try{
     var brut = window.localStorage.getItem(CLE);
-    if(!brut) return;
+    if(!brut){ return false; }
     var o = JSON.parse(brut);
-    if(o && Object.prototype.toString.call(o.reponses)==="[object Array]" && o.reponses.length===QUESTIONS.length){
-      etat.reponses = o.reponses;
-      etat.i = (typeof o.i === "number" && o.i>=0 && o.i<QUESTIONS.length) ? o.i : 0;
-      etat.fini = !!o.fini;
-    }
-  }catch(e){ /* stockage indisponible, on continue en memoire */ }
-}
-function sauver(){
-  try{ window.localStorage.setItem(CLE, JSON.stringify(etat)); }catch(e){}
-}
-function effacer(){
-  try{ window.localStorage.removeItem(CLE); }catch(e){}
+    if(!o || !o.reponses || o.reponses.length !== QUESTIONS.length){ return false; }
+    etat = o;
+    return true;
+  }catch(e){ return false; }
 }
 
-function scoreTotal(){
+/* ---------- Score ---------- */
+function score(){
   var n=0;
-  for(var j=0;j<QUESTIONS.length;j++){
-    if(etat.reponses[j]!==null && etat.reponses[j]===QUESTIONS[j].bonne) n++;
+  for (var i=0;i<QUESTIONS.length;i++){
+    if (etat.reponses[i] !== null && etat.reponses[i] === QUESTIONS[i].bonne){ n++; }
   }
   return n;
 }
-function scoreJour(nom){
-  var bons=0, tot=0;
-  for(var j=0;j<QUESTIONS.length;j++){
-    if(QUESTIONS[j].jour!==nom) continue;
-    tot++;
-    if(etat.reponses[j]!==null && etat.reponses[j]===QUESTIONS[j].bonne) bons++;
-  }
-  return bons+" / "+tot;
-}
-
-var elQuiz=document.getElementById("ecranQuiz");
-var elFinal=document.getElementById("ecranFinal");
-var elAnim=document.getElementById("ecranAnim");
-var elNum=document.getElementById("num");
-var elJour=document.getElementById("jour");
-var elBadge=document.getElementById("badgePiege");
-var elQ=document.getElementById("question");
-var elOpts=document.getElementById("options");
-var elExpl=document.getElementById("expl");
-var elScore=document.getElementById("score");
-var elBarre=document.getElementById("barre");
-var btnPrec=document.getElementById("btnPrec");
-var btnSuiv=document.getElementById("btnSuiv");
-var LETTRES=["A","B","C","D"];
-
-function majScore(){
-  elScore.innerHTML = scoreTotal()+" <small>/ "+QUESTIONS.length+"</small>";
-}
-
-function rendre(){
-  majScore();
-  elBarre.style.width = Math.round(((etat.i+1)/QUESTIONS.length)*100)+"%";
-  var q = QUESTIONS[etat.i];
-  var rep = etat.reponses[etat.i];
-
-  elNum.textContent = "Question "+(etat.i+1)+" sur "+QUESTIONS.length;
-  elJour.textContent = q.jour;
-  elBadge.className = q.piege ? "piege" : "piege masque";
-  elQ.textContent = q.q;
-
-  elOpts.innerHTML = "";
-  elOpts.className = rep===null ? "options" : "options repondu";
-
-  for(var a=0;a<q.opts.length;a++){
-    (function(idx){
-      var b=document.createElement("button");
-      b.type="button";
-      b.className="opt";
-      var sp=document.createElement("span");
-      sp.className="lettre";
-      sp.textContent=LETTRES[idx];
-      var tx=document.createElement("span");
-      tx.textContent=q.opts[idx];
-      b.appendChild(sp); b.appendChild(tx);
-      if(rep!==null){
-        if(idx===q.bonne){ b.className="opt juste"; }
-        else { b.className = (idx===rep) ? "opt faux choisi-faux" : "opt faux"; }
-      } else {
-        b.onclick=function(){
-          etat.reponses[etat.i]=idx;
-          sauver();
-          rendre();
-        };
-      }
-      elOpts.appendChild(b);
-    })(a);
-  }
-
-  if(rep===null){
-    elExpl.className="expl masque";
-    elExpl.innerHTML="";
-  } else {
-    elExpl.className="expl";
-    elExpl.innerHTML = blocExplication(q);
-  }
-
-  btnPrec.disabled = (etat.i===0);
-  btnSuiv.textContent = (etat.i===QUESTIONS.length-1) ? "Voir le résultat" : "Suivant";
-}
-
-function blocExplication(q){
-  var h = "<h3>POURQUOI CETTE RÉPONSE</h3>";
-  h += "<p><span class=\"lbl\">Bonne réponse, "+LETTRES[q.bonne]+".</span> "+q.pourquoi+"</p>";
-  h += "<h3>POURQUOI LES AUTRES SONT FAUSSES</h3><ul>";
+function totalPieges(){
   var n=0;
-  for(var i=0;i<q.opts.length;i++){
-    if(i===q.bonne) continue;
-    h += "<li><span class=\"lbl\">"+LETTRES[i]+".</span> "+q.pieges[n]+"</li>";
-    n++;
+  for (var i=0;i<QUESTIONS.length;i++){ if (QUESTIONS[i].piege){ n++; } }
+  return n;
+}
+function piegesEvites(){
+  var n=0;
+  for (var i=0;i<QUESTIONS.length;i++){
+    if (QUESTIONS[i].piege && etat.reponses[i] === QUESTIONS[i].bonne){ n++; }
   }
-  h += "</ul>";
-  h += "<div class=\"src\">Source : "+q.src+"</div>";
-  return h;
+  return n;
 }
 
-function afficherFinal(){
-  var total=scoreTotal();
-  var h = "<h1>Quiz Semaine 1, résultat</h1>";
-  h += "<div class=\"gros\">"+total+" <small>/ "+QUESTIONS.length+"</small></div>";
-  h += "<div class=\"parjour\">";
-  h += "<div class=\"carte\"><b>JOUR 1</b><span>"+scoreJour("Jour 1")+"</span></div>";
-  h += "<div class=\"carte\"><b>JOUR 2</b><span>"+scoreJour("Jour 2")+"</span></div>";
-  h += "<div class=\"carte\"><b>JOUR 3</b><span>"+scoreJour("Jour 3")+"</span></div>";
-  h += "</div>";
-
-  var rates=[];
-  for(var j=0;j<QUESTIONS.length;j++){
-    if(etat.reponses[j]===null || etat.reponses[j]!==QUESTIONS[j].bonne) rates.push(j);
+/* ---------- Bloc Pour aller plus loin ---------- */
+function blocPlus(q){
+  var w = document.createElement("div");
+  w.className = "plus";
+  var t = document.createElement("p");
+  t.className = "titre";
+  t.textContent = "Pour aller plus loin";
+  w.appendChild(t);
+  var p = document.createElement("p");
+  p.textContent = q.plus;
+  w.appendChild(p);
+  if (q.lien){
+    var pl = document.createElement("p");
+    pl.style.marginTop = "8px";
+    var a = document.createElement("a");
+    a.href = q.lien;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = q.lien;
+    pl.appendChild(a);
+    w.appendChild(pl);
   }
-  if(rates.length===0){
-    h += "<p style=\"font-size:24px\">Aucune question ratée. Les trente réponses sont justes.</p>";
-  } else {
-    h += "<h2 style=\"font-size:28px;color:#E91FCB;margin:10px 0 18px\">À revoir : "+rates.length+" question(s)</h2>";
-    for(var r=0;r<rates.length;r++){
-      var idx=rates[r]; var q=QUESTIONS[idx];
-      h += "<div class=\"rate\">";
-      h += "<h4>Q"+(idx+1)+" · "+q.jour+(q.piege?" · PIÈGE":"")+" : "+q.q+"</h4>";
-      h += "<div class=\"bonne\">Bonne réponse : "+LETTRES[q.bonne]+". "+q.opts[q.bonne]+"</div>";
-      h += "<div class=\"expl\" style=\"margin-top:0\">"+blocExplication(q)+"</div>";
-      h += "</div>";
-    }
-  }
-  h += "<div class=\"nav\"><button class=\"btn btn-plein\" type=\"button\" onclick=\"retourQuiz()\">Revenir aux questions</button>";
-  h += "<button class=\"btn\" type=\"button\" onclick=\"recommencer()\">Recommencer</button></div>";
-  elFinal.innerHTML=h;
-  elQuiz.className="masque";
-  elAnim.className="anim masque";
-  elFinal.className="final";
-  majScore();
+  return w;
 }
 
-function afficherAnim(){
-  var h = "<h1 style=\"font-size:38px;color:#E91FCB;margin-bottom:6px\">Mode animateur</h1>";
-  h += "<p style=\"font-size:18px;color:#4A4A4A;margin-bottom:10px\">Les 30 questions, leur bonne réponse en vert et l'explication complète. Vue de relecture, aucune interaction.</p>";
-  var jourCourant="";
-  for(var j=0;j<QUESTIONS.length;j++){
-    var q=QUESTIONS[j];
-    if(q.jour!==jourCourant){
-      jourCourant=q.jour;
-      h += "<div class=\"titre-jour\">"+jourCourant+"</div>";
-    }
-    h += "<div class=\"bloc\">";
-    h += "<div style=\"font-size:15px;color:#4A4A4A;letter-spacing:1px\">Q"+(j+1)+(q.piege?" · <b style=\"color:#E91FCB\">PIÈGE</b>":"")+"</div>";
-    h += "<div class=\"q\">"+q.q+"</div>";
-    for(var a=0;a<q.opts.length;a++){
-      h += "<div class=\"o"+(a===q.bonne?" ok":"")+"\">"+LETTRES[a]+". "+q.opts[a]+"</div>";
-    }
-    h += "<div class=\"expl\" style=\"margin-top:14px\">"+blocExplication(q)+"</div>";
-    h += "</div>";
+/* ---------- Rendu d'une question ---------- */
+function rendre(){
+  var q = QUESTIONS[etat.i];
+  $("hNom").textContent = etat.nom;
+  $("hNum").textContent = "Question " + (etat.i+1) + " sur " + QUESTIONS.length;
+  $("hScore").textContent = "Score " + score();
+  $("hJour").textContent = (q.jour === "Inédite") ? "Hors support" : q.jour;
+  $("qTexte").textContent = q.q;
+  var zs = $("qSrc");
+  vide(zs);
+  zs.appendChild(document.createTextNode("Source : " + q.src));
+  if (q.lien){
+    zs.appendChild(document.createTextNode("  "));
+    var al = document.createElement("a");
+    al.href = q.lien;
+    al.target = "_blank";
+    al.rel = "noopener";
+    al.textContent = "ouvrir la source";
+    zs.appendChild(al);
   }
-  h += "<div class=\"nav\"><button class=\"btn btn-plein\" type=\"button\" onclick=\"retourQuiz()\">Revenir au quiz</button></div>";
-  elAnim.innerHTML=h;
-  elQuiz.className="masque";
-  elFinal.className="final masque";
-  elAnim.className="anim";
-  window.scrollTo(0,0);
+
+  var zone = $("zoneOpts");
+  vide(zone);
+  var choisi = etat.reponses[etat.i];
+
+  var zi = $("zoneIndice");
+  vide(zi);
+  if (q.indice && choisi === null){
+    var di = document.createElement("p");
+    di.className = "indice";
+    di.textContent = q.indice;
+    zi.appendChild(di);
+  }
+  for (var k=0;k<q.opts.length;k++){
+    (function(k){
+      var b = document.createElement("button");
+      b.className = "opt";
+      var sp = document.createElement("span");
+      sp.className = "lettre";
+      sp.textContent = LETTRES[k];
+      b.appendChild(sp);
+      b.appendChild(document.createTextNode(q.opts[k]));
+      if (choisi !== null){
+        b.disabled = true;
+        if (k === q.bonne){ b.className = "opt juste"; }
+        else if (k === choisi){ b.className = "opt rate"; }
+        else { b.className = "opt neutre"; }
+      } else {
+        b.onclick = function(){ repondre(k); };
+      }
+      zone.appendChild(b);
+    })(k);
+  }
+
+  var ze = $("zoneExpl");
+  vide(ze);
+  if (choisi !== null){
+    var d = document.createElement("div");
+    d.className = "expl";
+    var t = document.createElement("p");
+    t.className = "titre";
+    t.textContent = (choisi === q.bonne) ? "Bonne réponse" : ("Réponse attendue : " + LETTRES[q.bonne]);
+    d.appendChild(t);
+    var p = document.createElement("p");
+    p.textContent = q.pourquoi;
+    d.appendChild(p);
+    var t2 = document.createElement("p");
+    t2.className = "titre";
+    t2.textContent = "Pourquoi les autres sont fausses";
+    d.appendChild(t2);
+    var ul = document.createElement("ul");
+    var autres = [];
+    for (var m=0;m<q.opts.length;m++){ if (m !== q.bonne){ autres.push(m); } }
+    for (var n2=0;n2<autres.length;n2++){
+      var li = document.createElement("li");
+      var bb = document.createElement("b");
+      bb.textContent = LETTRES[autres[n2]] + ". ";
+      li.appendChild(bb);
+      li.appendChild(document.createTextNode(q.pieges[n2] || ""));
+      ul.appendChild(li);
+    }
+    d.appendChild(ul);
+    ze.appendChild(d);
+    ze.appendChild(blocPlus(q));
+  }
+
+  $("btnPrec").disabled = (etat.i === 0);
+  $("btnSuiv").textContent = (etat.i === QUESTIONS.length-1) ? "Voir mon résultat" : "Suivant";
 }
 
-function retourQuiz(){
-  etat.fini=false; sauver();
-  elFinal.className="final masque";
-  elAnim.className="anim masque";
-  elQuiz.className="";
+function repondre(k){
+  etat.reponses[etat.i] = k;
+  sauver();
   rendre();
-  window.scrollTo(0,0);
-}
-function recommencer(){
-  etat.i=0; etat.fini=false;
-  etat.reponses=[];
-  for(var k=0;k<QUESTIONS.length;k++){ etat.reponses.push(null); }
-  effacer(); sauver();
-  retourQuiz();
 }
 
-btnSuiv.onclick=function(){
-  if(etat.i===QUESTIONS.length-1){ etat.fini=true; sauver(); afficherFinal(); return; }
-  etat.i++; sauver(); rendre(); window.scrollTo(0,0);
-};
-btnPrec.onclick=function(){
-  if(etat.i>0){ etat.i--; sauver(); rendre(); window.scrollTo(0,0); }
-};
-document.getElementById("btnAnim").onclick=function(){
-  if(elAnim.className.indexOf("masque")===-1){ retourQuiz(); } else { afficherAnim(); }
-};
-document.getElementById("btnReset").onclick=function(){ recommencer(); };
+function aller(d){
+  var n = etat.i + d;
+  if (n < 0){ return; }
+  if (n >= QUESTIONS.length){ terminer(); return; }
+  etat.i = n;
+  sauver();
+  rendre();
+}
 
-document.onkeydown=function(e){
-  if(elQuiz.className.indexOf("masque")!==-1) return;
-  if(e.key==="ArrowRight"){ btnSuiv.onclick(); }
-  if(e.key==="ArrowLeft"){ btnPrec.onclick(); }
-};
+/* ---------- Ecran final ---------- */
+function corpsResultat(){
+  var l = [];
+  l.push("Nom : " + etat.nom);
+  l.push("Score : " + score() + " sur " + QUESTIONS.length);
+  l.push("Pièges évités : " + piegesEvites() + " sur " + totalPieges());
+  l.push("");
+  l.push("Questions ratées :");
+  var c = 0;
+  for (var i=0;i<QUESTIONS.length;i++){
+    var r = etat.reponses[i];
+    if (r === QUESTIONS[i].bonne){ continue; }
+    c++;
+    var donne = (r === null) ? "sans réponse" : (LETTRES[r] + ". " + QUESTIONS[i].opts[r]);
+    l.push(c + ") Q" + (i+1) + " (" + QUESTIONS[i].jour + ") : " + QUESTIONS[i].q);
+    l.push("   Réponse donnée : " + donne);
+    l.push("   Réponse attendue : " + LETTRES[QUESTIONS[i].bonne] + ". " + QUESTIONS[i].opts[QUESTIONS[i].bonne]);
+  }
+  if (c === 0){ l.push("Aucune."); }
+  return l.join("\n");
+}
 
-charger();
-if(etat.fini){ afficherFinal(); } else { rendre(); }
+function terminer(){
+  etat.fini = true;
+  sauver();
+  cache($("quiz"));
+  cache($("accueil"));
+  cache($("animateur"));
+  var f = $("final");
+  vide(f);
+  montre(f);
+
+  var h = document.createElement("h1");
+  h.textContent = "Résultat de " + etat.nom;
+  f.appendChild(h);
+
+  var s = document.createElement("div");
+  s.className = "score";
+  s.textContent = score() + " / " + QUESTIONS.length;
+  f.appendChild(s);
+
+  var p = document.createElement("p");
+  p.className = "sous";
+  p.textContent = "Pièges évités : " + piegesEvites() + " sur " + totalPieges();
+  f.appendChild(p);
+
+  var h2 = document.createElement("h2");
+  h2.textContent = "Les questions ratées";
+  f.appendChild(h2);
+
+  var nb = 0;
+  for (var i=0;i<QUESTIONS.length;i++){
+    var q = QUESTIONS[i];
+    var r = etat.reponses[i];
+    if (r === q.bonne){ continue; }
+    nb++;
+    var c = document.createElement("div");
+    c.className = "carte";
+    var t = document.createElement("h3");
+    t.textContent = "Question " + (i+1) + ", " + ((q.jour === "Inédite") ? "hors support" : q.jour) + " : " + q.q;
+    c.appendChild(t);
+    var d = document.createElement("p");
+    d.className = "donne";
+    d.textContent = "Votre réponse : " + ((r === null) ? "sans réponse" : (LETTRES[r] + ". " + q.opts[r]))
+      + "  |  Réponse attendue : " + LETTRES[q.bonne] + ". " + q.opts[q.bonne];
+    c.appendChild(d);
+    var e = document.createElement("div");
+    e.className = "expl";
+    var ep = document.createElement("p");
+    ep.textContent = q.pourquoi;
+    e.appendChild(ep);
+    c.appendChild(e);
+    c.appendChild(blocPlus(q));
+    f.appendChild(c);
+  }
+  if (nb === 0){
+    var ok = document.createElement("p");
+    ok.textContent = "Aucune question ratée.";
+    f.appendChild(ok);
+  }
+
+  var nav = document.createElement("div");
+  nav.className = "nav";
+
+  var corps = corpsResultat();
+  var objet = "Quiz Semaine 1, " + etat.nom;
+  var lien = "";
+  var trop = false;
+  try{
+    lien = "mailto:clem.pred@gmail.com?subject=" + encodeURIComponent(objet) + "&body=" + encodeURIComponent(corps);
+    if (lien.length > 1900){ trop = true; }
+  }catch(e){ trop = true; }
+
+  if (!trop){
+    var a = document.createElement("button");
+    a.className = "btn";
+    a.textContent = "J'envoie mon résultat";
+    a.onclick = function(){
+      try{ window.location.href = lien; }
+      catch(e){ afficherCopie(f, corps); }
+    };
+    nav.appendChild(a);
+  } else {
+    var bc = document.createElement("button");
+    bc.className = "btn";
+    bc.textContent = "Copier mon résultat";
+    bc.onclick = function(){ afficherCopie(f, corps); };
+    nav.appendChild(bc);
+    var msg = document.createElement("p");
+    msg.className = "sous";
+    msg.textContent = "Le résultat est trop long pour tenir dans un lien de messagerie. Copiez le texte et collez-le dans un mail à clem.pred@gmail.com, objet " + objet + ".";
+    f.appendChild(msg);
+  }
+
+  var br = document.createElement("button");
+  br.className = "btn sec";
+  br.textContent = "Refaire le quiz";
+  br.onclick = function(){
+    etat.i = 0; etat.fini = false;
+    etat.reponses = [];
+    for (var z2=0; z2<QUESTIONS.length; z2++){ etat.reponses.push(null); }
+    sauver();
+    cache($("final"));
+    montre($("quiz"));
+    rendre();
+  };
+  nav.appendChild(br);
+
+  var ba = document.createElement("button");
+  ba.className = "btn sec";
+  ba.textContent = "Mode animateur";
+  ba.onclick = ouvrirAnimateur;
+  nav.appendChild(ba);
+
+  f.appendChild(nav);
+}
+
+function afficherCopie(f, corps){
+  var ex = document.getElementById("zoneCopie");
+  if (ex){ ex.value = corps; ex.focus(); ex.select(); return; }
+  var ta = document.createElement("textarea");
+  ta.id = "zoneCopie";
+  ta.className = "zonecopie";
+  ta.value = corps;
+  f.appendChild(ta);
+  try{ ta.focus(); ta.select(); }catch(e){}
+  try{
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(corps); }
+    else { document.execCommand("copy"); }
+  }catch(e){ /* copie manuelle */ }
+}
+
+/* ---------- Mode animateur ---------- */
+function ouvrirAnimateur(){
+  var a = $("animateur");
+  vide(a);
+  montre(a);
+  cache($("quiz")); cache($("accueil")); cache($("final"));
+
+  var h = document.createElement("h1");
+  h.textContent = "Mode animateur, les 40 questions et toutes les réponses";
+  a.appendChild(h);
+  var s = document.createElement("p");
+  s.className = "sous";
+  s.textContent = "Vue de relecture. Pièges : " + totalPieges() + " sur " + QUESTIONS.length + " questions.";
+  a.appendChild(s);
+
+  var nav = document.createElement("div");
+  nav.className = "nav";
+  var b = document.createElement("button");
+  b.className = "btn";
+  b.textContent = "Revenir";
+  b.onclick = function(){
+    cache($("animateur"));
+    if (etat.nom){ montre($("quiz")); rendre(); }
+    else { montre($("accueil")); }
+  };
+  nav.appendChild(b);
+  a.appendChild(nav);
+
+  for (var i=0;i<QUESTIONS.length;i++){
+    var q = QUESTIONS[i];
+    var bl = document.createElement("div");
+    bl.className = "bloc";
+    var t = document.createElement("p");
+    t.className = "ligne";
+    var nm = document.createElement("span");
+    nm.className = "num";
+    nm.textContent = (i+1) + ". ";
+    t.appendChild(nm);
+    var st = document.createElement("b");
+    st.textContent = q.q;
+    t.appendChild(st);
+    bl.appendChild(t);
+
+    var src = document.createElement("p");
+    src.className = "qsrc";
+    src.textContent = q.src + (q.piege ? "  |  question piège" : "") + (q.indice ? "  |  indice affiché" : "");
+    bl.appendChild(src);
+
+    for (var k=0;k<q.opts.length;k++){
+      var o = document.createElement("p");
+      o.className = "ligne" + (k === q.bonne ? " ok" : "");
+      o.textContent = LETTRES[k] + ". " + q.opts[k] + (k === q.bonne ? "   (bonne réponse)" : "");
+      bl.appendChild(o);
+    }
+    var pw = document.createElement("div");
+    pw.className = "expl";
+    var pp = document.createElement("p");
+    pp.textContent = q.pourquoi;
+    pw.appendChild(pp);
+    var ul = document.createElement("ul");
+    var autres = [];
+    for (var m=0;m<q.opts.length;m++){ if (m !== q.bonne){ autres.push(m); } }
+    for (var n3=0;n3<autres.length;n3++){
+      var li = document.createElement("li");
+      var bb = document.createElement("b");
+      bb.textContent = LETTRES[autres[n3]] + ". ";
+      li.appendChild(bb);
+      li.appendChild(document.createTextNode(q.pieges[n3] || ""));
+      ul.appendChild(li);
+    }
+    pw.appendChild(ul);
+    bl.appendChild(pw);
+    bl.appendChild(blocPlus(q));
+    a.appendChild(bl);
+  }
+}
+
+/* ---------- Mode projection ---------- */
+var projIndex = 0;
+function ouvrirProjection(){
+  projIndex = etat.i;
+  montre($("projection"));
+  rendreProjection();
+  document.addEventListener("keydown", toucheProj);
+}
+function fermerProjection(){
+  cache($("projection"));
+  document.removeEventListener("keydown", toucheProj);
+}
+function toucheProj(e){
+  if (e.key === "ArrowRight" || e.key === " "){ avancerProj(1); }
+  else if (e.key === "ArrowLeft"){ avancerProj(-1); }
+  else if (e.key === "Escape"){ fermerProjection(); }
+}
+function avancerProj(d){
+  var n = projIndex + d;
+  if (n < 0 || n >= QUESTIONS.length){ return; }
+  projIndex = n;
+  rendreProjection();
+}
+function rendreProjection(){
+  var p = $("projection");
+  vide(p);
+  var q = QUESTIONS[projIndex];
+
+  var haut = document.createElement("div");
+  haut.className = "haut";
+  var cpt = document.createElement("span");
+  cpt.className = "cpt";
+  cpt.textContent = "Question " + (projIndex+1) + " sur " + QUESTIONS.length;
+  haut.appendChild(cpt);
+  var sp = document.createElement("span");
+  sp.className = "spacer";
+  haut.appendChild(sp);
+  var bp = document.createElement("button");
+  bp.className = "btn sec petit";
+  bp.textContent = "Précédent";
+  bp.onclick = function(){ avancerProj(-1); };
+  haut.appendChild(bp);
+  var bs = document.createElement("button");
+  bs.className = "btn petit";
+  bs.textContent = "Question suivante";
+  bs.onclick = function(){ avancerProj(1); };
+  haut.appendChild(bs);
+  var bf = document.createElement("button");
+  bf.className = "btn sec petit";
+  bf.textContent = "Quitter la projection";
+  bf.onclick = fermerProjection;
+  haut.appendChild(bf);
+  p.appendChild(haut);
+
+  var t = document.createElement("div");
+  t.className = "pq";
+  t.textContent = q.q;
+  p.appendChild(t);
+
+  if (q.indice){
+    var pi = document.createElement("div");
+    pi.className = "pi";
+    pi.textContent = q.indice;
+    p.appendChild(pi);
+  }
+
+  for (var k=0;k<q.opts.length;k++){
+    var o = document.createElement("div");
+    o.className = "po";
+    var l = document.createElement("span");
+    l.className = "lettre";
+    l.textContent = LETTRES[k];
+    o.appendChild(l);
+    o.appendChild(document.createTextNode(q.opts[k]));
+    p.appendChild(o);
+  }
+}
+
+/* ---------- Demarrage ---------- */
+(function(){
+  var champ = $("champNom");
+  var bd = $("btnDemarrer");
+  function maj(){
+    bd.disabled = (champ.value.replace(/\s+/g,"") === "");
+  }
+  champ.addEventListener("input", maj);
+  champ.addEventListener("keydown", function(e){
+    if (e.key === "Enter" && !bd.disabled){ demarrer(); }
+  });
+
+  function demarrer(){
+    etat.nom = champ.value.replace(/^\s+|\s+$/g,"");
+    sauver();
+    cache($("accueil"));
+    montre($("quiz"));
+    rendre();
+  }
+  bd.onclick = demarrer;
+
+  $("btnAnimAccueil").onclick = ouvrirAnimateur;
+  $("btnAnim").onclick = ouvrirAnimateur;
+  $("btnProj").onclick = ouvrirProjection;
+  $("btnPrec").onclick = function(){ aller(-1); };
+  $("btnSuiv").onclick = function(){ aller(1); };
+
+  if (charger() && etat.nom){
+    champ.value = etat.nom;
+    maj();
+    if (etat.fini){ terminer(); }
+    else { cache($("accueil")); montre($("quiz")); rendre(); }
+  } else {
+    maj();
+  }
+})();
 </script>
 </body>
 </html>
