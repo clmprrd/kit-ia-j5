@@ -49,13 +49,7 @@ button.sec{background:#fff;color:var(--m);border:2px solid var(--m)}
 <p class="quand">À remplir en début d'après-midi</p>
 
 <label>J'observais</label>
-<select id="observe">
-<option value="">choisissez</option>
-<option>Richard</option><option>Julie</option><option>Yann</option><option>Stéphane</option>
-<option>Stéphane 2</option><option>Marc</option><option>Jean-Régis</option><option>Myriam</option>
-<option>Lili</option><option>Thibaut</option><option>Daphné</option><option>Jean-Yves</option>
-<option>Jean-Luc</option>
-</select>
+<input type="text" id="observe" list="noms" placeholder="tapez le prenom">
 
 <div class="coches" id="c1">
 <div><input type="checkbox" id="k0"><label for="k0">Il a annoncé son objectif et sa durée avant de commencer</label></div>
@@ -91,13 +85,7 @@ button.sec{background:#fff;color:var(--m);border:2px solid var(--m)}
 <p class="quand">À remplir en fin de journée</p>
 
 <label>À qui</label>
-<select id="qui">
-<option value="">choisissez</option>
-<option>Richard</option><option>Julie</option><option>Yann</option><option>Stéphane</option>
-<option>Stéphane 2</option><option>Marc</option><option>Jean-Régis</option><option>Myriam</option>
-<option>Lili</option><option>Thibaut</option><option>Daphné</option><option>Jean-Yves</option>
-<option>Jean-Luc</option>
-</select>
+<input type="text" id="qui" list="noms" placeholder="tapez le prenom">
 
 <label>Une force que je lui reconnais, et une chose qui le ferait progresser</label>
 <textarea id="retour"></textarea>
@@ -178,5 +166,10 @@ function copier(){
 
 charger();
 </script>
+<datalist id="noms">
+<option>Richard</option><option>Julie</option><option>Yann</option><option>Stephane</option>
+<option>Marc</option><option>Jean-Regis</option><option>Myriam</option><option>Lili</option>
+<option>Thibaut</option><option>Daphne</option><option>Jean-Yves</option><option>Jean-Luc</option>
+</datalist>
 </body>
 </html>
