@@ -81,11 +81,41 @@
   .petit{margin-top:26px;font-size:clamp(13px,1vw,16px);color:var(--gris);line-height:1.5;max-width:60ch}
 
   /* ===== REVELATION ===== */
+  /* Quand la réponse est révélée, le titre s'efface au profit du contenu */
+  .ecran.revele .citation,.ecran.revele .grand{font-size:clamp(24px,2.5vw,40px);max-width:40ch}
+  .ecran.revele .sous{font-size:clamp(15px,1.35vw,21px);margin-top:14px;max-width:80ch}
+  .ecran.revele .kicker{margin-bottom:12px;font-size:clamp(15px,1.4vw,22px)}
+  .ecran.revele .consigne{display:none}
   .reveal{display:none;margin-top:34px;border-top:5px solid var(--magenta);padding-top:28px}
   .reveal.on{display:block}
-  .reveal p{font-size:clamp(17px,1.7vw,26px);line-height:1.5;max-width:52ch;margin-bottom:16px}
+  .reveal p{font-size:clamp(16px,1.5vw,23px);line-height:1.5;max-width:62ch;margin-bottom:14px}
+  .reveal p:last-child{margin-bottom:0}
   .reveal p strong{color:var(--magenta)}
   .ecran.dark .reveal p{color:var(--blanc)}
+
+  /* ===== LES QUATRE BLOCS ===== */
+  .rv-bloc{margin-bottom:22px;max-width:74ch}
+  .rv-bloc:last-child{margin-bottom:0}
+  .rv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px;align-items:start;margin-top:6px}
+  .rv-grid .rv-bloc{margin-bottom:0;max-width:none}
+  .rv-grid .rv-bloc p{max-width:none}
+  .rv-grid .rv-src{grid-column:1 / -1}
+  @media (max-width:1150px){.rv-grid{grid-template-columns:1fr}}
+  .rv-h{
+    font-size:clamp(13px,1.05vw,17px);font-weight:bold;letter-spacing:2.5px;
+    text-transform:uppercase;color:var(--magenta);margin-bottom:10px;
+  }
+  .rv-pourquoi{background:var(--rose);border-left:12px solid var(--magenta);padding:24px 28px}
+  .rv-pourquoi .rv-h{color:var(--noir)}
+  .rv-pourquoi p{max-width:58ch}
+  .rv-cas{border:3px solid var(--noir);padding:20px 26px}
+  .rv-nf{border:3px dashed var(--magenta);padding:18px 26px}
+  .rv-src{font-size:clamp(12px,.95vw,16px);color:var(--gris);line-height:1.5;word-break:break-word}
+  .rv-src a{color:var(--magenta);font-weight:bold}
+  .ecran.dark .rv-pourquoi{background:#2A2A2A}
+  .ecran.dark .rv-pourquoi .rv-h{color:var(--magenta)}
+  .ecran.dark .rv-cas{border-color:var(--magenta)}
+  .ecran.dark .rv-src{color:#BBBBBB}
 
   .badge{
     display:inline-block;font-size:clamp(18px,2vw,30px);font-weight:bold;
@@ -97,24 +127,24 @@
   .duo{display:flex;gap:22px;flex-wrap:wrap;margin-top:6px}
   .col{flex:1 1 320px;padding:24px;border:4px solid var(--magenta);background:var(--blanc)}
   .col.contre{background:var(--noir);color:var(--blanc);border-color:var(--noir)}
-  .col h4{font-size:clamp(17px,1.7vw,28px);text-transform:uppercase;letter-spacing:2px;color:var(--magenta);margin-bottom:14px}
+  .col h4{font-size:clamp(15px,1.4vw,22px);text-transform:uppercase;letter-spacing:2px;color:var(--magenta);margin-bottom:14px}
   .col.contre h4{color:var(--blanc)}
-  .col p{font-size:clamp(17px,1.6vw,25px);line-height:1.45;margin:0}
+  .col p{font-size:clamp(16px,1.45vw,22px);line-height:1.45;margin:0}
 
   .bloc{background:var(--rose);border-left:10px solid var(--magenta);padding:26px 28px;margin-top:8px}
   .bloc p{margin:0}
 
   .liste{list-style:none;margin-top:10px}
   .liste li{
-    font-size:clamp(17px,1.8vw,28px);line-height:1.4;padding:16px 0 16px 30px;
+    font-size:clamp(16px,1.5vw,24px);line-height:1.45;padding:14px 0 14px 30px;
     border-bottom:2px solid var(--rose);position:relative;
   }
-  .liste li:before{content:"";position:absolute;left:0;top:26px;width:14px;height:14px;background:var(--magenta)}
+  .liste li:before{content:"";position:absolute;left:0;top:24px;width:14px;height:14px;background:var(--magenta)}
   .liste li b{color:var(--magenta)}
   .ecran.dark .liste li{border-bottom-color:#3A3A3A}
 
   .phrase{
-    font-size:clamp(20px,2.2vw,34px);line-height:1.4;font-weight:bold;
+    font-size:clamp(19px,2vw,31px);line-height:1.4;font-weight:bold;
     font-style:normal;max-width:56ch;
   }
   .copier{margin-top:18px}
@@ -154,7 +184,7 @@
   .liste-mode .reveal{display:block}
   .liste-mode .num{font-size:14px;font-weight:bold;color:var(--gris);letter-spacing:2px;margin-bottom:10px}
   .liste-mode .grand,.liste-mode .citation{font-size:clamp(24px,2.6vw,38px);max-width:100%}
-  .liste-mode .sous,.liste-mode .reveal p{max-width:100%}
+  .liste-mode .sous,.liste-mode .reveal p,.liste-mode .rv-bloc{max-width:100%}
   .liste-mode h1.doc{font-size:38px;margin-bottom:8px;color:var(--magenta)}
   .liste-mode p.doc{font-size:18px;color:var(--gris);margin-bottom:34px}
 
@@ -190,42 +220,65 @@
 <script>
 var SCREENS = [];
 
-function obj(n, texte, nature, reponse){
+/* ---------- Fabrique des quatre blocs révélés ---------- */
+function lien(u, t){
+  return '<a href="' + u + '" target="_blank" rel="noopener">' + t + '</a>';
+}
+
+function meth(o){
+  var h = "";
+  if (o.avant) h += o.avant;
+  h += '<div class="rv-grid">';
+  if (o.conduite){
+    h += '<div class="rv-bloc"><div class="rv-h">La conduite à tenir</div><p>' + o.conduite + '</p></div>';
+  }
+  if (o.pourquoi){
+    h += '<div class="rv-bloc rv-pourquoi"><div class="rv-h">Pourquoi ça marche</div><p>' + o.pourquoi + '</p></div>';
+  }
+  if (o.cas){
+    h += '<div class="rv-bloc rv-cas"><div class="rv-h">' + (o.casTitre || "Le cas réel") + '</div><p>' + o.cas + '</p></div>';
+  }
+  if (o.nf){
+    h += '<div class="rv-bloc rv-nf"><div class="rv-h">Ce qui n\'est pas établi</div><p>' + o.nf + '</p></div>';
+  }
+  if (o.src){
+    h += '<div class="rv-bloc rv-src">Source : ' + o.src + '</div>';
+  }
+  h += '</div>';
+  if (o.apres) h += o.apres;
+  return h;
+}
+
+function obj(n, texte, nature, o){
+  o.avant = '<span class="badge' + (nature === "VALEUR" ? " valeur" : "") + '">' + nature + '</span>';
   return {
     v: "",
     kicker: "Objection " + n + " sur 10",
     citation: "« " + texte + " »",
     consigne: "FAIT ou VALEUR ? Puis quelle réponse ?",
-    reveal: '<span class="badge' + (nature === "VALEUR" ? " valeur" : "") + '">' + nature + '</span><p>' + reponse + '</p>'
+    reveal: meth(o)
   };
 }
 
-function profil(n, nom, manif, cause, marche, aggrave){
+function profil(n, nom, manif, o){
   return {
     v: "",
     kicker: "Profil " + n + " sur 5",
     grand: "Le profil : " + nom,
     sous: manif,
     consigne: "Qu'est-ce que vous faites, vous ?",
-    reveal:
-      '<p><strong>Ce qui le produit :</strong> ' + cause + '</p>' +
-      '<div class="duo">' +
-        '<div class="col"><h4>Ce qui marche</h4><p>' + marche + '</p></div>' +
-        '<div class="col contre"><h4>Ce qui aggrave</h4><p>' + aggrave + '</p></div>' +
-      '</div>',
-    petit: "Source : guides de formation de formateurs, Cegos et formationdeformateurs.fr. Ce sont des repères de terrain, pas une typologie académique validée par la recherche."
+    reveal: meth(o),
+    petit: "La typologie des cinq profils vient des guides de formation de formateurs, Cegos et formationdeformateurs.fr. Ce sont des repères de terrain commodes pour trier, pas une typologie clinique validée par la recherche : personne n'est un profil, et une même personne change de comportement selon la séquence."
   };
 }
 
-function situ(n, titre, sionnefaitrien, geste){
+function situ(n, titre, o){
   return {
     v: "",
     kicker: "Situation " + n + " sur 8",
     grand: titre,
     consigne: "Qu'est-ce qui se passe si vous ne faites rien ?",
-    reveal:
-      '<p><strong>Si on ne fait rien :</strong> ' + sionnefaitrien + '</p>' +
-      '<p><strong>Le geste qui répare :</strong> ' + geste + '</p>'
+    reveal: meth(o)
   };
 }
 
@@ -236,9 +289,11 @@ SCREENS.push({
   grand: "Ne jamais engager la discussion en premier avec l'opposant.",
   sous: "Faites parler le promoteur du groupe en premier. C'est le groupe qui convainc, ce n'est pas le formateur qui convainc seul contre un opposant, face à toute la salle.",
   consigne: "Pourquoi est-ce que ça marche, à votre avis ?",
-  reveal:
-    '<p>Ce principe s\'appuie sur le concept de <strong>leader d\'opinion</strong>, formalisé par Paul Lazarsfeld et Elihu Katz, école de Columbia : dans un groupe, l\'information et la conviction circulent moins d\'un émetteur unique vers chaque individu que par relais, via quelques personnes influentes que les autres écoutent. Convaincre le relais convainc le groupe plus sûrement que convaincre chaque personne une par une.</p>' +
-    '<p>Ça rejoint la <strong>diffusion de l\'innovation</strong> d\'Everett Rogers : une idée nouvelle se propage par cercles successifs, des innovateurs et adopteurs précoces vers la majorité, et ce sont ces premiers cercles qui font basculer les suivants. Le promoteur dans votre salle est souvent un adopteur précoce.</p>'
+  reveal: meth({
+    conduite: "Quand l'objection tombe, ne répondez pas. Balayez la salle et cherchez qui a déjà dit quelque chose de favorable, qui hoche la tête, ou qui a raconté un usage. Donnez-lui la parole sur le point contesté : « vous, vous en avez fait quoi de ce point précis ? ». Vous vous placez en distributeur de parole, pas en avocat de l'outil. Vous ne reprenez la main qu'après, en vous appuyant sur ce que le groupe vient de dire, jamais sur votre seule autorité. Si personne ne se manifeste, ne forcez pas : passez par deux minutes en binôme sur la question, vous ressortirez avec un porte-parole plutôt qu'avec un duel.",
+    pourquoi: "Le principe s'appuie sur le <strong>leader d'opinion</strong>, formalisé par Paul Lazarsfeld et Elihu Katz à l'école de Columbia dans les années cinquante. Leur observation est que l'influence ne va pas d'un émetteur unique vers chaque individu, mais transite par des relais : quelques personnes que le groupe écoute filtrent et retransmettent. Convaincre le relais convainc le groupe plus sûrement que convaincre chacun. Everett Rogers, avec la <strong>diffusion de l'innovation</strong>, décrit le même mécanisme dans le temps : une idée nouvelle se propage par cercles successifs, des adopteurs précoces vers la majorité, et ce sont ces premiers cercles qui font basculer les suivants. Le promoteur de votre salle est un adopteur précoce, et il vous coûte moins cher que vous.",
+    nf: "Ces deux modèles décrivent la diffusion d'idées dans des populations, pas la gestion d'une objection dans une salle de formation de quinze personnes. Le transfert est cohérent et largement pratiqué, mais aucune étude ne mesure ce geste précis en formation professionnelle. C'est un principe transposé, pas un résultat expérimental."
+  })
 });
 
 /* ---------- 2 et 3. La distinction la plus importante ---------- */
@@ -248,9 +303,11 @@ SCREENS.push({
   grand: "Objection de FAIT",
   sous: "« ça ne marche pas », « ça hallucine », « ça va me faire perdre mon poste ». La personne conteste une performance ou une conséquence mesurable.",
   consigne: "Qu'est-ce qu'on oppose à une objection de fait ?",
-  reveal:
-    '<p><strong>Se traite par la preuve :</strong> démonstration en direct, cas d\'usage sur le poste réel de la personne, chiffres vérifiables.</p>' +
-    '<p>La preuve fonctionne parce que le désaccord porte sur des faits.</p>'
+  reveal: meth({
+    conduite: "Traitez par la preuve, et par la preuve manipulée par la personne elle-même. Reformulez l'objection en un test vérifiable dans la salle : « si je vous montre que sur votre tâche de rédaction de compte rendu ça tient, on est d'accord que le point est réglé ? ». Puis faites le test sur son poste réel, pas sur un exemple de démonstration. Acceptez publiquement de perdre le test si le résultat est mauvais : c'est ce qui rend votre preuve recevable quand elle est bonne. Donnez des chiffres seulement s'ils sont vérifiables devant elle, jamais des ordres de grandeur invérifiables.",
+    pourquoi: "Une objection de fait porte sur un état du monde observable, donc une preuve y est admissible. Mais une preuve administrée par quelqu'un qui a intérêt à convaincre se lit comme un plaidoyer, pas comme une preuve. C'est pourquoi le geste utile n'est pas de montrer, c'est de faire manipuler : la personne qui produit elle-même le résultat n'a plus à arbitrer entre sa perception et la vôtre. Le test annoncé à l'avance, avec un critère de réussite accepté par les deux, transforme un rapport de force en protocole.",
+    nf: "L'idée qu'une démonstration manipulée par le participant convainc mieux qu'une démonstration regardée est un principe pédagogique de bon sens, largement partagé dans les guides de formation. Aucune étude n'isole spécifiquement ce geste face à une objection en salle. C'est du savoir-faire de terrain, présentez-le comme tel."
+  })
 });
 
 SCREENS.push({
@@ -259,101 +316,204 @@ SCREENS.push({
   grand: "Objection de VALEUR",
   sous: "« l'IA est néfaste par principe », argument environnemental, argument politique. La personne ne conteste pas l'efficacité, elle conteste la légitimité ou la désirabilité même de l'outil.",
   consigne: "Et là, qu'est-ce qui change ?",
-  reveal:
-    '<p><strong>Ne se traite pas par la preuve d\'efficacité :</strong> prouver que l\'outil marche mieux ne répond à rien puisque l\'efficacité n\'est pas ce qui est contesté.</p>' +
-    '<p>La <strong>Moral Foundations Theory</strong> de Jonathan Haidt et Jesse Graham établit qu\'une opposition de nature morale résiste à l\'argumentation factuelle : on ne fait pas céder un jugement moral avec des chiffres, parce que le jugement moral ne s\'est pas construit avec des chiffres.</p>' +
-    '<p>Face à une objection de valeur, la conduite juste est de reconnaître le désaccord explicitement, donner les vrais chiffres sans les esquiver ni les minimiser, et ne pas chercher à convertir la personne. <strong>On respecte la position, on informe, on n\'insiste pas.</strong></p>'
+  reveal: meth({
+    conduite: "Ne répondez surtout pas par la preuve d'efficacité : prouver que l'outil marche mieux ne répond à rien, puisque l'efficacité n'est pas ce qui est contesté. Faites trois choses, dans cet ordre. Nommez le désaccord à voix haute et sans ironie : « vous, ce n'est pas la performance qui vous pose problème, c'est le principe, et c'est un autre sujet ». Donnez les chiffres réels que vous avez, sans les esquiver ni les minimiser. Puis arrêtez-vous : proposez à la personne de rester et d'observer sans avoir à changer d'avis. Ne cherchez pas la conversion, cherchez la coexistence sur la demi-journée.",
+    pourquoi: "La <strong>Moral Foundations Theory</strong> de Jonathan Haidt et Jesse Graham établit qu'une opposition de nature morale résiste à l'argumentation factuelle : on ne fait pas céder un jugement moral avec des chiffres, parce que le jugement moral ne s'est pas construit avec des chiffres. Insister produit l'effet inverse de celui recherché, la personne devant alors défendre son identité et plus seulement son opinion. Le principe du <strong>rolling with resistance</strong> de Miller et Rollnick, en entretien motivationnel, dit la même chose côté conduite : nommer le désaccord sans chercher à le résoudre fait tomber la réaction de défense, parce qu'il n'y a plus rien à repousser.",
+    cas: "Le repère pratique en salle : une objection de valeur ne se termine jamais par un accord, elle se termine par une phrase du type « on n'est pas d'accord et ce n'est pas grave, on va travailler quand même ». Si vous cherchez l'accord, vous perdez le reste du groupe, qui regarde le duel au lieu de faire l'exercice.",
+    casTitre: "Le repère de salle"
+  })
 });
 
 /* ---------- 4 à 13. Dix objections ---------- */
-SCREENS.push(obj(1, "Ça invente des choses, je ne peux pas m'y fier", "FAIT",
-  "Démonstration en direct d'une hallucination repérée, puis de la méthode de vérification systématique (source, recoupement). <strong>La preuve, pas la promesse.</strong>"));
-SCREENS.push(obj(2, "Ça va supprimer mon poste", "FAIT",
-  "Cas d'usage précis sur le métier de la personne : ce qui est automatisable face à ce qui reste humain, avec des exemples concrets tirés de son quotidien."));
-SCREENS.push(obj(3, "L'IA consomme trop d'énergie, c'est une aberration écologique", "VALEUR",
-  "Reconnaître le désaccord, donner les chiffres vérifiés, ne pas chercher à convaincre que c'est acceptable."));
-SCREENS.push(obj(4, "Je ne veux pas être remplacé par une machine, c'est une question de principe", "VALEUR",
-  "Reconnaître la position sans la réfuter, ne pas argumenter sur l'efficacité qui n'est pas le sujet ici."));
-SCREENS.push(obj(5, "Ça a déjà été essayé chez nous, ça n'a pas marché", "FAIT",
-  "Demander ce qui a été tenté précisément, souvent l'échec vient d'un mauvais prompt ou d'un mauvais cas d'usage, le montrer sur un exemple corrigé."));
-SCREENS.push(obj(6, "C'est une mode, ça va passer", "FAIT",
-  "Chiffres d'adoption réels et cas d'usage déjà en production dans des entreprises comparables au secteur de la personne."));
-SCREENS.push(obj(7, "Ça va déshumaniser la relation client", "VALEUR",
-  "Reconnaître l'inquiétude, ne pas la balayer par des statistiques de satisfaction, montrer où l'humain reste central sans prétendre que le sujet est clos."));
-SCREENS.push(obj(8, "Je n'ai pas le temps d'apprendre un nouvel outil", "FAIT",
-  "Chiffrer le temps gagné sur une tâche concrète de son poste, en minutes réelles, pas en promesse générale."));
-SCREENS.push(obj(9, "Les grandes entreprises technologiques accumulent trop de pouvoir avec l'IA", "VALEUR",
-  "Reconnaître que c'est un enjeu politique légitime, ne pas y répondre par des arguments de performance produit."));
-SCREENS.push(obj(10, "Mes données, mes documents internes, où vont-ils vraiment ?", "FAIT",
-  "Réponse factuelle et vérifiable sur le traitement des données, les paramètres de confidentialité, sans minimiser un risque réel."));
+SCREENS.push(obj(1, "Ça invente des choses, je ne peux pas m'y fier", "FAIT", {
+  conduite: "Commencez par donner raison, sans réserve : oui, ça invente, et ce n'est pas résolu. Puis faites-le en direct, sur un sujet que la salle maîtrise mieux que l'outil, un règlement interne, une date locale, un nom propre du secteur. L'hallucination apparaît, tout le monde la voit, et elle cesse d'être une rumeur pour devenir un objet de travail. Enchaînez immédiatement sur le protocole : demander les sources, recouper systématiquement, ne jamais utiliser sans relecture sur un sujet à enjeu, et bannir l'outil des tâches où l'erreur ne se voit pas. Formulez la règle en une phrase que la personne pourra répéter à son équipe.",
+  pourquoi: "La personne a raison sur le fait, et contester un fait vrai détruit la crédibilité pour tout le reste de la session. Le geste consiste à déplacer la question : on ne discute plus de « est-ce que ça invente », qui est tranché, mais de « qu'est-ce qu'on met en place pour que ça ne coûte rien ». Vous passez d'un débat que vous perdez à un problème d'organisation que vous savez traiter. Nommer soi-même la limite avant que le groupe ne la trouve renforce la crédibilité perçue, alors que la minimiser la détruit dès la première contradiction.",
+  cas: "IBM Watson for Oncology. Des documents internes révélés en juillet 2018 montrent que des recommandations de traitement étaient qualifiées en interne de dangereuses et incorrectes. La cause identifiée n'était pas la puissance du système mais son alimentation : il avait été entraîné sur des cas synthétiques construits par une poignée de médecins, pas sur des données patients réelles. C'est l'argument utile en salle : la fiabilité dépend de ce qu'on donne à l'outil et du contrôle qu'on garde, pas de sa réputation.",
+  src: lien("https://www.statnews.com/2018/07/25/ibm-watson-recommended-unsafe-incorrect-treatments/", "STAT News, 25 juillet 2018, IBM Watson recommended unsafe and incorrect treatments")
+}));
+
+SCREENS.push(obj(2, "Ça va supprimer mon poste", "FAIT", {
+  conduite: "Ne rassurez pas. Une promesse de non-remplacement faite par un formateur extérieur n'est pas vérifiable, donc elle ne vaut rien, et le groupe le sait. Faites autre chose : demandez à la personne de lister à voix haute cinq tâches de sa semaine, puis triez ensemble ce qui est automatisable aujourd'hui, ce qui ne l'est pas, et ce qui deviendra un travail de contrôle. Nommez ce qui est réellement exposé, sans l'adoucir. Terminez sur la seule chose que vous maîtrisez : ce que la personne peut faire de sa journée d'aujourd'hui pour être du côté de celui qui pilote l'outil.",
+  pourquoi: "L'inquiétude d'être remplacé est une objection de fait sur un futur, donc invérifiable dans les deux sens : ni vous ni la personne ne pouvez la trancher. Ce qui est vérifiable, en revanche, c'est le découpage de son poste en tâches, et c'est le seul terrain où la conversation peut avancer. Le geste consiste à ramener une peur globale et indécidable à un inventaire concret et discutable. Reconnaître au passage que l'inquiétude est majoritaire dans la population active retire à la personne la charge d'avoir à se justifier devant le groupe.",
+  cas: "Pew Research Center, enquête d'octobre 2024 publiée en février 2025 auprès de 5273 actifs américains : 52 pourcent se disent inquiets de l'usage futur de l'IA au travail, et 32 pourcent anticipent moins d'opportunités pour eux à long terme. La phrase à dire en salle : « vous êtes dans la majorité, pas dans la marge, et on ne va pas faire comme si la question ne se posait pas ».",
+  src: lien("https://www.pewresearch.org/social-trends/2025/02/25/u-s-workers-are-more-worried-than-hopeful-about-future-ai-use-in-the-workplace/", "Pew Research Center, 25 février 2025")
+}));
+
+SCREENS.push(obj(3, "L'IA consomme trop d'énergie, c'est une aberration écologique", "VALEUR", {
+  conduite: "Reconnaissez le désaccord, donnez les chiffres à jour, dites ce qu'on ne sait pas, et arrêtez-vous là. Concrètement : « l'impact est réel, il est mesuré, et voilà les seuls chiffres solides dont je dispose ». Donnez la mesure publiée par Google en août 2025 sur son propre assistant, puis l'ordre de grandeur des centres de données par l'Agence internationale de l'énergie. Précisez que le premier chiffre est une mesure d'entreprise sur son propre parc, pas une moyenne du secteur. Ne comparez avec rien : pas de voiture, pas de machine à laver, pas de fabrication de téléphone, ces comparaisons circulent partout sans source primaire traçable et un formateur expérimenté vous le fera remarquer.",
+  pourquoi: "C'est une objection de valeur, donc elle ne se traite pas par la preuve d'efficacité, et l'insistance déclenche la défense identitaire décrite par Haidt. Mais elle a une particularité utile : sur ce sujet précis, la plupart des chiffres qui circulent sont faux ou périmés. Votre crédibilité ne se gagne pas en défendant l'outil, elle se gagne en corrigeant les chiffres dans les deux sens, y compris ceux qui vous arrangeraient. C'est ce qui vous distingue d'un vendeur aux yeux de la personne qui objecte.",
+  cas: "Le chiffre des « 6 à 10 fois plus d'électricité qu'une recherche web » est périmé et contesté par les analystes qui l'avaient produit, surévalué d'un facteur proche de dix. La mesure publiée par Google en août 2025 sur son propre assistant donne, pour une requête texte médiane, 0,24 Wh, 0,03 g de CO2 équivalent et 0,26 mL d'eau, avec une énergie par requête divisée par 33 et des émissions divisées par 44 entre mai 2024 et mai 2025.",
+  src: lien("https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference", "Google Cloud, août 2025, mesure de l'impact environnemental de l'inférence") + " et " + lien("https://www.iea.org/reports/energy-and-ai", "Agence internationale de l'énergie, Energy and AI")
+}));
+
+SCREENS.push(obj(4, "Je ne veux pas être remplacé par une machine, c'est une question de principe", "VALEUR", {
+  conduite: "Reconnaissez la position sans la réfuter, et surtout n'argumentez pas sur l'efficacité, qui n'est pas le sujet. Dites-le explicitement : « ce que vous dites, ce n'est pas que ça marche mal, c'est que vous ne voulez pas, et c'est votre droit ». Proposez ensuite un cadre de coexistence pour la journée : la personne participe aux exercices en observatrice, elle n'a rien à valider, et elle garde le droit de dire à la fin que ça ne lui convient toujours pas. Ce contrat explicite est ce qui vous évite de la retrouver en embuscade sur chaque séquence.",
+  pourquoi: "C'est le principe du <strong>rolling with resistance</strong> de Miller et Rollnick : la résistance n'est pas un trait de la personne, c'est un produit de la relation. Elle monte quand quelqu'un pousse, elle tombe quand personne ne pousse. Nommer le désaccord sans chercher à le résoudre supprime l'objet contre lequel la personne s'arc-boutait. En pratique, une position de principe assumée publiquement se durcit à chaque tentative de conversion, parce que la personne défend alors sa cohérence devant témoins, ce qui coûte bien plus cher que défendre une opinion.",
+  cas: "Pew Research Center, février 2025, sur 5273 actifs : 32 pourcent anticipent moins d'opportunités pour eux à long terme. Autrement dit, la position de principe est rarement isolée dans une salle, elle est souvent la formulation assumée de ce que plusieurs autres pensent sans le dire. C'est pour cela que la façon dont vous la traitez est regardée par tout le groupe.",
+  src: lien("https://www.pewresearch.org/social-trends/2025/02/25/u-s-workers-are-more-worried-than-hopeful-about-future-ai-use-in-the-workplace/", "Pew Research Center, 25 février 2025")
+}));
+
+SCREENS.push(obj(5, "Ça a déjà été essayé chez nous, ça n'a pas marché", "FAIT", {
+  conduite: "Ne contredisez pas, enquêtez. Posez quatre questions dans l'ordre : qu'est-ce qui a été tenté exactement, quand, sur quelle tâche précise, et qui accompagnait. Dans la grande majorité des cas, la réponse fait apparaître un outil imposé sans cas d'usage, une consigne floue, ou l'absence totale d'accompagnement. Reprenez alors le cas raté en direct, devant tout le monde, et laissez le groupe constater l'écart. Si le cas ne s'améliore pas, dites-le : « celui-là, effectivement, ce n'est pas pour ça ». Vous gagnez plus à valider un échec réel qu'à sauver la face.",
+  pourquoi: "Un échec collectif fait autorité dans une salle, parce que tout le monde s'en souvient et que personne ne veut passer pour naïf. Le contredire sans le détail revient à nier l'expérience partagée du groupe, et vous perdez la salle en une phrase. Le détail, lui, déplace la conversation du verdict vers le diagnostic : on ne discute plus de « est-ce que ça marche », on discute de « qu'est-ce qui a manqué la dernière fois », ce qui est un terrain où le groupe a des choses à dire et où vous êtes utile.",
+  cas: "Rapport MIT NANDA relayé par MIT Sloan, été 2025 : 95 pourcent des pilotes d'IA générative en entreprise ne produisent aucun impact mesurable, alors que 90 pourcent des salariés utilisent déjà des outils personnels en parallèle. La cause identifiée est l'intégration et l'absence d'apprentissage du contexte de l'entreprise, pas le rejet par les utilisateurs. C'est l'argument exact à donner : leur échec est le cas général, et il ne dit rien de l'outil, il dit tout du dispositif.",
+  src: lien("https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/", "MIT Sloan Management Review, The Emerging Agentic Enterprise")
+}));
+
+SCREENS.push(obj(6, "C'est une mode, ça va passer", "FAIT", {
+  conduite: "Ne répondez jamais par l'enthousiasme, c'est exactement ce que la personne teste. Donnez deux choses dans la même minute : des usages en production dans des entreprises comparables à son secteur, et un recul documenté, une entreprise qui est allée trop loin et qui a reculé. Puis rendez la question au groupe : « qu'est-ce qui, chez vous, tiendrait encore dans trois ans, et qu'est-ce qui est clairement un effet de vague ? ». Vous obtenez un tri fait par eux, bien plus solide que votre pronostic.",
+  pourquoi: "Cette objection n'est pas une question sur la technologie, c'est un test sur vous : la personne cherche à savoir si elle a en face d'elle un formateur ou un vendeur. Citer spontanément un échec retentissant est le geste qui tranche, parce qu'un vendeur ne le fait pas. Vous perdez un argument et vous gagnez la crédibilité qui rend recevables tous les suivants.",
+  cas: "Klarna, mai 2025. Après avoir annoncé qu'un agent IA remplaçait l'équivalent de 700 postes au service client, le dirigeant a reconnu être allé trop loin, la qualité ayant baissé, et l'entreprise a recommencé à recruter. Le point à souligner : la cause n'était pas l'IA, c'était un remplacement total sans escalade humaine sur les cas complexes. Ce n'est donc ni la preuve que c'est une mode, ni la preuve que tout marche, et c'est ce qui en fait un bon cas à donner.",
+  nf: "L'idée que citer un échec renforce la crédibilité de la source est un principe classique de psychologie sociale de la persuasion, mais je n'ai pas d'étude qui l'isole dans le contexte d'une formation professionnelle. Traitez-le comme un savoir-faire de terrain."
+  ,
+  src: lien("https://www.forbes.com/sites/quickerbettertech/2025/05/18/business-tech-news-klarna-reverses-on-ai-says-customers-like-talking-to-people/", "Forbes, 18 mai 2025, Klarna reverses on AI")
+}));
+
+SCREENS.push(obj(7, "Ça va déshumaniser la relation client", "VALEUR", {
+  conduite: "Reconnaissez l'inquiétude et ne la balayez surtout pas par des statistiques de satisfaction, qui donnent l'impression que vous n'avez pas entendu. Posez une question qui rend la valeur opérationnelle : « où est la limite, pour vous, entre ce qu'une machine peut traiter et ce qui doit rester humain ? ». Faites tracer cette ligne par le groupe, notez-la au tableau, et montrez ensuite comment on la tient techniquement, par une règle d'escalade vers un humain. Vous n'avez pas converti la personne, vous avez transformé son objection en spécification.",
+  pourquoi: "Sur le fond, c'est une objection de valeur : elle ne se traite pas par la preuve, et le principe de Miller et Rollnick s'applique, on ne pousse pas. Mais celle-ci a un correlat opérationnel, contrairement à une objection purement morale : la ligne entre automatisable et humain est un objet de travail réel. Le geste consiste à respecter la valeur et à en tirer une contrainte de conception, ce qui donne à la personne un rôle utile dans la salle au lieu d'un rôle d'opposante.",
+  cas: "Klarna, mai 2025, est le cas exact de cette objection : l'entreprise a remplacé son service client par un agent, la qualité a baissé, le dirigeant l'a reconnu publiquement et le recrutement a repris. La cause identifiée n'est pas l'automatisation en soi mais l'absence d'escalade humaine sur les cas complexes. La personne qui objecte a donc raison sur le risque, et la réponse n'est pas de le nier, c'est de nommer le garde-fou.",
+  src: lien("https://www.forbes.com/sites/quickerbettertech/2025/05/18/business-tech-news-klarna-reverses-on-ai-says-customers-like-talking-to-people/", "Forbes, 18 mai 2025, Klarna reverses on AI")
+}));
+
+SCREENS.push(obj(8, "Je n'ai pas le temps d'apprendre un nouvel outil", "FAIT", {
+  conduite: "Ne promettez aucun gain général, ce sont des promesses de brochure et elles se retournent. Prenez une tâche réelle de son poste, chronométrez-la telle qu'elle la fait aujourd'hui, refaites-la avec l'outil, et donnez l'écart en minutes réelles devant tout le monde, y compris si l'écart est faible. Puis faites-lui refaire l'opération seule, sans support et sans regarder l'écran d'à côté. Dix minutes de pratique avec rappel valent plus qu'une heure de démonstration regardée, et c'est cette pratique-là que vous devez lui vendre, pas l'outil.",
+  pourquoi: "C'est l'<strong>effet de test</strong> de Roediger et Karpicke, 2006 : le rappel actif, se forcer à restituer sans support, bat la relecture à deux jours et à une semaine. Or l'argument du temps repose sur une intuition inverse, celle qu'il faudrait d'abord tout lire et tout regarder avant de pouvoir faire. En montrant qu'on apprend en faisant et en se trompant, vous réduisez le coût annoncé de l'apprentissage, qui est le vrai objet de l'objection. Corollaire pratique : ne distribuez pas le mémo avant l'exercice, distribuez-le après.",
+  nf: "Attention en salle si un formateur expérimenté creuse : l'effet de test est solidement établi sur des apprentissages de contenu, listes, textes, faits. Son transfert à l'apprentissage d'un geste outil en formation professionnelle est une extrapolation raisonnable, mais aucune étude dédiée ne l'isole. Dites-le, cela vous coûte moins cher que de vous faire reprendre."
+}));
+
+SCREENS.push(obj(9, "Les grandes entreprises technologiques accumulent trop de pouvoir avec l'IA", "VALEUR", {
+  conduite: "Reconnaissez que c'est un enjeu politique légitime, et ne répondez pas par des arguments de performance produit, qui feraient de vous le porte-parole des entreprises visées. Distinguez ensuite deux plans à voix haute : ce qui se joue au niveau politique et réglementaire, sur lequel ni vous ni la salle n'avez la main aujourd'hui, et ce qui se décide dans leur organisation, le choix des outils, le lieu d'hébergement des données, l'existence d'alternatives ouvertes, la dépendance acceptée ou non à un fournisseur unique. Traitez le second, laissez le premier ouvert sans prétendre le régler.",
+  pourquoi: "Une objection politique est une objection de valeur : l'argumentation factuelle sur les mérites du produit ne l'atteint pas, et Haidt explique pourquoi, le jugement ne s'est pas construit sur ces critères. Le geste utile est le découpage entre ce sur quoi la personne n'a pas prise et ce sur quoi elle en a, parce qu'il transforme un sentiment d'impuissance, qui produit du retrait, en une liste de décisions concrètes, qui produit de l'engagement. Vous ne changez pas l'opinion, vous rendez la journée utile malgré l'opinion.",
+  nf: "Le découpage entre ce qui est sous contrôle et ce qui ne l'est pas est un geste de conduite du changement courant, cohérent avec le besoin d'autonomie décrit par Deci et Ryan, mais aucune étude ne mesure son effet sur une objection politique en formation. Savoir-faire de terrain."
+}));
+
+SCREENS.push(obj(10, "Mes données, mes documents internes, où vont-ils vraiment ?", "FAIT", {
+  conduite: "C'est un fait, donc une réponse factuelle et vérifiable, jamais une réassurance. Ouvrez les paramètres devant la salle, montrez où se règle la réutilisation des contenus, distinguez les offres grand public des offres professionnelles, et dites clairement ce que vous ne savez pas plutôt que de combler. Renvoyez ensuite à la seule autorité qui compte pour eux : la politique interne de leur organisation et la personne qui en répond. Terminez par une règle simple et mémorisable sur ce qui ne se colle jamais dans un outil grand public.",
+  pourquoi: "Sur ce sujet, l'esquive est le seul geste qui transforme mécaniquement une objection de fait en objection de valeur : la personne qui sent qu'on lui cache quelque chose cesse de discuter des données et se met à discuter de la légitimité de l'outil, terrain sur lequel plus rien n'est prouvable. Nommer soi-même un risque réel, avec ses limites, maintient la conversation sur le terrain factuel où vous pouvez être utile. La règle courte et répétable compte plus que l'exhaustivité : ce qui n'est pas mémorisable ne sera pas appliqué lundi.",
+  nf: "Il n'existe pas de règle unique valable pour tous les outils et toutes les offres, et les conditions changent vite. Ce que vous montrez en salle est vrai le jour où vous le montrez : dites-le, et refusez de répondre à la place du service juridique de leur entreprise."
+}));
 
 /* ---------- 14. Chiffres environnementaux ---------- */
 SCREENS.push({
   v: "",
   kicker: "Les chiffres environnementaux",
-  grand: "Trois ordres de grandeur, à donner tels quels",
+  grand: "Ce qu'on peut dire, et ce qu'il faut arrêter de dire",
   consigne: "Quels chiffres avez-vous en tête ?",
-  reveal:
-    '<ul class="liste">' +
-      '<li><b>6 à 10 fois</b> plus d\'électricité pour une requête d\'IA générative qu\'une recherche web classique</li>' +
-      '<li><b>460 à 1000 TWh et plus</b>, consommation mondiale des data centers, de 2022 à une projection 2026</li>' +
-      '<li><b>environ 0,5 litre d\'eau</b> mobilisée pour 10 à 50 requêtes</li>' +
-    '</ul>' +
-    '<div class="bloc" style="margin-top:26px"><p style="font-size:clamp(17px,1.6vw,25px);line-height:1.45"><strong>Mention obligatoire :</strong> ces trois chiffres sont à donner tels quels, comme ordres de grandeur, jamais comme argument pour minimiser l\'impact ni pour le dramatiser. Ce sont des ordres de grandeur, pas des mesures consensuelles.</p></div>'
+  reveal: meth({
+    conduite: "Donnez deux échelles et une mise en garde, dans cet ordre. L'échelle de la requête : la mesure publiée par Google en août 2025 sur son propre assistant donne 0,24 Wh d'électricité, 0,03 g de CO2 équivalent et 0,26 mL d'eau pour une requête texte médiane. L'échelle du parc : l'Agence internationale de l'énergie chiffre les centres de données à 415 puis 485 TWh en 2025, avec une trajectoire vers environ 950 TWh en 2030, soit près de 3 pourcent de la demande électrique mondiale, et un bond de 50 pourcent en 2025 pour les centres dédiés à l'IA. La mise en garde : le premier chiffre est une mesure d'entreprise sur son propre parc, pas une moyenne du secteur, et vous devez le préciser vous-même.",
+    pourquoi: "L'écart entre les deux échelles est le vrai message pédagogique, et il désamorce les deux camps de la salle en même temps. La requête individuelle est petite, donc culpabiliser un utilisateur sur ses requêtes n'a pas de sens. Le parc est grand et croît vite, donc dire que l'impact est négligeable n'a pas de sens non plus. Un formateur qui donne les deux échelles et refuse d'en tirer une conclusion morale se rend crédible auprès des deux moitiés du groupe, ce qu'aucun chiffre unique ne permet.",
+    cas: "Le chiffre des « 6 à 10 fois plus d'électricité qu'une recherche web » est périmé, et il est contesté par les analystes qui l'avaient produit eux-mêmes : la surévaluation est d'un facteur proche de dix. C'est une information précieuse à donner en salle, parce que ce chiffre circule encore partout, y compris dans des supports de formation récents. Entre mai 2024 et mai 2025, sur le parc mesuré par Google, l'énergie par requête a été divisée par 33 et les émissions par 44.",
+    casTitre: "Le chiffre périmé, à corriger en salle",
+    nf: "Ne comparez avec rien : ni voiture, ni machine à laver, ni fabrication d'un téléphone. Ces comparaisons circulent massivement mais aucune source primaire fiable ne les étaye, seulement des blogs qui recyclent des estimations non traçables. Une comparaison frappante et non sourcée est exactement ce qu'un formateur expérimenté ira vérifier après la séance.",
+    src: lien("https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference", "Google Cloud, août 2025") + " et " + lien("https://www.iea.org/reports/energy-and-ai", "Agence internationale de l'énergie, Energy and AI")
+  })
 });
 
 /* ---------- 15 à 19. Cinq profils ---------- */
-SCREENS.push(profil(1, "le bavard",
-  "Monopolise la parole, digresse.",
-  "un besoin de reconnaissance, une anxiété comblée par la parole.",
-  "Reformuler son propos puis relancer le groupe, « pour aller plus loin, qu'en pensent les autres ? »",
-  "Le couper sèchement en public : il double la prise de parole suivante."));
-SCREENS.push(profil(2, "le contradicteur",
-  "Objecte systématiquement, teste le formateur.",
-  "une position hiérarchique menacée, un besoin de contrôle.",
-  "Laisser le groupe répondre avant le formateur.",
-  "Vouloir le convaincre frontalement : la contradiction devient un duel."));
-SCREENS.push(profil(3, "l'expert auto-proclamé",
-  "Prend la place du formateur, cas particuliers hors sujet.",
-  "une compétence réelle mais non reconnue, ou la peur de paraître dépassé.",
-  "Nommer l'expertise à voix haute puis la mettre au service du groupe.",
-  "L'ignorer ou minimiser : il cherche alors des alliés contre le formateur."));
-SCREENS.push(profil(4, "le discret",
-  "Silence, aucune contribution.",
-  "de la timidité, un désaccord non formulé, un désengagement réel.",
-  "Solliciter en aparté, questions fermées d'abord.",
-  "Le forcer en public : humiliation puis retrait définitif."));
-SCREENS.push(profil(5, "le démotivé",
-  "Présence physique sans engagement.",
-  "une formation subie, décidée par la hiérarchie sans lui.",
-  "Faire nommer ce qui a manqué, reconnecter à un usage concret pour lui.",
-  "Faire comme si de rien n'était : le silence collectif valide son désengagement."));
+SCREENS.push(profil(1, "le bavard", "Monopolise la parole, digresse, reprend la main après chaque question posée au groupe.", {
+  conduite: "Reformulez son propos en une phrase, remerciez, puis rendez la question au groupe et taisez-vous. Comptez mentalement jusqu'à cinq avant de reprendre la parole, sans combler le vide. Si le vide vous met mal à l'aise, regardez ailleurs que lui : le contact visuel est une invitation à parler. En cas de récidive, cadrez sans le viser, pour tout le monde : « on fait un tour où chacun dit une phrase, une seule, et on commence par la droite ». Jamais de remarque publique sur son temps de parole.",
+  pourquoi: "Le bavard occupe souvent un vide que le formateur a créé lui-même. <strong>Mary Budd Rowe</strong>, en 1986, a mesuré que les enseignants attendent moins d'une seconde après une question avant de reprendre la parole ou de désigner quelqu'un. Porter ce temps d'attente à trois ou cinq secondes augmente la longueur des réponses, la confiance dans ce qui est dit, et fait entrer dans la conversation des personnes qui ne parlaient jamais. Autrement dit, la meilleure façon de réduire la part de parole du bavard n'est pas de le couper, c'est d'attendre plus longtemps que lui.",
+  cas: "Le geste concret, mesurable pour vous dès la prochaine session : après votre question, comptez cinq secondes dans votre tête avant tout autre son. C'est très long à tenir la première fois, et c'est précisément ce qui rend l'effet visible.",
+  casTitre: "Le geste, chiffré",
+  nf: "Couper sèchement en public produit l'effet inverse, la personne double sa prise de parole suivante : c'est une observation de terrain constante dans les guides de formation de formateurs, pas un résultat expérimental chiffré.",
+  src: lien("https://journals.sagepub.com/doi/10.1177/002248718603700110", "Mary Budd Rowe, 1986, Wait Time, Journal of Teacher Education")
+}));
+
+SCREENS.push(profil(2, "le contradicteur", "Objecte systématiquement, teste le formateur, cherche la faille plus que la réponse.", {
+  conduite: "Laissez le groupe répondre avant vous, systématiquement. Puis reformulez son objection mieux qu'il ne l'a formulée, jusqu'à ce qu'il dise « oui, c'est ça », avant de dire quoi que ce soit d'autre. Ne cherchez pas à gagner l'échange : donnez-lui raison sur la part qui est juste, et bornez le désacord au reste. Si vous devez trancher, tranchez sur le fond et pas sur la personne, et proposez-lui de vérifier le point pendant la pause, ce qui sort le duel de la scène.",
+  pourquoi: "La reformulation vient de l'écoute active de <strong>Carl Rogers</strong> et des reflets de l'entretien motivationnel de <strong>Miller et Rollnick</strong> : une personne qui vient d'être reformulée fidèlement n'a plus à répéter, donc n'a plus à monter le ton. La charge défensive tombe parce que l'objection est déjà portée par quelqu'un d'autre. Le principe de <strong>rolling with resistance</strong> complète : la résistance se nourrit de ce qui la pousse. Un contradicteur privé de contradicteur en face de lui perd très vite son rôle.",
+  cas: "Le repère de salle : quand vous laissez le groupe répondre le premier, le contradicteur ne se bat plus contre le formateur mais contre ses collègues, ce qui est un rapport de force qu'il ne cherche pas et qui le fait redescendre de lui-même.",
+  casTitre: "Le repère de salle",
+  nf: "L'attribution de la contradiction systématique à une position hiérarchique menacée ou à un besoin de contrôle est une hypothèse de terrain répandue, pas un résultat de recherche. Elle aide à ne pas le prendre personnellement, elle ne prouve rien."
+}));
+
+SCREENS.push(profil(3, "l'expert auto-proclamé", "Prend la place du formateur, apporte des cas particuliers hors sujet, complète chaque réponse.", {
+  conduite: "Nommez son expertise à voix haute, tôt, et devant tout le monde : « vous, vous avez pratiqué, donc sur ce point je vais m'appuyer sur vous ». Puis confiez-lui un rôle précis et borné, et seulement celui-là : il valide un exemple, il traite les questions techniques d'un exercice, il co-anime cinq minutes sur un point qu'il maîtrise. Le rôle doit avoir une fin annoncée. Ce que vous achetez, c'est la reconnaissance publique, et elle coûte trois secondes.",
+  pourquoi: "C'est le mécanisme des <strong>affirmations</strong> en entretien motivationnel, chez Miller et Rollnick : reconnaître explicitement une compétence réelle diminue la résistance, parce que la personne n'a plus besoin de défendre son statut avant de pouvoir discuter du fond. Tant que le statut n'est pas reconnu, chaque prise de parole sert d'abord à l'établir, et le contenu passe après. Une fois reconnu, la même personne devient souvent le meilleur relais du groupe, au sens du leader d'opinion de l'écran d'ouverture.",
+  cas: "L'erreur symétrique, et la plus coûteuse : l'ignorer ou minimiser sa contribution. Il ne se tait pas, il cherche des alliés dans la salle, et vous vous retrouvez à animer contre un sous-groupe au lieu d'un individu.",
+  casTitre: "Ce qui aggrave",
+  nf: "L'idée que ce comportement viendrait de la peur de paraître dépassé n'a aucune donnée chiffrée derrière elle, seulement une observation répétée sur le terrain. Le geste, lui, s'appuie sur un principe documenté ; l'explication psychologique de la cause, non."
+}));
+
+SCREENS.push(profil(4, "le discret", "Silence, aucune contribution spontanée, participe aux exercices sans jamais prendre la parole en plénière.", {
+  conduite: "Ne le désignez pas en plénière. Trois gestes, dans cet ordre : allongez votre temps d'attente après chaque question posée au groupe, jusqu'à cinq secondes, ce qui suffit souvent ; faites passer les questions par le binôme ou le trio avant la plénière ; sollicitez-le en aparté pendant un exercice, où le coût social d'une réponse est nul. Si vous voulez sa contribution devant tout le monde, demandez-lui d'abord en privé s'il accepte que vous la repreniez, puis attribuez-la lui publiquement.",
+  pourquoi: "<strong>Mary Budd Rowe</strong>, 1986 : quand le temps d'attente après une question passe sous la seconde à trois ou cinq secondes, ce sont précisément les élèves habituellement silencieux qui commencent à répondre, et la longueur des réponses augmente. Le silence d'une personne discrète n'est donc pas toujours un trait de caractère, c'est souvent une conséquence directe du rythme imposé par l'animateur. Vous avez la main sur ce rythme, vous n'avez pas la main sur son tempérament : travaillez sur ce que vous contrôlez.",
+  cas: "Le forcer en public produit une humiliation puis un retrait définitif pour le reste de la journée, et le groupe enregistre que prendre la parole est risqué. Le coût ne porte pas sur une personne, il porte sur toute la salle.",
+  casTitre: "Ce qui aggrave",
+  nf: "La recommandation classique de commencer par une question fermée plutôt qu'ouverte avec une personne discrète ne repose sur aucune étude qui l'isole. C'est un usage de terrain plausible, présentez-le comme tel si on vous demande la source.",
+  src: lien("https://journals.sagepub.com/doi/10.1177/002248718603700110", "Mary Budd Rowe, 1986, Wait Time, Journal of Teacher Education")
+}));
+
+SCREENS.push(profil(5, "le démotivé", "Présence physique sans engagement, formation manifestement subie, décidée par la hiérarchie sans lui.", {
+  conduite: "Faites nommer ce qui a manqué, sans défendre le commanditaire : « qu'est-ce qu'on ne vous a pas demandé avant de vous inscrire ? ». Écoutez la réponse en entier. Puis repartez de son terrain à lui : demandez un cas concret de sa semaine, et faites la séquence suivante sur ce cas-là plutôt que sur votre exemple. Donnez-lui un retour précis sur ce qu'il produit, pas un encouragement général. Ne cherchez pas l'adhésion à la formation, cherchez un résultat utilisable dans son travail de la semaine prochaine.",
+  pourquoi: "C'est le cœur de l'<strong>andragogie</strong> de Malcolm Knowles, 1980 : un adulte s'engage quand le contenu résout un problème qu'il reconnaît comme le sien, et quand il a eu part à la décision d'apprendre. Ici la décision lui a été retirée, et c'est ce manque-là qu'il exprime, pas un rejet du sujet. Repartir d'un cas qu'il apporte lui restitue la seule part de décision encore disponible, celle du contenu. Le retour, lui, doit répondre aux trois questions de <strong>Hattie et Timperley</strong> : où je vais, où j'en suis, quelle est la prochaine étape.",
+  cas: "Faire comme si de rien n'était est le pire choix : le silence collectif valide son désengagement, et son voisin en déduit que le retrait est une option acceptable pour la journée.",
+  casTitre: "Ce qui aggrave"
+}));
 
 /* ---------- 20 à 27. Huit situations ---------- */
-SCREENS.push(situ(1, "Un participant sort son téléphone",
-  "signal de décrochage qui se propage visuellement.",
-  "réintégrer par une tâche courte et nominative, jamais une remarque publique."));
-SCREENS.push(situ(2, "Un participant conteste un chiffre",
-  "le doute s'installe pour tout le reste de la session.",
-  "reconnaître l'incertitude, proposer de vérifier ensemble en direct."));
-SCREENS.push(situ(3, "« La direction a déjà décidé »",
-  "le groupe se range derrière ce cadrage fataliste.",
-  "séparer la décision, hors de portée, de la pratique, dans la salle, aujourd'hui."));
-SCREENS.push(situ(4, "Il a testé et il a été déçu",
-  "sa déception devient la norme du groupe.",
-  "faire décrire précisément le cas raté, c'est souvent un problème de prompt ou de cas d'usage, pas d'outil."));
-SCREENS.push(situ(5, "Il en sait plus que le formateur",
-  "perte de crédibilité si on l'ignore ou si on bluffe.",
-  "le nommer coformateur sur ce point, à voix haute."));
-SCREENS.push(situ(6, "Le groupe entier se tait",
-  "le silence est lu comme un accord de façade.",
-  "passer en sous-groupes de deux ou trois, le silence collectif ne résiste pas au binôme."));
-SCREENS.push(situ(7, "Deux participants se contredisent",
-  "le groupe se polarise, un camp se forme.",
-  "faire reformuler à chacun ce que dit l'autre avant de trancher, jamais le formateur en arbitre."));
-SCREENS.push(situ(8, "Un manager présent inhibe son équipe",
-  "l'équipe s'autocensure toute la session.",
-  "proposer une séquence sans hiérarchie, ou recueillir en écrit anonyme."));
+SCREENS.push(situ(1, "Un participant sort son téléphone", {
+  conduite: "Aucune remarque publique, jamais. Changez de format dans les trente secondes : une question nominative mais facile, un passage en binôme, un exercice court à produire. Le téléphone se range de lui-même quand il y a quelque chose à faire. Ensuite, regardez votre propre contenu : si trois personnes décrochent en même temps, ce n'est plus un problème de discipline, c'est un problème de charge. Retirez ce qui n'aide pas à comprendre avant d'ajouter quoi que ce soit, et coupez par des tâches plutôt que par le chronomètre.",
+  pourquoi: "Deux mécanismes. La <strong>charge cognitive</strong> de <strong>John Sweller</strong> d'abord : au-delà d'un certain volume d'informations nouvelles simultanées, la mémoire de travail sature et le traitement s'arrête, ce qui se voit de l'extérieur comme du désintérêt. La bonne réponse est de retirer, pas d'ajouter de l'animation. Ensuite le rythme : ce qui relance l'attention n'est pas la durée écoulée, c'est le changement de tâche. Une consigne qui demande de produire quelque chose remet la mémoire de travail au travail, une anecdote ne le fait pas.",
+  cas: "Le mythe des dix à quinze minutes d'attention n'est pas confirmé par la recherche primaire : la revue publiée dans Advances in Physiology Education en 2016 montre que cette affirmation est citée en boucle sans donnée qui la soutienne. Un adulte peut soutenir une attention choisie plusieurs heures, un film ou une partie de jeu le prouvent tous les jours. Ce qui change n'est pas la durée possible, c'est la fréquence des interruptions et la nature de la tâche.",
+  casTitre: "Le chiffre à ne plus répéter",
+  nf: "Corollaire pour votre déroulé : ne découpez pas votre journée en tranches de quinze minutes parce qu'un support l'affirme. Découpez selon les tâches à faire produire. Aucune donnée ne fixe de durée maximale universelle d'attention.",
+  src: lien("https://journals.physiology.org/doi/full/10.1152/advan.00109.2016", "Advances in Physiology Education, 2016, sur le mythe de la durée d'attention")
+}));
+
+SCREENS.push(situ(2, "Un participant conteste un chiffre", {
+  conduite: "Remerciez, à voix haute et sans ironie : « bonne question, on vérifie ». Puis vérifiez vraiment, en direct si c'est possible, à l'écran, devant tout le monde. Si vous ne pouvez pas, notez la question au tableau avec le nom de la personne et revenez dessus avant la fin de la journée, ce qui n'est pas négociable. Si vous vous êtes trompé, dites-le en une phrase, corrigez et passez : ne vous excusez pas trois fois, cela déplace l'attention sur vous. Ne bluffez jamais, une salle de quinze personnes a un téléphone et trouve la réponse en vingt secondes.",
+  pourquoi: "C'est directement la <strong>sécurité psychologique</strong> d'<strong>Amy Edmondson</strong> : dans son étude de 1999 sur 51 équipes, les équipes les mieux dirigées signalaient plus d'erreurs, pas moins, parce que le signalement y était sans coût. Le contresens courant est de lire un signalement comme un problème alors qu'il est le symptôme d'un climat sain. En salle, la première personne qui conteste un chiffre décide pour tout le groupe si contester est possible : votre réaction, dans les cinq secondes, fixe la norme pour le reste de la journée. Remerciez publiquement, c'est l'investissement le moins cher de la session.",
+  cas: "Étude d'Amy Edmondson, 1999, sur 51 équipes de soins : le taux d'erreurs signalées était plus élevé dans les équipes les mieux dirigées. Ce n'est pas qu'elles se trompaient davantage, c'est que l'erreur y était dicible. Le transfert en salle est direct : un groupe silencieux n'est pas un groupe sans objection, c'est un groupe où l'objection ne se dit pas.",
+  src: lien("https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Organizational_Learning_and_Change/Edmondson_1999_Psychological_safety.pdf", "Amy Edmondson, 1999, Psychological Safety and Learning Behavior in Work Teams")
+}));
+
+SCREENS.push(situ(3, "« La direction a déjà décidé »", {
+  conduite: "Ne défendez pas la direction, et ne la critiquez pas non plus : vous perdez dans les deux cas. Séparez explicitement deux plans, au tableau si nécessaire. Ce qui est décidé et hors de portée aujourd'hui, vous le nommez sans le discuter. Ce qui reste ouvert dans la salle, vous le listez avec eux : comment on s'en sert, sur quelles tâches, avec quelles règles internes, ce qu'on refuse d'y mettre. Puis faites choisir : chaque exercice de la journée doit comporter au moins une décision réelle laissée au participant, y compris le cas sur lequel il travaille.",
+  pourquoi: "La théorie de l'<strong>autodétermination</strong> de <strong>Deci et Ryan</strong> identifie trois besoins qui conditionnent l'engagement : autonomie, compétence, appartenance. Une décision imposée attaque le premier, et le retrait qui suit n'est pas de la mauvaise volonté, c'est la conséquence prévisible. Vous ne pouvez pas rendre la décision stratégique, mais vous pouvez restituer de l'autonomie sur le comment, et cela suffit souvent à relancer l'engagement. Un choix réel, même petit, vaut mieux qu'un grand discours sur l'adhésion.",
+  cas: "Le piège à éviter : promettre que leur avis va remonter si vous n'avez aucun moyen de le garantir. Une promesse non tenue sur ce point vous coûte plus cher que le fatalisme initial. Si vous avez ce canal, dites précisément à qui et quand, sinon ne dites rien.",
+  casTitre: "Le piège de salle",
+  nf: "L'autodétermination est un cadre théorique solide et abondamment documenté, mais aucune étude ne mesure spécifiquement l'effet de ce découpage entre décidé et ouvert sur un groupe en formation obligatoire. Le geste relève du savoir-faire de terrain."
+}));
+
+SCREENS.push(situ(4, "Il a testé et il a été déçu", {
+  conduite: "Faites décrire le cas précisément, sans commenter : quelle tâche, quelle consigne donnée exactement, quel outil, quelle version, quel résultat obtenu. Rejouez le cas en direct. Puis donnez un retour structuré sur ce qu'il a fait, en trois temps : où on veut aller, où en est le résultat actuel, quelle est la prochaine étape concrète. Portez le retour sur la consigne qu'il a écrite, jamais sur lui, et ne dites jamais qu'il s'y est mal pris. Si le cas ne s'améliore pas, actez-le : « celui-là n'est pas pour ça », et vous gagnez plus que si vous aviez gagné.",
+  pourquoi: "C'est la structure établie par <strong>Hattie et Timperley</strong> en 2007, dans une méta-analyse dont l'effet moyen de la rétroaction ressort à d égal 0,48, ce qui en fait un des leviers les plus robustes de l'apprentissage. Leur résultat le plus utile ici est négatif : la rétroaction fonctionne quand elle répond aux trois questions, où je vais, où j'en suis, quelle est la prochaine étape, et elle échoue quand elle vise l'estime de soi de la personne plutôt que la tâche. Un « vous vous y êtes mal pris » et un « bravo quand même » échouent pour la même raison, ils parlent de la personne.",
+  cas: "Méta-analyse de Hattie et Timperley, Review of Educational Research, 2007 : effet moyen d égal 0,48, avec une variabilité forte selon la forme du retour. Le retour orienté tâche et processus est efficace, le retour orienté personne ne l'est pas, et peut être négatif.",
+  nf: "Un point à ne pas surinterpréter en salle : l'idée que faire décrire un échec passé vaut mieux que le contredire est cohérente avec l'effet de test et avec la rétroaction, mais le lien est une analogie, pas une étude dédiée à cette situation. Le geste tient debout, sa justification savante doit rester prudente.",
+  src: lien("https://conselhopedagogico.tecnico.ulisboa.pt/files/sites/32/hattie-and-timperley-2007.pdf", "John Hattie et Helen Timperley, 2007, The Power of Feedback")
+}));
+
+SCREENS.push(situ(5, "Il en sait plus que le formateur", {
+  conduite: "Dites-le avant qu'il ne le montre. Nommez-le coformateur sur ce point précis, à voix haute et devant tout le monde, avec une frontière nette : « sur la partie technique, c'est vous qui répondez, sur la partie pédagogique, c'est moi ». Ne bluffez sur aucun point, y compris petit. Quand vous ne savez pas, dites que vous ne savez pas et demandez-lui. Reprenez la main sur ce que vous maîtrisez et qu'il ne maîtrise pas : le déroulé, la progression du groupe, le fait que quinze personnes doivent repartir avec quelque chose.",
+  pourquoi: "Même mécanisme que pour l'expert auto-proclamé, les <strong>affirmations</strong> de Miller et Rollnick : reconnaître une compétence réelle diminue la résistance, parce que la personne n'a plus à défendre son statut avant de pouvoir parler du fond. Ici s'ajoute un enjeu propre au formateur : la crédibilité ne vient pas de tout savoir, elle vient de ne jamais être pris en flagrant délit d'approximation. Un bluff démonté à onze heures contamine tout ce que vous direz jusqu'à dix-sept heures, y compris ce qui est juste.",
+  cas: "Le repère de salle : le groupe ne vous compare pas à l'expert sur le savoir, il vous regarde gérer l'expert. C'est cette compétence-là qu'il évalue, et elle est entièrement à votre portée.",
+  casTitre: "Le repère de salle"
+}));
+
+SCREENS.push(situ(6, "Le groupe entier se tait", {
+  conduite: "Ne reformulez pas votre question tout de suite, c'est le réflexe qui tue le silence utile. Comptez jusqu'à cinq dans votre tête, sans un mot et sans regarder une personne en particulier. Si le silence tient encore, ne le forcez pas en plénière : passez en binôme ou en trio, deux minutes, avec une consigne écrite et un livrable minuscule, une phrase à ramener. Reprenez ensuite en demandant non pas un avis mais un compte rendu : « qu'est-ce qui s'est dit chez vous ? ». Personne ne s'expose plus en son nom propre, et la parole revient.",
+  pourquoi: "Deux mécanismes se cumulent. <strong>Mary Budd Rowe</strong>, 1986 : les enseignants attendent moins d'une seconde après une question, et porter ce délai à trois ou cinq secondes allonge les réponses et fait parler ceux qui ne parlaient pas. La moitié des silences de groupe sont donc un artefact du rythme de l'animateur. Ensuite l'<strong>ignorance pluraliste</strong> : dans un groupe silencieux, chacun interprète le silence des autres comme un accord, et se tait pour ne pas être le seul à ne pas suivre. Le binôme casse exactement cela, parce qu'il permet de vérifier auprès d'une seule personne, à coût social presque nul, que l'on n'est pas seul à penser ce qu'on pense.",
+  cas: "Le chiffre de Rowe est le plus utile à retenir pour vous-même : moins d'une seconde en moyenne. Cinq secondes de silence tenues volontairement sont inconfortables pour l'animateur, jamais pour le groupe, qui les vit comme un temps de réflexion normal.",
+  casTitre: "Le geste, chiffré",
+  src: lien("https://journals.sagepub.com/doi/10.1177/002248718603700110", "Mary Budd Rowe, 1986, Wait Time, Journal of Teacher Education")
+}));
+
+SCREENS.push(situ(7, "Deux participants se contredisent", {
+  conduite: "N'arbitrez pas, et surtout ne tranchez pas sur le fond en premier. Demandez à chacun de reformuler la position de l'autre jusqu'à ce que l'autre valide : « il dit quoi, lui, exactement ? ». Tant que la validation n'est pas obtenue, on ne passe pas à la suite. Une fois les deux positions reformulées et reconnues, nommez ce qui est réellement en jeu, souvent deux contextes différents plutôt qu'un désaccord de fond. Si vous devez trancher, faites-le sur le fond, brièvement, et rendez la main au groupe : le formateur en arbitre permanent transforme la salle en tribunal.",
+  pourquoi: "La reformulation vient de l'écoute active de <strong>Carl Rogers</strong> et des reflets de <strong>Miller et Rollnick</strong>. Son effet est mécanique : tant qu'une personne n'a pas été entendue, elle répète, et elle répète plus fort. Une fois qu'elle s'entend reformulée correctement, y compris par son contradicteur, la charge défensive tombe et l'écoute redevient possible. L'obligation de reformuler l'autre a un second effet, plus rapide encore : elle rend impossible la caricature de la position adverse, qui est ce qui polarise un groupe.",
+  cas: "Ce qui se passe si vous ne faites rien : le groupe se polarise, deux camps se forment, et la suite de la journée se lit à travers cette ligne de fracture. La polarisation est bien plus coûteuse que le désaccord lui-même.",
+  casTitre: "Si on ne fait rien",
+  nf: "L'écoute active de Rogers est un cadre clinique très documenté, mais la reformulation croisée entre deux participants en formation professionnelle n'a pas fait l'objet d'une étude dédiée à ma connaissance. Le principe est solide, le protocole précis relève du savoir-faire de terrain."
+}));
+
+SCREENS.push(situ(8, "Un manager présent inhibe son équipe", {
+  conduite: "Traitez-le avant la séance si vous le pouvez : demandez au manager soit de ne pas assister à la séquence sensible, soit d'ouvrir en nommant lui-même ses propres doutes, ce qui est le geste le plus efficace des deux. Pendant la séance, faites circuler l'écrit : recueil anonyme sur papier ou en ligne, restitution par vous, jamais de tour de table nominatif sur un sujet à risque. Composez les binômes en évitant les liens hiérarchiques directs. Et ne demandez jamais publiquement à un collaborateur de se positionner sur une décision de son manager.",
+  pourquoi: "La <strong>sécurité psychologique</strong> d'<strong>Amy Edmondson</strong> se joue au niveau de l'équipe et dépend fortement du comportement du responsable : dans son étude de 1999 sur 51 équipes, ce sont les équipes les mieux dirigées qui signalaient le plus d'erreurs. Le corollaire pour votre salle est direct : la présence du manager ne pose pas problème en soi, c'est son comportement dans les dix premières minutes qui fixe ce qui est dicible. D'où l'intérêt de lui faire ouvrir la séquence en exprimant ses propres incertitudes, ce qui autorise les autres à en avoir.",
+  cas: "Étude d'Amy Edmondson, 1999, sur 51 équipes : les taux d'erreurs signalées les plus élevés se trouvaient dans les équipes les mieux dirigées, pas dans les moins bonnes. Transposé en salle, un silence poli devant le manager n'est pas un accord, c'est une absence d'information, et vous animerez à l'aveugle tant que vous ne l'aurez pas contourné.",
+  src: lien("https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Organizational_Learning_and_Change/Edmondson_1999_Psychological_safety.pdf", "Amy Edmondson, 1999, Psychological Safety and Learning Behavior in Work Teams")
+}));
 
 /* ---------- 28. Six chiffres sur la résistance ---------- */
 SCREENS.push({
@@ -361,19 +521,26 @@ SCREENS.push({
   kicker: "Six chiffres sur la résistance à l'IA, 2026",
   grand: "La méfiance est majoritaire",
   consigne: "À votre avis, combien de salariés se disent méfiants ?",
-  reveal:
-    '<ul class="liste">' +
-      '<li><b>44 pourcent</b> des jeunes salariés déclarent pouvoir saboter des initiatives IA par peur d\'être remplacés (Writer et Workplace Intelligence, avril 2026)</li>' +
-      '<li><b>61 pourcent</b> des salariés se disent méfiants envers l\'IA (Harvard Business Review)</li>' +
-      '<li><b>28 pourcent</b> des actifs se sentent dépassés, surtout les 50-65 ans et les professions intermédiaires (Ipsos, juin 2025)</li>' +
-      '<li><b>88 pourcent</b> des organisations ont déployé de l\'IA, <b>6 pourcent</b> seulement en tirent un impact mesurable (études 2026 citées par Adequancy)</li>' +
-      '<li><b>3,8 pourcent</b> de l\'emploi français est fragilisé par l\'IA générative (Coface, avril 2026)</li>' +
-      '<li><b>moins de 5 pourcent</b> des entreprises françaises ont négocié un accord IA (IRES, FO, CGT, 2026)</li>' +
-    '</ul>' +
-    '<div class="bloc" style="margin-top:28px">' +
-      '<p class="phrase" id="phrase-1">Votre méfiance n\'est pas irrationnelle, elle est même partagée par six salariés sur dix. La question n\'est pas de l\'éteindre, c\'est de savoir ce qu\'on en fait aujourd\'hui.</p>' +
-      '<div class="copier"><button class="btn" data-copy="phrase-1">Copier la phrase</button><span class="copie-ok" id="ok-phrase-1"></span></div>' +
-    '</div>'
+  reveal: meth({
+    conduite: "Donnez ces six chiffres au moment où quelqu'un s'excuse d'être réticent, pas en ouverture. Leur fonction n'est pas d'informer, elle est de retirer à la personne la charge d'être l'exception dans la salle. Annoncez la source à chaque fois, et n'en donnez jamais plus de deux d'affilée : un chiffre isolé et attribué se retient, une rafale ne se retient pas.",
+    avant:
+      '<ul class="liste">' +
+        '<li><b>44 pourcent</b> des jeunes salariés déclarent pouvoir saboter des initiatives IA par peur d\'être remplacés (Writer et Workplace Intelligence, avril 2026)</li>' +
+        '<li><b>61 pourcent</b> des salariés se disent méfiants envers l\'IA (Harvard Business Review)</li>' +
+        '<li><b>28 pourcent</b> des actifs se sentent dépassés, surtout les 50-65 ans et les professions intermédiaires (Ipsos, juin 2025)</li>' +
+        '<li><b>88 pourcent</b> des organisations ont déployé de l\'IA, <b>6 pourcent</b> seulement en tirent un impact mesurable (études 2026 citées par Adequancy)</li>' +
+        '<li><b>3,8 pourcent</b> de l\'emploi français est fragilisé par l\'IA générative (Coface, avril 2026)</li>' +
+        '<li><b>moins de 5 pourcent</b> des entreprises françaises ont négocié un accord IA (IRES, FO, CGT, 2026)</li>' +
+      '</ul>',
+    pourquoi: "Le mécanisme est le même que celui qui produit le silence des groupes, l'<strong>ignorance pluraliste</strong> : chacun croit être le seul à douter, parce que personne ne dit rien, et se tait donc à son tour. Donner un chiffre de prévalence casse cette croyance en une phrase et transforme une opinion honteuse en position partagée, donc discutable. C'est aussi pour cela que le chiffre de l'écart entre déploiement et impact mesurable est utile : il dit au groupe que leur expérience d'échec est le cas général, ce qui les autorise à en parler.",
+    cas: "L'écart entre 88 pourcent d'organisations qui déploient et 6 pourcent qui en tirent un impact mesurable recoupe le rapport MIT NANDA relayé par MIT Sloan à l'été 2025, qui trouve 95 pourcent de pilotes sans impact mesurable, avec une cause identifiée du côté de l'intégration et de l'apprentissage du contexte de l'entreprise, pas du côté du rejet par les utilisateurs. Deux sources indépendantes, même ordre de grandeur.",
+    apres:
+      '<div class="bloc" style="margin-top:8px;margin-bottom:22px">' +
+        '<p class="phrase" id="phrase-1">Votre méfiance n\'est pas irrationnelle, elle est même partagée par six salariés sur dix. La question n\'est pas de l\'éteindre, c\'est de savoir ce qu\'on en fait aujourd\'hui.</p>' +
+        '<div class="copier"><button class="btn" data-copy="phrase-1">Copier la phrase</button><span class="copie-ok" id="ok-phrase-1"></span></div>' +
+      '</div>',
+    src: "les six chiffres gardent les sources indiquées entre parenthèses. Pour le recoupement : " + lien("https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/", "MIT Sloan Management Review, The Emerging Agentic Enterprise")
+  })
 });
 
 /* ---------- 29. Six méthodes nommées ---------- */
@@ -382,15 +549,21 @@ SCREENS.push({
   kicker: "Six méthodes nommées",
   grand: "Ce sur quoi tout ça s'appuie",
   consigne: "Lesquelles connaissez-vous déjà ?",
-  reveal:
-    '<ul class="liste">' +
-      '<li><b>Diffusion de l\'innovation</b>, Everett Rogers, l\'adoption suit une courbe. Geste : identifier les deux ou trois précoces du groupe dès le début et s\'appuyer sur eux publiquement.</li>' +
-      '<li><b>Leader d\'opinion</b>, Lazarsfeld et Katz, l\'influence passe par un relais. Geste : repérer qui le groupe regarde quand il hésite, et convaincre cette personne en premier.</li>' +
-      '<li><b>Entretien motivationnel</b>, Miller et Rollnick, c\'est la personne qui doit nommer sa propre ambivalence. Geste : « qu\'est-ce qui vous ferait dire oui, et qu\'est-ce qui vous retient ? »</li>' +
-      '<li><b>Autodétermination</b>, Deci et Ryan, autonomie, compétence, appartenance. Geste : toujours laisser un choix réel dans l\'exercice.</li>' +
-      '<li><b>Courbe du changement</b>, Kübler-Ross adaptée à la conduite du changement, le refus et la colère sont des étapes normales. Geste : nommer l\'étape sans la juger, « ce que vous dites, c\'est typique du moment où on n\'y croit pas encore, et c\'est normal ».</li>' +
-      '<li><b>Dégel, changement, regel</b>, Kurt Lewin, aucun changement ne tient sans déstabiliser d\'abord. Geste : commencer par une expérience qui bouscule une certitude, avant tout contenu.</li>' +
-    '</ul>'
+  reveal: meth({
+    avant:
+      '<ul class="liste">' +
+        '<li><b>Diffusion de l\'innovation</b>, Everett Rogers, l\'adoption suit une courbe. Geste : identifier les deux ou trois précoces du groupe dès le début et s\'appuyer sur eux publiquement.</li>' +
+        '<li><b>Leader d\'opinion</b>, Lazarsfeld et Katz, l\'influence passe par un relais. Geste : repérer qui le groupe regarde quand il hésite, et convaincre cette personne en premier.</li>' +
+        '<li><b>Entretien motivationnel</b>, Miller et Rollnick, c\'est la personne qui doit nommer sa propre ambivalence. Geste : « qu\'est-ce qui vous ferait dire oui, et qu\'est-ce qui vous retient ? »</li>' +
+        '<li><b>Autodétermination</b>, Deci et Ryan, autonomie, compétence, appartenance. Geste : toujours laisser un choix réel dans l\'exercice.</li>' +
+        '<li><b>Courbe du changement</b>, Kübler-Ross adaptée à la conduite du changement, le refus et la colère sont des étapes normales. Geste : nommer l\'étape sans la juger.</li>' +
+        '<li><b>Dégel, changement, regel</b>, Kurt Lewin, aucun changement ne tient sans déstabiliser d\'abord. Geste : commencer par une expérience qui bouscule une certitude, avant tout contenu.</li>' +
+      '</ul>',
+    conduite: "Quatre autres références traversent toute cette séquence et méritent d'être nommées si on vous demande vos sources. Le temps d'attente de Mary Budd Rowe, qui vous fait compter jusqu'à cinq après chaque question. La rétroaction de Hattie et Timperley, qui structure tout retour en trois questions, où je vais, où j'en suis, quelle est la prochaine étape. La sécurité psychologique d'Amy Edmondson, qui vous fait remercier publiquement la première personne qui signale un doute. La charge cognitive de John Sweller, qui vous fait retirer du contenu avant d'en ajouter. Et l'andragogie de Malcolm Knowles, qui vous fait partir d'un cas apporté par le groupe.",
+    pourquoi: "Nommer les auteurs devant un groupe de futurs formateurs n'est pas de l'érudition, c'est un acte professionnel : cela transforme des astuces en gestes traçables, que chacun peut aller vérifier et transmettre à son tour. Cela vous protège aussi, parce que la référence donnée permet à un participant plus savant que vous de corriger un détail sans vous démonter. Le corollaire est strict : ce qui n'a pas d'auteur doit être annoncé comme savoir-faire de terrain, sans exception, sinon la première vérification faite dans la salle fait tomber tout le reste avec.",
+    nf: "La courbe du changement attribuée à Kübler-Ross est un modèle de deuil transposé au monde de l'entreprise, et cette transposition n'a jamais été validée empiriquement. Elle reste utile comme grille de lecture pour ne pas prendre le refus pour de la mauvaise volonté ; ne la présentez pas comme une loi de l'adoption.",
+    src: lien("https://journals.sagepub.com/doi/10.1177/002248718603700110", "Rowe, 1986") + " ; " + lien("https://conselhopedagogico.tecnico.ulisboa.pt/files/sites/32/hattie-and-timperley-2007.pdf", "Hattie et Timperley, 2007") + " ; " + lien("https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Organizational_Learning_and_Change/Edmondson_1999_Psychological_safety.pdf", "Edmondson, 1999")
+  })
 });
 
 /* ---------- 30. Clôture ---------- */
@@ -398,17 +571,26 @@ SCREENS.push({
   v: "",
   kicker: "Pour finir",
   grand: "Ce qui n'est pas solidement sourcé",
-  sous: "Deux points restent des hypothèses de terrain, pas des faits établis.",
+  sous: "Cinq points à annoncer comme des repères de terrain ou des chiffres périmés, jamais comme des faits établis.",
   consigne: "À dire tel quel si la question tombe en salle",
-  reveal:
-    '<ul class="liste">' +
-      '<li>Les <b>trois chiffres environnementaux</b> sont des ordres de grandeur et non des mesures consensuelles.</li>' +
-      '<li>L\'idée que <b>l\'expert auto-proclamé agit par peur de paraître dépassé</b> n\'a aucune donnée chiffrée derrière, seulement une observation répétée sur le terrain.</li>' +
-    '</ul>' +
-    '<div class="bloc" style="margin-top:28px">' +
-      '<p class="phrase" id="phrase-2">On va faire un tour en binôme deux minutes, pas besoin de lever la main pour parler.</p>' +
-      '<div class="copier"><button class="btn" data-copy="phrase-2">Copier la phrase</button><span class="copie-ok" id="ok-phrase-2"></span></div>' +
-    '</div>'
+  reveal: meth({
+    avant:
+      '<ul class="liste">' +
+        '<li>Le chiffre des <b>6 à 10 fois plus d\'électricité</b> qu\'une recherche web est <b>périmé</b> et contesté par les analystes qui l\'avaient produit, surévalué d\'un facteur proche de dix. Ne le donnez plus.</li>' +
+        '<li>Le <b>mythe des dix à quinze minutes d\'attention</b> n\'est pas confirmé par la recherche primaire. Coupez par des tâches, pas par le chronomètre.</li>' +
+        '<li>Solliciter une personne discrète par une <b>question fermée plutôt qu\'ouverte</b> : aucune étude ne l\'isole, c\'est un usage de terrain.</li>' +
+        '<li>Faire <b>décrire un échec passé</b> plutôt que le contredire : le lien avec l\'effet de test est une analogie, pas une étude dédiée.</li>' +
+        '<li>La <b>typologie des cinq profils</b> et les causes psychologiques qu\'on leur prête sont des repères d\'animation, pas une classification validée.</li>' +
+      '</ul>',
+    conduite: "Dites-le vous-même, avant qu'on ne vous le demande, et en une phrase simple : « celui-là, c'est du savoir-faire de terrain, aucune étude ne l'isole ». Vous êtes devant des formateurs, dont plusieurs vérifieront ce que vous avancez le soir même. Distinguez systématiquement trois statuts quand vous parlez : ce qui est mesuré et sourcé, ce qui est transposé d'un domaine voisin, et ce qui est de la pratique partagée. Un support qui mélange les trois se fait démonter sur le point le plus faible, et perd avec lui tout ce qui était juste.",
+    pourquoi: "C'est la même mécanique que la sécurité psychologique d'Edmondson, appliquée à vous : le formateur qui signale lui-même la limite de ce qu'il affirme rend le doute dicible, et le groupe cesse de chercher la faille pour se mettre à travailler. À l'inverse, une affirmation savante non fondée détectée par un participant expérimenté ne coûte pas seulement cette affirmation, elle rétroagit sur tout ce que vous avez dit depuis le matin, y compris ce qui était solide. Le coût d'un aveu de limite est nul, le coût d'un démenti public est intégral.",
+    apres:
+      '<div class="bloc" style="margin-top:8px;margin-bottom:22px">' +
+        '<p class="phrase" id="phrase-2">On va faire un tour en binôme deux minutes, pas besoin de lever la main pour parler.</p>' +
+        '<div class="copier"><button class="btn" data-copy="phrase-2">Copier la phrase</button><span class="copie-ok" id="ok-phrase-2"></span></div>' +
+      '</div>',
+    src: lien("https://journals.physiology.org/doi/full/10.1152/advan.00109.2016", "Advances in Physiology Education, 2016, sur le mythe de la durée d'attention")
+  })
 });
 
 /* ================= RENDU ================= */
@@ -452,6 +634,8 @@ function reveler(){
   var r = scene.querySelector(".reveal");
   if (!r) return;
   r.classList.add("on");
+  var e = scene.querySelector(".ecran");
+  if (e) e.classList.add("revele");
   btnReveal.classList.add("vide");
 }
 
@@ -480,7 +664,7 @@ var listeConstruite = false;
 function construireListe(){
   if (listeConstruite) return;
   var h = '<h1 class="doc">Comportements en salle</h1>';
-  h += '<p class="doc">Version complète, les ' + TOTAL + " écrans avec les réponses.</p>";
+  h += '<p class="doc">Version complète, les ' + TOTAL + " écrans avec les réponses, les mécanismes et les sources.</p>";
   for (var i = 0; i < SCREENS.length; i++){
     var s = SCREENS[i];
     h += '<div class="ecran' + (s.v ? " " + s.v : "") + '">' + corps(s, true, i + 1) + "</div>";
