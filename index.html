@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mes trois réponses, J5</title>
+<style>
+:root{--m:#E91FCB;--n:#1A1A1A;--g:#4A4A4A;--r:#FCE4F7;}
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--n);margin:0;padding:0;background:#fff;font-size:16px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:24px 20px 60px}
+h1{color:var(--m);font-size:28px;margin:0 0 4px}
+.sous{color:var(--g);margin:0 0 22px}
+.aide{background:var(--r);padding:14px 16px;border-left:4px solid var(--m);margin:0 0 26px}
+.bloc{border:1px solid #eee;border-radius:6px;padding:18px 20px 22px;margin:0 0 22px}
+.num{display:inline-block;background:var(--m);color:#fff;font-weight:bold;padding:3px 11px;border-radius:20px;font-size:14px}
+h2{font-size:19px;margin:12px 0 2px}
+.quand{color:var(--m);font-weight:bold;font-size:14px;margin:0 0 12px}
+label{display:block;font-weight:bold;margin:16px 0 5px;font-size:15px}
+input[type=text],select,textarea{width:100%;border:1px solid #ccc;padding:10px;font-family:inherit;font-size:15px;border-radius:4px}
+textarea{min-height:90px;resize:vertical}
+.coches{margin:14px 0 0}
+.coches div{margin:7px 0}
+.coches input{margin-right:9px;transform:scale(1.25)}
+.coches label{display:inline;font-weight:normal;font-size:15px;margin:0}
+button{background:var(--m);color:#fff;border:0;padding:16px 26px;font-family:inherit;font-size:17px;font-weight:bold;cursor:pointer;border-radius:5px;margin:0 10px 10px 0}
+button.sec{background:#fff;color:var(--m);border:2px solid var(--m)}
+.enr{color:var(--g);font-size:13px;margin:16px 0 0}
+#sortie{display:none;height:240px;font-family:Menlo,monospace;font-size:12px;margin-top:14px}
+#msg{display:none;background:var(--r);padding:12px 14px;border-left:4px solid var(--m);margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Mes trois réponses</h1>
+<p class="sous">Formation Référent IA, Agence Nikita, vendredi 11 septembre 2026</p>
+
+<div class="aide">
+<b>Cinq minutes, trois questions.</b> Vous répondez au fil de la journée, quand on vous le dit. Tout s'enregistre tout seul sur votre ordinateur pendant que vous écrivez. À la fin, un bouton envoie vos réponses.
+</div>
+
+<label>Votre prénom et nom</label>
+<input type="text" id="moi" placeholder="par exemple : Marie Dupont">
+
+<div class="bloc">
+<span class="num">1</span>
+<h2>Ce que j'ai vu chez la personne que j'observais</h2>
+<p class="quand">À remplir en début d'après-midi</p>
+
+<label>J'observais</label>
+<select id="observe">
+<option value="">choisissez</option>
+<option>Richard</option><option>Julie</option><option>Yann</option><option>Stéphane</option>
+<option>Stéphane 2</option><option>Marc</option><option>Jean-Régis</option><option>Myriam</option>
+<option>Lili</option><option>Thibaut</option><option>Daphné</option><option>Jean-Yves</option>
+<option>Jean-Luc</option>
+</select>
+
+<div class="coches" id="c1">
+<div><input type="checkbox" id="k0"><label for="k0">Il a annoncé son objectif et sa durée avant de commencer</label></div>
+<div><input type="checkbox" id="k1"><label for="k1">Sa consigne était claire du premier coup, personne n'a redemandé</label></div>
+<div><input type="checkbox" id="k2"><label for="k2">Le groupe a travaillé plus qu'il n'a écouté</label></div>
+<div><input type="checkbox" id="k3"><label for="k3">Il a tenu le temps qu'il avait annoncé</label></div>
+<div><input type="checkbox" id="k4"><label for="k4">Il a laissé le silence après ses questions, sans y répondre lui-même</label></div>
+<div><input type="checkbox" id="k5"><label for="k5">Il a rattaché son exemple au métier réel des gens en face</label></div>
+</div>
+
+<label>Une chose précise que je l'ai vu faire, et l'effet que ça a produit</label>
+<textarea id="vu" placeholder="Quand il a posé sa question au groupe, il a laissé trois secondes de silence, et deux personnes ont levé la main."></textarea>
+</div>
+
+<div class="bloc">
+<span class="num">2</span>
+<h2>Mon propre passage</h2>
+<p class="quand">À remplir avant midi</p>
+
+<label>Ce que je garde, parce que ça a marché</label>
+<textarea id="garde"></textarea>
+
+<label>Ce que je ferais autrement la prochaine fois</label>
+<textarea id="change"></textarea>
+
+<label>La chose que je veux travailler d'ici la prochaine immersion</label>
+<textarea id="travail" style="min-height:60px"></textarea>
+</div>
+
+<div class="bloc">
+<span class="num">3</span>
+<h2>Mon retour à un collègue</h2>
+<p class="quand">À remplir en fin de journée</p>
+
+<label>À qui</label>
+<select id="qui">
+<option value="">choisissez</option>
+<option>Richard</option><option>Julie</option><option>Yann</option><option>Stéphane</option>
+<option>Stéphane 2</option><option>Marc</option><option>Jean-Régis</option><option>Myriam</option>
+<option>Lili</option><option>Thibaut</option><option>Daphné</option><option>Jean-Yves</option>
+<option>Jean-Luc</option>
+</select>
+
+<label>Une force que je lui reconnais, et une chose qui le ferait progresser</label>
+<textarea id="retour"></textarea>
+</div>
+
+<button onclick="envoyer()">J'envoie ma copie</button>
+<button class="sec" onclick="copier()">Copier mes réponses</button>
+
+<div id="msg"></div>
+<textarea id="sortie"></textarea>
+
+<p class="enr">Vos réponses sont enregistrées sur cet appareil. Elles ne partent nulle part tant que vous n'appuyez pas sur le bouton.</p>
+
+</div>
+
+<script>
+var CHAMPS=["moi","observe","vu","garde","change","travail","qui","retour"];
+var COCHES=["k0","k1","k2","k3","k4","k5"];
+var CLE="reponses-j5-lyon";
+
+function charger(){
+  try{
+    var b=localStorage.getItem(CLE); if(!b)return;
+    var d=JSON.parse(b);
+    CHAMPS.forEach(function(c){ if(d[c]!==undefined) document.getElementById(c).value=d[c]; });
+    COCHES.forEach(function(c){ if(d[c]!==undefined) document.getElementById(c).checked=d[c]; });
+  }catch(e){}
+}
+function sauver(){
+  try{
+    var d={};
+    CHAMPS.forEach(function(c){ d[c]=document.getElementById(c).value; });
+    COCHES.forEach(function(c){ d[c]=document.getElementById(c).checked; });
+    localStorage.setItem(CLE,JSON.stringify(d));
+  }catch(e){}
+}
+CHAMPS.forEach(function(c){ document.getElementById(c).addEventListener("input",sauver); document.getElementById(c).addEventListener("change",sauver); });
+COCHES.forEach(function(c){ document.getElementById(c).addEventListener("change",sauver); });
+
+function v(id){ return document.getElementById(id).value.trim(); }
+function ch(id){ return document.getElementById(id).checked; }
+
+function texte(){
+  var L=["FORMATION RÉFÉRENT IA, AGENCE NIKITA","Journée du vendredi 11 septembre 2026, Lyon","Participant : "+(v("moi")||"non renseigné"),"",
+  "1. CE QUE J'AI VU CHEZ LA PERSONNE QUE J'OBSERVAIS","Personne observée : "+(v("observe")||"non renseignée")];
+  var lib=["Objectif et durée annoncés","Consigne claire du premier coup","Le groupe a travaillé plus qu'écouté","Temps annoncé tenu","Silence laissé après les questions","Exemple rattaché au métier réel"];
+  COCHES.forEach(function(c,i){ L.push((ch(c)?"[oui] ":"[non] ")+lib[i]); });
+  L.push("Ce que j'ai vu : "+(v("vu")||"non renseigné"));
+  L.push("","2. MON PROPRE PASSAGE");
+  L.push("Ce que je garde : "+(v("garde")||"non renseigné"));
+  L.push("Ce que je ferais autrement : "+(v("change")||"non renseigné"));
+  L.push("Ce que je veux travailler : "+(v("travail")||"non renseigné"));
+  L.push("","3. MON RETOUR À UN COLLÈGUE");
+  L.push("À : "+(v("qui")||"non renseigné"));
+  L.push(v("retour")||"non renseigné");
+  return L.join("\n");
+}
+
+function envoyer(){
+  var t=texte();
+  var obj="Formation Référent IA, mes réponses du 11 septembre, "+(v("moi")||"");
+  var url="mailto:clem.pred@gmail.com?subject="+encodeURIComponent(obj)+"&body="+encodeURIComponent(t);
+  if(url.length>1900){ copier(); return; }
+  window.location.href=url;
+}
+
+function copier(){
+  var t=texte();
+  var z=document.getElementById("sortie");
+  z.style.display="block"; z.value=t; z.select();
+  var ok=false;
+  try{ navigator.clipboard.writeText(t); ok=true; }catch(e){ try{ ok=document.execCommand("copy"); }catch(e2){} }
+  var m=document.getElementById("msg");
+  m.style.display="block";
+  m.innerHTML=ok?"<b>C'est copié.</b> Ouvrez un mail à clem.pred@gmail.com et collez le texte."
+                :"<b>Sélectionnez le texte ci-dessous</b>, copiez-le, et collez-le dans un mail à clem.pred@gmail.com.";
+}
+
+charger();
+</script>
+</body>
+</html>
