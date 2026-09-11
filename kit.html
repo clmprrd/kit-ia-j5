@@ -8,16 +8,18 @@
 :root{--m:#E91FCB;--n:#1A1A1A;--g:#4A4A4A;--r:#FCE4F7;}
 *{box-sizing:border-box}
 body{font-family:Arial,Helvetica,sans-serif;color:var(--n);margin:0;background:#fff;font-size:16px;line-height:1.5}
-.wrap{max-width:900px;margin:0 auto;padding:34px 24px 70px}
+.wrap{max-width:920px;margin:0 auto;padding:34px 24px 70px}
 h1{color:var(--m);font-size:34px;margin:0 0 6px}
-.sous{color:var(--g);font-size:17px;margin:0 0 30px}
-.bar{height:5px;background:var(--m);width:150px;margin:0 0 34px}
+.sous{color:var(--g);font-size:17px;margin:0 0 22px}
+.bar{height:5px;background:var(--m);width:150px;margin:0 0 26px}
+.intro{background:var(--r);border-left:5px solid var(--m);padding:16px 20px;margin:0 0 30px;line-height:1.6}
 a.carte{display:block;text-decoration:none;color:inherit;border:2px solid #eee;border-radius:10px;padding:20px 22px;margin:0 0 16px;transition:border-color .15s}
 a.carte:hover{border-color:var(--m)}
-.num{display:inline-block;background:var(--m);color:#fff;font-weight:bold;width:34px;height:34px;line-height:34px;text-align:center;border-radius:50%;font-size:17px;margin-right:12px}
+.fixe{border:2px solid #eee;border-radius:10px;padding:20px 22px;margin:0 0 16px;background:#fff}
+.num{display:inline-block;background:var(--m);color:#fff;font-weight:bold;width:34px;height:34px;line-height:34px;text-align:center;border-radius:50%;font-size:17px;margin-right:12px;flex:0 0 auto}
 .tete{display:flex;align-items:center;margin:0 0 8px}
 .titre{font-size:22px;font-weight:bold}
-.moment{color:var(--m);font-weight:bold;font-size:13px;letter-spacing:.06em;margin-left:auto}
+.moment{color:var(--m);font-weight:bold;font-size:13px;letter-spacing:.06em;margin-left:auto;text-align:right}
 .quoi{color:var(--g);font-size:15px;margin:0 0 0 46px}
 .perso{border-style:dashed;border-color:#ddd;background:#fcfcfc}
 .perso .num{background:var(--g)}
@@ -32,29 +34,33 @@ a.carte:hover{border-color:var(--m)}
 <p class="sous">Formation Référent IA, Agence Nikita, immersion 1 sur 3, Lyon</p>
 <div class="bar"></div>
 
+<div class="intro">
+<b>Gardez cette page ouverte toute la journée.</b> Tout ce qu'on utilise part d'ici, dans l'ordre. Et une chose à savoir dès maintenant, parce que ça change la façon de travailler cet après-midi : <b>chacun passera présenter son travail devant le groupe.</b>
+</div>
+
 <a class="carte" href="comportements.html">
-  <div class="tete"><span class="num">1</span><span class="titre">Comment réagir en salle</span><span class="moment">LE MATIN, UNE HEURE</span></div>
-  <p class="quoi">Une situation à la fois, en grand. Vous proposez, on tranche ensemble, et on regarde ce que dit la méthode et pourquoi elle marche.</p>
+  <div class="tete"><span class="num">1</span><span class="titre">Comment réagir en salle</span><span class="moment">LE MATIN<br>UNE HEURE</span></div>
+  <p class="quoi">Trente situations, une à la fois. Vous proposez, on tranche ensemble, et on regarde ce que dit la méthode, pourquoi elle marche, et sur quoi elle s'appuie.</p>
 </a>
 
 <a class="carte" href="menu-des-outils.html">
-  <div class="tete"><span class="num">2</span><span class="titre">Le menu des outils</span><span class="moment">APRÈS LA PAUSE</span></div>
-  <p class="quoi">Trente-quatre outils, rangés par famille. Vous choisissez ce qu'on regarde, je le montre en direct.</p>
+  <div class="tete"><span class="num">2</span><span class="titre">Le menu des outils</span><span class="moment">APRÈS LA PAUSE<br>QUARANTE-CINQ MINUTES</span></div>
+  <p class="quoi">Trente-quatre outils rangés par famille. Vous choisissez ce qu'on regarde, je le montre en direct.</p>
 </a>
 
-<a class="carte" href="programme.html">
-  <div class="tete"><span class="num">3</span><span class="titre">Ce que le programme prévoyait</span><span class="moment">VINGT MINUTES</span></div>
-  <p class="quoi">Tous les points de la journée, passés en revue rapidement, cochés au fur et à mesure.</p>
-</a>
+<div class="fixe">
+  <div class="tete"><span class="num">3</span><span class="titre">Le défi libre</span><span class="moment">L'APRÈS-MIDI<br>DEUX HEURES</span></div>
+  <p class="quoi">Vous prenez une vraie tâche de votre poste et vous la faites avec l'outil de votre choix, seul ou à deux, comme vous voulez. Il n'y a pas de consigne imposée. <b>En fin d'après-midi, chacun passe au tableau présenter ce qu'il a produit et dire à quoi ça sert.</b></p>
+</div>
 
-<a class="carte" href="contenu.html">
-  <div class="tete"><span class="num">4</span><span class="titre">Ce qu'on a vu ensemble</span><span class="moment">À GARDER</span></div>
-  <p class="quoi">Le contenu complet de l'immersion, à relire quand vous animerez votre propre session.</p>
+<a class="carte" href="ce-qu-on-a-couvert.html">
+  <div class="tete"><span class="num">4</span><span class="titre">Ce qu'on a couvert</span><span class="moment">VINGT MINUTES<br>JE COCHE EN AVANÇANT</span></div>
+  <p class="quoi">Tout ce que la journée devait couvrir, en trois phrases par point. Chaque point se déplie et donne le détail complet, à relire quand vous animerez votre propre session.</p>
 </a>
 
 <a class="carte" href="quiz-semaine-1.html">
-  <div class="tete"><span class="num">5</span><span class="titre">Le quiz</span><span class="moment">EN FIN DE JOURNÉE</span></div>
-  <p class="quoi">Cinquante questions sur tout ce qu'on a vu depuis le premier jour. On le fait ensemble, on débat des pièges.</p>
+  <div class="tete"><span class="num">5</span><span class="titre">Le quiz</span><span class="moment">EN FIN DE JOURNÉE<br>TRENTE MINUTES</span></div>
+  <p class="quoi">Cinquante questions sur tout ce qu'on a vu depuis le premier jour. On le fait ensemble, on débat des pièges. Il n'est pas là pour vous juger.</p>
 </a>
 
 
