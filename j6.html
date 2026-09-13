@@ -4,95 +4,217 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Le kit de la journée J6, Lyon</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--m:#E91FCB;--n:#1A1A1A;--g:#4A4A4A;--r:#FCE4F7;--v:#1F7A4D;}
+:root{
+  --marque:#E91FCB; --marque-fonce:#A3128C; --marque-texte:#9C0F86; --rose:#FCE4F7; --rose-clair:#FEF3FB;
+  --encre:#1A1A1A; --gris:#4A4A4A; --gris-clair:#E7E3E6; --fond:#FAF8F9; --blanc:#FFFFFF;
+  --vert:#1F6E45; --vert-fond:#E6F2EB; --bleu-gris:#3D4A5C; --bleu-gris-fond:#EEF1F5;
+  --rayon:14px; --ombre:0 1px 2px rgba(26,26,26,.06),0 6px 20px rgba(26,26,26,.06);
+  --nav-h:60px;
+}
 *{box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif;color:var(--n);margin:0;background:#fff;font-size:16px;line-height:1.55}
-.wrap{max-width:940px;margin:0 auto;padding:30px 20px 80px}
-h1{color:var(--m);font-size:32px;margin:0 0 4px}
-h2{color:var(--m);font-size:24px;margin:44px 0 10px;padding-top:10px;border-top:2px solid var(--r)}
-h3{font-size:18px;margin:22px 0 6px}
-.sous{color:var(--g);margin:0 0 18px}
-.bar{height:5px;background:var(--m);width:150px;margin:0 0 22px}
-.encart{background:var(--r);border-left:5px solid var(--m);padding:14px 18px;margin:14px 0}
-.menu{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
-.menu a{text-decoration:none;color:var(--n);border:2px solid #eee;border-radius:20px;padding:6px 12px;font-size:14px}
-.menu a:hover{border-color:var(--m)}
-.tab{overflow-x:auto;margin:10px 0}
-table{border-collapse:collapse;width:100%;font-size:14.5px}
-th{background:var(--m);color:#fff;text-align:left;padding:8px}
-td{border-bottom:1px solid #eee;padding:8px;vertical-align:top}
-tr:nth-child(even) td{background:#FDF3FA}
-tr.fort td{font-weight:bold}
-.h{white-space:nowrap;font-weight:bold}
-ol,ul{padding-left:22px}
-li{margin:4px 0}
-.etape{display:flex;gap:14px;margin:12px 0;align-items:flex-start}
-.num{flex:0 0 36px;height:36px;border-radius:50%;background:var(--m);color:#fff;font-weight:bold;display:flex;align-items:center;justify-content:center}
-.bouton{display:inline-block;background:var(--m);color:#fff;text-decoration:none;font-weight:bold;padding:12px 18px;border-radius:8px;border:0;font-size:15px;cursor:pointer;font-family:inherit}
-.bouton.sec{background:#fff;color:var(--m);border:2px solid var(--m)}
-.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-.carte{border:2px solid #eee;border-radius:10px;padding:14px 16px}
-.carte b{color:var(--m)}
-label{display:block;font-weight:bold;margin:12px 0 4px}
-input,textarea{width:100%;border:1px solid #ccc;border-radius:6px;padding:9px;font-family:inherit;font-size:15px}
-textarea{min-height:64px}
-details{border:2px solid #eee;border-radius:10px;padding:10px 16px;margin:12px 0}
-summary{cursor:pointer;font-weight:bold}
-.petit{font-size:13.5px;color:var(--g)}
-a{color:var(--m)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--fond);color:var(--encre);font-family:"Source Sans 3",Arial,Helvetica,sans-serif;font-size:18px;line-height:1.6}
+a{color:var(--marque-texte);text-underline-offset:3px}
+a:hover{color:var(--marque-fonce)}
+:focus-visible{outline:3px solid var(--marque-fonce);outline-offset:3px;border-radius:6px}
+.saut{position:absolute;left:-999px;top:8px;background:var(--encre);color:#fff;padding:10px 14px;border-radius:8px;z-index:100}
+.saut:focus{left:8px}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px}
+b,strong{font-weight:700}
+.petit,.sources{font-size:14.5px;color:var(--gris)}
+
+/* en-tete */
+.hero{background:var(--blanc);border-bottom:1px solid var(--gris-clair)}
+.hero .wrap{padding-top:34px;padding-bottom:26px}
+.surtitre{margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--marque-texte)}
+h1{margin:0 0 8px;font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.01em}
+.hero-sous{margin:0 0 20px;color:var(--gris);font-size:18px;max-width:62ch}
+.maintenant{display:flex;gap:16px;align-items:center;background:var(--encre);color:#fff;border-radius:var(--rayon);padding:16px 18px;box-shadow:var(--ombre)}
+.maintenant .pastille{flex:0 0 auto;width:12px;height:12px;border-radius:50%;background:var(--marque);box-shadow:0 0 0 5px rgba(233,31,203,.25)}
+.maintenant p{margin:0}
+.maintenant .m-lab{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#E9CFE4;font-weight:700}
+.maintenant .m-txt{font-size:18px;font-weight:700}
+.maintenant a{color:#fff}
+.maintenant .m-btn{margin-left:auto;flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:10px;background:var(--marque-fonce);color:#fff;text-decoration:none;font-weight:700}
+.maintenant .m-btn:hover{background:var(--marque-texte)}
+
+/* navigation collante */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--gris-clair)}
+.nav ol{list-style:none;margin:0 auto;padding:8px 18px;max-width:880px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.nav ol::-webkit-scrollbar{display:none}
+.nav a{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 10px;border-radius:999px;text-decoration:none;color:var(--encre);white-space:nowrap;font-size:15.5px;border:1px solid transparent}
+.nav a .n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--gris-clair);font-size:13px;font-weight:700}
+.nav a:hover{background:var(--rose-clair)}
+.nav a.actif{background:var(--rose);border-color:#F3B9E8;font-weight:700}
+.nav a.actif .n{background:var(--marque-fonce);color:#fff}
+
+/* sections */
+main{padding:22px 0 90px}
+.bloc{background:var(--blanc);border:1px solid var(--gris-clair);border-radius:var(--rayon);box-shadow:var(--ombre);margin:0 0 22px;scroll-margin-top:calc(var(--nav-h) + 12px);overflow:hidden}
+.bloc-tete{display:flex;gap:14px;align-items:flex-start;padding:22px 22px 0}
+.bloc-num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;background:var(--marque-fonce);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px}
+.bloc-titres{min-width:0}
+.bloc-meta{margin:0 0 4px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.heure{font-weight:700;font-size:14px;color:var(--gris)}
+.type{font-size:12.5px;font-weight:700;padding:3px 9px;border-radius:999px}
+.type-vous{background:var(--vert-fond);color:var(--vert)}
+.type-info{background:#F1EEF0;color:var(--gris)}
+.type-demo,.type-mix{background:var(--bleu-gris-fond);color:var(--bleu-gris)}
+.bloc h2{margin:0;font-size:clamp(22px,3.4vw,27px);line-height:1.25}
+.afaire{margin:16px 22px 0;background:var(--rose);border-radius:12px;padding:12px 16px}
+.afaire-lab{display:block;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--marque-texte)}
+.afaire p{margin:2px 0 0;font-weight:700}
+.bloc-corps{padding:6px 22px 24px}
+.bloc-corps h3{font-size:19px;margin:28px 0 8px;line-height:1.3}
+.bloc-corps h3#idees{scroll-margin-top:calc(var(--nav-h) + 12px)}
+p{margin:10px 0}
+ol,ul{padding-left:24px}
+li{margin:5px 0}
+
+/* etapes */
+.etape{display:flex;gap:14px;margin:14px 0;align-items:flex-start}
+.etape .num{flex:0 0 32px;height:32px;border-radius:50%;background:var(--encre);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.etape > div{min-width:0}
+
+/* encarts */
+.encart{background:var(--rose-clair);border-left:4px solid var(--marque);border-radius:0 12px 12px 0;padding:12px 16px;margin:16px 0}
+.carte{border:1px solid var(--gris-clair);border-radius:12px;padding:14px 16px;background:var(--blanc)}
+.carte b:first-child{color:var(--marque-texte)}
+.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:12px 0}
+
+/* tableaux */
+.tab{overflow-x:auto;margin:12px 0;border:1px solid var(--gris-clair);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
+th{background:var(--encre);color:#fff;text-align:left;padding:10px;font-size:14px}
+td{border-top:1px solid var(--gris-clair);padding:10px;vertical-align:top}
+tr:nth-child(even) td{background:#FCFAFB}
+.h{white-space:nowrap;font-weight:700}
+
+/* depliants */
+details{border:1px solid var(--gris-clair);border-radius:12px;margin:10px 0;background:var(--blanc)}
+details[open]{box-shadow:var(--ombre)}
+summary{list-style:none;cursor:pointer;min-height:52px;padding:12px 44px 12px 16px;font-weight:700;position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:18px;top:50%;width:9px;height:9px;border-right:2.5px solid var(--encre);border-bottom:2.5px solid var(--encre);transform:translateY(-70%) rotate(45deg);transition:transform .2s ease-out}
+details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+summary:hover{background:var(--rose-clair);border-radius:12px}
+summary .petit{font-weight:400}
+details > *:not(summary){margin-left:16px;margin-right:16px}
+details > ol{padding-left:22px}
+details > p.petit{margin-bottom:14px}
+
+/* boutons et formulaire */
+.bouton{display:inline-flex;align-items:center;justify-content:center;min-height:48px;background:var(--marque-fonce);color:#fff;text-decoration:none;font-weight:700;padding:0 20px;border-radius:10px;border:2px solid var(--marque-fonce);font-size:16px;cursor:pointer;font-family:inherit;touch-action:manipulation;transition:background .15s ease-out}
+.bouton:hover{background:var(--marque-texte);color:#fff}
+.bouton.sec{background:#fff;color:var(--marque-texte)}
+.bouton.sec:hover{background:var(--rose-clair)}
+label{display:block;font-weight:700;margin:16px 0 6px}
+input,textarea{width:100%;border:1.5px solid #CFC7CD;border-radius:10px;padding:11px 12px;font-family:inherit;font-size:16px;background:#fff;color:var(--encre)}
+input:focus,textarea:focus{border-color:var(--marque-fonce);outline:none;box-shadow:0 0 0 3px rgba(163,18,140,.18)}
+textarea{min-height:72px;resize:vertical}
+#f-msg{font-weight:700}
+
+/* reassurance connecteurs */
+.lien-peur{background:var(--bleu-gris-fond);border-radius:10px;padding:10px 14px;font-weight:700}
+.rassure{margin:26px 0;border:2px solid var(--encre);border-radius:var(--rayon);padding:20px;scroll-margin-top:calc(var(--nav-h) + 12px)}
+.rassure-titre{margin:0 0 4px!important;font-size:22px!important}
+.qr-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:14px 0}
+.qr{background:var(--fond);border-radius:12px;padding:12px 14px}
+.qr .q{margin:0 0 4px;font-weight:700;color:var(--marque-texte)}
+.qr p{margin:0}
+.conseil{background:var(--vert-fond);color:#133F29;border-radius:12px;padding:12px 16px;margin:14px 0}
+
+/* frise du programme */
+.frise{list-style:none;padding:0;margin:14px 0 0;position:relative}
+.frise::before{content:"";position:absolute;left:60px;top:8px;bottom:8px;width:2px;background:var(--gris-clair)}
+.ligne{display:grid;grid-template-columns:52px 64px 1fr;gap:10px;align-items:center;margin:0;padding:6px 0;position:relative}
+.l-heure{font-weight:700;font-size:15px;color:var(--gris)}
+.l-type{justify-self:start;font-size:12px;font-weight:700;padding:3px 8px;border-radius:999px;position:relative;z-index:1}
+.t-vous .l-type{background:var(--vert-fond);color:var(--vert)}
+.t-demo .l-type{background:var(--bleu-gris-fond);color:var(--bleu-gris)}
+.t-info .l-type{background:#F1EEF0;color:var(--gris)}
+.t-pause .l-type{background:#F1EEF0;color:var(--gris)}
+.l-texte{color:var(--encre);text-decoration:none;min-height:44px;display:flex;align-items:center;border-radius:8px;padding:0 8px}
+.l-texte:hover{background:var(--rose-clair)}
+.t-pause .l-texte{color:var(--gris)}
+.ligne.encours .l-texte{background:var(--rose);font-weight:700}
+.ligne.encours .l-heure{color:var(--marque-texte)}
+.formateur{margin-top:10px}
+
+@media (max-width:600px){
+  body{font-size:16.5px}
+  .hero .wrap{padding-top:24px}
+  .maintenant{flex-wrap:wrap}
+  .maintenant .m-btn{margin-left:0;width:100%;justify-content:center}
+  .bloc-tete{padding:18px 16px 0}
+  .afaire{margin:14px 16px 0}
+  .bloc-corps{padding:4px 16px 20px}
+  .frise::before{left:50px}
+  .ligne{grid-template-columns:44px 58px 1fr;gap:8px}
+  .rassure{padding:16px}
+}
 </style>
 </head>
 <body>
+<a class="saut" href="#contenu">Aller au contenu</a>
+<header class="hero">
 <div class="wrap">
-
-<h1>Le kit de la journée</h1>
-<p class="sous">Formation Référent IA, Agence Nikita, J6, lundi 14 septembre 2026, Lyon<br>Copilotes de productivité : créer ses propres outils, et savoir conseiller ceux de ses clients</p>
-<div class="bar"></div>
-
-<div class="encart"><b>Aujourd'hui, vous construisez.</b> Peu d'exposé, beaucoup de pratique. Le matin, vous créez en duo un outil qui tourne vraiment : un skill, un agent ou une tâche programmée. Chacun le présente au tableau et le fait fonctionner en direct. L'après-midi, chacun monte sa propre base de connaissances. Gardez cette page ouverte toute la journée.</div>
-
-<div class="menu">
-<a href="#programme">Programme</a>
-<a href="#quiz">1. Le quiz</a>
-<a href="#demo">2. Skills, agents, tâches</a>
-<a href="#copilotes">3. Copilot et Gemini</a>
-<a href="#duos">4. La création en duo</a>
-<a href="#idees">Idées par métier</a>
-<a href="#tableau">5. Le passage au tableau</a>
-<a href="#fiche">Ma fiche</a>
-<a href="#rag">6. Base de connaissances</a>
+<p class="surtitre">Formation Référent IA · Agence Nikita · J6 · Lyon</p>
+<h1>Aujourd'hui, vous construisez vos propres outils IA</h1>
+<p class="hero-sous">Lundi 14 septembre 2026, de 9h00 à 17h00. Peu d'exposé, beaucoup de pratique : en duo, vous créez un outil qui tourne vraiment, vous le montrez au tableau, puis chacun monte sa base de connaissances.</p>
+<div class="maintenant" role="status" aria-live="polite">
+<span class="pastille" aria-hidden="true"></span>
+<div><p class="m-lab" id="m-lab">La journée</p><p class="m-txt" id="m-txt">Commence lundi 14 septembre à 9h00. Première étape : le quiz.</p></div>
+<a class="m-btn" id="m-btn" href="#quiz">Y aller</a>
 </div>
+</div>
+</header>
+<nav class="nav" aria-label="Étapes de la journée"><ol><li><a href="#programme" data-cible="programme"><span class="n">0</span>Programme</a></li><li><a href="#quiz" data-cible="quiz"><span class="n">1</span>Quiz</a></li><li><a href="#demo" data-cible="demo"><span class="n">2</span>Les briques</a></li><li><a href="#copilotes" data-cible="copilotes"><span class="n">3</span>Copilot et Gemini</a></li><li><a href="#duos" data-cible="duos"><span class="n">4</span>Création en duo</a></li><li><a href="#tableau" data-cible="tableau"><span class="n">5</span>Au tableau</a></li><li><a href="#fiche" data-cible="fiche"><span class="n">6</span>Ma fiche</a></li><li><a href="#rag" data-cible="rag"><span class="n">7</span>Base de connaissances</a></li></ol></nav>
+<main id="contenu" class="wrap">
+<section class="bloc" id="programme" aria-labelledby="t-programme">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">0</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">09h00 à 17h00</span><span class="type type-info">Toute la journée</span></p>
+<h2 id="t-programme">Le programme de la journée</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Gardez cette page ouverte. La ligne en rose indique où on en est. Cliquez sur une ligne pour aller à la consigne.</p></div>
+<div class="bloc-corps">
+<ol class="frise"><li class="ligne t-info" data-debut="09:00" data-fin="09:10"><span class="l-heure">09h00</span><span class="l-type">Accueil</span><a class="l-texte" href="#programme">Accueil, émargement, déroulé de la journée</a></li><li class="ligne t-vous" data-debut="09:10" data-fin="09:50"><span class="l-heure">09h10</span><span class="l-type">Vous</span><a class="l-texte" href="#quiz">Le quiz des 50 questions, puis l'envoi du PDF</a></li><li class="ligne t-demo" data-debut="09:50" data-fin="10:15"><span class="l-heure">09h50</span><span class="l-type">Démo</span><a class="l-texte" href="#demo">Démonstration : skills, agents, tâches programmées, connecteurs</a></li><li class="ligne t-demo" data-debut="10:15" data-fin="10:25"><span class="l-heure">10h15</span><span class="l-type">Démo</span><a class="l-texte" href="#copilotes">Rappel express : Copilot et Gemini</a></li><li class="ligne t-pause" data-debut="10:25" data-fin="10:40"><span class="l-heure">10h25</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-vous" data-debut="10:40" data-fin="10:55"><span class="l-heure">10h40</span><span class="l-type">Vous</span><a class="l-texte" href="#duos">Duos et brainstorm : on choisit ce qu'on crée</a></li><li class="ligne t-vous" data-debut="10:55" data-fin="12:15"><span class="l-heure">10h55</span><span class="l-type">Vous</span><a class="l-texte" href="#duos">Création, chacun de son côté</a></li><li class="ligne t-vous" data-debut="12:15" data-fin="12:30"><span class="l-heure">12h15</span><span class="l-type">Vous</span><a class="l-texte" href="#tableau">Premier passage au tableau</a></li><li class="ligne t-pause" data-debut="12:30" data-fin="13:30"><span class="l-heure">12h30</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Déjeuner</a></li><li class="ligne t-vous" data-debut="13:30" data-fin="14:00"><span class="l-heure">13h30</span><span class="l-type">Vous</span><a class="l-texte" href="#fiche">Fin de la création, tests, fiche de cas d'usage</a></li><li class="ligne t-vous" data-debut="14:00" data-fin="14:45"><span class="l-heure">14h00</span><span class="l-type">Vous</span><a class="l-texte" href="#tableau">Passages au tableau</a></li><li class="ligne t-pause" data-debut="14:45" data-fin="15:00"><span class="l-heure">14h45</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-vous" data-debut="15:00" data-fin="15:30"><span class="l-heure">15h00</span><span class="l-type">Vous</span><a class="l-texte" href="#tableau">Passages au tableau, fin à 15h30</a></li><li class="ligne t-demo" data-debut="15:30" data-fin="16:00"><span class="l-heure">15h30</span><span class="l-type">Démo</span><a class="l-texte" href="#rag">Atelier base de connaissances, tous ensemble</a></li><li class="ligne t-vous" data-debut="16:00" data-fin="16:50"><span class="l-heure">16h00</span><span class="l-type">Vous</span><a class="l-texte" href="#rag">Chacun construit sa base de connaissances</a></li><li class="ligne t-info" data-debut="16:50" data-fin="17:00"><span class="l-heure">16h50</span><span class="l-type">Clôture</span><a class="l-texte" href="#programme">Clôture : plan d'action, évaluation à chaud</a></li></ol>
+</div>
+</section>
+<section class="bloc" id="quiz" aria-labelledby="t-quiz">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">1</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">09h10 · 40 min</span><span class="type type-vous">Vous pratiquez</span></p>
+<h2 id="t-quiz">Le quiz des 50 questions</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Répondez aux 50 questions, téléchargez votre PDF et envoyez-le par mail.</p></div>
+<div class="bloc-corps">
 
-<h2 id="programme">Le programme</h2>
-<div class="tab"><table>
-<tr><th>Horaire</th><th>Durée</th><th>Ce qu'on fait</th></tr>
-<tr><td class="h">09h00</td><td>10 min</td><td>Accueil, émargement, déroulé de la journée</td></tr>
-<tr><td class="h">09h10</td><td>40 min</td><td><b>Le quiz des 50 questions</b>, puis chacun envoie son résultat en PDF</td></tr>
-<tr><td class="h">09h50</td><td>25 min</td><td>Démonstration : skills, agents, tâches programmées et connecteurs, pour que tout le monde parte du même niveau</td></tr>
-<tr><td class="h">10h15</td><td>10 min</td><td>Rappel express : Copilot et Gemini, ce que vos clients ont déjà</td></tr>
-<tr><td class="h">10h25</td><td>15 min</td><td>Pause</td></tr>
-<tr><td class="h">10h40</td><td>15 min</td><td><b>Duos et brainstorm</b> : on choisit ensemble ce qu'on va créer</td></tr>
-<tr><td class="h">10h55</td><td>80 min</td><td><b>Création</b>, chacun de son côté, coaching au poste</td></tr>
-<tr><td class="h">12h15</td><td>15 min</td><td>Premier passage au tableau</td></tr>
-<tr><td class="h">12h30</td><td></td><td>Déjeuner</td></tr>
-<tr><td class="h">13h30</td><td>30 min</td><td>Fin de la création, tests, fiche de cas d'usage</td></tr>
-<tr><td class="h">14h00</td><td>45 min</td><td><b>Passages au tableau</b></td></tr>
-<tr><td class="h">14h45</td><td>15 min</td><td>Pause</td></tr>
-<tr><td class="h">15h00</td><td>30 min</td><td><b>Passages au tableau</b>, fin à 15h30</td></tr>
-<tr><td class="h">15h30</td><td>30 min</td><td><b>Atelier base de connaissances</b>, tous ensemble : les façons de faire</td></tr>
-<tr><td class="h">16h00</td><td>50 min</td><td>Chacun construit sa base de connaissances et la teste</td></tr>
-<tr><td class="h">16h50</td><td>10 min</td><td>Clôture : plan d'action, évaluation à chaud</td></tr>
-</table></div>
-
-<h2 id="quiz">1. Le quiz des 50 questions</h2>
 <p>Il porte sur tout ce qu'on a vu depuis le premier jour. Il ne sert pas à vous juger : il montre ce qui est acquis et ce qui mérite d'être revu.</p>
 <div class="etape"><span class="num">1</span><div>Ouvrez le quiz, tapez votre prénom et votre nom, répondez aux 50 questions.<br><a class="bouton" href="https://clmprrd.github.io/kit-ia-j5/quiz-semaine-1.html" target="_blank" rel="noopener">Ouvrir le quiz</a></div></div>
 <div class="etape"><span class="num">2</span><div>À la fin, cliquez sur <b>« 1. Télécharger mon PDF »</b>. Le fichier arrive dans votre dossier Téléchargements.</div></div>
 <div class="etape"><span class="num">3</span><div>Cliquez sur <b>« 2. Écrire le mail »</b>. Un mail s'ouvre, déjà adressé à clem.pred@gmail.com. <b>Joignez le PDF</b> et envoyez.</div></div>
 <p class="petit">Pas de Gmail : le quiz propose aussi d'ouvrir votre messagerie habituelle. En dernier recours, écrivez à clem.pred@gmail.com avec le PDF en pièce jointe.</p>
 
-<h2 id="demo">2. Skills, agents, tâches programmées, connecteurs</h2>
+
+</div>
+</section>
+<section class="bloc" id="demo" aria-labelledby="t-demo">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">2</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">09h50 · 25 min</span><span class="type type-demo">Clément montre</span></p>
+<h2 id="t-demo">Les quatre briques : skill, agent, tâche programmée, connecteur</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Écoutez la démonstration, puis gardez cette partie ouverte pendant la création : chaque brique a sa marche à suivre.</p></div>
+<div class="bloc-corps">
+
 <p>Quatre briques, quatre questions différentes. <b>Partez toujours de la question, pas de l'outil.</b></p>
 
 <h3>Le skill : « je refais souvent la même chose, de la même façon »</h3>
@@ -119,12 +241,29 @@ a{color:var(--m)}
 <p class="petit">Documentation officielle : <a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork" target="_blank" rel="noopener">Programmer des tâches récurrentes dans Cowork</a>.<br><a href="https://youtu.be/tYOI-WoLS_o" target="_blank" rel="noopener">Vidéo : Delegate and schedule tasks in Claude Cowork</a> <span class="petit">(chaîne Claude)</span><br><a href="https://youtu.be/Lbml7IuGJYw" target="_blank" rel="noopener">Vidéo : Getting started with Claude Cowork</a> <span class="petit">(chaîne Claude)</span></p>
 
 <h3>Le connecteur : « l'assistant doit voir mes vrais outils »</h3>
+<p class="lien-peur">Vous hésitez à connecter ? <a href="#peur">Lisez d'abord « J'ai peur de cliquer sur Connecter »</a>.</p>
 <p>Un connecteur donne à Claude l'accès à votre messagerie, votre agenda ou vos documents, avec les droits que vous choisissez. <b>Disponible sur toutes les offres, y compris gratuite.</b></p>
 <div class="etape"><span class="num">1</span><div>Dans la zone de message, cliquez sur <b>+</b>, puis <b>Connecteurs</b>. Dans l'application de bureau : <b>Personnaliser</b>, puis <b>Connecteurs</b>.</div></div>
 <div class="etape"><span class="num">2</span><div>Activez <b>Gmail</b>, <b>Google Agenda</b> ou <b>Google Drive</b>, et autorisez l'accès avec votre compte Google.</div></div>
 <div class="etape"><span class="num">3</span><div>Pour Notion ou un autre outil, cherchez-le dans l'<b>annuaire des connecteurs</b>, cliquez sur <b>Connecter</b> et choisissez votre espace.</div></div>
 <div class="etape"><span class="num">4</span><div>Testez tout de suite : « Résume les cinq derniers mails non lus de ma boîte » ou « Qu'est-ce que j'ai dans mon agenda demain ? ».</div></div>
 <p class="petit">Documentation officielle : <a href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors" target="_blank" rel="noopener">Connecteurs Google Workspace</a> et <a href="https://claude.com/connectors" target="_blank" rel="noopener">l'annuaire des connecteurs</a>.</p>
+
+<div class="rassure" id="peur">
+<p class="surtitre">La question la plus fréquente</p>
+<h3 class="rassure-titre">« J'ai peur de cliquer sur Connecter »</h3>
+<p>C'est normal de se méfier. Voici ce que disent les éditeurs eux-mêmes, dans leurs pages d'aide officielles.</p>
+<div class="qr-grille">
+<div class="qr"><p class="q">Qu'est-ce qu'il peut voir ?</p><p>Ce que votre propre compte voit : vos mails, votre agenda, vos fichiers Drive. <b>Rien que vous ne pourriez pas ouvrir vous-même.</b></p></div>
+<div class="qr"><p class="q">Est-ce qu'il agit sans me demander ?</p><p>Claude peut consulter un outil connecté de lui-même quand c'est utile à votre question. Mais <b>avant d'envoyer, de répondre ou de transférer un mail, et avant de partager, déplacer ou supprimer un fichier, il vous demande votre accord</b>, par défaut.</p></div>
+<div class="qr"><p class="q">Pourquoi Google parle d'envoi de mails ?</p><p>L'écran d'autorisation de Google décrit l'étendue de l'accès demandé. <b>Claude ne s'en sert qu'avec votre validation.</b></p></div>
+<div class="qr"><p class="q">Mes données servent-elles à entraîner l'IA ?</p><p>Anthropic indique <b>ne pas entraîner ses modèles sur les données des connecteurs Gmail, Drive et Agenda</b>, chiffrées au repos et en transit. Vos conversations ne servent à améliorer Claude que si vous l'autorisez dans le réglage <b>Amélioration du modèle</b>, et jamais en mode incognito.</p></div>
+<div class="qr"><p class="q">Et si je veux tout débrancher ?</p><p><b>Personnaliser</b>, puis <b>Connecteurs</b>, puis <b>Déconnecter</b>. Ou directement chez Google, sur <a href="https://myaccount.google.com/connections" target="_blank" rel="noopener">myaccount.google.com/connections</a>. C'est immédiat, et vous pouvez rebrancher plus tard.</p></div>
+<div class="qr"><p class="q">Et sur ChatGPT ?</p><p>Par défaut, ChatGPT lit dans vos applications sans demander, mais <b>demande avant les actions importantes</b> : envoyer un message, supprimer, partager ou déplacer un fichier. Vous pouvez régler l'application sur <b>Toujours demander</b>.</p></div>
+</div>
+<div class="conseil"><b>Pour l'atelier, faites simple :</b> connectez un seul outil, commencez par une question qui ne fait que lire, par exemple « Qu'est-ce que j'ai dans mon agenda demain ? », et déconnectez-le en fin de journée si vous préférez.</div>
+<p class="sources">Sources officielles : <a href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors" target="_blank" rel="noopener">Claude, connecteurs Google</a> · <a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" target="_blank" rel="noopener">Claude, connecteurs</a> · <a href="https://support.claude.com/en/articles/8325621-i-would-like-to-input-sensitive-data-into-my-chats-with-claude-who-can-view-my-conversations" target="_blank" rel="noopener">Claude, confidentialité des conversations</a> · <a href="https://help.openai.com/articles/20001495" target="_blank" rel="noopener">OpenAI, permissions des applications</a></p>
+</div>
 
 <h3>Et sur ChatGPT ?</h3>
 <div class="encart"><b>Attention, ChatGPT a beaucoup changé cet été.</b> Deux choses que vous avez peut-être vues en vidéo n'existent plus sous cette forme : <b>la création de GPT personnalisés est fermée sur les comptes personnels</b>, gratuits comme payants, et <b>l'agent ChatGPT a été retiré</b>.</div>
@@ -138,7 +277,18 @@ a{color:var(--m)}
 
 
 
-<h2 id="copilotes">3. Copilot et Gemini, en dix minutes</h2>
+
+</div>
+</section>
+<section class="bloc" id="copilotes" aria-labelledby="t-copilotes">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">3</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">10h15 · 10 min</span><span class="type type-demo">Clément montre</span></p>
+<h2 id="t-copilotes">Copilot et Gemini, ce que vos clients ont déjà</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Retenez la méthode des @ dans Gemini et les trois niveaux de Copilot, pour savoir conseiller un client équipé.</p></div>
+<div class="bloc-corps">
+
 <p>Vous les avez vus vendredi. Ce qui compte pour un Référent IA : <b>vos clients les ont souvent déjà</b>, et vous devez savoir leur dire quoi en faire.</p>
 
 <h3>Gemini : la stratégie des @</h3>
@@ -165,7 +315,18 @@ a{color:var(--m)}
 <p class="petit"><a href="https://youtu.be/O4voDdOy2lQ" target="_blank" rel="noopener">Vidéo : Copilot now included with Word, Excel, PowerPoint, Outlook and OneNote</a> <span class="petit">(Microsoft Mechanics, octobre 2025)</span><br><a href="https://youtu.be/YNcIN_bXpuA" target="_blank" rel="noopener">Vidéo : Turn everyday spreadsheets into actionable insights, Excel</a> <span class="petit">(Microsoft 365, 2025)</span><br>Documentation officielle : <a href="https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365" target="_blank" rel="noopener">Différence entre Copilot gratuit et Copilot dans Microsoft 365</a>.</p>
 <div class="encart"><b>La question à poser à un client équipé Microsoft :</b> la licence est-elle attribuée à chaque personne, et activée par l'administrateur ? Pour un client Google : l'édition souscrite inclut-elle Gemini, et pour quelles équipes ? <b>On ne recommande pas un outil, on part de la tâche et de ce que le client a déjà.</b></div>
 
-<h2 id="duos">4. La création en duo</h2>
+
+</div>
+</section>
+<section class="bloc" id="duos" aria-labelledby="t-duos">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">4</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">10h40 à 13h30</span><span class="type type-vous">Vous pratiquez</span></p>
+<h2 id="t-duos">La création en duo</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Formez un duo, choisissez une seule chose à créer, puis construisez-la chacun de votre côté.</p></div>
+<div class="bloc-corps">
+
 <div class="etape"><span class="num">1</span><div><b>Formez un duo</b> avec quelqu'un qui ne fait pas le même métier que vous. Si vous êtes en nombre impair, un trio.</div></div>
 <div class="etape"><span class="num">2</span><div><b>Brainstormez 15 minutes</b> et mettez-vous d'accord sur <b>une seule chose à créer</b> : un skill, un agent ou une tâche programmée. Libre à vous de choisir. Pour trancher, répondez ensemble à ces cinq questions :
 <ol>
@@ -192,7 +353,18 @@ a{color:var(--m)}
 <div class="carte"><b>Optimisation organisationnelle</b><br>Un skill qui décrit un processus à partir d'explications orales et repère les étapes automatisables.<br>Un skill qui produit un compte rendu d'atelier au format du cabinet.</div>
 </div>
 
-<h2 id="tableau">5. Le passage au tableau</h2>
+
+</div>
+</section>
+<section class="bloc" id="tableau" aria-labelledby="t-tableau">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">5</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">12h15, puis 14h00 à 15h30</span><span class="type type-vous">Vous pratiquez</span></p>
+<h2 id="t-tableau">Le passage au tableau</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Passez à deux, montrez comment vous avez construit, faites-le tourner en direct. Le duo suivant observe.</p></div>
+<div class="bloc-corps">
+
 <p><b>Chaque duo passe ensemble, 11 minutes. Le duo suivant observe.</b></p>
 <div class="etape"><span class="num">1</span><div><b>4 min, personne 1 :</b> montrez comment vous l'avez construit, puis faites-le tourner en direct.</div></div>
 <div class="etape"><span class="num">2</span><div><b>4 min, personne 2 :</b> pareil, avec votre version.</div></div>
@@ -205,7 +377,18 @@ a{color:var(--m)}
 </ol></div></div>
 <p class="petit">Tout le reste de la salle note une idée à reprendre.</p>
 
-<h2 id="fiche">Ma fiche de cas d'usage</h2>
+
+</div>
+</section>
+<section class="bloc" id="fiche" aria-labelledby="t-fiche">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">6</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">13h30</span><span class="type type-vous">Vous pratiquez</span></p>
+<h2 id="t-fiche">Ma fiche de cas d'usage</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Remplissez une fiche par création et envoyez-la par mail. Le risque et le contrôle humain sont obligatoires.</p></div>
+<div class="bloc-corps">
+
 <p>Une fiche par création. C'est ce document que vous pourrez montrer à un client pour lui recommander un outil.</p>
 <label for="f-nom">Mon nom</label><input id="f-nom">
 <label for="f-tache">La tâche, en une phrase</label><textarea id="f-tache"></textarea>
@@ -217,7 +400,18 @@ a{color:var(--m)}
 <p style="margin-top:14px"><button class="bouton" onclick="envoyerFiche()">Envoyer ma fiche par mail</button> <button class="bouton sec" onclick="copierFiche()">Copier ma fiche</button></p>
 <p class="petit" id="f-msg">Une fiche sans risque identifié ni contrôle humain n'est pas terminée.</p>
 
-<h2 id="rag">6. L'atelier base de connaissances</h2>
+
+</div>
+</section>
+<section class="bloc" id="rag" aria-labelledby="t-rag">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">7</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">15h30 à 16h50</span><span class="type type-mix">Clément montre, puis vous pratiquez</span></p>
+<h2 id="t-rag">L'atelier base de connaissances</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Choisissez un outil, ouvrez sa fiche et suivez les étapes, puis faites les deux tests : le piège et la contradiction.</p></div>
+<div class="bloc-corps">
+
 <p>Vous nous l'avez beaucoup demandé. Une base de connaissances, c'est un assistant qui répond <b>à partir de vos documents</b>, et pas de sa mémoire générale. <b>Choisissez un outil ci-dessous, ouvrez sa fiche et suivez les étapes.</b></p>
 <h3>Les outils, avec la marche à suivre</h3>
 <details><summary>Projets Claude <span class="petit">· gratuit jusqu'à 5 projets</span></summary><ol><li>Dans la barre latérale, ouvrez <b>Projets</b>, puis <b>Créer un projet</b>, et donnez-lui un nom.</li><li>Dans la partie <b>Connaissances du projet</b>, ajoutez vos documents ou collez du texte.</li><li>Ajoutez des <b>instructions du projet</b> : « Réponds uniquement à partir des documents et cite celui que tu utilises. »</li><li>Ouvrez une conversation <b>à l'intérieur du projet</b> et posez vos questions.</li><li>Sur les offres payantes, la recherche étendue permet de travailler sur un volume de documents bien plus grand.</li></ol><p class="petit"><a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank" rel="noopener">Aide Claude, projets</a><br><a href="https://youtu.be/GJ5jTgcbRHA" target="_blank" rel="noopener">Vidéo : Getting started with projects in Claude.ai</a> <span class="petit">(chaîne Anthropic, décembre 2025)</span></p></details>
@@ -247,7 +441,8 @@ a{color:var(--m)}
 <div class="etape"><span class="num">4</span><div><b>Test du piège :</b> posez une question dont la réponse n'est dans aucun document. Une bonne base avoue qu'elle ne sait pas. Si elle invente, reprenez vos instructions.</div></div>
 <div class="etape"><span class="num">5</span><div><b>Test de la contradiction :</b> ajoutez un document qui contredit un autre, et demandez laquelle des deux informations est la bonne. Observez si elle signale le conflit.</div></div>
 
-<details>
+
+<div class="formateur"><details>
 <summary>Pour le formateur : correspondance avec le programme de la journée J6</summary>
 <div class="tab"><table>
 <tr><th>Point du programme J6</th><th>Où il est traité</th></tr>
@@ -261,9 +456,10 @@ a{color:var(--m)}
 <tr><td>Objectif : choisir le bon copilote selon l'environnement</td><td>Rappel de 10h15 et rubrique « pourquoi cet outil » de la fiche</td></tr>
 <tr><td>Évaluation</td><td>Quiz de 9h10 envoyé en PDF, démonstrations en direct au tableau, évaluation à chaud à 16h50</td></tr>
 </table></div>
-</details>
-
+</details></div>
 </div>
+</section>
+</main>
 <script>
 function champ(id){ var e=document.getElementById(id); return e ? e.value.trim() : ""; }
 function texteFiche(){
@@ -303,6 +499,53 @@ function envoyerFiche(){
   try{ var v=localStorage.getItem("j6-"+id); if(v) e.value=v; }catch(x){}
   e.addEventListener("input",function(){ try{ localStorage.setItem("j6-"+id,e.value); }catch(x){} });
 });
+</script>
+<script>
+(function(){
+  var PROG = [["09:00", "09:10", "Accueil, émargement, déroulé de la journée", "programme"], ["09:10", "09:50", "Le quiz des 50 questions, puis l'envoi du PDF", "quiz"], ["09:50", "10:15", "Démonstration : skills, agents, tâches programmées, connecteurs", "demo"], ["10:15", "10:25", "Rappel express : Copilot et Gemini", "copilotes"], ["10:25", "10:40", "Pause", "programme"], ["10:40", "10:55", "Duos et brainstorm : on choisit ce qu'on crée", "duos"], ["10:55", "12:15", "Création, chacun de son côté", "duos"], ["12:15", "12:30", "Premier passage au tableau", "tableau"], ["12:30", "13:30", "Déjeuner", "programme"], ["13:30", "14:00", "Fin de la création, tests, fiche de cas d'usage", "fiche"], ["14:00", "14:45", "Passages au tableau", "tableau"], ["14:45", "15:00", "Pause", "programme"], ["15:00", "15:30", "Passages au tableau, fin à 15h30", "tableau"], ["15:30", "16:00", "Atelier base de connaissances, tous ensemble", "rag"], ["16:00", "16:50", "Chacun construit sa base de connaissances", "rag"], ["16:50", "17:00", "Clôture : plan d'action, évaluation à chaud", "programme"]];
+  function minutes(h){var p=h.split(":");return (+p[0])*60+(+p[1]);}
+  function pad(n){return (n<10?"0":"")+n;}
+  function maj(){
+    var d=new Date(), lab=document.getElementById("m-lab"), txt=document.getElementById("m-txt"), btn=document.getElementById("m-btn");
+    var jour=d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+    var lignes=document.querySelectorAll(".ligne");
+    lignes.forEach(function(l){l.classList.remove("encours");});
+    if(jour!=="2026-09-14"){
+      if(jour<"2026-09-14"){lab.textContent="La journée";txt.textContent="Commence lundi 14 septembre à 9h00. Première étape : le quiz.";btn.href="#quiz";}
+      else{lab.textContent="La journée est terminée";txt.textContent="Retrouvez toutes les consignes et ressources ci-dessous.";btn.href="#rag";btn.textContent="Revoir les outils";}
+      return;
+    }
+    var m=d.getHours()*60+d.getMinutes();
+    if(m<minutes("09:00")){lab.textContent="Bientôt";txt.textContent="On commence à 9h00, par le quiz.";btn.href="#quiz";return;}
+    if(m>=minutes("17:00")){lab.textContent="La journée est terminée";txt.textContent="Merci à tous. Pensez à envoyer votre fiche.";btn.href="#fiche";btn.textContent="Ma fiche";return;}
+    for(var i=0;i<PROG.length;i++){
+      if(m>=minutes(PROG[i][0]) && m<minutes(PROG[i][1])){
+        lab.textContent="En ce moment, jusqu'à "+PROG[i][1].replace(":","h");
+        txt.textContent=PROG[i][2];
+        btn.href="#"+PROG[i][3]; btn.textContent="Voir la consigne";
+        if(lignes[i]) lignes[i].classList.add("encours");
+        return;
+      }
+    }
+  }
+  maj(); setInterval(maj, 30000);
+
+  var liens=document.querySelectorAll(".nav a");
+  function activer(id){
+    liens.forEach(function(a){
+      var on=a.getAttribute("data-cible")===id;
+      a.classList.toggle("actif",on);
+      if(on){ a.setAttribute("aria-current","true"); if(a.scrollIntoView && window.matchMedia("(max-width: 900px)").matches){ var ol=a.parentNode.parentNode; ol.scrollLeft = a.offsetLeft - 18; } }
+      else a.removeAttribute("aria-current");
+    });
+  }
+  if("IntersectionObserver" in window){
+    var obs=new IntersectionObserver(function(entrees){
+      entrees.forEach(function(e){ if(e.isIntersecting) activer(e.target.id); });
+    },{rootMargin:"-30% 0px -60% 0px"});
+    document.querySelectorAll("section.bloc").forEach(function(sec){obs.observe(sec);});
+  }
+})();
 </script>
 </body>
 </html>
