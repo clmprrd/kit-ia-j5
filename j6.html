@@ -93,22 +93,77 @@ a{color:var(--m)}
 <p class="petit">Pas de Gmail : le quiz propose aussi d'ouvrir votre messagerie habituelle. En dernier recours, écrivez à clem.pred@gmail.com avec le PDF en pièce jointe.</p>
 
 <h2 id="demo">2. Skills, agents, tâches programmées, connecteurs</h2>
-<p>Quatre briques, quatre questions différentes. Pour choisir la bonne, partez de la question qu'elle résout.</p>
-<div class="grille">
-<div class="carte"><b>Le skill</b><br>Répond à : « je refais souvent la même chose de la même façon ». Un savoir-faire écrit une fois, avec ses instructions et ses fichiers. L'assistant s'en sert dès que votre demande correspond.</div>
-<div class="carte"><b>L'agent</b><br>Répond à : « il y a plusieurs étapes, et des outils à utiliser ». Il enchaîne les actions, cherche, lit, rédige, et vous rend un résultat.</div>
-<div class="carte"><b>La tâche programmée</b><br>Répond à : « je veux que ça se fasse sans que j'y pense ». Elle s'exécute toute seule, au jour et à l'heure choisis.</div>
-<div class="carte"><b>Le connecteur</b><br>Répond à : « l'assistant doit voir mes vrais outils ». Il lui donne accès à votre messagerie, votre agenda, vos documents, avec les droits que vous choisissez.</div>
-</div>
-<div class="encart"><b>Sur ChatGPT, les équivalents existent.</b> Un GPT personnalisé ou un projet joue le rôle du skill, les tâches planifiées celui de la tâche programmée, et les connecteurs donnent accès à vos applications. La méthode d'aujourd'hui marche sur les deux.</div>
+<p>Quatre briques, quatre questions différentes. <b>Partez toujours de la question, pas de l'outil.</b></p>
+
+<h3>Le skill : « je refais souvent la même chose, de la même façon »</h3>
+<p>Un skill est un dossier d'instructions, et au besoin de fichiers modèles, que Claude charge de lui-même quand votre demande correspond. Vous l'écrivez une fois, il sert à chaque fois. Disponible sur toutes les offres, y compris gratuite.</p>
+<div class="etape"><span class="num">1</span><div>Ouvrez <b>Paramètres</b>, puis <b>Capacités</b>, et activez <b>Exécution de code et création de fichiers</b>. Sans cela, les skills ne fonctionnent pas.</div></div>
+<div class="etape"><span class="num">2</span><div>Allez dans <b>Personnaliser</b>, puis <b>Skills</b>. Activez un skill existant avec son interrupteur.</div></div>
+<div class="etape"><span class="num">3</span><div>Pour créer le vôtre, cliquez sur <b>+</b>, puis <b>Créer un skill</b>. Le plus simple : demandez à Claude de vous aider à l'écrire, puis importez le dossier compressé qu'il vous prépare.</div></div>
+<p class="petit">Documentation officielle : <a href="https://support.claude.com/en/articles/12512176-what-are-skills" target="_blank" rel="noopener">Qu'est-ce qu'un skill</a> et <a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude" target="_blank" rel="noopener">Utiliser les skills dans Claude</a>.<br><a href="https://youtu.be/bjdBVZa66oU" target="_blank" rel="noopener">Vidéo : What are skills?</a> <span class="petit">(chaîne Claude)</span><br><a href="https://youtu.be/kS1MJFZWMq4" target="_blank" rel="noopener">Vidéo : Creating custom Skills with Claude</a> <span class="petit">(chaîne Anthropic, novembre 2025, l'interface a pu évoluer)</span></p>
+
+<h3>L'agent : « il y a plusieurs étapes et des outils à utiliser »</h3>
+<p>Un agent enchaîne les actions à votre place : il cherche, lit, rédige, et vous rend un résultat. Trois agents sont accessibles avec un abonnement Pro.</p>
+<div class="tab"><table>
+<tr><th>Agent</th><th>Ce qu'il fait</th><th>Comment l'ouvrir</th><th>Documentation</th></tr>
+<tr><td><b>Cowork</b></td><td>Prend en charge un travail de bureau en plusieurs étapes, en autonomie : dossiers, documents, synthèses</td><td>Dans l'application ou sur claude.ai, choisissez <b>Cowork</b> dans la zone de message. Encore en préversion</td><td><a href="https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork" target="_blank" rel="noopener">Démarrer avec Cowork</a></td></tr>
+<tr><td><b>Recherche</b></td><td>Mène une recherche en plusieurs passes sur le web et dans vos outils connectés, puis rend un rapport avec ses sources</td><td>Cliquez sur <b>+</b> en bas à gauche de la zone de message, puis <b>Recherche</b>. La recherche web doit être activée. Offres payantes uniquement</td><td><a href="https://support.claude.com/en/articles/11088861-use-research-on-claude" target="_blank" rel="noopener">Utiliser la recherche</a></td></tr>
+<tr><td><b>Claude dans Chrome</b></td><td>Lit une page, clique, remplit et navigue sur un site à votre place</td><td>Installez l'extension depuis le Chrome Web Store, connectez-vous, cliquez sur l'icône Claude</td><td><a href="https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome" target="_blank" rel="noopener">Démarrer avec Claude dans Chrome</a></td></tr>
+</table></div>
+
+<h3>La tâche programmée : « je veux que ça se fasse sans que j'y pense »</h3>
+<p>Elle se crée dans Cowork et tourne à l'heure choisie, <b>même ordinateur éteint</b>. Seule exception : si elle a besoin de fichiers ou d'applications de votre ordinateur, celui-ci doit rester allumé.</p>
+<div class="etape"><span class="num">1</span><div>Dans la barre latérale, cliquez sur <b>Programmées</b>, puis <b>Nouvelle tâche</b>.</div></div>
+<div class="etape"><span class="num">2</span><div>Le plus simple : <b>Créer avec Claude</b>. Décrivez ce que vous voulez, il propose un nom, une fréquence et une consigne, et vous cliquez sur <b>Programmer</b>.</div></div>
+<div class="etape"><span class="num">3</span><div>Sinon, <b>Configurer manuellement</b> : nom, consigne, fréquence (chaque heure, chaque jour, jours ouvrés, chaque semaine), puis <b>Enregistrer</b>.</div></div>
+<p class="petit">Documentation officielle : <a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork" target="_blank" rel="noopener">Programmer des tâches récurrentes dans Cowork</a>.<br><a href="https://youtu.be/tYOI-WoLS_o" target="_blank" rel="noopener">Vidéo : Delegate and schedule tasks in Claude Cowork</a> <span class="petit">(chaîne Claude)</span><br><a href="https://youtu.be/Lbml7IuGJYw" target="_blank" rel="noopener">Vidéo : Getting started with Claude Cowork</a> <span class="petit">(chaîne Claude)</span></p>
+
+<h3>Le connecteur : « l'assistant doit voir mes vrais outils »</h3>
+<p>Un connecteur donne à Claude l'accès à votre messagerie, votre agenda ou vos documents, avec les droits que vous choisissez. <b>Disponible sur toutes les offres, y compris gratuite.</b></p>
+<div class="etape"><span class="num">1</span><div>Dans la zone de message, cliquez sur <b>+</b>, puis <b>Connecteurs</b>. Dans l'application de bureau : <b>Personnaliser</b>, puis <b>Connecteurs</b>.</div></div>
+<div class="etape"><span class="num">2</span><div>Activez <b>Gmail</b>, <b>Google Agenda</b> ou <b>Google Drive</b>, et autorisez l'accès avec votre compte Google.</div></div>
+<div class="etape"><span class="num">3</span><div>Pour Notion ou un autre outil, cherchez-le dans l'<b>annuaire des connecteurs</b>, cliquez sur <b>Connecter</b> et choisissez votre espace.</div></div>
+<div class="etape"><span class="num">4</span><div>Testez tout de suite : « Résume les cinq derniers mails non lus de ma boîte » ou « Qu'est-ce que j'ai dans mon agenda demain ? ».</div></div>
+<p class="petit">Documentation officielle : <a href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors" target="_blank" rel="noopener">Connecteurs Google Workspace</a> et <a href="https://claude.com/connectors" target="_blank" rel="noopener">l'annuaire des connecteurs</a>.</p>
+
+<h3>Et sur ChatGPT ?</h3>
+<div class="encart"><b>Attention, ChatGPT a beaucoup changé cet été.</b> Deux choses que vous avez peut-être vues en vidéo n'existent plus sous cette forme : <b>la création de GPT personnalisés est fermée sur les comptes personnels</b>, gratuits comme payants, et <b>l'agent ChatGPT a été retiré</b>.</div>
+<div class="tab"><table>
+<tr><th>Brique</th><th>Sur ChatGPT aujourd'hui</th><th>Comment faire</th><th>Sources</th></tr>
+<tr><td><b>Skill</b></td><td>Les GPT personnalisés ne se créent plus sur un compte personnel. OpenAI annonce leur remplacement par des <b>Plugins</b>, migration visée au 17 septembre 2026</td><td>En attendant : un <b>Projet</b> avec des instructions et des fichiers de référence (voir l'atelier base de connaissances)</td><td><a href="https://help.openai.com/en/articles/8554397-creating-and-editing-gpts" target="_blank" rel="noopener">Aide OpenAI, GPTs</a></td></tr>
+<tr><td><b>Agent</b></td><td>L'agent ChatGPT n'est plus disponible. OpenAI renvoie vers <b>ChatGPT Work</b> pour les tâches longues en plusieurs étapes</td><td>Ouvrez <b>Work</b> dans ChatGPT et décrivez le résultat attendu</td><td><a href="https://help.openai.com/en/articles/11752874-chatgpt-agent" target="_blank" rel="noopener">Aide OpenAI, agent</a><br><a href="https://youtu.be/GphgJjaKKhw" target="_blank" rel="noopener">Vidéo : Get started with ChatGPT Work</a> <span class="petit">(chaîne OpenAI)</span></td></tr>
+<tr><td><b>Tâche programmée</b></td><td>Disponible. Une tâche peut aussi se déclencher sur un mail, Slack ou GitHub, à partir de l'offre Plus</td><td>Demandez à ChatGPT une action à faire plus tard ou régulièrement, par exemple « chaque lundi à 8h, fais-moi un résumé de l'actualité de mon secteur ». Tout se gère dans <b>Programmées</b></td><td><a href="https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt" target="_blank" rel="noopener">Aide OpenAI, tâches</a><br><a href="https://youtu.be/CToxp125mhc" target="_blank" rel="noopener">Vidéo : Schedule tasks with ChatGPT</a> <span class="petit">(chaîne OpenAI)</span></td></tr>
+<tr><td><b>Connecteur</b></td><td>Les connecteurs s'appellent <b>Applications</b>. Depuis le 9 juillet 2026, leur annuaire est devenu l'annuaire des <b>Plugins</b>. Disponibilité selon l'offre et l'application</td><td><b>Paramètres</b>, puis <b>Applications</b>, choisissez l'outil et autorisez l'accès</td><td><a href="https://help.openai.com/en/articles/11487775-connectors-in-chatgpt" target="_blank" rel="noopener">Aide OpenAI, applications</a><br><a href="https://youtu.be/UaeWJK_vv-Y" target="_blank" rel="noopener">Vidéo : Introducing Agent Plugins</a> <span class="petit">(chaîne OpenAI)</span></td></tr>
+</table></div>
+
+
 
 <h2 id="copilotes">3. Copilot et Gemini, en dix minutes</h2>
-<p>Vous les avez vus en démonstration vendredi. Ce qui compte pour un Référent IA : <b>vos clients les ont souvent déjà</b>, et vous devez savoir leur dire quoi en faire.</p>
-<div class="grille">
-<div class="carte"><b>Microsoft Copilot</b><br>Intégré à Word, Excel, PowerPoint, Outlook et Teams. Sa force : il travaille dans les documents et les échanges de l'entreprise. La question à poser au client : la licence est-elle attribuée à chaque personne, et activée par l'administrateur ?</div>
-<div class="carte"><b>Gemini dans Google Workspace</b><br>Intégré à Docs, Gmail, Sheets, Slides et Meet. Même logique, côté Google. La question à poser au client : l'édition souscrite inclut-elle l'assistance, et pour quelles équipes ?</div>
-</div>
-<p class="petit">Retenez la règle de conseil : on ne recommande pas un outil, on part de la tâche et de l'environnement que le client a déjà.</p>
+<p>Vous les avez vus vendredi. Ce qui compte pour un Référent IA : <b>vos clients les ont souvent déjà</b>, et vous devez savoir leur dire quoi en faire.</p>
+
+<h3>Gemini : la stratégie des @</h3>
+<p>Dans Gemini, taper <b>@</b> permet d'aller chercher la réponse directement dans vos outils Google, au lieu de copier-coller.</p>
+<div class="etape"><span class="num">1</span><div>Ouvrez <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a> et tapez <b>@</b> dans la zone de message.</div></div>
+<div class="etape"><span class="num">2</span><div>Choisissez l'outil : <b>@Gmail</b>, <b>@Drive</b>, <b>@Docs</b> ou <b>@Agenda</b>. À la première utilisation, Gemini demande l'autorisation.</div></div>
+<div class="etape"><span class="num">3</span><div>Posez la question, par exemple :
+<ul>
+<li>« @Gmail résume les échanges de cette semaine avec tel client »</li>
+<li>« @Drive retrouve le dernier devis envoyé à telle société »</li>
+<li>« @Agenda quand suis-je libre jeudi après-midi ? »</li>
+</ul></div></div>
+<div class="encart"><b>Deux situations différentes chez vos clients.</b> Avec un compte Google Workspace d'entreprise, ces applications sont incluses dans les éditions payantes et l'administrateur doit les activer. Avec un compte Google personnel, Google a rendu la fonction gratuite aux États-Unis le 17 mars 2026. <b>Sa disponibilité en France reste à tester sur votre compte.</b></div>
+<p class="petit">Documentation officielle : <a href="https://support.google.com/gemini/answer/15229592" target="_blank" rel="noopener">Connecter Google Workspace à Gemini</a>.<br><a href="https://youtu.be/o5Ur1pm4oDA" target="_blank" rel="noopener">Vidéo : Create faster with Gemini in Google Workspace</a> <span class="petit">(chaîne Google Workspace)</span><br><a href="https://youtu.be/l479xga7QOY" target="_blank" rel="noopener">Vidéo : Draft Contextual Emails Directly Inside Google Docs</a> <span class="petit">(chaîne Google Workspace)</span></p>
+
+<h3>Copilot : trois niveaux à ne pas confondre</h3>
+<div class="tab"><table>
+<tr><th>Version</th><th>Pour qui</th><th>Ce qu'elle voit</th></tr>
+<tr><td><b>Microsoft Copilot</b>, copilot.microsoft.com</td><td>Gratuit, tout le monde</td><td>Le web. Rédaction, résumé d'un texte collé, images</td></tr>
+<tr><td><b>Microsoft 365 Copilot Chat</b></td><td>Inclus avec un compte professionnel Microsoft 365</td><td>Le web et les documents qu'on lui donne, pas les mails ni les fichiers de l'entreprise</td></tr>
+<tr><td><b>Microsoft 365 Copilot</b></td><td>Licence payante, par utilisateur</td><td>Les mails, fichiers, réunions Teams et l'agenda de l'entreprise, directement dans Word, Excel, PowerPoint, Outlook et Teams</td></tr>
+</table></div>
+<p>La démonstration en direct se fait sur la version gratuite. Pour voir la version sous licence, dans les applications de travail, regardez ces vidéos officielles :</p>
+<p class="petit"><a href="https://youtu.be/O4voDdOy2lQ" target="_blank" rel="noopener">Vidéo : Copilot now included with Word, Excel, PowerPoint, Outlook and OneNote</a> <span class="petit">(Microsoft Mechanics, octobre 2025)</span><br><a href="https://youtu.be/YNcIN_bXpuA" target="_blank" rel="noopener">Vidéo : Turn everyday spreadsheets into actionable insights, Excel</a> <span class="petit">(Microsoft 365, 2025)</span><br>Documentation officielle : <a href="https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365" target="_blank" rel="noopener">Différence entre Copilot gratuit et Copilot dans Microsoft 365</a>.</p>
+<div class="encart"><b>La question à poser à un client équipé Microsoft :</b> la licence est-elle attribuée à chaque personne, et activée par l'administrateur ? Pour un client Google : l'édition souscrite inclut-elle Gemini, et pour quelles équipes ? <b>On ne recommande pas un outil, on part de la tâche et de ce que le client a déjà.</b></div>
 
 <h2 id="duos">4. La création en duo</h2>
 <div class="etape"><span class="num">1</span><div><b>Formez un duo</b> avec quelqu'un qui ne fait pas le même métier que vous. Si vous êtes en nombre impair, un trio.</div></div>
@@ -138,22 +193,17 @@ a{color:var(--m)}
 </div>
 
 <h2 id="tableau">5. Le passage au tableau</h2>
-<p>Chaque duo passe ensemble, environ 11 minutes. Personne n'est passif : pendant qu'un duo présente, un autre duo observe.</p>
-<div class="tab"><table>
-<tr><th>Qui</th><th>Durée</th><th>Ce qu'il fait</th></tr>
-<tr><td>Première personne</td><td>4 min</td><td><b>Comment je l'ai construit</b> : les instructions, les fichiers, le déclencheur. Puis <b>démonstration en direct</b>, du début à la fin.</td></tr>
-<tr><td>Deuxième personne</td><td>4 min</td><td>Même chose sur sa propre version du même outil.</td></tr>
-<tr><td>Clément</td><td>2 min</td><td>Coaching : ce qui aurait pu être fait autrement, et pourquoi.</td></tr>
-<tr><td>Le duo observateur</td><td>1 min</td><td>Répond aux trois questions ci-dessous.</td></tr>
-</table></div>
-<div class="encart"><b>Les trois questions de l'observateur :</b>
+<p><b>Chaque duo passe ensemble, 11 minutes. Le duo suivant observe.</b></p>
+<div class="etape"><span class="num">1</span><div><b>4 min, personne 1 :</b> montrez comment vous l'avez construit, puis faites-le tourner en direct.</div></div>
+<div class="etape"><span class="num">2</span><div><b>4 min, personne 2 :</b> pareil, avec votre version.</div></div>
+<div class="etape"><span class="num">3</span><div><b>2 min :</b> coaching de Clément.</div></div>
+<div class="etape"><span class="num">4</span><div><b>1 min, le duo observateur</b> répond à voix haute :
 <ol>
-<li>Est-ce que les deux outils ont fonctionné en direct ?</li>
-<li>Qu'est-ce qui différencie les deux façons de faire ?</li>
-<li>Une amélioration concrète, pour chacun.</li>
-</ol>
-<b>Qui observe ?</b> Le duo qui passe juste après. Le premier duo de la journée est observé par le dernier.</div>
-<p>Tout le reste de la salle note <b>une idée à reprendre</b> pour son propre travail.</p>
+<li>Est-ce que les deux outils ont fonctionné ?</li>
+<li>Qu'est-ce qui change entre les deux façons de faire ?</li>
+<li>Une amélioration concrète pour chacun.</li>
+</ol></div></div>
+<p class="petit">Tout le reste de la salle note une idée à reprendre.</p>
 
 <h2 id="fiche">Ma fiche de cas d'usage</h2>
 <p>Une fiche par création. C'est ce document que vous pourrez montrer à un client pour lui recommander un outil.</p>
@@ -168,18 +218,27 @@ a{color:var(--m)}
 <p class="petit" id="f-msg">Une fiche sans risque identifié ni contrôle humain n'est pas terminée.</p>
 
 <h2 id="rag">6. L'atelier base de connaissances</h2>
-<p>Vous nous l'avez beaucoup demandé. Une base de connaissances, c'est un assistant qui répond <b>à partir de vos documents</b>, et pas de sa mémoire générale. Plusieurs outils le permettent, dont certains gratuitement.</p>
+<p>Vous nous l'avez beaucoup demandé. Une base de connaissances, c'est un assistant qui répond <b>à partir de vos documents</b>, et pas de sa mémoire générale. <b>Choisissez un outil ci-dessous, ouvrez sa fiche et suivez les étapes.</b></p>
+<h3>Les outils, avec la marche à suivre</h3>
+<details><summary>Projets Claude <span class="petit">· gratuit jusqu'à 5 projets</span></summary><ol><li>Dans la barre latérale, ouvrez <b>Projets</b>, puis <b>Créer un projet</b>, et donnez-lui un nom.</li><li>Dans la partie <b>Connaissances du projet</b>, ajoutez vos documents ou collez du texte.</li><li>Ajoutez des <b>instructions du projet</b> : « Réponds uniquement à partir des documents et cite celui que tu utilises. »</li><li>Ouvrez une conversation <b>à l'intérieur du projet</b> et posez vos questions.</li><li>Sur les offres payantes, la recherche étendue permet de travailler sur un volume de documents bien plus grand.</li></ol><p class="petit"><a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank" rel="noopener">Aide Claude, projets</a><br><a href="https://youtu.be/GJ5jTgcbRHA" target="_blank" rel="noopener">Vidéo : Getting started with projects in Claude.ai</a> <span class="petit">(chaîne Anthropic, décembre 2025)</span></p></details>
+<details><summary>Projets ChatGPT <span class="petit">· gratuit et payant, le nombre de fichiers dépend de l'offre</span></summary><ol><li>Dans la barre latérale, cliquez sur <b>Nouveau projet</b>, donnez un nom, une icône et une couleur.</li><li>Ajoutez vos fichiers : PDF, tableurs, documents, images, ou du texte collé.</li><li>Cliquez sur les <b>trois points</b> en haut à droite, puis <b>Paramètres du projet</b>, et écrivez les instructions.</li><li>Vous pouvez aussi coller un lien vers un dossier Google Drive comme source.</li><li>Ouvrez une conversation dans le projet et posez vos questions.</li></ol><p class="petit"><a href="https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt" target="_blank" rel="noopener">Aide OpenAI, projets</a></p></details>
+<details><summary>NotebookLM, désormais Gemini Notebook <span class="petit">· gratuit, jusqu'à 50 sources par carnet</span></summary><ol><li>Ouvrez <a href="https://notebooklm.google.com" target="_blank" rel="noopener">notebooklm.google.com</a>, qui redirige vers Gemini Notebook, puis <b>Créer un notebook</b>.</li><li>Cliquez sur <b>Ajouter une source</b> : PDF, documents Google, sites web, vidéos YouTube, texte collé.</li><li>Un résumé de vos sources apparaît dans le chat.</li><li>Posez vos questions : chaque réponse renvoie à la phrase exacte de la source.</li><li>Le panneau <b>Studio</b> fabrique des notes, des cartes mentales ou un résumé audio.</li></ol><p class="petit"><a href="https://support.google.com/gemininotebook/answer/16206563" target="_blank" rel="noopener">Aide Google, créer un notebook</a>. Google a renommé le produit le 16 juillet 2026, et modifie ses limites d'usage depuis le 2 septembre 2026.<br><a href="https://youtu.be/AmKZCo5Dtn0" target="_blank" rel="noopener">Vidéo : Meet NotebookLM</a> <span class="petit">(chaîne Google Workspace, 2025, interface ancienne)</span></p></details>
+<details><summary>Gems Gemini <span class="petit">· gratuit selon Google, à vérifier sur votre compte</span></summary><ol><li>Sur <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a>, ouvrez la barre latérale, puis <b>Gems</b>.</li><li>Cliquez sur <b>Nouveau Gem</b>, donnez un nom et écrivez les instructions.</li><li>Dans <b>Connaissances</b>, cliquez sur <b>Ajouter des fichiers</b> : depuis votre ordinateur, Drive ou un notebook.</li><li>Enregistrez et testez dans l'aperçu.</li><li>Retrouvez-le ensuite dans la liste de vos Gems.</li></ol><p class="petit"><a href="https://support.google.com/gemini/answer/15146780" target="_blank" rel="noopener">Aide Google, utiliser les Gems</a></p></details>
+<details><summary>Obsidian avec un plugin IA <span class="petit">· gratuit, pour ceux qui veulent garder leurs notes sur leur ordinateur</span></summary><ol><li>Téléchargez <a href="https://obsidian.md" target="_blank" rel="noopener">Obsidian</a> et créez un coffre, c'est-à-dire un dossier de notes.</li><li>Ouvrez les <b>Paramètres</b>, puis <b>Plugins communautaires</b>, et désactivez le mode restreint.</li><li>Cliquez sur <b>Parcourir</b> et cherchez <b>Smart Connections</b> ou <b>Copilot</b>, puis <b>Installer</b> et <b>Activer</b>.</li><li><b>Smart Connections</b> fonctionne sans clé, avec un modèle local, et trouve les notes liées entre elles. <b>Copilot</b> permet de discuter avec son coffre, mais demande une clé d'un fournisseur d'IA ou un modèle local.</li><li>Posez une question sur vos notes depuis le panneau du plugin.</li></ol><p class="petit">Dépôts officiels : <a href="https://github.com/brianpetro/obsidian-smart-connections" target="_blank" rel="noopener">Smart Connections</a> et <a href="https://github.com/logancyang/obsidian-copilot" target="_blank" rel="noopener">Copilot for Obsidian</a>, tous deux actifs le 13 septembre 2026</p></details>
+<details><summary>Notion <span class="petit">· structuration gratuite, IA en essai limité</span></summary><ol><li>Rangez vos pages dans un espace Notion, avec des titres clairs.</li><li>Ouvrez une page et cliquez sur <b>Demander à l'IA</b>, ou tapez espace sur une ligne vide.</li><li>Posez une question en langage courant sur le contenu de votre espace.</li><li>Sur l'offre gratuite, le nombre de réponses IA est limité. L'IA complète est incluse dans l'offre Business.</li></ol><p class="petit"><a href="https://www.notion.com/help/complimentary-ai-responses" target="_blank" rel="noopener">Aide Notion, réponses IA offertes</a> et <a href="https://www.notion.com/pricing" target="_blank" rel="noopener">tarifs</a><br><a href="https://youtu.be/tFIgG-7RBvc" target="_blank" rel="noopener">Vidéo : Searching with Notion AI</a> <span class="petit">(chaîne Notion, 2025, interface ancienne)</span></p></details>
+<details><summary>Bibliothèques Mistral, dans Mistral Vibe (ex Le Chat) <span class="petit">· à partir de l'offre Pro</span></summary><ol><li>Ouvrez <a href="https://chat.mistral.ai" target="_blank" rel="noopener">chat.mistral.ai</a>. Le Chat s'appelle Mistral Vibe depuis le 12 août 2026.</li><li>Ouvrez le menu <b>Intelligence</b>, puis <b>Bibliothèques</b>, et <b>Nouvelle bibliothèque</b>.</li><li>Importez vos fichiers : PDF, Word, PowerPoint, Excel, CSV, texte.</li><li>Attendez la fin du traitement, puis attachez la bibliothèque à une conversation.</li></ol><p class="petit"><a href="https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe" target="_blank" rel="noopener">Aide Mistral, Le Chat devient Vibe</a> et <a href="https://mistral.ai/pricing" target="_blank" rel="noopener">tarifs</a></p></details>
+<details><summary>Microsoft Copilot Notebooks <span class="petit">· pour les clients équipés Microsoft 365</span></summary><ol><li>Sur m365.cloud.microsoft, ouvrez l'application <b>Copilot</b>, puis <b>Notebooks</b>.</li><li>Cliquez sur <b>Nouveau notebook</b> et donnez un nom.</li><li>Ajoutez des fichiers, des mails, des réunions ou des liens, jusqu'à 300 éléments.</li><li>Posez vos questions : les réponses s'appuient uniquement sur ce que vous avez ajouté.</li><li>Nécessite une licence Copilot ou un abonnement Microsoft 365 éligible, avec OneDrive ou SharePoint.</li></ol><p class="petit"><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-microsoft-365-copilot-notebooks" target="_blank" rel="noopener">Aide Microsoft, Copilot Notebooks</a></p></details>
+<details><summary>Perplexity <span class="petit">· réservé aux abonnés, à vérifier</span></summary><ol><li>Perplexity propose des espaces de recherche où l'on dépose des fichiers et des liens, réservés aux abonnés Pro.</li><li>Sa page d'aide sur les Espaces n'existe plus : la fonction semble renommée en Projets. Vérifiez le nom actuel dans votre compte avant de la conseiller.</li></ol><p class="petit">Point non vérifié à la source le 13 septembre 2026</p></details>
+
+<h3>À ne pas confondre : la recherche approfondie</h3>
+<div class="encart"><b>Une recherche approfondie va chercher sur le web</b>, lit des dizaines de sources et vous rend un rapport. Elle ne garde pas vos documents. <b>Une base de connaissances, au contraire, se limite à ce que vous lui donnez.</b> Certaines recherches approfondies peuvent aussi fouiller vos outils connectés, comme Gmail ou Drive.</div>
 <div class="tab"><table>
-<tr><th>Outil</th><th>Comment ça marche</th><th>En gratuit</th><th>Source</th></tr>
-<tr><td><b>Projets Claude</b></td><td>Un projet avec vos fichiers et vos instructions</td><td>Oui, jusqu'à 5 projets. La recherche étendue dans de gros volumes de documents est réservée aux offres payantes</td><td><a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank" rel="noopener">Aide Claude</a></td></tr>
-<tr><td><b>Projets ChatGPT</b></td><td>Un projet avec fichiers, instructions et conversations regroupées</td><td>Oui, 5 fichiers par projet. Davantage sur les offres payantes</td><td><a href="https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt" target="_blank" rel="noopener">Aide OpenAI</a></td></tr>
-<tr><td><b>NotebookLM</b></td><td>Un carnet de sources, réponses citées phrase par phrase</td><td>Oui, jusqu'à 50 sources par carnet</td><td><a href="https://support.google.com/notebooklm/answer/16269187" target="_blank" rel="noopener">Aide Google</a></td></tr>
-<tr><td><b>Gems Gemini</b></td><td>Un assistant personnalisé avec des fichiers de référence, qui peut aussi s'appuyer sur un carnet NotebookLM</td><td>Oui</td><td><a href="https://support.google.com/gemini/answer/15235603" target="_blank" rel="noopener">Aide Google</a></td></tr>
-<tr><td><b>Bibliothèques Mistral</b></td><td>Des bases persistantes de documents et de pages web, à rattacher à une conversation</td><td>Selon le compte, avec une allocation de traitement mensuelle</td><td><a href="https://docs.mistral.ai/le-chat/knowledge-integrations/libraries" target="_blank" rel="noopener">Doc Mistral</a></td></tr>
-<tr><td><b>Notion</b></td><td>Structurer vos pages en base, puis l'interroger avec l'IA</td><td>La structuration oui. L'IA est en essai limité, complète sur l'offre Business</td><td><a href="https://www.notion.com/pricing" target="_blank" rel="noopener">Tarifs Notion</a></td></tr>
-<tr><td><b>Espaces Perplexity</b></td><td>Un espace de recherche avec vos fichiers et vos liens</td><td>Accès et limites selon l'offre, à vérifier sur votre compte</td><td><a href="https://www.perplexity.ai/help-center/en/articles/10354807-file-uploads" target="_blank" rel="noopener">Aide Perplexity</a></td></tr>
+<tr><th>Outil</th><th>Comment la lancer</th><th>Offre</th><th>Source</th></tr>
+<tr><td><b>Claude</b></td><td><b>+</b> en bas à gauche, puis <b>Recherche</b>, avec la recherche web activée</td><td>Offres payantes</td><td><a href="https://support.claude.com/en/articles/11088861-use-research-on-claude" target="_blank" rel="noopener">Aide Claude</a></td></tr>
+<tr><td><b>ChatGPT</b></td><td><b>+</b> dans la zone de message, puis <b>Deep research</b>, ou tapez <b>@Deepresearch</b></td><td>Usage selon l'offre, un compteur dans l'interface indique ce qu'il reste</td><td><a href="https://help.openai.com/en/articles/10500283-deep-research-in-chatgpt" target="_blank" rel="noopener">Aide OpenAI</a></td></tr>
+<tr><td><b>Gemini</b></td><td><b>Ajouter</b>, puis <b>Deep Research</b>, choisissez les sources, puis lancez</td><td>Quota quotidien limité en gratuit</td><td><a href="https://support.google.com/gemini/answer/15719111" target="_blank" rel="noopener">Aide Google</a><br><a href="https://youtu.be/buwMJxvW7wI" target="_blank" rel="noopener">Vidéo : Gemini Deep Research Demo</a> <span class="petit">(chaîne Google, 2025)</span></td></tr>
+<tr><td><b>Perplexity</b></td><td>Sélecteur de mode, avant de poser la question</td><td>Limité en gratuit</td><td>Quotas non vérifiés à la source</td></tr>
 </table></div>
-<div class="encart"><b>À ne pas confondre :</b> la « recherche approfondie » va chercher sur le web et rédige un rapport. Elle ne garde pas vos documents. Une base de connaissances, au contraire, se limite à ce que vous lui donnez.</div>
 
 <h3>La consigne, de 16h00 à 16h50</h3>
 <div class="etape"><span class="num">1</span><div><b>Choisissez 5 à 10 documents</b> de votre activité : offres, procédures, questions fréquentes, modèles. Rien de confidentiel.</div></div>
@@ -196,7 +255,7 @@ a{color:var(--m)}
 <tr><td>Google Workspace et Gemini</td><td>Démonstration du vendredi 11 septembre, rappel à 10h15</td></tr>
 <tr><td>Ateliers pratiques sur des cas de poste réels</td><td>Création en duo sur une tâche réelle, de 10h40 à 15h30</td></tr>
 <tr><td>Notion AI et gestion des connaissances</td><td>Atelier base de connaissances de 15h30 à 16h50, Notion compris dans les outils présentés</td></tr>
-<tr><td>Comparatif des copilotes et critères de choix</td><td>Chaque passage justifie le choix de l'outil, l'atelier de 15h30 compare sept outils</td></tr>
+<tr><td>Comparatif des copilotes et critères de choix</td><td>Chaque passage justifie le choix de l'outil, l'atelier de 15h30 présente neuf outils et les compare à la recherche approfondie</td></tr>
 <tr><td>Fiches de cas d'usage par métier</td><td>Une fiche remplie par chaque participant pour sa création</td></tr>
 <tr><td>Objectif : gagner en productivité bureautique</td><td>Temps gagné estimé, vérification comprise, dans chaque fiche</td></tr>
 <tr><td>Objectif : choisir le bon copilote selon l'environnement</td><td>Rappel de 10h15 et rubrique « pourquoi cet outil » de la fiche</td></tr>
