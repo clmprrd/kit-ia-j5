@@ -220,6 +220,10 @@ details.kb > .kb-corps{margin:0}
 .ideal b{display:block;margin-bottom:2px}
 @media (min-width:760px){ .kb-grille{grid-template-columns:1fr} }
 @media (max-width:600px){ details.kb > summary{grid-template-columns:44px 1fr;padding:16px}.kb-tuile{width:44px;height:44px;font-size:15px}.kb-corps{padding:0 14px 16px}.kb-nom{font-size:20px} }
+
+.grille-choix td input{width:84px;text-align:center}
+.grille-choix th:nth-child(2),.grille-choix th:nth-child(3){width:110px}
+.bloc-corps h3{scroll-margin-top:calc(var(--nav-h) + 12px)}
 </style>
 </head>
 <body>
@@ -228,7 +232,7 @@ details.kb > .kb-corps{margin:0}
 <div class="wrap">
 <p class="surtitre">Formation Référent IA · Agence Nikita · J6 · Lyon</p>
 <h1>Aujourd'hui, vous construisez vos propres outils IA</h1>
-<p class="hero-sous">Lundi 14 septembre 2026, de 9h00 à 17h00. Peu d'exposé, beaucoup de pratique : en duo, vous créez un outil qui tourne vraiment, vous le montrez au tableau, puis chacun monte sa base de connaissances.</p>
+<p class="hero-sous">Lundi 14 septembre 2026, de 9h00 à 17h00. Le matin, chacun monte sa base de connaissances. L'après-midi, en duo, vous créez un skill adapté à votre métier, vous le faites tourner en direct au tableau et vous remplissez votre fiche.</p>
 <div class="maintenant" role="status" aria-live="polite">
 <span class="pastille" aria-hidden="true"></span>
 <div><p class="m-lab" id="m-lab">La journée</p><p class="m-txt" id="m-txt">Commence lundi 14 septembre à 9h00. Première étape : le quiz.</p></div>
@@ -236,7 +240,7 @@ details.kb > .kb-corps{margin:0}
 </div>
 </div>
 </header>
-<nav class="nav" aria-label="Étapes de la journée"><ol><li><a href="#programme" data-cible="programme"><span class="n">0</span>Programme</a></li><li><a href="#quiz" data-cible="quiz"><span class="n">1</span>Quiz</a></li><li><a href="#demo" data-cible="demo"><span class="n">2</span>Les briques</a></li><li><a href="#copilotes" data-cible="copilotes"><span class="n">3</span>Copilot et Gemini</a></li><li><a href="#duos" data-cible="duos"><span class="n">4</span>Création en duo</a></li><li><a href="#tableau" data-cible="tableau"><span class="n">5</span>Au tableau</a></li><li><a href="#fiche" data-cible="fiche"><span class="n">6</span>Ma fiche</a></li><li><a href="#rag" data-cible="rag"><span class="n">7</span>Base de connaissances</a></li></ol></nav>
+<nav class="nav" aria-label="Étapes de la journée"><ol><li><a href="#programme" data-cible="programme"><span class="n">0</span>Programme</a></li><li><a href="#quiz" data-cible="quiz"><span class="n">1</span>Quiz</a></li><li><a href="#demo" data-cible="demo"><span class="n">2</span>Les briques</a></li><li><a href="#copilotes" data-cible="copilotes"><span class="n">3</span>Copilot et Gemini</a></li><li><a href="#rag" data-cible="rag"><span class="n">4</span>Base de connaissances</a></li><li><a href="#duos" data-cible="duos"><span class="n">5</span>Création en duo</a></li><li><a href="#tableau" data-cible="tableau"><span class="n">6</span>Au tableau</a></li><li><a href="#fiche" data-cible="fiche"><span class="n">7</span>Ma fiche</a></li></ol></nav>
 <main id="contenu" class="wrap">
 <section class="bloc" id="programme" aria-labelledby="t-programme">
 <header class="bloc-tete">
@@ -246,7 +250,19 @@ details.kb > .kb-corps{margin:0}
 </header>
 <div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Gardez cette page ouverte. La ligne en rose indique où on en est. Cliquez sur une ligne pour aller à la consigne.</p></div>
 <div class="bloc-corps">
-<ol class="frise"><li class="ligne t-info" data-debut="09:00" data-fin="09:10"><span class="l-heure">09h00</span><span class="l-type">Accueil</span><a class="l-texte" href="#programme">Accueil, émargement, déroulé de la journée</a></li><li class="ligne t-vous" data-debut="09:10" data-fin="09:50"><span class="l-heure">09h10</span><span class="l-type">Vous</span><a class="l-texte" href="#quiz">Le quiz des 50 questions, puis l'envoi du PDF</a></li><li class="ligne t-demo" data-debut="09:50" data-fin="10:15"><span class="l-heure">09h50</span><span class="l-type">Démo</span><a class="l-texte" href="#demo">Démonstration : skills, agents, tâches programmées, connecteurs</a></li><li class="ligne t-demo" data-debut="10:15" data-fin="10:25"><span class="l-heure">10h15</span><span class="l-type">Démo</span><a class="l-texte" href="#copilotes">Rappel express : Copilot et Gemini</a></li><li class="ligne t-pause" data-debut="10:25" data-fin="10:40"><span class="l-heure">10h25</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-vous" data-debut="10:40" data-fin="10:55"><span class="l-heure">10h40</span><span class="l-type">Vous</span><a class="l-texte" href="#duos">Duos et brainstorm : on choisit ce qu'on crée</a></li><li class="ligne t-vous" data-debut="10:55" data-fin="12:15"><span class="l-heure">10h55</span><span class="l-type">Vous</span><a class="l-texte" href="#duos">Création, chacun de son côté</a></li><li class="ligne t-vous" data-debut="12:15" data-fin="12:30"><span class="l-heure">12h15</span><span class="l-type">Vous</span><a class="l-texte" href="#tableau">Premier passage au tableau</a></li><li class="ligne t-pause" data-debut="12:30" data-fin="13:30"><span class="l-heure">12h30</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Déjeuner</a></li><li class="ligne t-vous" data-debut="13:30" data-fin="14:00"><span class="l-heure">13h30</span><span class="l-type">Vous</span><a class="l-texte" href="#fiche">Fin de la création, tests, fiche de cas d'usage</a></li><li class="ligne t-vous" data-debut="14:00" data-fin="14:45"><span class="l-heure">14h00</span><span class="l-type">Vous</span><a class="l-texte" href="#tableau">Passages au tableau</a></li><li class="ligne t-pause" data-debut="14:45" data-fin="15:00"><span class="l-heure">14h45</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-vous" data-debut="15:00" data-fin="15:30"><span class="l-heure">15h00</span><span class="l-type">Vous</span><a class="l-texte" href="#tableau">Passages au tableau, fin à 15h30</a></li><li class="ligne t-demo" data-debut="15:30" data-fin="16:00"><span class="l-heure">15h30</span><span class="l-type">Démo</span><a class="l-texte" href="#rag">Atelier base de connaissances, tous ensemble</a></li><li class="ligne t-vous" data-debut="16:00" data-fin="16:50"><span class="l-heure">16h00</span><span class="l-type">Vous</span><a class="l-texte" href="#rag">Chacun construit sa base de connaissances</a></li><li class="ligne t-info" data-debut="16:50" data-fin="17:00"><span class="l-heure">16h50</span><span class="l-type">Clôture</span><a class="l-texte" href="#programme">Clôture : plan d'action, évaluation à chaud</a></li></ol>
+<ol class="frise"><li class="ligne t-info" data-debut="09:00" data-fin="09:10"><span class="l-heure">09h00</span><span class="l-type">Accueil</span><a class="l-texte" href="#programme">Accueil, émargement, autopositionnement d'entrée</a></li><li class="ligne t-vous" data-debut="09:10" data-fin="09:50"><span class="l-heure">09h10</span><span class="l-type">Vous</span><a class="l-texte" href="#quiz">Le quiz des 50 questions, puis l'envoi du PDF</a></li><li class="ligne t-demo" data-debut="09:50" data-fin="10:15"><span class="l-heure">09h50</span><span class="l-type">Démo</span><a class="l-texte" href="#demo">Démonstration : skills, agents, tâches programmées, connecteurs</a></li><li class="ligne t-demo" data-debut="10:15" data-fin="10:25"><span class="l-heure">10h15</span><span class="l-type">Démo</span><a class="l-texte" href="#copilotes">Rappel express : Copilot et Gemini</a></li><li class="ligne t-pause" data-debut="10:25" data-fin="10:40"><span class="l-heure">10h25</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-demo" data-debut="10:40" data-fin="11:10"><span class="l-heure">10h40</span><span class="l-type">Démo</span><a class="l-texte" href="#rag">Atelier base de connaissances, tous ensemble</a></li><li class="ligne t-vous" data-debut="11:10" data-fin="12:10"><span class="l-heure">11h10</span><span class="l-type">Vous</span><a class="l-texte" href="#rag">Chacun construit sa base de connaissances</a></li><li class="ligne t-vous" data-debut="12:10" data-fin="12:30"><span class="l-heure">12h10</span><span class="l-type">Vous</span><a class="l-texte" href="#duos">Duos et brainstorm : une même idée de skill</a></li><li class="ligne t-pause" data-debut="12:30" data-fin="13:30"><span class="l-heure">12h30</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Déjeuner</a></li><li class="ligne t-vous" data-debut="13:30" data-fin="15:00"><span class="l-heure">13h30</span><span class="l-type">Vous</span><a class="l-texte" href="#duos">Création du skill, chacun sa version</a></li><li class="ligne t-pause" data-debut="15:00" data-fin="15:15"><span class="l-heure">15h00</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-vous" data-debut="15:15" data-fin="16:45"><span class="l-heure">15h15</span><span class="l-type">Vous</span><a class="l-texte" href="#tableau">Passages au tableau</a></li><li class="ligne t-info" data-debut="16:45" data-fin="17:00"><span class="l-heure">16h45</span><span class="l-type">Clôture</span><a class="l-texte" href="#fiche">Clôture : plan d'action, autopositionnement de sortie, évaluation à chaud</a></li></ol>
+<details><summary>Autopositionnement d'entrée (9h00) et de sortie (16h45) <span class="petit">· six questions, niveau de 1 à 4</span></summary>
+<p>Pour chaque phrase, notez-vous de 1 à 4 le matin, puis à nouveau en fin de journée. <b>1</b> : je ne sais pas faire. <b>2</b> : je sais faire avec de l'aide. <b>3</b> : je sais faire seul. <b>4</b> : je sais faire seul et l'expliquer à un collègue.</p>
+<ol>
+<li>Je sais expliquer la différence entre un copilote intégré à une suite bureautique et un assistant comme Claude ou ChatGPT.</li>
+<li>Je sais où trouver Copilot dans Microsoft 365 et Gemini dans Google Workspace, et ce qu'ils permettent.</li>
+<li>Je sais écrire une consigne qui s'appuie sur un document source, et repérer quand l'IA est déconseillée.</li>
+<li>Je sais transformer une tâche de mon poste en outil IA et estimer le temps gagné, vérification comprise.</li>
+<li>Je sais créer une base de connaissances et la faire répondre à partir de mes documents.</li>
+<li>Je sais choisir un outil avec une grille de critères, le justifier en trois minutes et planifier sa mise en œuvre.</li>
+</ol>
+<p class="petit">Questions reformulées à partir des objectifs O1 à O12 du support J6 déposé.</p>
+</details>
 </div>
 </section>
 <section class="bloc" id="quiz" aria-labelledby="t-quiz">
@@ -273,7 +289,7 @@ details.kb > .kb-corps{margin:0}
 <div class="bloc-titres"><p class="bloc-meta"><span class="heure">09h50 · 25 min</span><span class="type type-demo">Clément montre</span></p>
 <h2 id="t-demo">Les quatre briques : skill, agent, tâche programmée, connecteur</h2></div>
 </header>
-<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Écoutez la démonstration, puis gardez cette partie ouverte pendant la création : chaque brique a sa marche à suivre.</p></div>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Écoutez la démonstration, puis gardez cette partie ouverte : chaque brique a sa marche à suivre.</p></div>
 <div class="bloc-corps">
 
 <p>Quatre briques, quatre questions différentes. <b>Partez toujours de la question, pas de l'outil.</b></p>
@@ -379,98 +395,13 @@ details.kb > .kb-corps{margin:0}
 
 </div>
 </section>
-<section class="bloc" id="duos" aria-labelledby="t-duos">
-<header class="bloc-tete">
-<span class="bloc-num" aria-hidden="true">4</span>
-<div class="bloc-titres"><p class="bloc-meta"><span class="heure">10h40 à 13h30</span><span class="type type-vous">Vous pratiquez</span></p>
-<h2 id="t-duos">La création en duo</h2></div>
-</header>
-<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Formez un duo, choisissez une seule chose à créer, puis construisez-la chacun de votre côté.</p></div>
-<div class="bloc-corps">
-
-<div class="etape"><span class="num">1</span><div><b>Formez un duo</b> avec quelqu'un qui ne fait pas le même métier que vous. Si vous êtes en nombre impair, un trio.</div></div>
-<div class="etape"><span class="num">2</span><div><b>Brainstormez 15 minutes</b> et mettez-vous d'accord sur <b>une seule chose à créer</b> : un skill, un agent ou une tâche programmée. Libre à vous de choisir. Pour trancher, répondez ensemble à ces cinq questions :
-<ol>
-<li>Quelle tâche réelle, qui revient souvent, dans le travail de l'un de vous deux ?</li>
-<li>Qu'est-ce qui la déclenche ?</li>
-<li>Qu'est-ce qu'on donne à l'outil au départ ?</li>
-<li>Qu'est-ce qu'on doit obtenir à la fin, précisément ?</li>
-<li>Comment vérifie-t-on que le résultat est juste ?</li>
-</ol></div></div>
-<div class="etape"><span class="num">3</span><div><b>Chacun construit le même outil de son côté</b>, sans copier sur l'autre. C'est tout l'intérêt : au tableau, on comparera deux façons de faire la même chose.</div></div>
-<div class="etape"><span class="num">4</span><div><b>Testez-le pour de vrai.</b> Un outil qui ne tourne pas en direct ne compte pas. Gardez un exemple d'entrée prêt pour la démonstration.</div></div>
-<div class="etape"><span class="num">5</span><div><b>Remplissez votre fiche de cas d'usage</b>, plus bas sur cette page.</div></div>
-<div class="encart"><b>Règle de sécurité :</b> aucun document confidentiel de client. Travaillez sur des contenus neutres ou fictifs.</div>
-
-<h3 id="idees">Des idées pour démarrer, par métier</h3>
-<div class="grille">
-<div class="carte"><b>Direction</b><br>Une tâche programmée qui prépare chaque lundi un point sur la semaine à partir de l'agenda et des mails.<br>Un skill qui transforme des notes de réunion en décisions, responsables et échéances.</div>
-<div class="carte"><b>Marketing et automatisation</b><br>Un skill qui décline un article en post, en mail et en trois accroches, dans le ton de la marque.<br>Un agent qui prépare une fiche de prospect à partir de son site et de son actualité publique.</div>
-<div class="carte"><b>Accompagnement administratif</b><br>Un skill qui trie une demande reçue et propose une réponse type à relire.<br>Une tâche programmée qui liste chaque vendredi les relances à faire.</div>
-<div class="carte"><b>Graphisme</b><br>Un skill qui transforme un brief client flou en cahier des charges clair, avec les questions à poser.<br>Un skill qui rédige le texte d'accompagnement d'une proposition visuelle.</div>
-<div class="carte"><b>Recrutement</b><br>Un skill qui compare un CV à une fiche de poste et liste les points à creuser en entretien.<br>Un agent qui prépare la trame d'entretien d'un profil donné.</div>
-<div class="carte"><b>Développement logiciel</b><br>Un skill qui relit une demande d'évolution et la découpe en tâches estimables.<br>Une tâche programmée qui résume chaque matin les tickets ouverts.</div>
-<div class="carte"><b>Communication et conseil</b><br>Un skill qui prépare un diagnostic de maturité IA d'un client à partir de ses réponses à un questionnaire.<br>Un agent qui fait une veille sur un secteur et rédige une note d'une page.</div>
-<div class="carte"><b>Optimisation organisationnelle</b><br>Un skill qui décrit un processus à partir d'explications orales et repère les étapes automatisables.<br>Un skill qui produit un compte rendu d'atelier au format du cabinet.</div>
-</div>
-
-
-</div>
-</section>
-<section class="bloc" id="tableau" aria-labelledby="t-tableau">
-<header class="bloc-tete">
-<span class="bloc-num" aria-hidden="true">5</span>
-<div class="bloc-titres"><p class="bloc-meta"><span class="heure">12h15, puis 14h00 à 15h30</span><span class="type type-vous">Vous pratiquez</span></p>
-<h2 id="t-tableau">Le passage au tableau</h2></div>
-</header>
-<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Passez à deux, montrez comment vous avez construit, faites-le tourner en direct. Le duo suivant observe.</p></div>
-<div class="bloc-corps">
-
-<p><b>Chaque duo passe ensemble, 11 minutes. Le duo suivant observe.</b></p>
-<div class="etape"><span class="num">1</span><div><b>4 min, personne 1 :</b> montrez comment vous l'avez construit, puis faites-le tourner en direct.</div></div>
-<div class="etape"><span class="num">2</span><div><b>4 min, personne 2 :</b> pareil, avec votre version.</div></div>
-<div class="etape"><span class="num">3</span><div><b>2 min :</b> coaching de Clément.</div></div>
-<div class="etape"><span class="num">4</span><div><b>1 min, le duo observateur</b> répond à voix haute :
-<ol>
-<li>Est-ce que les deux outils ont fonctionné ?</li>
-<li>Qu'est-ce qui change entre les deux façons de faire ?</li>
-<li>Une amélioration concrète pour chacun.</li>
-</ol></div></div>
-<p class="petit">Tout le reste de la salle note une idée à reprendre.</p>
-
-
-</div>
-</section>
-<section class="bloc" id="fiche" aria-labelledby="t-fiche">
-<header class="bloc-tete">
-<span class="bloc-num" aria-hidden="true">6</span>
-<div class="bloc-titres"><p class="bloc-meta"><span class="heure">13h30</span><span class="type type-vous">Vous pratiquez</span></p>
-<h2 id="t-fiche">Ma fiche de cas d'usage</h2></div>
-</header>
-<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Remplissez une fiche par création et envoyez-la par mail. Le risque et le contrôle humain sont obligatoires.</p></div>
-<div class="bloc-corps">
-
-<p>Une fiche par création. C'est ce document que vous pourrez montrer à un client pour lui recommander un outil.</p>
-<label for="f-nom">Mon nom</label><input id="f-nom">
-<label for="f-tache">La tâche, en une phrase</label><textarea id="f-tache"></textarea>
-<label for="f-outil">Ce que j'ai créé, et dans quel outil</label><textarea id="f-outil"></textarea>
-<label for="f-pourquoi">Pourquoi cet outil plutôt qu'un autre</label><textarea id="f-pourquoi"></textarea>
-<label for="f-risque">Le risque principal</label><textarea id="f-risque"></textarea>
-<label for="f-controle">Le contrôle humain prévu</label><textarea id="f-controle"></textarea>
-<label for="f-temps">Temps gagné estimé, vérification comprise</label><input id="f-temps">
-<p style="margin-top:14px"><button class="bouton" onclick="envoyerFiche()">Envoyer ma fiche par mail</button> <button class="bouton sec" onclick="copierFiche()">Copier ma fiche</button></p>
-<p class="petit" id="f-msg">Une fiche sans risque identifié ni contrôle humain n'est pas terminée.</p>
-
-
-</div>
-</section>
 <section class="bloc" id="rag" aria-labelledby="t-rag">
 <header class="bloc-tete">
-<span class="bloc-num" aria-hidden="true">7</span>
-<div class="bloc-titres"><p class="bloc-meta"><span class="heure">15h30 à 16h50</span><span class="type type-mix">Clément montre, puis vous pratiquez</span></p>
+<span class="bloc-num" aria-hidden="true">4</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">10h40 à 12h10</span><span class="type type-mix">Clément montre, puis vous pratiquez</span></p>
 <h2 id="t-rag">L'atelier base de connaissances</h2></div>
 </header>
-<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Choisissez un outil, ouvrez sa fiche et suivez les étapes, puis faites les deux tests : le piège et la contradiction.</p></div>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Choisissez un outil, ouvrez sa fiche, suivez les étapes, puis faites les quatre actions et les deux tests. Vous la brancherez sur votre skill l'après-midi.</p></div>
 <div class="bloc-corps">
 
 <p>Vous nous l'avez beaucoup demandé. Une base de connaissances, c'est un assistant qui répond <b>à partir de vos documents</b>, et pas de sa mémoire générale. <b>Choisissez un outil ci-dessous, ouvrez sa fiche et suivez les étapes.</b></p>
@@ -614,45 +545,160 @@ Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
 <tr><td><b>Perplexity</b></td><td>Sélecteur de mode, avant de poser la question</td><td>Limité en gratuit</td><td>Quotas non vérifiés à la source</td></tr>
 </table></div>
 
-<h3>La consigne, de 16h00 à 16h50</h3>
+<h3>La consigne, de 11h10 à 12h10</h3>
 <div class="etape"><span class="num">1</span><div><b>Choisissez 5 à 10 documents</b> de votre activité : offres, procédures, questions fréquentes, modèles. Rien de confidentiel.</div></div>
 <div class="etape"><span class="num">2</span><div><b>Créez la base</b> dans l'outil de votre choix, parmi ceux du tableau.</div></div>
 <div class="etape"><span class="num">3</span><div><b>Écrivez les instructions</b> : répondre uniquement à partir des documents, citer le document utilisé, et dire « je ne trouve pas cette information » quand elle n'y est pas.</div></div>
+<div class="encart"><b>Avant les tests, faites faire quatre actions à votre base :</b> rédiger un court texte à partir d'un document, résumer un document, extraire une liste d'informations, et retrouver une information précise.</div>
 <div class="piege-box"><div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Le test du piège, à poser à votre base</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Quel est le numéro de téléphone de notre avocat ?
 (Si la réponse n&#x27;est dans aucun document, votre base doit répondre qu&#x27;elle ne trouve pas l&#x27;information.)</pre></div></div>
 <div class="etape"><span class="num">4</span><div><b>Test du piège :</b> posez une question dont la réponse n'est dans aucun document. Une bonne base avoue qu'elle ne sait pas. Si elle invente, reprenez vos instructions.</div></div>
 <div class="etape"><span class="num">5</span><div><b>Test de la contradiction :</b> ajoutez un document qui contredit un autre, et demandez laquelle des deux informations est la bonne. Observez si elle signale le conflit.</div></div>
+<div class="conseil"><b>Gardez votre base ouverte :</b> l'après-midi, vous pourrez la brancher sur le skill que vous allez créer.</div>
+</div>
+</section>
+<section class="bloc" id="duos" aria-labelledby="t-duos">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">5</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">12h10, puis 13h30 à 15h00</span><span class="type type-vous">Vous pratiquez</span></p>
+<h2 id="t-duos">La création du skill en duo</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Avant le déjeuner, trouvez en duo une même idée de skill. Après le déjeuner, chacun construit sa propre version, adaptée à son métier.</p></div>
+<div class="bloc-corps">
+<div class="etape"><span class="num">1</span><div><b>12h10 · Formez un duo</b> avec quelqu'un qui ne fait pas le même métier que vous. En nombre impair, un trio.</div></div>
+<div class="etape"><span class="num">2</span><div><b>Brainstormez 15 minutes</b> et trouvez <b>une même idée de skill</b>, que chacun adaptera à son propre travail. Par exemple : « un skill qui prépare mes rendez-vous clients » ou « un skill qui transforme mes notes en compte rendu ». Pour trancher, répondez ensemble :
+<ol>
+<li>Quelle tâche revient souvent chez vous deux, même sous une forme différente ?</li>
+<li>Qu'est-ce qui la déclenche, chez l'un et chez l'autre ?</li>
+<li>Qu'est-ce que chacun donne au skill au départ ?</li>
+<li>Qu'est-ce que chacun doit obtenir à la fin ?</li>
+<li>Comment chacun vérifie que le résultat est juste ?</li>
+</ol></div></div>
+<div class="etape"><span class="num">3</span><div><b>13h30 · Chacun construit sa propre version</b>, adaptée à son métier. Branchez-y la base de connaissances du matin si c'est utile. Les deux skills seront différents, c'est voulu : au tableau, on compare.</div></div>
+<div class="etape"><span class="num">4</span><div><b>Testez-le pour de vrai.</b> Un skill qui ne tourne pas en direct ne compte pas. Gardez un exemple d'entrée prêt pour la démonstration.</div></div>
+<div class="etape"><span class="num">5</span><div><b>Avant 15h00, remplissez votre fiche</b> : cas d'usage et grille de choix d'outil, plus bas sur cette page.</div></div>
+<div class="encart"><b>Règle de sécurité :</b> aucun document confidentiel de client. Travaillez sur des contenus neutres ou fictifs.</div>
+
+<h3 id="idees">Des idées pour démarrer, par métier</h3>
+<div class="grille">
+<div class="carte"><b>Direction</b><br>Une tâche programmée qui prépare chaque lundi un point sur la semaine à partir de l'agenda et des mails.<br>Un skill qui transforme des notes de réunion en décisions, responsables et échéances.</div>
+<div class="carte"><b>Marketing et automatisation</b><br>Un skill qui décline un article en post, en mail et en trois accroches, dans le ton de la marque.<br>Un agent qui prépare une fiche de prospect à partir de son site et de son actualité publique.</div>
+<div class="carte"><b>Accompagnement administratif</b><br>Un skill qui trie une demande reçue et propose une réponse type à relire.<br>Une tâche programmée qui liste chaque vendredi les relances à faire.</div>
+<div class="carte"><b>Graphisme</b><br>Un skill qui transforme un brief client flou en cahier des charges clair, avec les questions à poser.<br>Un skill qui rédige le texte d'accompagnement d'une proposition visuelle.</div>
+<div class="carte"><b>Recrutement</b><br>Un skill qui compare un CV à une fiche de poste et liste les points à creuser en entretien.<br>Un agent qui prépare la trame d'entretien d'un profil donné.</div>
+<div class="carte"><b>Développement logiciel</b><br>Un skill qui relit une demande d'évolution et la découpe en tâches estimables.<br>Une tâche programmée qui résume chaque matin les tickets ouverts.</div>
+<div class="carte"><b>Communication et conseil</b><br>Un skill qui prépare un diagnostic de maturité IA d'un client à partir de ses réponses à un questionnaire.<br>Un agent qui fait une veille sur un secteur et rédige une note d'une page.</div>
+<div class="carte"><b>Optimisation organisationnelle</b><br>Un skill qui décrit un processus à partir d'explications orales et repère les étapes automatisables.<br>Un skill qui produit un compte rendu d'atelier au format du cabinet.</div>
+</div>
 
 
-<div class="formateur"><details>
-<summary>Pour le formateur : correspondance avec le programme de la journée J6</summary>
-<div class="tab"><table>
-<tr><th>Point du programme J6</th><th>Où il est traité</th></tr>
-<tr><td>Microsoft Copilot 365</td><td>Démonstration du vendredi 11 septembre, rappel à 10h15</td></tr>
-<tr><td>Google Workspace et Gemini</td><td>Démonstration du vendredi 11 septembre, rappel à 10h15</td></tr>
-<tr><td>Ateliers pratiques sur des cas de poste réels</td><td>Création en duo sur une tâche réelle, de 10h40 à 15h30</td></tr>
-<tr><td>Notion AI et gestion des connaissances</td><td>Atelier base de connaissances de 15h30 à 16h50, Notion compris dans les outils présentés</td></tr>
-<tr><td>Comparatif des copilotes et critères de choix</td><td>Chaque passage justifie le choix de l'outil, l'atelier de 15h30 présente neuf outils et les compare à la recherche approfondie</td></tr>
-<tr><td>Fiches de cas d'usage par métier</td><td>Une fiche remplie par chaque participant pour sa création</td></tr>
-<tr><td>Objectif : gagner en productivité bureautique</td><td>Temps gagné estimé, vérification comprise, dans chaque fiche</td></tr>
-<tr><td>Objectif : choisir le bon copilote selon l'environnement</td><td>Rappel de 10h15 et rubrique « pourquoi cet outil » de la fiche</td></tr>
-<tr><td>Évaluation</td><td>Quiz de 9h10 envoyé en PDF, démonstrations en direct au tableau, évaluation à chaud à 16h50</td></tr>
-</table></div>
-</details></div>
+</div>
+</section>
+<section class="bloc" id="tableau" aria-labelledby="t-tableau">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">6</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">15h15 à 16h45</span><span class="type type-vous">Vous pratiquez</span></p>
+<h2 id="t-tableau">Le passage au tableau</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Passez à deux : chacun montre sa version, ce qui la différencie et en quoi elle sert son travail. Le duo suivant observe.</p></div>
+<div class="bloc-corps">
+<p><b>Chaque duo passe ensemble, environ 11 minutes. Le duo suivant observe.</b></p>
+<div class="etape"><span class="num">1</span><div><b>4 min, personne 1 :</b> montrez comment vous avez construit votre skill, faites-le tourner en direct, et dites <b>en quoi il s'intègre à votre travail</b>. Citez <b>deux critères de la grille de choix</b> et <b>un point de vigilance</b> : données, ou contrôle humain.</div></div>
+<div class="etape"><span class="num">2</span><div><b>4 min, personne 2 :</b> pareil avec votre version, puis dites <b>ce qui la différencie</b> de celle de votre binôme.</div></div>
+<div class="etape"><span class="num">3</span><div><b>2 min :</b> coaching de Clément.</div></div>
+<div class="etape"><span class="num">4</span><div><b>1 min, le duo observateur</b> répond à voix haute :
+<ol>
+<li>Les deux skills ont-ils fonctionné en direct ?</li>
+<li>Qu'est-ce qui change entre les deux versions ?</li>
+<li>En quoi chacune sert le métier de son auteur ?</li>
+<li>Une amélioration concrète pour chacun.</li>
+</ol></div></div>
+<p class="petit">Tout le reste de la salle note une idée à reprendre. Un trio passe avec une personne de plus.</p>
+</div>
+</section>
+<section class="bloc" id="fiche" aria-labelledby="t-fiche">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">7</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">Avant 15h00, puis à 16h45</span><span class="type type-vous">Vous pratiquez</span></p>
+<h2 id="t-fiche">Ma fiche, ma grille de choix et mon plan d'action</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Remplissez votre cas d'usage, votre grille de choix et votre plan d'action à 30 jours, puis envoyez le tout par mail.</p></div>
+<div class="bloc-corps">
+<p>Trois choses à rendre sur une seule fiche : votre cas d'usage, votre grille de choix d'outil et votre plan d'action. <b>Tout part en un seul mail.</b></p>
+<h3>1. Mon cas d'usage</h3>
+<label for="f-nom">Mon nom</label><input id="f-nom">
+<label for="f-tache">La tâche, en une phrase</label><textarea id="f-tache"></textarea>
+<label for="f-outil">Ce que j'ai créé, et dans quel outil</label><textarea id="f-outil"></textarea>
+<label for="f-integration">En quoi il s'intègre à mon travail</label><textarea id="f-integration"></textarea>
+<label for="f-pourquoi">Pourquoi cet outil plutôt qu'un autre, en une phrase</label><textarea id="f-pourquoi"></textarea>
+<label for="f-risque">Le risque principal</label><textarea id="f-risque"></textarea>
+<label for="f-controle">Le contrôle humain prévu</label><textarea id="f-controle"></textarea>
+<label for="f-temps">Temps gagné estimé, vérification comprise</label><input id="f-temps">
+<h3>2. Ma grille de choix d'outil</h3>
+<p><b>Règle d'or : on pondère avant de noter.</b> Répartissez 100 points entre les huit critères selon ce qui compte dans votre situation, puis notez l'outil choisi de 1 à 5 sur chaque critère.</p>
+<div class="tab"><table class="grille-choix"><tr><th>Critère</th><th>Poids</th><th>Note sur 5</th></tr><tr><td><b>1. Intégration à l'existant</b><br><span class="petit">L'outil est-il là où l'on travaille déjà ?</span></td><td><input id="g-p1" type="number" min="0" max="100" step="5" inputmode="numeric" aria-label="Poids du critère 1"></td><td><input id="g-n1" type="number" min="1" max="5" step="1" inputmode="numeric" aria-label="Note du critère 1"></td></tr><tr><td><b>2. Périmètre fonctionnel réel</b><br><span class="petit">Ce qu'il fait vraiment dans votre version, vérifié.</span></td><td><input id="g-p2" type="number" min="0" max="100" step="5" inputmode="numeric" aria-label="Poids du critère 2"></td><td><input id="g-n2" type="number" min="1" max="5" step="1" inputmode="numeric" aria-label="Note du critère 2"></td></tr><tr><td><b>3. Coût et modèle de licence</b><br><span class="petit">Vérifié à la date du jour, sans se fier à une page commerciale.</span></td><td><input id="g-p3" type="number" min="0" max="100" step="5" inputmode="numeric" aria-label="Poids du critère 3"></td><td><input id="g-n3" type="number" min="1" max="5" step="1" inputmode="numeric" aria-label="Note du critère 3"></td></tr><tr><td><b>4. Localisation et traitement des données</b><br><span class="petit">Où sont traitées les données, sont-elles réutilisées, quelles garanties.</span></td><td><input id="g-p4" type="number" min="0" max="100" step="5" inputmode="numeric" aria-label="Poids du critère 4"></td><td><input id="g-n4" type="number" min="1" max="5" step="1" inputmode="numeric" aria-label="Note du critère 4"></td></tr><tr><td><b>5. Administration et journalisation</b><br><span class="petit">Savoir qui a utilisé quoi, restreindre, désactiver.</span></td><td><input id="g-p5" type="number" min="0" max="100" step="5" inputmode="numeric" aria-label="Poids du critère 5"></td><td><input id="g-n5" type="number" min="1" max="5" step="1" inputmode="numeric" aria-label="Note du critère 5"></td></tr><tr><td><b>6. Courbe d'apprentissage</b><br><span class="petit">Temps avant qu'un utilisateur obtienne un résultat utile seul.</span></td><td><input id="g-p6" type="number" min="0" max="100" step="5" inputmode="numeric" aria-label="Poids du critère 6"></td><td><input id="g-n6" type="number" min="1" max="5" step="1" inputmode="numeric" aria-label="Note du critère 6"></td></tr><tr><td><b>7. Dépendance au fournisseur</b><br><span class="petit">Que devient le travail si l'on change d'outil ?</span></td><td><input id="g-p7" type="number" min="0" max="100" step="5" inputmode="numeric" aria-label="Poids du critère 7"></td><td><input id="g-n7" type="number" min="1" max="5" step="1" inputmode="numeric" aria-label="Note du critère 7"></td></tr><tr><td><b>8. Réversibilité</b><br><span class="petit">Peut-on retirer l'outil sans perdre l'information produite ?</span></td><td><input id="g-p8" type="number" min="0" max="100" step="5" inputmode="numeric" aria-label="Poids du critère 8"></td><td><input id="g-n8" type="number" min="1" max="5" step="1" inputmode="numeric" aria-label="Note du critère 8"></td></tr></table></div>
+<p id="g-resultat" class="encart" aria-live="polite">Total des poids : 0 sur 100.</p>
+<h3>3. Mon plan d'action à 30 jours</h3>
+<label for="f-plan-t1">Première tâche que je mets en œuvre</label><input id="f-plan-t1">
+<label for="f-plan-t2">Deuxième tâche</label><input id="f-plan-t2">
+<label for="f-plan-personne">Une personne que j'embarque</label><input id="f-plan-personne">
+<label for="f-plan-date">Ma date de contrôle</label><input id="f-plan-date" type="date">
+<label for="f-plan-indic">Mon indicateur simple</label><input id="f-plan-indic" placeholder="par exemple : 2 heures gagnées par semaine">
+<p style="margin-top:16px"><button class="bouton" onclick="envoyerFiche()">Envoyer ma fiche par mail</button> <button class="bouton sec" onclick="copierFiche()">Copier ma fiche</button></p>
+<p class="petit" id="f-msg">Une fiche sans risque identifié ni contrôle humain n'est pas terminée.</p>
+<details class="formateur"><summary>Pour le formateur et l'Agence Nikita : conformité au programme J6</summary>
+<p><b>Tous les contenus, objectifs et livrables du programme J6 sont traités.</b> L'ordre de la journée est adapté : la gestion des connaissances passe le matin, et les ateliers se font sur les outils dont disposent les participants. Les écarts sont listés en bas, avec leur justification.</p>
+<h3>Contenus du programme</h3><div class="tab"><table><tr><th>Contenu</th><th>Où il est traité</th></tr><tr><td>Microsoft Copilot 365</td><td>Démonstration du vendredi 11 septembre, rappel à 10h15</td></tr><tr><td>Google Workspace et Gemini</td><td>Démonstration du vendredi 11 septembre, rappel à 10h15 avec la méthode des @</td></tr><tr><td>Ateliers pratiques sur des cas de poste réels</td><td>Création du skill en duo, 12h10 puis 13h30 à 15h00</td></tr><tr><td>Notion AI et gestion des connaissances</td><td>Atelier base de connaissances, 10h40 à 12h10, Notion parmi les neuf outils</td></tr><tr><td>Comparatif des copilotes et critères de choix</td><td>Rappel de 10h15, grille des huit critères dans la fiche, critères cités au tableau</td></tr><tr><td>Fiches de cas d'usage par métier</td><td>Fiche de chaque participant, envoyée par mail</td></tr></table></div>
+<h3>Livrables formateur de l'Annexe 1</h3><div class="tab"><table><tr><th>Livrable</th><th>Où il se trouve</th></tr><tr><td>Support</td><td>Support déposé et kit de la journée</td></tr><tr><td>Ateliers pratiques par suite</td><td>Démonstrations Copilot et Gemini du 11 septembre et rappel à 10h15. Exécution par les participants remplacée par le plan de repli de la pièce 5, faute de licences</td></tr><tr><td>Fiches de cas d'usage par métier</td><td>Fiche du kit, une par création</td></tr><tr><td>Grille de choix d'outil</td><td>Grille des huit critères pondérés, dans la fiche</td></tr></table></div>
+<h3>Objectifs pédagogiques</h3><div class="tab"><table><tr><th>Objectif</th><th>Moment et preuve</th></tr><tr><td>O1</td><td>Rappel de 10h15 : copilote intégré contre assistant, trois niveaux de Copilot</td></tr><tr><td>O2, O3</td><td>Démonstrations du 11 septembre et rappel de 10h15, exécution en observation selon le plan de repli de la pièce 5</td></tr><tr><td>O4</td><td>Instructions du skill et de la base de connaissances, qui s'appuient sur un document source</td></tr><tr><td>O5</td><td>Temps gagné estimé, vérification comprise, dans la fiche</td></tr><tr><td>O6</td><td>Encart « J'ai peur de cliquer sur Connecter », rubriques risque et contrôle humain de la fiche</td></tr><tr><td>O7, O8</td><td>Atelier base de connaissances : structurer, quatre actions assistées, test du piège, test de la contradiction</td></tr><tr><td>O9</td><td>Grille des huit critères, pondérée avant d'être notée</td></tr><tr><td>O10</td><td>Fiche de cas d'usage : tâche, outil, gain, risque, contrôle humain</td></tr><tr><td>O11</td><td>Passage au tableau : quatre minutes par personne, deux critères de la grille et un point de vigilance cités</td></tr><tr><td>O12</td><td>Plan d'action à 30 jours dans la fiche</td></tr></table></div>
+<h3>Évaluation et traçabilité</h3><div class="tab"><table><tr><th>Exigence</th><th>Comment</th></tr><tr><td>Autopositionnement d'entrée et de sortie</td><td>9h00 et 16h45, six questions</td></tr><tr><td>Évaluations formatives</td><td>Démonstration en direct au tableau, observation par le duo suivant, coaching du formateur</td></tr><tr><td>Quiz</td><td>Quiz des 50 questions à 9h10, résultat envoyé en PDF, plus large que le quiz formatif de douze questions prévu</td></tr><tr><td>Évaluation à chaud</td><td>Formulaire de l'Agence Nikita à 16h45</td></tr><tr><td>Preuves conservées</td><td>Émargement, PDF des quiz, fiches avec grille et plan d'action reçues par mail</td></tr></table></div>
+<h3>Écarts assumés</h3>
+<ul>
+<li><b>Pas d'atelier Copilot 365 ni Gemini Workspace par les participants</b> : aucun n'a de licence. Démonstration faite le 11 septembre et rappel à 10h15, conformément au plan de repli prévu dans la pièce 5 du dossier déposé.</li>
+<li><b>La gestion des connaissances passe le matin</b> et porte sur l'outil choisi par chacun, Notion compris, pour pouvoir la brancher sur le skill de l'après-midi.</li>
+<li><b>La soutenance de trois minutes de l'atelier A5 est intégrée au passage au tableau</b>, avec la même exigence : deux critères de la grille et un point de vigilance.</li>
+<li><b>La mesure d'écart de temps est une estimation déclarée</b> dans la fiche, vérification comprise.</li>
+</ul>
+</details>
 </div>
 </section>
 </main>
 <script>
 function champ(id){ var e=document.getElementById(id); return e ? e.value.trim() : ""; }
+var CRITERES=["Intégration à l'existant","Périmètre fonctionnel réel","Coût et modèle de licence","Localisation et traitement des données","Administration et journalisation","Courbe d'apprentissage","Dépendance au fournisseur","Réversibilité"];
+function grille(){
+  var tp=0, sc=0, lignes=[];
+  for(var i=1;i<=8;i++){
+    var pw=parseFloat(champ("g-p"+i))||0, nt=parseFloat(champ("g-n"+i))||0;
+    tp+=pw; sc+=pw*nt;
+    if(pw||nt) lignes.push(CRITERES[i-1]+" : poids "+pw+", note "+nt+"/5");
+  }
+  return {total:tp, score: tp? Math.round(sc/tp*10)/10 : 0, lignes:lignes};
+}
+function majGrille(){
+  var g=grille(), el=document.getElementById("g-resultat"); if(!el) return;
+  if(g.total===100){ el.textContent="Total des poids : 100 sur 100. Score de l'outil : "+g.score+" sur 5."; el.style.borderColor="#1F6E45"; }
+  else { el.textContent="Total des poids : "+g.total+" sur 100. Ajustez pour arriver à 100 avant de noter."; el.style.borderColor=""; }
+}
 function texteFiche(){
-  return "FICHE DE CAS D'USAGE, J6 Lyon\n\n"
+  var g=grille();
+  return "FICHE J6 Lyon\n\n1. CAS D'USAGE\n"
    + "Nom : " + champ("f-nom") + "\n"
    + "Tâche : " + champ("f-tache") + "\n"
    + "Création et outil : " + champ("f-outil") + "\n"
+   + "Intégration à mon travail : " + champ("f-integration") + "\n"
    + "Pourquoi cet outil : " + champ("f-pourquoi") + "\n"
    + "Risque principal : " + champ("f-risque") + "\n"
    + "Contrôle humain : " + champ("f-controle") + "\n"
-   + "Temps gagné estimé : " + champ("f-temps") + "\n";
+   + "Temps gagné estimé : " + champ("f-temps") + "\n\n"
+   + "2. GRILLE DE CHOIX (poids sur 100, note sur 5)\n" + (g.lignes.length ? g.lignes.join("\n") : "non remplie") + "\n"
+   + "Total des poids : " + g.total + " sur 100. Score : " + g.score + " sur 5\n\n"
+   + "3. PLAN D'ACTION A 30 JOURS\n"
+   + "Tâche 1 : " + champ("f-plan-t1") + "\n"
+   + "Tâche 2 : " + champ("f-plan-t2") + "\n"
+   + "Personne embarquée : " + champ("f-plan-personne") + "\n"
+   + "Date de contrôle : " + champ("f-plan-date") + "\n"
+   + "Indicateur : " + champ("f-plan-indic") + "\n";
 }
 function ficheComplete(){
   var m=document.getElementById("f-msg");
@@ -660,7 +706,12 @@ function ficheComplete(){
     m.textContent="Il manque le risque ou le contrôle humain : la fiche n'est pas terminée.";
     m.style.color="#B3261E"; return false;
   }
-  return true;
+  var g=grille();
+  if(g.total && g.total!==100){
+    m.textContent="La grille n'est pas terminée : le total des poids doit faire 100.";
+    m.style.color="#B3261E"; return false;
+  }
+  m.style.color=""; return true;
 }
 function copierFiche(){
   if(!ficheComplete()) return;
@@ -676,15 +727,16 @@ function envoyerFiche(){
   var w=null; try{ w=window.open(u,"_blank"); }catch(e){}
   if(!w){ window.location.href=u; }
 }
-["f-nom","f-tache","f-outil","f-pourquoi","f-risque","f-controle","f-temps"].forEach(function(id){
+["f-nom", "f-tache", "f-outil", "f-integration", "f-pourquoi", "f-risque", "f-controle", "f-temps", "f-plan-t1", "f-plan-t2", "f-plan-personne", "f-plan-date", "f-plan-indic", "g-p1", "g-p2", "g-p3", "g-p4", "g-p5", "g-p6", "g-p7", "g-p8", "g-n1", "g-n2", "g-n3", "g-n4", "g-n5", "g-n6", "g-n7", "g-n8"].forEach(function(id){
   var e=document.getElementById(id);
   try{ var v=localStorage.getItem("j6-"+id); if(v) e.value=v; }catch(x){}
-  e.addEventListener("input",function(){ try{ localStorage.setItem("j6-"+id,e.value); }catch(x){} });
+  e.addEventListener("input",function(){ try{ localStorage.setItem("j6-"+id,e.value); }catch(x){} if(id.indexOf("g-")===0) majGrille(); });
 });
 </script>
+<script>majGrille();</script>
 <script>
 (function(){
-  var PROG = [["09:00", "09:10", "Accueil, émargement, déroulé de la journée", "programme"], ["09:10", "09:50", "Le quiz des 50 questions, puis l'envoi du PDF", "quiz"], ["09:50", "10:15", "Démonstration : skills, agents, tâches programmées, connecteurs", "demo"], ["10:15", "10:25", "Rappel express : Copilot et Gemini", "copilotes"], ["10:25", "10:40", "Pause", "programme"], ["10:40", "10:55", "Duos et brainstorm : on choisit ce qu'on crée", "duos"], ["10:55", "12:15", "Création, chacun de son côté", "duos"], ["12:15", "12:30", "Premier passage au tableau", "tableau"], ["12:30", "13:30", "Déjeuner", "programme"], ["13:30", "14:00", "Fin de la création, tests, fiche de cas d'usage", "fiche"], ["14:00", "14:45", "Passages au tableau", "tableau"], ["14:45", "15:00", "Pause", "programme"], ["15:00", "15:30", "Passages au tableau, fin à 15h30", "tableau"], ["15:30", "16:00", "Atelier base de connaissances, tous ensemble", "rag"], ["16:00", "16:50", "Chacun construit sa base de connaissances", "rag"], ["16:50", "17:00", "Clôture : plan d'action, évaluation à chaud", "programme"]];
+  var PROG = [["09:00", "09:10", "Accueil, émargement, autopositionnement d'entrée", "programme"], ["09:10", "09:50", "Le quiz des 50 questions, puis l'envoi du PDF", "quiz"], ["09:50", "10:15", "Démonstration : skills, agents, tâches programmées, connecteurs", "demo"], ["10:15", "10:25", "Rappel express : Copilot et Gemini", "copilotes"], ["10:25", "10:40", "Pause", "programme"], ["10:40", "11:10", "Atelier base de connaissances, tous ensemble", "rag"], ["11:10", "12:10", "Chacun construit sa base de connaissances", "rag"], ["12:10", "12:30", "Duos et brainstorm : une même idée de skill", "duos"], ["12:30", "13:30", "Déjeuner", "programme"], ["13:30", "15:00", "Création du skill, chacun sa version", "duos"], ["15:00", "15:15", "Pause", "programme"], ["15:15", "16:45", "Passages au tableau", "tableau"], ["16:45", "17:00", "Clôture : plan d'action, autopositionnement de sortie, évaluation à chaud", "fiche"]];
   function minutes(h){var p=h.split(":");return (+p[0])*60+(+p[1]);}
   function pad(n){return (n<10?"0":"")+n;}
   function maj(){
