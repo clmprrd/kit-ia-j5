@@ -7,7 +7,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --marque:#E91FCB; --marque-fonce:#A3128C; --marque-texte:#9C0F86; --rose:#FCE4F7; --rose-clair:#FEF3FB;
@@ -19,7 +19,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-body{margin:0;background:var(--fond);color:var(--encre);font-family:"Source Sans 3",Arial,Helvetica,sans-serif;font-size:18px;line-height:1.6}
+body{margin:0;background:var(--fond);color:var(--encre);font-family:Inter,system-ui,Arial,Helvetica,sans-serif;font-size:17px;line-height:1.6}
 a{color:var(--marque-texte);text-underline-offset:3px}
 a:hover{color:var(--marque-fonce)}
 :focus-visible{outline:3px solid var(--marque-fonce);outline-offset:3px;border-radius:6px}
@@ -159,6 +159,67 @@ textarea{min-height:72px;resize:vertical}
   .ligne{grid-template-columns:44px 58px 1fr;gap:8px}
   .rassure{padding:16px}
 }
+
+/* ===== style bibliotheque ===== */
+body{background-color:var(--fond);background-image:linear-gradient(to right,rgba(26,26,26,.035) 1px,transparent 1px),linear-gradient(rgba(26,26,26,.035) 1px,transparent 1px);background-size:56px 56px}
+h1,.bloc h2,.rassure-titre,.cat-titre,.kb-nom{font-family:Fraunces,Georgia,"Times New Roman",serif;font-weight:900;letter-spacing:-.01em}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.05}
+.bloc h2{font-weight:800}
+.hero{background:transparent;border-bottom:0}
+.hero .wrap{text-align:left}
+.bloc{border-color:#ECE8EB;border-radius:18px;box-shadow:0 1px 2px rgba(26,26,26,.04)}
+.etape{border:1px solid #ECE8EB;border-radius:14px;padding:14px 16px;background:#fff}
+.etape .num{background:var(--marque-fonce)}
+.encart{border-left:0;border:1px solid #F3C6EA;border-radius:14px;background:var(--rose-clair)}
+.carte{border-radius:14px;border-color:#ECE8EB}
+
+/* categories */
+.cat{margin:34px 0 12px}
+.cat-lab{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--marque-texte);margin:0 0 4px}
+.cat-titre{font-size:clamp(22px,3.6vw,28px);margin:0 0 6px;line-height:1.15}
+.cat-expl{margin:0;color:var(--gris);max-width:62ch}
+
+/* cartes outils */
+.kb-grille{display:grid;grid-template-columns:1fr;gap:14px;margin:14px 0 6px}
+details.kb{border:1px solid #ECE8EB;border-radius:18px;background:#fff;margin:0;overflow:hidden}
+details.kb[open]{box-shadow:0 10px 30px rgba(26,26,26,.08);border-color:#E3D5E0}
+details.kb > summary{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start;padding:18px 20px;min-height:0}
+details.kb > summary::after{top:30px}
+details.kb > summary:hover{background:#FCFAFB;border-radius:0}
+.kb-tuile{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;color:#fff;font-family:Inter,sans-serif}
+.kb-tete{min-width:0;padding-right:18px}
+.kb-cat{display:block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gris);margin-bottom:2px}
+.kb-nom{display:block;font-size:22px;line-height:1.15;margin:0 0 4px;color:var(--encre)}
+.kb-accroche{display:block;font-weight:400;color:var(--gris);font-size:15.5px;line-height:1.5}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.badge{font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:999px;border:1px solid #E6E1E5;background:#fff;color:var(--encre)}
+.badge.prix-gratuit{background:var(--vert-fond);border-color:#CBE5D5;color:var(--vert)}
+.badge.prix-limite{background:#FFF6E0;border-color:#F0DFAE;color:#6B4E00}
+.badge.prix-payant{background:#F1EEF0;border-color:#E3DDE1;color:var(--gris)}
+.badge.prix-verifier{background:#FCE8E6;border-color:#F2C9C4;color:#8A2A1E}
+.kb-voir{display:inline-block;margin-top:10px;font-size:14.5px;font-weight:700;color:var(--marque-texte)}
+details.kb[open] .kb-voir{display:none}
+.kb-corps{padding:0 20px 20px;border-top:1px solid #F1EDF0}
+details.kb > .kb-corps{margin:0}
+.kb-corps h4{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:19px;margin:20px 0 10px}
+.pas{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;border:1px solid #ECE8EB;border-radius:14px;padding:12px 14px;margin:8px 0;background:#fff}
+.pas .n{width:28px;height:28px;border-radius:50%;background:var(--marque-fonce);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.pas p{margin:0}
+.prompt{background:#16131A;color:#F4EEF3;border-radius:14px;margin:10px 0;overflow:hidden}
+.prompt-tete{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px 0 16px;flex-wrap:wrap}
+.prompt-lab{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#D9B8D2}
+.prompt pre{margin:0;padding:12px 16px 16px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;line-height:1.65}
+.prompt-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn-copier{min-height:44px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font-family:inherit;font-size:14.5px;font-weight:600;cursor:pointer}
+.btn-copier:hover{background:rgba(255,255,255,.16)}
+.btn-copier.ouvrir{background:var(--marque-fonce);border-color:var(--marque-fonce)}
+.btn-copier.ouvrir:hover{background:var(--marque-texte)}
+.btn-copier.ok{background:#1F6E45;border-color:#1F6E45}
+.ideal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:10px 0}
+.ideal div{border:1px solid #ECE8EB;border-radius:14px;padding:12px 14px;background:#FCFAFB}
+.ideal b{display:block;margin-bottom:2px}
+@media (min-width:760px){ .kb-grille{grid-template-columns:1fr} }
+@media (max-width:600px){ details.kb > summary{grid-template-columns:44px 1fr;padding:16px}.kb-tuile{width:44px;height:44px;font-size:15px}.kb-corps{padding:0 14px 16px}.kb-nom{font-size:20px} }
 </style>
 </head>
 <body>
@@ -413,17 +474,136 @@ textarea{min-height:72px;resize:vertical}
 <div class="bloc-corps">
 
 <p>Vous nous l'avez beaucoup demandé. Une base de connaissances, c'est un assistant qui répond <b>à partir de vos documents</b>, et pas de sa mémoire générale. <b>Choisissez un outil ci-dessous, ouvrez sa fiche et suivez les étapes.</b></p>
-<h3>Les outils, avec la marche à suivre</h3>
-<details><summary>Projets Claude <span class="petit">· gratuit jusqu'à 5 projets</span></summary><ol><li>Dans la barre latérale, ouvrez <b>Projets</b>, puis <b>Créer un projet</b>, et donnez-lui un nom.</li><li>Dans la partie <b>Connaissances du projet</b>, ajoutez vos documents ou collez du texte.</li><li>Ajoutez des <b>instructions du projet</b> : « Réponds uniquement à partir des documents et cite celui que tu utilises. »</li><li>Ouvrez une conversation <b>à l'intérieur du projet</b> et posez vos questions.</li><li>Sur les offres payantes, la recherche étendue permet de travailler sur un volume de documents bien plus grand.</li></ol><p class="petit"><a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank" rel="noopener">Aide Claude, projets</a><br><a href="https://youtu.be/GJ5jTgcbRHA" target="_blank" rel="noopener">Vidéo : Getting started with projects in Claude.ai</a> <span class="petit">(chaîne Anthropic, décembre 2025)</span></p></details>
-<details><summary>Projets ChatGPT <span class="petit">· gratuit et payant, le nombre de fichiers dépend de l'offre</span></summary><ol><li>Dans la barre latérale, cliquez sur <b>Nouveau projet</b>, donnez un nom, une icône et une couleur.</li><li>Ajoutez vos fichiers : PDF, tableurs, documents, images, ou du texte collé.</li><li>Cliquez sur les <b>trois points</b> en haut à droite, puis <b>Paramètres du projet</b>, et écrivez les instructions.</li><li>Vous pouvez aussi coller un lien vers un dossier Google Drive comme source.</li><li>Ouvrez une conversation dans le projet et posez vos questions.</li></ol><p class="petit"><a href="https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt" target="_blank" rel="noopener">Aide OpenAI, projets</a></p></details>
-<details><summary>NotebookLM, désormais Gemini Notebook <span class="petit">· gratuit, jusqu'à 50 sources par carnet</span></summary><ol><li>Ouvrez <a href="https://notebooklm.google.com" target="_blank" rel="noopener">notebooklm.google.com</a>, qui redirige vers Gemini Notebook, puis <b>Créer un notebook</b>.</li><li>Cliquez sur <b>Ajouter une source</b> : PDF, documents Google, sites web, vidéos YouTube, texte collé.</li><li>Un résumé de vos sources apparaît dans le chat.</li><li>Posez vos questions : chaque réponse renvoie à la phrase exacte de la source.</li><li>Le panneau <b>Studio</b> fabrique des notes, des cartes mentales ou un résumé audio.</li></ol><p class="petit"><a href="https://support.google.com/gemininotebook/answer/16206563" target="_blank" rel="noopener">Aide Google, créer un notebook</a>. Google a renommé le produit le 16 juillet 2026, et modifie ses limites d'usage depuis le 2 septembre 2026.<br><a href="https://youtu.be/AmKZCo5Dtn0" target="_blank" rel="noopener">Vidéo : Meet NotebookLM</a> <span class="petit">(chaîne Google Workspace, 2025, interface ancienne)</span></p></details>
-<details><summary>Gems Gemini <span class="petit">· gratuit selon Google, à vérifier sur votre compte</span></summary><ol><li>Sur <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a>, ouvrez la barre latérale, puis <b>Gems</b>.</li><li>Cliquez sur <b>Nouveau Gem</b>, donnez un nom et écrivez les instructions.</li><li>Dans <b>Connaissances</b>, cliquez sur <b>Ajouter des fichiers</b> : depuis votre ordinateur, Drive ou un notebook.</li><li>Enregistrez et testez dans l'aperçu.</li><li>Retrouvez-le ensuite dans la liste de vos Gems.</li></ol><p class="petit"><a href="https://support.google.com/gemini/answer/15146780" target="_blank" rel="noopener">Aide Google, utiliser les Gems</a></p></details>
-<details><summary>Obsidian avec un plugin IA <span class="petit">· gratuit, pour ceux qui veulent garder leurs notes sur leur ordinateur</span></summary><ol><li>Téléchargez <a href="https://obsidian.md" target="_blank" rel="noopener">Obsidian</a> et créez un coffre, c'est-à-dire un dossier de notes.</li><li>Ouvrez les <b>Paramètres</b>, puis <b>Plugins communautaires</b>, et désactivez le mode restreint.</li><li>Cliquez sur <b>Parcourir</b> et cherchez <b>Smart Connections</b> ou <b>Copilot</b>, puis <b>Installer</b> et <b>Activer</b>.</li><li><b>Smart Connections</b> fonctionne sans clé, avec un modèle local, et trouve les notes liées entre elles. <b>Copilot</b> permet de discuter avec son coffre, mais demande une clé d'un fournisseur d'IA ou un modèle local.</li><li>Posez une question sur vos notes depuis le panneau du plugin.</li></ol><p class="petit">Dépôts officiels : <a href="https://github.com/brianpetro/obsidian-smart-connections" target="_blank" rel="noopener">Smart Connections</a> et <a href="https://github.com/logancyang/obsidian-copilot" target="_blank" rel="noopener">Copilot for Obsidian</a>, tous deux actifs le 13 septembre 2026</p></details>
-<details><summary>Notion <span class="petit">· structuration gratuite, IA en essai limité</span></summary><ol><li>Rangez vos pages dans un espace Notion, avec des titres clairs.</li><li>Ouvrez une page et cliquez sur <b>Demander à l'IA</b>, ou tapez espace sur une ligne vide.</li><li>Posez une question en langage courant sur le contenu de votre espace.</li><li>Sur l'offre gratuite, le nombre de réponses IA est limité. L'IA complète est incluse dans l'offre Business.</li></ol><p class="petit"><a href="https://www.notion.com/help/complimentary-ai-responses" target="_blank" rel="noopener">Aide Notion, réponses IA offertes</a> et <a href="https://www.notion.com/pricing" target="_blank" rel="noopener">tarifs</a><br><a href="https://youtu.be/tFIgG-7RBvc" target="_blank" rel="noopener">Vidéo : Searching with Notion AI</a> <span class="petit">(chaîne Notion, 2025, interface ancienne)</span></p></details>
-<details><summary>Bibliothèques Mistral, dans Mistral Vibe (ex Le Chat) <span class="petit">· à partir de l'offre Pro</span></summary><ol><li>Ouvrez <a href="https://chat.mistral.ai" target="_blank" rel="noopener">chat.mistral.ai</a>. Le Chat s'appelle Mistral Vibe depuis le 12 août 2026.</li><li>Ouvrez le menu <b>Intelligence</b>, puis <b>Bibliothèques</b>, et <b>Nouvelle bibliothèque</b>.</li><li>Importez vos fichiers : PDF, Word, PowerPoint, Excel, CSV, texte.</li><li>Attendez la fin du traitement, puis attachez la bibliothèque à une conversation.</li></ol><p class="petit"><a href="https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe" target="_blank" rel="noopener">Aide Mistral, Le Chat devient Vibe</a> et <a href="https://mistral.ai/pricing" target="_blank" rel="noopener">tarifs</a></p></details>
-<details><summary>Microsoft Copilot Notebooks <span class="petit">· pour les clients équipés Microsoft 365</span></summary><ol><li>Sur m365.cloud.microsoft, ouvrez l'application <b>Copilot</b>, puis <b>Notebooks</b>.</li><li>Cliquez sur <b>Nouveau notebook</b> et donnez un nom.</li><li>Ajoutez des fichiers, des mails, des réunions ou des liens, jusqu'à 300 éléments.</li><li>Posez vos questions : les réponses s'appuient uniquement sur ce que vous avez ajouté.</li><li>Nécessite une licence Copilot ou un abonnement Microsoft 365 éligible, avec OneDrive ou SharePoint.</li></ol><p class="petit"><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-microsoft-365-copilot-notebooks" target="_blank" rel="noopener">Aide Microsoft, Copilot Notebooks</a></p></details>
-<details><summary>Perplexity <span class="petit">· réservé aux abonnés, à vérifier</span></summary><ol><li>Perplexity propose des espaces de recherche où l'on dépose des fichiers et des liens, réservés aux abonnés Pro.</li><li>Sa page d'aide sur les Espaces n'existe plus : la fonction semble renommée en Projets. Vérifiez le nom actuel dans votre compte avant de la conseiller.</li></ol><p class="petit">Point non vérifié à la source le 13 septembre 2026</p></details>
+<div class="encart"><b>Comment choisir en 10 secondes.</b> Vous voulez commencer tout de suite : catégorie 1, dans l'assistant que vous avez déjà. Vous étudiez un dossier et voulez chaque source : catégorie 2. Vos notes doivent rester sur votre ordinateur : catégorie 3. Votre client range tout dans Notion ou Microsoft : catégorie 4.</div>
+<h3 class="sr" style="position:absolute;left:-9999px">Les outils, par catégorie</h3>
+<div class="cat"><span class="cat-lab">Catégorie 1</span><h3 class="cat-titre">Dans l'assistant que vous utilisez déjà</h3><p class="cat-expl">Vous ajoutez vos documents dans un espace de votre assistant habituel, et il répond en s'appuyant dessus. <b>C'est le plus simple pour commencer.</b></p></div>
+<div class="kb-grille">
+<details class="kb"><summary><span class="kb-tuile" style="background:#A3128C" aria-hidden="true">Cl</span><span class="kb-tete"><span class="kb-cat">Assistant habituel</span><span class="kb-nom">Projets Claude</span><span class="kb-accroche">Un espace avec vos documents et vos règles, dans Claude.</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">5 min pour démarrer</span><span class="badge prix-gratuit">Gratuit jusqu'à 5 projets</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Un projet regroupe vos documents, vos instructions et vos conversations au même endroit. Chaque nouvelle conversation dans le projet part de ces documents.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Dans la barre latérale, ouvrez <b>Projets</b>, puis <b>Créer un projet</b>, et donnez-lui un nom.</p></div><div class="pas"><span class="n">2</span><p>Dans <b>Connaissances du projet</b>, ajoutez vos documents ou collez du texte.</p></div><div class="pas"><span class="n">3</span><p>Ouvrez les <b>instructions du projet</b> et collez le prompt ci-dessous.</p></div><div class="pas"><span class="n">4</span><p>Ouvrez une conversation <b>à l'intérieur du projet</b> et posez vos questions.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller dans les instructions du projet</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://claude.ai/projects">Copier et ouvrir Claude</button></div></div><pre>Tu es l&#x27;assistant de mon activité : [décrivez votre métier en une phrase].
+Réponds uniquement à partir des documents que je t&#x27;ai donnés.
+Pour chaque réponse, cite le nom du document utilisé.
+Si l&#x27;information n&#x27;est dans aucun document, réponds : « Je ne trouve pas cette information dans les documents. » Ne devine jamais.
+Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Vos offres et tarifs</b>Répondre vite à un prospect sans rouvrir vos fichiers.</div><div><b>Vos procédures</b>Retrouver la bonne étape en une question.</div><div><b>Vos modèles</b>Produire un document à votre format.</div></div>
+<p class="sources"><a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank" rel="noopener">Aide Claude, projets</a> · <a href="https://youtu.be/GJ5jTgcbRHA" target="_blank" rel="noopener">Vidéo : Getting started with projects in Claude.ai</a> (Anthropic, décembre 2025). Sur les offres payantes, la recherche étendue permet de travailler sur beaucoup plus de documents.</p>
+</div></details>
+<details class="kb"><summary><span class="kb-tuile" style="background:#1A1A1A" aria-hidden="true">Gp</span><span class="kb-tete"><span class="kb-cat">Assistant habituel</span><span class="kb-nom">Projets ChatGPT</span><span class="kb-accroche">Le même principe, dans ChatGPT.</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">5 min pour démarrer</span><span class="badge prix-gratuit">Gratuit et payant</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Un projet ChatGPT garde vos fichiers, vos instructions et vos conversations ensemble. Le nombre de fichiers dépend de votre offre.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Dans la barre latérale, cliquez sur <b>Nouveau projet</b>, donnez un nom, une icône et une couleur.</p></div><div class="pas"><span class="n">2</span><p>Ajoutez vos fichiers : PDF, tableurs, documents, images, ou du texte collé. Vous pouvez aussi coller un lien vers un dossier Google Drive.</p></div><div class="pas"><span class="n">3</span><p>Cliquez sur les <b>trois points</b> en haut à droite, puis <b>Paramètres du projet</b>, et collez le prompt ci-dessous.</p></div><div class="pas"><span class="n">4</span><p>Ouvrez une conversation dans le projet et posez vos questions.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller dans les paramètres du projet</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://chatgpt.com">Copier et ouvrir ChatGPT</button></div></div><pre>Tu es l&#x27;assistant de mon activité : [décrivez votre métier en une phrase].
+Réponds uniquement à partir des documents que je t&#x27;ai donnés.
+Pour chaque réponse, cite le nom du document utilisé.
+Si l&#x27;information n&#x27;est dans aucun document, réponds : « Je ne trouve pas cette information dans les documents. » Ne devine jamais.
+Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Un dossier client</b>Toutes les pièces d'un client au même endroit.</div><div><b>Une veille</b>Vos articles de référence, interrogeables.</div><div><b>Une formation</b>Vos supports, pour préparer une séance.</div></div>
+<p class="sources"><a href="https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt" target="_blank" rel="noopener">Aide OpenAI, projets</a>. Rappel : les GPT personnalisés ne se créent plus sur un compte personnel, le projet les remplace.</p>
+</div></details>
+<details class="kb"><summary><span class="kb-tuile" style="background:#3D4A5C" aria-hidden="true">Ge</span><span class="kb-tete"><span class="kb-cat">Assistant habituel</span><span class="kb-nom">Gems Gemini</span><span class="kb-accroche">Un assistant Gemini personnalisé, avec vos fichiers de référence.</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">5 min pour démarrer</span><span class="badge prix-limite">Gratuit selon Google, à vérifier</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Un Gem est un assistant Gemini à qui vous donnez des instructions et des fichiers. Il peut aussi s'appuyer sur un carnet NotebookLM.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Sur gemini.google.com, ouvrez la barre latérale, puis <b>Gems</b>.</p></div><div class="pas"><span class="n">2</span><p>Cliquez sur <b>Nouveau Gem</b>, donnez un nom et collez le prompt ci-dessous dans les instructions.</p></div><div class="pas"><span class="n">3</span><p>Dans <b>Connaissances</b>, cliquez sur <b>Ajouter des fichiers</b> : ordinateur, Drive ou notebook.</p></div><div class="pas"><span class="n">4</span><p>Enregistrez, testez dans l'aperçu, puis retrouvez-le dans vos Gems.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller dans les instructions du Gem</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://gemini.google.com/app">Copier et ouvrir Gemini</button></div></div><pre>Tu es l&#x27;assistant de mon activité : [décrivez votre métier en une phrase].
+Réponds uniquement à partir des documents que je t&#x27;ai donnés.
+Pour chaque réponse, cite le nom du document utilisé.
+Si l&#x27;information n&#x27;est dans aucun document, réponds : « Je ne trouve pas cette information dans les documents. » Ne devine jamais.
+Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Un client équipé Google</b>L'outil qu'il a déjà, sans licence en plus.</div><div><b>Des documents Drive</b>Branchés directement depuis Drive.</div><div><b>Un assistant partagé</b>Le même Gem pour toute une équipe.</div></div>
+<p class="sources"><a href="https://support.google.com/gemini/answer/15146780" target="_blank" rel="noopener">Aide Google, utiliser les Gems</a></p>
+</div></details>
+</div>
+<div class="cat"><span class="cat-lab">Catégorie 2</span><h3 class="cat-titre">Le carnet de recherche sur vos sources</h3><p class="cat-expl">Un outil pensé pour étudier un dossier : il ne répond qu'à partir de vos sources, et <b>chaque réponse renvoie à la phrase exacte</b>.</p></div>
+<div class="kb-grille">
+<details class="kb"><summary><span class="kb-tuile" style="background:#1F6E45" aria-hidden="true">NL</span><span class="kb-tete"><span class="kb-cat">Carnet de sources</span><span class="kb-nom">NotebookLM, désormais Gemini Notebook</span><span class="kb-accroche">Des réponses citées phrase par phrase, sur vos PDF, sites et vidéos.</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">5 min pour démarrer</span><span class="badge prix-gratuit">Gratuit, 50 sources par carnet</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Vous créez un carnet, vous y déposez vos sources, et vous l'interrogez. Google a renommé le produit Gemini Notebook le 16 juillet 2026 et modifie ses limites d'usage depuis le 2 septembre 2026.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Ouvrez notebooklm.google.com, qui redirige vers Gemini Notebook, puis <b>Créer un notebook</b>.</p></div><div class="pas"><span class="n">2</span><p>Cliquez sur <b>Ajouter une source</b> : PDF, documents Google, sites web, vidéos YouTube, texte collé.</p></div><div class="pas"><span class="n">3</span><p>Posez la première question avec le prompt ci-dessous.</p></div><div class="pas"><span class="n">4</span><p>Le panneau <b>Studio</b> fabrique ensuite des notes, des cartes mentales ou un résumé audio.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Première question à poser au carnet</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://notebooklm.google.com">Copier et ouvrir NotebookLM</button></div></div><pre>Fais-moi la liste des 5 informations les plus importantes de ces sources, avec pour chacune la source exacte.
+Puis propose-moi 5 questions utiles que je pourrais poser à ce carnet pour mon activité.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Un appel d'offres</b>Retrouver chaque exigence et sa page.</div><div><b>Une réglementation</b>Vérifier ce que dit exactement le texte.</div><div><b>Un dossier client</b>Préparer un rendez-vous en 10 minutes.</div></div>
+<p class="sources"><a href="https://support.google.com/gemininotebook/answer/16206563" target="_blank" rel="noopener">Aide Google, créer un notebook</a> · <a href="https://youtu.be/AmKZCo5Dtn0" target="_blank" rel="noopener">Vidéo : Meet NotebookLM</a> (Google Workspace, 2025, interface ancienne)</p>
+</div></details>
+</div>
+<div class="cat"><span class="cat-lab">Catégorie 3</span><h3 class="cat-titre">Vos notes, sur votre ordinateur</h3><p class="cat-expl">Pour ceux qui veulent <b>garder leurs fichiers chez eux</b> : les notes restent dans un dossier de votre ordinateur, et un plugin permet de les interroger.</p></div>
+<div class="kb-grille">
+<details class="kb"><summary><span class="kb-tuile" style="background:#4A2D6B" aria-hidden="true">Ob</span><span class="kb-tete"><span class="kb-cat">Notes locales</span><span class="kb-nom">Obsidian avec un plugin IA</span><span class="kb-accroche">Vos notes dans un dossier à vous, interrogeables avec l'IA.</span><span class="badges"><span class="badge ">Intermédiaire</span><span class="badge ">20 min pour démarrer</span><span class="badge prix-gratuit">Gratuit</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Obsidian est une application de notes qui range tout dans un dossier de votre ordinateur. <b>Smart Connections</b> fonctionne sans clé, avec un modèle local, et trouve les notes liées. <b>Copilot</b> permet de discuter avec vos notes, mais demande une clé d'un fournisseur d'IA ou un modèle local.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Téléchargez Obsidian et créez un coffre, c'est-à-dire un dossier de notes.</p></div><div class="pas"><span class="n">2</span><p>Ouvrez les <b>Paramètres</b>, puis <b>Plugins communautaires</b>, et désactivez le mode restreint.</p></div><div class="pas"><span class="n">3</span><p>Cliquez sur <b>Parcourir</b>, cherchez <b>Smart Connections</b>, puis <b>Installer</b> et <b>Activer</b>.</p></div><div class="pas"><span class="n">4</span><p>Bloqué à une étape ? Collez le prompt ci-dessous dans Claude ou ChatGPT : il vous guide pas à pas.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller dans Claude ou ChatGPT pour être guidé</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://claude.ai/new">Copier et ouvrir Claude</button></div></div><pre>Je veux installer Obsidian et le plugin Smart Connections pour interroger mes notes, sans clé API. Je débute.
+Guide-moi étape par étape : téléchargement sur obsidian.md, création d&#x27;un coffre, activation des plugins communautaires, installation et réglage de Smart Connections.
+Attends que je te confirme chaque étape avant de passer à la suivante, et explique-moi simplement ce que fait chaque réglage.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Des notes sensibles</b>Elles ne quittent pas votre ordinateur.</div><div><b>Un second cerveau</b>Retrouver une idée notée il y a six mois.</div><div><b>Des comptes rendus</b>Relier les rendez-vous entre eux.</div></div>
+<p class="sources">Dépôts officiels : <a href="https://github.com/brianpetro/obsidian-smart-connections" target="_blank" rel="noopener">Smart Connections</a> et <a href="https://github.com/logancyang/obsidian-copilot" target="_blank" rel="noopener">Copilot for Obsidian</a>, tous deux actifs le 13 septembre 2026 · <a href="https://obsidian.md" target="_blank" rel="noopener">obsidian.md</a></p>
+</div></details>
+</div>
+<div class="cat"><span class="cat-lab">Catégorie 4</span><h3 class="cat-titre">L'espace de travail de l'équipe</h3><p class="cat-expl">Pour les entreprises qui rangent déjà leurs documents dans un outil commun. <b>On interroge les documents là où ils sont déjà.</b></p></div>
+<div class="kb-grille">
+<details class="kb"><summary><span class="kb-tuile" style="background:#1A1A1A" aria-hidden="true">No</span><span class="kb-tete"><span class="kb-cat">Espace d'équipe</span><span class="kb-nom">Notion</span><span class="kb-accroche">Vos pages Notion, interrogées avec l'IA.</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">10 min pour démarrer</span><span class="badge prix-limite">IA en essai limité</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>La structuration des pages est gratuite. L'IA est en essai limité sur l'offre gratuite, et complète sur l'offre Business.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Rangez vos pages dans un espace Notion, avec des titres clairs.</p></div><div class="pas"><span class="n">2</span><p>Ouvrez une page et cliquez sur <b>Demander à l'IA</b>, ou tapez espace sur une ligne vide.</p></div><div class="pas"><span class="n">3</span><p>Collez le prompt ci-dessous, puis posez votre question.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller avant votre question</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://www.notion.so">Copier et ouvrir Notion</button></div></div><pre>Réponds uniquement à partir des pages de cet espace.
+Cite le titre de la page utilisée.
+Si l&#x27;information n&#x27;y est pas, dis-le clairement au lieu de deviner.
+Ma question : [écrivez votre question]</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Un wiki d'équipe</b>Les réponses aux questions qui reviennent.</div><div><b>Des procédures</b>Accueillir un nouveau collaborateur.</div><div><b>Un suivi projet</b>Faire le point en une question.</div></div>
+<p class="sources"><a href="https://www.notion.com/help/complimentary-ai-responses" target="_blank" rel="noopener">Aide Notion, réponses IA offertes</a> · <a href="https://www.notion.com/pricing" target="_blank" rel="noopener">tarifs</a> · <a href="https://youtu.be/tFIgG-7RBvc" target="_blank" rel="noopener">Vidéo : Searching with Notion AI</a> (Notion, 2025, interface ancienne)</p>
+</div></details>
+<details class="kb"><summary><span class="kb-tuile" style="background:#3D4A5C" aria-hidden="true">Cn</span><span class="kb-tete"><span class="kb-cat">Espace d'équipe</span><span class="kb-nom">Microsoft Copilot Notebooks</span><span class="kb-accroche">Pour les clients équipés Microsoft 365.</span><span class="badges"><span class="badge ">Intermédiaire</span><span class="badge ">10 min pour démarrer</span><span class="badge prix-payant">Licence Microsoft 365</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Un notebook rassemble fichiers, mails, réunions et liens, jusqu'à 300 éléments, et Copilot répond à partir de ce contenu. Il faut une licence Copilot ou un abonnement Microsoft 365 éligible, avec OneDrive ou SharePoint.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Sur m365.cloud.microsoft, ouvrez l'application <b>Copilot</b>, puis <b>Notebooks</b>.</p></div><div class="pas"><span class="n">2</span><p>Cliquez sur <b>Nouveau notebook</b> et donnez un nom.</p></div><div class="pas"><span class="n">3</span><p>Ajoutez fichiers, mails, réunions ou liens.</p></div><div class="pas"><span class="n">4</span><p>Posez la première question avec le prompt ci-dessous.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Première question à poser au notebook</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://m365.cloud.microsoft">Copier et ouvrir Microsoft 365</button></div></div><pre>En t&#x27;appuyant uniquement sur le contenu de ce notebook, fais-moi une synthèse en 5 points, avec pour chaque point l&#x27;élément source.
+Signale toute information qui se contredit entre deux éléments.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Un client Microsoft</b>L'outil qu'il paie déjà.</div><div><b>Un projet</b>Mails, réunions et fichiers réunis.</div><div><b>Une réunion</b>Préparer les points à trancher.</div></div>
+<p class="sources"><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-microsoft-365-copilot-notebooks" target="_blank" rel="noopener">Aide Microsoft, Copilot Notebooks</a></p>
+</div></details>
+</div>
+<div class="cat"><span class="cat-lab">Catégorie 5</span><h3 class="cat-titre">Les alternatives à connaître</h3><p class="cat-expl">Deux options à citer à un client, en vérifiant d'abord ce qu'offre son compte.</p></div>
+<div class="kb-grille">
+<details class="kb"><summary><span class="kb-tuile" style="background:#8A4B00" aria-hidden="true">Mi</span><span class="kb-tete"><span class="kb-cat">Alternative</span><span class="kb-nom">Bibliothèques Mistral</span><span class="kb-accroche">L'option européenne, dans Mistral Vibe (ex Le Chat).</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">10 min pour démarrer</span><span class="badge prix-payant">À partir de l'offre Pro</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Le Chat s'appelle Mistral Vibe depuis le 12 août 2026. Une bibliothèque rassemble vos fichiers, et vous l'attachez à une conversation.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Ouvrez chat.mistral.ai, puis le menu <b>Intelligence</b>, et <b>Bibliothèques</b>.</p></div><div class="pas"><span class="n">2</span><p>Cliquez sur <b>Nouvelle bibliothèque</b> et importez vos fichiers : PDF, Word, PowerPoint, Excel, CSV, texte.</p></div><div class="pas"><span class="n">3</span><p>Attendez la fin du traitement, attachez la bibliothèque à une conversation, et collez le prompt ci-dessous.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller dans la conversation</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://chat.mistral.ai">Copier et ouvrir Mistral</button></div></div><pre>Tu es l&#x27;assistant de mon activité : [décrivez votre métier en une phrase].
+Réponds uniquement à partir des documents que je t&#x27;ai donnés.
+Pour chaque réponse, cite le nom du document utilisé.
+Si l&#x27;information n&#x27;est dans aucun document, réponds : « Je ne trouve pas cette information dans les documents. » Ne devine jamais.
+Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Un client attaché à l'Europe</b>Un éditeur français.</div><div><b>Des documents variés</b>Word, Excel, PowerPoint, PDF.</div><div><b>Une équipe</b>Avec les offres Team et Enterprise.</div></div>
+<p class="sources"><a href="https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe" target="_blank" rel="noopener">Aide Mistral, Le Chat devient Vibe</a> · <a href="https://mistral.ai/pricing" target="_blank" rel="noopener">tarifs</a></p>
+</div></details>
+<details class="kb"><summary><span class="kb-tuile" style="background:#6B6B6B" aria-hidden="true">Px</span><span class="kb-tete"><span class="kb-cat">Alternative</span><span class="kb-nom">Perplexity</span><span class="kb-accroche">Des espaces de recherche avec vos fichiers, réservés aux abonnés.</span><span class="badges"><span class="badge prix-verifier">À vérifier</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Perplexity propose des espaces où l'on dépose fichiers et liens, réservés aux abonnés Pro. Sa page d'aide sur les Espaces n'existe plus : la fonction semble renommée en Projets.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Vérifiez le nom actuel de la fonction dans votre compte avant de la conseiller à un client.</p></div>
 
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>À citer</b>Si le client utilise déjà Perplexity pour ses recherches.</div></div>
+<p class="sources">Point non vérifié à la source le 13 septembre 2026</p>
+</div></details>
+</div>
 <h3>À ne pas confondre : la recherche approfondie</h3>
 <div class="encart"><b>Une recherche approfondie va chercher sur le web</b>, lit des dizaines de sources et vous rend un rapport. Elle ne garde pas vos documents. <b>Une base de connaissances, au contraire, se limite à ce que vous lui donnez.</b> Certaines recherches approfondies peuvent aussi fouiller vos outils connectés, comme Gmail ou Drive.</div>
 <div class="tab"><table>
@@ -438,6 +618,8 @@ textarea{min-height:72px;resize:vertical}
 <div class="etape"><span class="num">1</span><div><b>Choisissez 5 à 10 documents</b> de votre activité : offres, procédures, questions fréquentes, modèles. Rien de confidentiel.</div></div>
 <div class="etape"><span class="num">2</span><div><b>Créez la base</b> dans l'outil de votre choix, parmi ceux du tableau.</div></div>
 <div class="etape"><span class="num">3</span><div><b>Écrivez les instructions</b> : répondre uniquement à partir des documents, citer le document utilisé, et dire « je ne trouve pas cette information » quand elle n'y est pas.</div></div>
+<div class="piege-box"><div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Le test du piège, à poser à votre base</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Quel est le numéro de téléphone de notre avocat ?
+(Si la réponse n&#x27;est dans aucun document, votre base doit répondre qu&#x27;elle ne trouve pas l&#x27;information.)</pre></div></div>
 <div class="etape"><span class="num">4</span><div><b>Test du piège :</b> posez une question dont la réponse n'est dans aucun document. Une bonne base avoue qu'elle ne sait pas. Si elle invente, reprenez vos instructions.</div></div>
 <div class="etape"><span class="num">5</span><div><b>Test de la contradiction :</b> ajoutez un document qui contredit un autre, et demandez laquelle des deux informations est la bonne. Observez si elle signale le conflit.</div></div>
 
@@ -545,6 +727,31 @@ function envoyerFiche(){
     },{rootMargin:"-30% 0px -60% 0px"});
     document.querySelectorAll("section.bloc").forEach(function(sec){obs.observe(sec);});
   }
+})();
+</script>
+<script>
+(function(){
+  function copier(texte){
+    if(navigator.clipboard && window.isSecureContext){ return navigator.clipboard.writeText(texte); }
+    return new Promise(function(ok,ko){
+      try{ var t=document.createElement("textarea"); t.value=texte; t.setAttribute("readonly",""); t.style.position="fixed"; t.style.opacity="0";
+        document.body.appendChild(t); t.select(); var r=document.execCommand("copy"); document.body.removeChild(t); r?ok():ko(); }catch(e){ ko(e); }
+    });
+  }
+  document.addEventListener("click",function(ev){
+    var b=ev.target.closest("[data-copier]"); if(!b) return;
+    var pre=b.closest(".prompt").querySelector("pre"); var texte=pre.textContent;
+    var url=b.getAttribute("data-ouvrir");
+    var w=null; if(url){ w=window.open(url,"_blank","noopener"); }
+    var lab=b.textContent;
+    copier(texte).then(function(){
+      b.classList.add("ok"); b.textContent= url ? "Copié, collez avec Cmd+V ou Ctrl+V" : "Copié";
+      setTimeout(function(){ b.classList.remove("ok"); b.textContent=lab; },2600);
+    },function(){
+      var r=document.createRange(); r.selectNodeContents(pre); var sel=window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      b.textContent="Sélectionné, copiez avec Cmd+C"; setTimeout(function(){ b.textContent=lab; },3000);
+    });
+  });
 })();
 </script>
 </body>
