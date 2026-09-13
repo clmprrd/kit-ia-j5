@@ -673,7 +673,7 @@ function grille(){
     tp+=pw; sc+=pw*nt;
     if(pw||nt) lignes.push(CRITERES[i-1]+" : poids "+pw+", note "+nt+"/5");
   }
-  return {total:tp, score: tp? Math.round(sc/tp*10)/10 : 0, lignes:lignes};
+  return {total:tp, score: tp? String(Math.round(sc/tp*10)/10).replace(".",",") : "0", lignes:lignes};
 }
 function majGrille(){
   var g=grille(), el=document.getElementById("g-resultat"); if(!el) return;
