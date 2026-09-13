@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quiz Semaine 1, 50 questions</title>
+<title>Quiz Semaine 1, 60 questions</title>
 <style>
 :root{
   --magenta:#E91FCB;
@@ -136,7 +136,7 @@ a{color:var(--magenta);}
 <body>
 
 <div class="bandeau">
-  <strong>Quiz de la Semaine 1</strong>, 50 questions, version finale du 11 septembre 2026.
+  <strong>Quiz de la Semaine 1</strong>, 60 questions, version du 14 septembre 2026.
 </div>
 
 <div class="wrap">
@@ -144,7 +144,7 @@ a{color:var(--magenta);}
   <!-- ACCUEIL -->
   <div id="accueil">
     <h1>Quiz de la Semaine 1</h1>
-    <p class="sous">50 questions, une à la fois. Jour 1 à Jour 5 du parcours, les outils et leurs fonctionnalités, ce que les modèles savent et ne savent pas faire, l'actualité d'août 2026, cinq questions de raisonnement de formateur, plus cinq questions sur l'histoire de l'intelligence artificielle et cinq de culture générale.</p>
+    <p class="sous">60 questions, une à la fois. Jour 1 à Jour 6 du parcours, les outils et leurs fonctionnalités, ce que les modèles savent et ne savent pas faire, l'actualité d'août 2026, cinq questions de raisonnement de formateur, plus cinq questions sur l'histoire de l'intelligence artificielle et cinq de culture générale.</p>
     <p style="font-size:15px;margin-bottom:8px;"><b>Prénom et nom</b></p>
     <input type="text" id="champNom" placeholder="Prénom Nom" autocomplete="off">
     <div class="nav">
@@ -1201,23 +1201,23 @@ var QUESTIONS = [
  {
   "jour": "Actualité",
   "piege": true,
-  "q": "Le 4 août 2026, Mistral publie Shieldstral, un classificateur de sécurité multimodal. Quel est le point le plus notable de cette publication ?",
+  "q": "Depuis le 2 août 2026, quelle partie de l'AI Act s'applique ?",
   "opts": [
-   "Il est réservé aux clients grands comptes de l'éditeur, sous contrat spécifique.",
-   "Il ne traite que du texte, la modération de l'image restant hors de son périmètre.",
-   "Il est publié en poids ouverts sous licence Apache 2.0, alors que l'on associe spontanément la sécurité de l'IA à des systèmes propriétaires fermés.",
-   "Il s'agit d'un service en ligne payant à l'appel, sans possibilité d'installation."
+   "Les obligations de transparence, comme informer une personne qu'elle échange avec une IA.",
+   "Toutes les obligations des systèmes à haut risque, comme le tri de candidatures.",
+   "Rien, le texte a été abandonné au printemps.",
+   "Seulement les sanctions financières, sans nouvelles obligations."
   ],
-  "bonne": 2,
-  "pourquoi": "Shieldstral a été publié le 4 août 2026 en poids ouverts, sous licence Apache 2.0. Le contre-pied est là : la couche de sécurité et de modération est justement celle que les éditeurs gardent d'ordinaire fermée, et c'est un acteur européen qui l'ouvre.",
+  "bonne": 0,
+  "pourquoi": "Le 2 août 2026, les règles de transparence de l'AI Act sont entrées en application : une personne doit savoir quand elle échange avec une IA, et les contenus générés doivent être signalés. Les obligations des systèmes à haut risque, elles, ont été repoussées par l'omnibus numérique, entré en vigueur le 27 juillet 2026 : le 2 décembre 2027 pour les domaines comme l'emploi ou l'éducation, et le 2 août 2028 pour les produits déjà réglementés.",
   "pieges": [
-   "Des poids ouverts sous Apache 2.0 sont l'inverse d'une réservation contractuelle à quelques clients.",
-   "Le classificateur est multimodal, il ne se limite donc pas au texte.",
-   "Une publication en poids ouverts permet précisément l'installation, ce que ne permet pas un service fermé facturé à l'appel."
+   "Le haut risque est justement la partie repoussée : décembre 2027 ou août 2028 selon les cas.",
+   "Le texte n'a pas été abandonné, son calendrier a été ajusté par l'omnibus numérique.",
+   "Les autorités peuvent désormais contrôler et sanctionner, mais sur des obligations précises, dont la transparence."
   ],
-  "src": "Actualité, août 2026",
-  "lien": "https://mistral.ai/news/regional-inference-open-models-new-compute/",
-  "plus": "Pour une organisation qui doit filtrer des contenus sans les envoyer à l'extérieur, un classificateur en poids ouverts change la conversation avec la direction informatique : la modération peut tourner à l'intérieur du système d'information. C'est un argument concret à garder en réserve quand on vous oppose la confidentialité des contenus analysés."
+  "src": "Commission européenne, cadre réglementaire de l'IA",
+  "lien": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+  "plus": "Pour un Référent IA, le réflexe du 2 août est simple : tout chatbot client et tout contenu généré diffusé à l'extérieur doivent être identifiés comme tels. C'est la première obligation que vos clients peuvent se voir reprocher."
  },
  {
   "jour": "Jour 2",
@@ -1369,44 +1369,44 @@ var QUESTIONS = [
  {
   "jour": "Actualité",
   "piege": false,
-  "q": "Début août 2026, Mistral lance les European Compute Units. De quoi s'agit-il ?",
+  "q": "En septembre 2026, Mistral AI annonce une levée de 3 milliards d'euros. Qu'est-ce qu'elle représente ?",
   "opts": [
-   "D'une structure d'engagements d'entreprise à long terme visant à financer jusqu'à un gigawatt de capacité de calcul européenne d'ici 2030.",
-   "D'une nouvelle unité de mesure de la consommation énergétique des requêtes IA, destinée au bilan carbone.",
-   "D'un label européen certifiant qu'un modèle a été entraîné sans données personnelles.",
-   "D'une offre d'abonnement à tarif réduit réservée aux administrations européennes."
+   "Le rachat de Mistral par un groupe américain.",
+   "La plus grosse levée de fonds jamais réalisée par une entreprise technologique européenne.",
+   "Une subvention de l'État français pour la souveraineté.",
+   "L'entrée en Bourse de Mistral."
   ],
-  "bonne": 0,
-  "pourquoi": "Les European Compute Units sont une structure d'engagements d'entreprise sur le long terme, destinée à financer jusqu'à un gigawatt de capacité de calcul européenne d'ici 2030. L'enseignement est stratégique : le frein de l'IA européenne n'est pas le savoir-faire logiciel, il est la puissance de calcul effectivement disponible sur le sol européen.",
+  "bonne": 1,
+  "pourquoi": "Mistral AI a annoncé une Série D de 3 milliards d'euros, pour une valorisation de plus de 21 milliards d'euros, présentée comme la plus importante levée en capital jamais réalisée par une entreprise technologique européenne. Les fonds doivent financer la recherche de pointe, la puissance de calcul et le développement international.",
   "pieges": [
-   "Ce n'est pas une unité de mesure, mais un mécanisme de financement de capacité.",
-   "Aucun label de certification sur les données d'entraînement n'est en jeu ici.",
-   "Il ne s'agit pas d'une grille tarifaire, mais d'engagements d'achat servant à financer des infrastructures."
+   "Mistral reste une entreprise indépendante : la levée fait entrer de nouveaux investisseurs au capital, sans rachat.",
+   "Il s'agit d'argent d'investisseurs privés et de fonds, pas d'une subvention publique.",
+   "Une levée de fonds privée n'est pas une introduction en Bourse : les actions ne sont pas cotées."
   ],
-  "src": "Actualité, août 2026",
-  "lien": "https://mistral.ai/news/regional-inference-open-models-new-compute/",
-  "plus": "C'est le chaînon que l'on oublie dans les discussions sur la souveraineté : héberger en Europe suppose des machines en Europe, et ces machines se commandent des années à l'avance. Quand une direction demande pourquoi l'offre européenne est plus rare ou plus chère, la réponse tient souvent à cette contrainte physique, pas à la compétence des équipes."
+  "src": "Annonce officielle de Mistral AI, septembre 2026",
+  "lien": "https://mistral.ai/news/",
+  "plus": "L'argument revient souvent en rendez-vous : un acteur européen solide existe pour les clients attentifs à la souveraineté. Vérifiez toujours ensuite ce que son offre couvre réellement pour le besoin du client."
  },
  {
   "jour": "Jour 5",
-  "piege": true,
-  "q": "Pourquoi le sandwich compliment, critique, compliment est-il banni du retour ?",
+  "piege": false,
+  "q": "Un participant reste immobile devant son écran, sans rien dire. Que faites-vous ?",
   "opts": [
-   "Parce qu'il prend trop de temps sur une journée déjà dense.",
-   "Parce que les compliments entre pairs sont mal reçus dans un groupe professionnel.",
-   "Parce qu'il faut toujours commencer par ce qui ne va pas, sinon on n'y revient jamais.",
-   "Il dilue le message : l'observateur cherche son compliment d'ouverture au lieu d'observer, et le destinataire n'entend plus que la couche du milieu."
+   "Vous le relancez devant le groupe pour qu'il participe.",
+   "Vous l'ignorez, il suit sûrement à son rythme.",
+   "Vous changez d'activité ou vous passez le voir en aparté.",
+   "Vous demandez à toute la salle : « vous suivez ? »."
   ],
-  "bonne": 3,
-  "pourquoi": "Le sandwich abîme les deux côtés du retour. Côté observateur, il transforme l'observation en recherche d'un compliment d'ouverture présentable, donc il détourne l'attention de ce qui se passe réellement. Côté destinataire, le rituel est connu : les deux tranches sont ignorées et il ne reste que la couche du milieu, entendue comme la seule chose sincère. Un retour utile est direct et adossé à un fait observé.",
+  "bonne": 2,
+  "pourquoi": "C'est le profil du décrocheur silencieux. La réponse n'est pas de le mettre en lumière, c'est de changer de régime pour le groupe, ou de traiter son cas en aparté. La règle des deux niveaux s'applique : ce qui concerne une personne se traite en privé.",
   "pieges": [
-   "Le temps n'est pas le problème : un sandwich se fait en trente secondes. Ce qui est en cause, c'est ce qu'il fait au message.",
-   "Les compliments ne sont pas le problème non plus. Un retour positif précis et factuel est parfaitement utile, c'est l'emballage rituel qui ne l'est pas.",
-   "Commencer par le négatif est une autre recette mécanique, et elle produit ses propres dégâts. Ce qu'on vise, c'est un retour adossé à un fait, pas un ordre imposé."
+   "Le relancer devant tout le monde l'expose et le ferme davantage.",
+   "L'immobilité prolongée est justement le signal de décrochage d'un atelier individuel.",
+   "« Vous suivez ? » ne relance rien : personne ne répond non devant le groupe."
   ],
-  "src": "Jour 5, ingénierie pédagogique",
+  "src": "Jour 5, typologie des situations difficiles",
   "lien": "",
-  "plus": "Le format qui fonctionne tient en deux temps : ce que j'ai vu, ce que je ferais autrement. Il est descriptif, daté, rattaché à un moment précis de la séance. Un retour qui commence par vous êtes plutôt que par j'ai vu est déjà sorti de l'observation."
+  "plus": "Une relance efficace est un changement de régime, pas une injonction à se réveiller : passer en binôme, faire manipuler, poser une question à laquelle chacun répond par écrit."
  },
  {
   "jour": "Jour 4",
@@ -1639,6 +1639,216 @@ var QUESTIONS = [
   "src": "Question de raisonnement, hors support",
   "lien": "",
   "plus": "Donner raison vite coûte beaucoup moins cher que de négocier : le groupe a déjà vu. Ce qui se joue ensuite est le temps, et c'est là que le formateur reprend la main, en actant la correction et en enchaînant plutôt qu'en s'expliquant."
+ },
+ {
+  "jour": "Jour 5",
+  "piege": false,
+  "q": "Un participant monopolise la parole. Quelle règle appliquer ?",
+  "opts": [
+   "Le recadrer fermement devant tout le monde pour l'exemple.",
+   "Le laisser parler, puisqu'il anime à votre place.",
+   "Suspendre la séance jusqu'à ce qu'il se calme.",
+   "Ce qui concerne le groupe se traite en plénière, ce qui concerne une personne en aparté."
+  ],
+  "bonne": 3,
+  "pourquoi": "C'est la règle des deux niveaux du support : on protège le temps collectif en plénière, par exemple en distribuant la parole, et on traite le comportement de la personne en aparté, à la pause. L'inversion est la source principale des incidents en salle.",
+  "pieges": [
+   "Recadrer un individu devant le groupe crée un allié à celui qu'on recadre.",
+   "Laisser faire, c'est laisser le temps collectif être confisqué et valider la délégation de parole.",
+   "Suspendre la séance fait payer tout le groupe pour une seule personne."
+  ],
+  "src": "Jour 5, la règle des deux niveaux",
+  "lien": "",
+  "plus": "Un geste simple en plénière : « merci, je vais prendre deux autres avis avant de revenir vers toi ». On règle le temps de parole sans viser la personne."
+ },
+ {
+  "jour": "Jour 5",
+  "piege": true,
+  "q": "Personne ne pose de question après votre explication. Qu'en conclure ?",
+  "opts": [
+   "C'est peut-être un silence protecteur : poser une question expose.",
+   "Tout est clair pour tout le monde.",
+   "Le groupe s'ennuie, il faut accélérer.",
+   "L'explication était trop courte."
+  ],
+  "bonne": 0,
+  "pourquoi": "Le support décrit le silence protecteur : personne ne pose de question, non parce que tout est clair, mais parce que poser une question expose devant les autres. C'est le phénomène le plus difficile à détecter et le plus coûteux.",
+  "pieges": [
+   "L'absence de question n'est pas une preuve de compréhension.",
+   "Accélérer aggrave le problème si le groupe ne suit pas.",
+   "La longueur n'est pas en cause : c'est le risque perçu de poser la question."
+  ],
+  "src": "Jour 5, trois phénomènes de groupe à connaître",
+  "lien": "",
+  "plus": "Pour lever le silence protecteur, faites écrire la question sur un papier ou dans un outil anonyme, ou demandez « quelle serait la question que quelqu'un pourrait se poser ici ? »."
+ },
+ {
+  "jour": "Jour 5",
+  "piege": false,
+  "q": "« On nous forme à l'outil qui va nous remplacer. » Quel est le bon réflexe ?",
+  "opts": [
+   "Rassurer tout de suite : l'IA ne remplacera personne.",
+   "Ne pas nier, et ramener au périmètre de la tâche et à ce que chacun décide de déléguer.",
+   "Changer de sujet pour ne pas perdre de temps.",
+   "Citer des chiffres sur l'emploi pour clore le débat."
+  ],
+  "bonne": 1,
+  "pourquoi": "C'est l'une des trois objections récurrentes du public. Le principe de réponse du support : ne pas nier, ne pas rassurer à bon compte, ramener la discussion au périmètre de la tâche et au fait que le participant décide de ce qu'il délègue, puis renvoyer à ce qu'est et n'est pas un modèle de langage.",
+  "pieges": [
+   "Rassurer à bon compte sonne faux et fait perdre la confiance.",
+   "Esquiver laisse l'inquiétude intacte pour toute la journée.",
+   "Des chiffres ne répondent pas à une inquiétude personnelle, ils la balaient."
+  ],
+  "src": "Jour 5, les trois objections récurrentes",
+  "lien": "",
+  "plus": "Cette réponse se prépare à l'avance, en trois phrases au plus, tenables debout. Improvisée, elle part presque toujours dans la réassurance ou dans le débat."
+ },
+ {
+  "jour": "Jour 5",
+  "piege": false,
+  "q": "« Où vont nos données ? » demande un participant. Que faites-vous ?",
+  "opts": [
+   "Vous improvisez une réponse juridique rassurante.",
+   "Vous affirmez que tout est chiffré, donc sans risque.",
+   "Vous reconnaissez que la question est légitime et renvoyez au RGPD et au choix cloud ou local, sans improviser de juridique.",
+   "Vous gardez la question pour la toute fin de la formation."
+  ],
+  "bonne": 2,
+  "pourquoi": "Le support est clair : la question est légitime et elle a une réponse technique. On renvoie aux contenus du Jour 1 sur le RGPD appliqué à l'IA et la souveraineté, et à ceux du Jour 3 sur le choix entre cloud et installation locale. On n'improvise jamais une réponse juridique.",
+  "pieges": [
+   "Une réponse juridique improvisée peut être fausse et engager votre crédibilité.",
+   "Le chiffrement ne dit rien de qui traite les données, où, ni pour quel usage.",
+   "Repousser la question à la fin laisse le doute peser sur tout ce qui suit."
+  ],
+  "src": "Jour 5, les trois objections récurrentes",
+  "lien": "",
+  "plus": "Gardez sous la main les réglages de confidentialité des outils utilisés en salle : montrer où ils se trouvent vaut mieux qu'un long discours."
+ },
+ {
+  "jour": "Jour 6",
+  "piege": false,
+  "q": "À quoi sert un skill dans Claude ?",
+  "opts": [
+   "À changer le modèle utilisé par Claude.",
+   "À connecter Claude à Gmail ou à Google Drive.",
+   "À programmer une tâche à une heure précise.",
+   "À enregistrer une façon de faire, avec ses instructions et ses fichiers, que Claude réutilise quand la demande correspond."
+  ],
+  "bonne": 3,
+  "pourquoi": "Un skill est un dossier d'instructions, et au besoin de scripts ou de fichiers modèles, que Claude charge quand votre demande s'y rapporte. On l'écrit une fois, il sert à chaque fois pour une tâche répétable.",
+  "pieges": [
+   "Le choix du modèle est un réglage à part, sans rapport avec les skills.",
+   "Relier Claude à Gmail ou Drive, c'est le rôle des connecteurs.",
+   "Déclencher une tâche à heure fixe, c'est le rôle d'une tâche programmée."
+  ],
+  "src": "Aide Claude, qu'est-ce qu'un skill",
+  "lien": "https://support.claude.com/en/articles/12512176-what-are-skills",
+  "plus": "Le bon candidat pour un skill est une tâche que vous refaites souvent de la même façon : un compte rendu au format de votre cabinet, une réponse type, une analyse structurée."
+ },
+ {
+  "jour": "Jour 6",
+  "piege": false,
+  "q": "Où ajoute-t-on un skill personnalisé dans Claude ?",
+  "opts": [
+   "Dans Personnaliser, puis Skills, avec le bouton + pour créer ou importer un skill.",
+   "Dans les paramètres du compte, rubrique Facturation.",
+   "Dans l'annuaire des connecteurs.",
+   "En le collant dans chaque conversation."
+  ],
+  "bonne": 0,
+  "pourquoi": "La page d'aide officielle indique que, sur les offres individuelles, on ajoute ses skills depuis Personnaliser, puis Skills : on active les skills d'exemple et on crée ou importe les siens avec le bouton +. Sur les offres Team et Enterprise, l'administrateur active d'abord les skills pour l'organisation.",
+  "pieges": [
+   "La facturation ne concerne que l'abonnement.",
+   "L'annuaire des connecteurs sert à brancher des outils comme Gmail ou Notion, pas à ajouter des skills.",
+   "Coller des instructions dans chaque conversation, c'est précisément ce que le skill évite."
+  ],
+  "src": "Aide Claude, utiliser les skills",
+  "lien": "https://support.claude.com/en/articles/12512180-use-skills-in-claude",
+  "plus": "Si la rubrique Skills n'apparaît pas, vérifiez les capacités activées dans les paramètres : l'aide officielle indique que les skills s'appuient sur l'exécution de code."
+ },
+ {
+  "jour": "Jour 6",
+  "piege": true,
+  "q": "Vous connectez Gmail à Claude. Que se passe-t-il avant l'envoi d'un mail ?",
+  "opts": [
+   "Claude l'envoie directement, sans rien demander.",
+   "Rien : le connecteur ne peut que lire, jamais envoyer.",
+   "Claude vous demande votre accord, par défaut, avant chaque envoi.",
+   "Google bloque l'envoi depuis une IA."
+  ],
+  "bonne": 2,
+  "pourquoi": "La page d'aide sur les connecteurs Google indique que Claude peut envoyer, répondre et transférer des mails depuis Gmail, et qu'il demande votre accord par défaut avant chacune de ces actions. L'écran d'autorisation de Google mentionne l'envoi, car c'est l'étendue de l'accès demandé.",
+  "pieges": [
+   "L'envoi sans validation n'est pas le comportement par défaut.",
+   "Le connecteur ne se limite pas à la lecture : il peut rédiger et envoyer, avec votre accord.",
+   "Google ne bloque pas l'envoi : l'autorisation est donnée au moment de la connexion."
+  ],
+  "src": "Aide Claude, connecteurs Google Workspace",
+  "lien": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+  "plus": "Pour rassurer un participant frileux : commencer par une question qui ne fait que lire, et savoir que l'on peut déconnecter à tout moment, depuis Claude ou depuis son compte Google."
+ },
+ {
+  "jour": "Jour 6",
+  "piege": true,
+  "q": "Une tâche programmée doit travailler sur des fichiers de votre ordinateur. Que faut-il pour qu'elle s'exécute ?",
+  "opts": [
+   "Rien : elle tourne dans le cloud, même ordinateur éteint.",
+   "Qu'on la relance à la main à chaque fois.",
+   "Un abonnement Enterprise obligatoire.",
+   "Que l'ordinateur reste allumé et éveillé, avec l'application Claude ouverte ; le réglage Keep computer awake évite la mise en veille."
+  ],
+  "bonne": 3,
+  "pourquoi": "Une tâche qui a besoin de fichiers, du navigateur ou de l'ordinateur doit pouvoir y accéder : l'aide de Cowork demande de garder l'application de bureau ouverte dans ce cas. Une tâche locale ne s'exécute que si l'ordinateur est éveillé ; si la machine dort à l'heure prévue, l'exécution est sautée. Le réglage Keep computer awake, dans les paramètres de l'application, empêche la mise en veille. Fermer le capot de l'ordinateur le met quand même en veille.",
+  "pieges": [
+   "L'exécution dans le cloud ne concerne que les tâches sans fichiers locaux, et elle est encore en bêta, déployée d'abord sur l'offre Max.",
+   "Une tâche programmée se déclenche seule à l'heure choisie, c'est tout son intérêt.",
+   "Les tâches programmées ne sont pas réservées à l'offre Enterprise."
+  ],
+  "src": "Aide Claude, démarrer avec Cowork, et documentation des tâches programmées sur ordinateur",
+  "lien": "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
+  "plus": "Avant de compter sur une tâche du matin, vérifiez deux choses : le réglage Keep computer awake activé, et l'ordinateur branché, capot ouvert. Sinon, la tâche rattrape son retard au réveil, parfois à une heure où elle n'a plus de sens."
+ },
+ {
+  "jour": "Jour 6",
+  "piege": false,
+  "q": "Quelle différence entre une base de connaissances et une recherche approfondie ?",
+  "opts": [
+   "La base répond à partir de vos documents ; la recherche approfondie va chercher sur le web et rédige un rapport.",
+   "Aucune, ce sont deux noms pour la même fonction.",
+   "La base de connaissances cherche sur le web, la recherche approfondie lit vos fichiers.",
+   "La recherche approfondie garde vos documents pour les prochaines fois."
+  ],
+  "bonne": 0,
+  "pourquoi": "Une base de connaissances, comme un projet ou un carnet de sources, répond à partir de ce que vous lui donnez. Une recherche approfondie mène plusieurs recherches sur le web, lit de nombreuses sources et produit un rapport cité. Certaines recherches approfondies peuvent aussi consulter vos outils connectés, mais elles ne constituent pas une base de vos documents.",
+  "pieges": [
+   "Les deux fonctions répondent à des besoins différents : vos documents d'un côté, le web de l'autre.",
+   "C'est l'inverse : la base se limite à vos documents.",
+   "La recherche approfondie ne conserve pas vos documents comme une base de connaissances."
+  ],
+  "src": "Jour 6, atelier base de connaissances",
+  "lien": "https://support.claude.com/en/articles/11088861-use-research-on-claude",
+  "plus": "Le test du piège révèle une bonne base : posez une question dont la réponse n'est dans aucun document. Elle doit répondre qu'elle ne trouve pas l'information, au lieu d'inventer."
+ },
+ {
+  "jour": "Jour 6",
+  "piege": true,
+  "q": "Selon OpenAI, quel est l'avenir des GPT personnalisés ?",
+  "opts": [
+   "Ils deviennent payants uniquement pour les entreprises.",
+   "Ils seront intégrés automatiquement dans chaque conversation.",
+   "Rien ne change, ils restent le format recommandé.",
+   "OpenAI prévoit de les retirer et recommande de passer aux plugins, avec un outil de migration."
+  ],
+  "bonne": 3,
+  "pourquoi": "La page d'aide d'OpenAI annonce le retrait prévu des GPT personnalisés et recommande de faire passer ses usages vers les plugins, qui regroupent des instructions réutilisables et des applications connectées. Un outil de migration est prévu. Pendant la transition, les GPT existants restent utilisables, et les possibilités de création varient selon les comptes : sur un compte personnel, le projet reste l'équivalent le plus sûr, avec ses instructions et ses fichiers.",
+  "pieges": [
+   "Le retrait ne consiste pas à les rendre payants : OpenAI oriente vers un autre format, les plugins.",
+   "Rien n'indique une intégration automatique dans les conversations : il faut migrer ses usages.",
+   "OpenAI dit l'inverse : les GPT personnalisés ne sont plus le format recommandé."
+  ],
+  "src": "Aide OpenAI, créer et modifier des GPT, septembre 2026",
+  "lien": "https://help.openai.com/en/articles/8554397-creating-and-editing-gpts",
+  "plus": "En salle, la situation varie d'un compte à l'autre pendant la transition : certains peuvent encore créer un GPT, d'autres non. Plutôt que de trancher sur un compte précis, retenez la direction annoncée par OpenAI et proposez le projet comme solution stable."
  }
 ];
 
@@ -2063,7 +2273,7 @@ function ouvrirAnimateur(){
   cache($("quiz")); cache($("accueil")); cache($("final"));
 
   var h = document.createElement("h1");
-  h.textContent = "Mode animateur, les 50 questions et toutes les réponses";
+  h.textContent = "Mode animateur, les 60 questions et toutes les réponses";
   a.appendChild(h);
   var s = document.createElement("p");
   s.className = "sous";
