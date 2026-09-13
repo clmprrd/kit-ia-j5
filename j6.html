@@ -731,23 +731,30 @@ function envoyerFiche(){
 </script>
 <script>
 (function(){
-  function copier(texte){
-    if(navigator.clipboard && window.isSecureContext){ return navigator.clipboard.writeText(texte); }
+  function copierAncien(texte){
     return new Promise(function(ok,ko){
-      try{ var t=document.createElement("textarea"); t.value=texte; t.setAttribute("readonly",""); t.style.position="fixed"; t.style.opacity="0";
-        document.body.appendChild(t); t.select(); var r=document.execCommand("copy"); document.body.removeChild(t); r?ok():ko(); }catch(e){ ko(e); }
+      try{ var t=document.createElement("textarea"); t.value=texte; t.setAttribute("readonly",""); t.style.position="fixed"; t.style.top="0"; t.style.opacity="0";
+        document.body.appendChild(t); t.focus(); t.select(); t.setSelectionRange(0,texte.length); var r=document.execCommand("copy"); document.body.removeChild(t); r?ok():ko(new Error("execCommand")); }catch(e){ ko(e); }
     });
+  }
+  function copier(texte){
+    if(navigator.clipboard && window.isSecureContext){
+      return navigator.clipboard.writeText(texte).catch(function(){ return copierAncien(texte); });
+    }
+    return copierAncien(texte);
   }
   document.addEventListener("click",function(ev){
     var b=ev.target.closest("[data-copier]"); if(!b) return;
     var pre=b.closest(".prompt").querySelector("pre"); var texte=pre.textContent;
     var url=b.getAttribute("data-ouvrir");
-    var w=null; if(url){ w=window.open(url,"_blank","noopener"); }
     var lab=b.textContent;
+    var w=null; if(url){ w=window.open("about:blank","_blank"); }
     copier(texte).then(function(){
+      if(w){ try{ w.opener=null; w.location.href=url; }catch(e){ window.open(url,"_blank","noopener"); } }
       b.classList.add("ok"); b.textContent= url ? "Copié, collez avec Cmd+V ou Ctrl+V" : "Copié";
       setTimeout(function(){ b.classList.remove("ok"); b.textContent=lab; },2600);
     },function(){
+      if(w){ try{ w.opener=null; w.location.href=url; }catch(e){} }
       var r=document.createRange(); r.selectNodeContents(pre); var sel=window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
       b.textContent="Sélectionné, copiez avec Cmd+C"; setTimeout(function(){ b.textContent=lab; },3000);
     });
