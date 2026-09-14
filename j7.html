@@ -233,38 +233,65 @@ details.kb > .kb-corps{margin:0}
 .kb-jump a{font-size:13px;font-weight:700;padding:7px 13px;border-radius:999px;border:1px solid #E6E1E5;background:#fff;color:var(--encre);text-decoration:none;white-space:nowrap}
 .kb-jump a:hover{border-color:var(--marque-texte);color:var(--marque-texte)}
 
-.at-hero{position:relative;border-radius:22px;padding:34px 30px;margin:4px 0 26px;color:#fff;background:radial-gradient(120% 140% at 0% 0%,#E91FCB 0%,#A3128C 45%,#1A1A1A 100%);overflow:hidden}
-.at-hero:after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)}
-.at-hero .at-sur{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin:0 0 10px}
-.at-hero h3{font-family:Fraunces,Georgia,serif;font-weight:900;font-size:clamp(26px,4.4vw,38px);line-height:1.08;margin:0 0 12px;color:#fff}
-.at-hero p{margin:0;max-width:56ch;font-size:16px;line-height:1.55;opacity:.95}
-.at-regle{display:inline-flex;gap:8px;align-items:center;margin-top:18px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 16px;font-weight:700;font-size:14px}
-.at-temps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:8px 0 30px;counter-reset:t}
-.at-t{background:#fff;border:1px solid var(--gris-clair);border-radius:16px;padding:14px 14px 16px;position:relative}
-.at-t b{display:block;font-family:Fraunces,Georgia,serif;font-weight:900;font-size:22px;color:var(--marque-texte);line-height:1}
-.at-t span{display:block;font-size:13.5px;color:var(--gris);margin-top:6px;line-height:1.4}
-.at-t.fort{background:var(--encre);border-color:var(--encre)}.at-t.fort b{color:#FF7BE8}.at-t.fort span{color:#eee}
-.at-titre{font-family:Fraunces,Georgia,serif;font-weight:900;font-size:clamp(22px,3.4vw,28px);margin:34px 0 6px}
-.at-sous{color:var(--gris);margin:0 0 16px;max-width:62ch}
-.at-roles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.at-role{background:#fff;border:1px solid var(--gris-clair);border-radius:18px;padding:18px;box-shadow:var(--ombre)}
-.at-role .pastille-r{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;margin-bottom:12px}
-.at-role h4{margin:0 0 6px;font-size:17px;font-weight:800}
-.at-role p{margin:0;font-size:14px;color:var(--gris);line-height:1.5}
-.at-role .livre{margin-top:10px;font-size:12.5px;font-weight:700;color:var(--marque-texte)}
-.at-role.chef{grid-column:1/-1;background:linear-gradient(90deg,var(--rose) 0%,#fff 70%);border-color:#F4C6EC}
-.at-idees{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.at-idee{border-radius:18px;padding:18px;background:var(--fond);border:1px solid var(--gris-clair);transition:transform .15s,box-shadow .15s}
-.at-idee:hover{transform:translateY(-2px);box-shadow:var(--ombre);background:#fff}
-.at-idee .theme{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--marque-texte)}
-.at-idee h4{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:19px;line-height:1.2;margin:6px 0 8px}
-.at-idee p{margin:0;font-size:14px;color:var(--gris);line-height:1.5}
-.at-idee .livrable{margin-top:10px;font-size:13px;color:var(--encre)}
-.at-or{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
-.at-or div{background:var(--encre);color:#fff;border-radius:16px;padding:16px;font-size:14.5px;line-height:1.45}
-.at-or b{display:block;color:#FF7BE8;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
-@media (max-width:860px){.at-roles{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.at-temps,.at-roles,.at-idees,.at-or{grid-template-columns:1fr}.at-hero{padding:26px 20px}}
+.mi{--mi-fond:#0F0B10;--mi-carte:#1C1520;--mi-ligne:rgba(255,255,255,.10);--mi-rose:#FF6FE6;--mi-texte:#F4EEF3;--mi-doux:#B9AEB7;background:var(--mi-fond);color:var(--mi-texte);border-radius:26px;padding:clamp(22px,4vw,40px);margin:4px 0 8px;position:relative;overflow:hidden}
+.mi:before{content:"";position:absolute;inset:-40% -20% auto auto;width:520px;height:520px;background:radial-gradient(circle,rgba(233,31,203,.35),transparent 65%);pointer-events:none}
+.mi *{position:relative}
+.mi-sur{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--mi-rose);margin:0 0 12px}
+.mi h3.mi-titre{font-family:Fraunces,Georgia,serif;font-weight:900;font-size:clamp(32px,6vw,58px);line-height:.98;margin:0 0 14px;color:#fff;letter-spacing:-.02em}
+.mi h3.mi-titre em{font-style:normal;background:linear-gradient(90deg,#FF6FE6,#E91FCB);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mi-intro{max-width:58ch;color:var(--mi-doux);font-size:16.5px;line-height:1.6;margin:0}
+.mi-chrono{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:24px 0 6px}
+.mi-compte{display:flex;gap:8px}
+.mi-compte div{background:var(--mi-carte);border:1px solid var(--mi-ligne);border-radius:14px;min-width:74px;padding:10px 12px;text-align:center}
+.mi-compte b{display:block;font-family:Fraunces,Georgia,serif;font-size:32px;font-weight:900;color:#fff;line-height:1;font-variant-numeric:tabular-nums}
+.mi-compte span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mi-doux)}
+.mi-chrono-lab{color:var(--mi-doux);font-size:14px;max-width:26ch}
+.mi h3.mi-h{font-family:Fraunces,Georgia,serif;font-weight:900;font-size:clamp(22px,3.2vw,30px);color:#fff;margin:40px 0 6px}
+.mi h3.mi-h small{display:block;font-family:Inter,sans-serif;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mi-rose);margin-bottom:6px}
+.mi-p{color:var(--mi-doux);margin:0 0 16px;max-width:62ch;line-height:1.6}
+.mi-etapes{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--mi-ligne);border-radius:18px;overflow:hidden}
+.mi-e{padding:16px;border-right:1px solid var(--mi-ligne);background:var(--mi-carte)}
+.mi-e:last-child{border-right:0}
+.mi-e b{display:block;font-family:Fraunces,Georgia,serif;font-size:24px;font-weight:900;color:#fff}
+.mi-e i{display:block;font-style:normal;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mi-rose);margin:4px 0 6px}
+.mi-e span{font-size:13.5px;color:var(--mi-doux);line-height:1.45}
+.mi-e.fort{background:linear-gradient(160deg,#E91FCB,#7A0D69)}.mi-e.fort i,.mi-e.fort span{color:#fff}
+.mi-roles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mi-role{background:var(--mi-carte);border:1px solid var(--mi-ligne);border-radius:18px;padding:18px}
+.mi-role.chef{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;background:linear-gradient(90deg,rgba(233,31,203,.28),var(--mi-carte) 60%);border-color:rgba(255,111,230,.45)}
+.mi-ini{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-weight:900;color:#0F0B10;background:var(--mi-rose);font-size:16px}
+.mi .mi-role h4{margin:12px 0 6px;color:#fff;font-size:17px}.mi-role.chef h4{margin:0 0 4px}
+.mi-role p{margin:0;color:var(--mi-doux);font-size:14px;line-height:1.5}
+.mi-role .mi-livre{margin-top:10px;color:var(--mi-rose);font-size:12.5px;font-weight:800}
+.mi-tirage{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mi-carte-t{background:var(--mi-carte);border:1px solid var(--mi-ligne);border-radius:20px;padding:20px;display:flex;flex-direction:column;min-height:230px}
+.mi-carte-t .lab{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mi-rose)}
+.mi-res{flex:1;margin:14px 0;font-family:Fraunces,Georgia,serif;font-weight:800;font-size:22px;line-height:1.25;color:#fff}
+.mi-res small{display:block;font-family:Inter,sans-serif;font-weight:400;font-size:14px;color:var(--mi-doux);margin-top:8px;line-height:1.5}
+.mi-bouton{align-self:flex-start;border:0;border-radius:999px;padding:12px 20px;min-height:44px;font-weight:800;font-size:15px;cursor:pointer;background:#fff;color:#0F0B10;transition:transform .15s}
+.mi-bouton:hover{transform:translateY(-1px)}.mi-bouton.rose{background:linear-gradient(90deg,#FF6FE6,#E91FCB);color:#fff}
+.mi-bouton:focus-visible{outline:3px solid var(--mi-rose);outline-offset:3px}
+.mi-idees{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.mi-idee{background:var(--mi-carte);border:1px solid var(--mi-ligne);border-radius:18px;padding:18px;transition:border-color .15s,transform .15s}
+.mi-idee:hover{border-color:rgba(255,111,230,.5);transform:translateY(-2px)}
+.mi-idee .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.mi-idee .theme{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mi-rose)}
+.mi-niv{display:flex;gap:4px}.mi-niv i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.18)}.mi-niv i.on{background:var(--mi-rose)}
+.mi .mi-idee h4{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:20px;color:#fff;margin:8px 0 6px;line-height:1.2}
+.mi-idee p{margin:0;color:var(--mi-doux);font-size:14px;line-height:1.5}
+.mi-idee .liv{margin-top:10px;font-size:13px;color:#fff;font-weight:700}
+.mi-jury{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mi-jury div{border:1px solid var(--mi-ligne);border-radius:18px;padding:18px;background:var(--mi-carte)}
+.mi-jury b{display:block;font-family:Fraunces,Georgia,serif;font-size:34px;font-weight:900;color:var(--mi-rose);line-height:1}
+.mi .mi-jury h4{color:#fff;margin:10px 0 6px;font-size:16px}.mi-jury p{margin:0;color:var(--mi-doux);font-size:13.5px;line-height:1.5}
+.mi-or{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.mi-or div{border-top:3px solid var(--mi-rose);background:var(--mi-carte);border-radius:0 0 16px 16px;padding:16px;font-size:14px;color:var(--mi-doux);line-height:1.5}
+.mi-or b{display:block;color:#fff;font-size:15px;margin-bottom:4px}
+.mi-fin{margin-top:36px;padding-top:24px;border-top:1px solid var(--mi-ligne);color:var(--mi-doux);font-size:15px;line-height:1.6}
+.mi-fin b{color:#fff}
+@media (max-width:900px){.mi-etapes{grid-template-columns:1fr 1fr 1fr}.mi-e:nth-child(3){border-right:0}.mi-roles,.mi-jury,.mi-or{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.mi-etapes,.mi-roles,.mi-tirage,.mi-idees,.mi-jury,.mi-or{grid-template-columns:1fr}.mi-e{border-right:0;border-bottom:1px solid var(--mi-ligne)}.mi-role.chef{grid-template-columns:1fr}.mi-compte div{min-width:62px}.mi-compte b{font-size:26px}}
+@media (prefers-reduced-motion:reduce){.mi-idee,.mi-bouton{transition:none}}
 </style></head>
 <body>
 <a class="saut" href="#contenu">Aller au contenu</a>
@@ -290,7 +317,7 @@ details.kb > .kb-corps{margin:0}
 </header>
 <div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Gardez cette page ouverte. La ligne en rose indique où on en est. Cliquez sur une ligne pour aller à la consigne.</p></div>
 <div class="bloc-corps">
-<ol class="frise"><li class="ligne t-vous" data-debut="09:00" data-fin="11:00"><span class="l-heure">09h00</span><span class="l-type">Vous</span><a class="l-texte" href="#presentations">Finir les présentations de Skills d'hier</a></li><li class="ligne t-pause" data-debut="11:00" data-fin="11:10"><span class="l-heure">11h00</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-mix" data-debut="11:10" data-fin="12:30"><span class="l-heure">11h10</span><span class="l-type">Démo puis vous</span><a class="l-texte" href="#nocode">n8n : Claude le lance, vous jouez avec les briques</a></li><li class="ligne t-pause" data-debut="12:30" data-fin="13:30"><span class="l-heure">12h30</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Déjeuner</a></li><li class="ligne t-vous" data-debut="13:30" data-fin="15:00"><span class="l-heure">13h30</span><span class="l-type">Vous</span><a class="l-texte" href="#rag">Base de connaissances : chacun choisit son outil</a></li><li class="ligne t-vous" data-debut="15:00" data-fin="15:20"><span class="l-heure">15h00</span><span class="l-type">Vous</span><a class="l-texte" href="#atelier">Atelier libre : le sujet, le vote, les rôles</a></li><li class="ligne t-vous" data-debut="15:20" data-fin="16:30"><span class="l-heure">15h20</span><span class="l-type">Vous</span><a class="l-texte" href="#atelier">Atelier libre : on construit</a></li><li class="ligne t-vous" data-debut="16:30" data-fin="16:50"><span class="l-heure">16h30</span><span class="l-type">Vous</span><a class="l-texte" href="#atelier">Pitch et retour de chacun</a></li><li class="ligne t-info" data-debut="16:50" data-fin="17:00"><span class="l-heure">16h50</span><span class="l-type">Info</span><a class="l-texte" href="#programme">Clôture : autopositionnement, évaluation à chaud</a></li></ol>
+<ol class="frise"><li class="ligne t-vous" data-debut="09:00" data-fin="11:00"><span class="l-heure">09h00</span><span class="l-type">Vous</span><a class="l-texte" href="#presentations">Finir les présentations de Skills d'hier</a></li><li class="ligne t-pause" data-debut="11:00" data-fin="11:10"><span class="l-heure">11h00</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-mix" data-debut="11:10" data-fin="12:30"><span class="l-heure">11h10</span><span class="l-type">Démo puis vous</span><a class="l-texte" href="#nocode">n8n : Claude le lance, vous jouez avec les briques</a></li><li class="ligne t-pause" data-debut="12:30" data-fin="13:30"><span class="l-heure">12h30</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Déjeuner</a></li><li class="ligne t-vous" data-debut="13:30" data-fin="15:00"><span class="l-heure">13h30</span><span class="l-type">Vous</span><a class="l-texte" href="#rag">Base de connaissances : chacun choisit son outil</a></li><li class="ligne t-vous" data-debut="15:00" data-fin="15:20"><span class="l-heure">15h00</span><span class="l-type">Vous</span><a class="l-texte" href="#atelier">Atelier libre : le sujet, les rôles, la contrainte</a></li><li class="ligne t-vous" data-debut="15:20" data-fin="16:30"><span class="l-heure">15h20</span><span class="l-type">Vous</span><a class="l-texte" href="#atelier">Atelier libre : on construit</a></li><li class="ligne t-vous" data-debut="16:30" data-fin="16:50"><span class="l-heure">16h30</span><span class="l-type">Vous</span><a class="l-texte" href="#atelier">Pitch et retour de chacun</a></li><li class="ligne t-info" data-debut="16:50" data-fin="17:00"><span class="l-heure">16h50</span><span class="l-type">Info</span><a class="l-texte" href="#programme">Clôture : autopositionnement, évaluation à chaud</a></li></ol>
 <details><summary>Autopositionnement d'entrée (9h00) et de sortie (16h50) <span class="petit">· six questions, niveau de 1 à 4</span></summary>
 <p>Pour chaque phrase, notez-vous de 1 à 4 le matin, puis à nouveau en fin de journée. <b>1</b> : je ne sais pas faire. <b>2</b> : je sais faire avec de l'aide. <b>3</b> : je sais faire seul. <b>4</b> : je sais faire seul et l'expliquer à un collègue.</p>
 <ol>
@@ -581,39 +608,68 @@ Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
 <div class="bloc-titres"><p class="bloc-meta"><span class="heure">15h00 à 16h50</span><span class="type type-vous">Vous pratiquez</span></p>
 <h2 id="t-atelier">L'atelier libre</h2></div>
 </header>
-<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Vous choisissez le sujet, vous vous répartissez les rôles, et vous livrez ensemble à 16h30.</p></div>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Vous choisissez le sujet, vous vous répartissez les rôles, vous tirez une contrainte, et vous livrez ensemble à 16h30.</p></div>
 <div class="bloc-corps">
-<div class="at-hero">
-<p class="at-sur">15h00 à 16h50 · toute la salle</p>
-<h3>Le sujet est à vous.<br>L'équipe aussi.</h3>
-<p>Pas d'outil imposé, pas de thème imposé. Vous choisissez ce qui vous donne envie, vous vous organisez seuls, et vous montrez le résultat à 16h30. Clément observe, vous pilotez.</p>
-<span class="at-regle">Une seule règle : tout le monde a un rôle</span>
+<div class="mi">
+<p class="mi-sur">Mission finale · toute la salle</p>
+<h3 class="mi-titre">Une équipe.<br>Un sujet. <em>90 minutes.</em></h3>
+<p class="mi-intro">Pas d'outil imposé, pas de thème imposé. Vous choisissez ce qui vous donne envie, vous vous organisez seuls, et à 16h30 vous montrez quelque chose qui marche. Clément observe. Vous pilotez.</p>
+<div class="mi-chrono"><div class="mi-compte" aria-hidden="true"><div><b id="mi-h">00</b><span>heures</span></div><div><b id="mi-m">00</b><span>minutes</span></div><div><b id="mi-s">00</b><span>secondes</span></div></div><p class="mi-chrono-lab" id="mi-lab">avant le pitch de 16h30</p></div>
+<h3 class="mi-h"><small>Le déroulé</small>Cinq temps, pas un de plus</h3>
+<div class="mi-etapes">
+<div class="mi-e"><b>15h00</b><i>Le sujet</i><span>Tour de table express : chacun dit son idée en une phrase. Vote à main levée, deux voix chacun.</span></div>
+<div class="mi-e"><b>15h10</b><i>Les rôles</i><span>On nomme le décideur. Il répartit les rôles, puis on tire une contrainte.</span></div>
+<div class="mi-e fort"><b>15h20</b><i>On construit</i><span>70 minutes. Point d'étape de 5 minutes à 15h50.</span></div>
+<div class="mi-e"><b>16h15</b><i>Stop</i><span>Plus aucun ajout. Les testeurs passent, les pitcheurs répètent.</span></div>
+<div class="mi-e"><b>16h30</b><i>Le pitch</i><span>5 minutes, puis chacun dit ce qu'il a apporté.</span></div>
 </div>
-
-<div class="at-temps">
-<div class="at-t"><b>15h00</b><span>Une idée par post-it, vote : deux voix chacun</span></div>
-<div class="at-t"><b>15h10</b><span>On nomme le décideur, il répartit les rôles</span></div>
-<div class="at-t fort"><b>15h20</b><span>On construit. Point d'étape à 15h50</span></div>
-<div class="at-t"><b>16h15</b><span>Stop aux ajouts, les testeurs passent</span></div>
-<div class="at-t"><b>16h30</b><span>Le pitch, puis chacun dit ce qu'il a apporté</span></div>
+<h3 class="mi-h"><small>Les rôles</small>Personne ne regarde les autres faire</h3>
+<p class="mi-p">Un rôle peut être tenu par une ou plusieurs personnes. Le décideur les attribue en regardant qui est fort en quoi : l'organisation, la rédaction, la technique, l'oral, l'œil critique.</p>
+<div class="mi-roles"><div class="mi-role chef"><div class="mi-ini">D</div><div><h4>Le décideur</h4><p>Choisi en premier. Il répartit tous les autres rôles selon les forces de chacun, tranche quand l'équipe hésite, et tient le cap jusqu'au pitch.</p><p class="mi-livre">Il porte : la répartition et les arbitrages</p></div></div><div class="mi-role"><div class="mi-ini">C</div><h4>Les créateurs</h4><p>Construisent la solution avec les outils de leur choix : Claude, un document, un tableau, une page, n8n.</p><p class="mi-livre">Ils livrent : la solution qui marche</p></div><div class="mi-role"><div class="mi-ini">T</div><h4>Les testeurs</h4><p>Utilisent la solution comme un vrai utilisateur, cherchent ce qui coince, et le renvoient aux créateurs avant 16h15.</p><p class="mi-livre">Ils livrent : les défauts trouvés et corrigés</p></div><div class="mi-role"><div class="mi-ini">P</div><h4>Les pitcheurs</h4><p>Suivent le travail depuis le début et préparent 5 minutes : le problème, la solution, la démonstration.</p><p class="mi-livre">Ils livrent : un pitch qui emporte la salle</p></div><div class="mi-role"><div class="mi-ini">G</div><h4>Le gardien du temps</h4><p>Annonce chaque étape, lance le point de 15h50 et le stop de 16h15. Personne ne déborde.</p><p class="mi-livre">Il livre : une équipe à l'heure</p></div></div>
+<h3 class="mi-h"><small>Le tirage</small>Pas d'idée ? Trop facile ? Tirez.</h3>
+<p class="mi-p">Deux boutons pour vous challenger. Le défi donne un sujet si la salle hésite. La contrainte se tire une fois le sujet choisi, et elle est obligatoire.</p>
+<div class="mi-tirage">
+<div class="mi-carte-t"><span class="lab">Le défi</span><p class="mi-res" id="mi-defi" aria-live="polite">Aucun sujet ne s'impose ?<small>Le hasard choisit parmi les huit idées ci-dessous.</small></p><button class="mi-bouton" type="button" id="mi-b-defi">Tirer un défi</button></div>
+<div class="mi-carte-t"><span class="lab">La contrainte</span><p class="mi-res" id="mi-contr" aria-live="polite">La salle tire une contrainte.<small>Elle s'ajoute au sujet, sans négociation.</small></p><button class="mi-bouton rose" type="button" id="mi-b-contr">Tirer une contrainte</button></div>
 </div>
-
-<h3 class="at-titre">Les rôles</h3>
-<p class="at-sous">Chaque rôle peut être tenu par une ou plusieurs personnes. Le décideur les attribue en regardant qui est fort en quoi : l'organisation, la rédaction, la technique, l'oral, l'œil critique.</p>
-<div class="at-roles"><div class="at-role chef"><div class="pastille-r" style="background:#1A1A1A">D</div><h4>Le décideur</h4><p>Choisi en premier. Il répartit tous les autres rôles selon les forces de chacun, tranche quand l'équipe hésite, et tient le cap jusqu'à 16h30.</p><p class="livre">Ce qu'il porte : la répartition et les arbitrages</p></div><div class="at-role"><div class="pastille-r" style="background:#A3128C">C</div><h4>Les créateurs</h4><p>Construisent la solution, avec les outils de leur choix : Claude, un document, un tableau, n8n, un visuel, une page.</p><p class="livre">Ce qu'ils livrent : la solution qui marche</p></div><div class="at-role"><div class="pastille-r" style="background:#3D4A5C">T</div><h4>Les testeurs</h4><p>Essaient la solution comme un vrai utilisateur, cherchent ce qui coince, et le remontent aux créateurs avant 16h15.</p><p class="livre">Ce qu'ils livrent : les défauts trouvés, et corrigés</p></div><div class="at-role"><div class="pastille-r" style="background:#E91FCB">P</div><h4>Les pitcheurs</h4><p>Suivent le travail depuis le début et préparent le pitch : le problème, la solution, la démonstration, en 5 minutes.</p><p class="livre">Ce qu'ils livrent : un pitch qui donne envie</p></div><div class="at-role"><div class="pastille-r" style="background:#1F6E45">G</div><h4>Le gardien du temps</h4><p>Annonce chaque étape, lance le point d'étape de 15h50 et le stop de 16h15. Personne ne déborde.</p><p class="livre">Ce qu'il livre : une équipe à l'heure</p></div></div>
-
-<h3 class="at-titre">Besoin d'une étincelle ?</h3>
-<p class="at-sous">Huit idées pour vous lancer. Prenez-en une telle quelle, mélangez-en deux, ou faites complètement autre chose : c'est votre atelier.</p>
-<div class="at-idees"><div class="at-idee"><span class="theme">Pour la promo</span><h4>La FAQ du futur référent</h4><p>Les 15 questions que vos collègues vous poseront le premier mois, avec la réponse courte et le piège à éviter.</p><p class="livrable"><b>À 16h30 : la FAQ, prête à imprimer</b></p></div><div class="at-idee"><span class="theme">Pour animer</span><h4>Un atelier de 45 minutes clé en main</h4><p>Un atelier IA pour une équipe commerciale, avec son déroulé, sa consigne et son exercice. Vous le testez sur l'autre moitié de la salle.</p><p class="livrable"><b>À 16h30 : le déroulé, et 5 minutes jouées en vrai</b></p></div><div class="at-idee"><span class="theme">Pour convaincre</span><h4>Le client sceptique</h4><p>Un jeu de rôle : un dirigeant qui ne croit pas à l'IA. L'équipe construit l'argumentaire, les testeurs jouent le client.</p><p class="livrable"><b>À 16h30 : la scène jouée devant la salle</b></p></div><div class="at-idee"><span class="theme">Pour une entreprise</span><h4>La charte IA d'une PME en une page</h4><p>Ce qu'on a le droit de faire, ce qui est interdit, qui valide. Lisible par un salarié en deux minutes.</p><p class="livrable"><b>À 16h30 : la charte, et 3 cas concrets tranchés</b></p></div><div class="at-idee"><span class="theme">Pour le quotidien</span><h4>Le guide anti-hallucination</h4><p>Comment reconnaître une réponse inventée et la vérifier, en affiche à coller à côté de l'écran.</p><p class="livrable"><b>À 16h30 : l'affiche, et la démonstration d'un piège</b></p></div><div class="at-idee"><span class="theme">Pour un vrai client</span><h4>Le diagnostic IA d'un métier</h4><p>Choisissez un métier réel de la salle : ses 5 tâches les plus chronophages, et ce que l'IA peut y changer, outil par outil.</p><p class="livrable"><b>À 16h30 : le diagnostic, présenté comme à un client</b></p></div><div class="at-idee"><span class="theme">Pour aller vite</span><h4>Le kit de démarrage d'un nouveau salarié</h4><p>Tout ce qu'un nouvel arrivant doit savoir pour utiliser l'IA dès son premier jour : outils, règles, trois prompts.</p><p class="livrable"><b>À 16h30 : le kit, testé par quelqu'un qui ne l'a pas écrit</b></p></div><div class="at-idee"><span class="theme">Pour se lancer</span><h4>Votre offre de référent IA</h4><p>Comment vous vendriez votre accompagnement à une entreprise : pour qui, quoi, en combien d'étapes.</p><p class="livrable"><b>À 16h30 : le pitch de l'offre, face à un « client »</b></p></div></div>
-
-<h3 class="at-titre">Les règles d'or</h3>
-<div class="at-or">
-<div><b>Tout le monde joue</b>Personne ne regarde les autres faire. Si vous n'avez rien à faire, dites-le au décideur.</div>
-<div><b>Petit mais fini</b>Mieux vaut une solution modeste qui marche à 16h30 qu'un grand projet à moitié fait.</div>
-<div><b>Le décideur tranche</b>On débat deux minutes, puis il décide. On avance.</div>
-<div><b>Rien de confidentiel</b>Pas de vraie donnée client ni personnelle dans ce que vous construisez.</div>
+<h3 class="mi-h"><small>Besoin d'une étincelle</small>Huit sujets pour vous lancer</h3>
+<p class="mi-p">Prenez-en un tel quel, mélangez-en deux, ou faites tout autre chose. Les points indiquent la difficulté.</p>
+<div class="mi-idees"><div class="mi-idee"><div class="top"><span class="theme">Pour la promo</span><span class="mi-niv" role="img" aria-label="Difficulté 1 sur 3"><i class="on"></i><i></i><i></i></span></div><h4>La FAQ du futur référent</h4><p>Les 15 questions que vos collègues vous poseront le premier mois, avec la réponse courte et le piège à éviter.</p><p class="liv">À 16h30 : la FAQ, prête à imprimer</p></div><div class="mi-idee"><div class="top"><span class="theme">Pour animer</span><span class="mi-niv" role="img" aria-label="Difficulté 3 sur 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><h4>Un atelier de 45 minutes clé en main</h4><p>Un atelier IA pour une équipe commerciale, avec déroulé, consigne et exercice. Vous le jouez sur une partie de la salle.</p><p class="liv">À 16h30 : 5 minutes jouées en vrai</p></div><div class="mi-idee"><div class="top"><span class="theme">Pour convaincre</span><span class="mi-niv" role="img" aria-label="Difficulté 2 sur 3"><i class="on"></i><i class="on"></i><i></i></span></div><h4>Le client sceptique</h4><p>Un dirigeant qui ne croit pas à l'IA. L'équipe prépare l'argumentaire, les testeurs jouent le client et ne lâchent rien.</p><p class="liv">À 16h30 : la scène jouée devant la salle</p></div><div class="mi-idee"><div class="top"><span class="theme">Pour une entreprise</span><span class="mi-niv" role="img" aria-label="Difficulté 2 sur 3"><i class="on"></i><i class="on"></i><i></i></span></div><h4>La charte IA d'une PME en une page</h4><p>Ce qu'on a le droit de faire, ce qui est interdit, qui valide. Lisible par un salarié en deux minutes.</p><p class="liv">À 16h30 : la charte et 3 cas tranchés</p></div><div class="mi-idee"><div class="top"><span class="theme">Pour le quotidien</span><span class="mi-niv" role="img" aria-label="Difficulté 1 sur 3"><i class="on"></i><i></i><i></i></span></div><h4>Le guide anti-hallucination</h4><p>Reconnaître une réponse inventée et la vérifier, en affiche à coller à côté de l'écran.</p><p class="liv">À 16h30 : l'affiche et un piège démontré</p></div><div class="mi-idee"><div class="top"><span class="theme">Pour un vrai client</span><span class="mi-niv" role="img" aria-label="Difficulté 3 sur 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><h4>Le diagnostic IA d'un métier</h4><p>Un métier réel de la salle : ses 5 tâches les plus chronophages, et ce que l'IA y change, outil par outil.</p><p class="liv">À 16h30 : le diagnostic, présenté comme à un client</p></div><div class="mi-idee"><div class="top"><span class="theme">Pour aller vite</span><span class="mi-niv" role="img" aria-label="Difficulté 2 sur 3"><i class="on"></i><i class="on"></i><i></i></span></div><h4>Le kit du nouveau salarié</h4><p>Tout ce qu'un nouvel arrivant doit savoir pour utiliser l'IA dès son premier jour : outils, règles, trois prompts.</p><p class="liv">À 16h30 : le kit, testé par quelqu'un qui ne l'a pas écrit</p></div><div class="mi-idee"><div class="top"><span class="theme">Pour se lancer</span><span class="mi-niv" role="img" aria-label="Difficulté 3 sur 3"><i class="on"></i><i class="on"></i><i class="on"></i></span></div><h4>Votre offre de référent IA</h4><p>Comment vous vendriez votre accompagnement à une entreprise : pour qui, quoi, en combien d'étapes.</p><p class="liv">À 16h30 : le pitch de l'offre face à un « client »</p></div></div>
+<h3 class="mi-h"><small>Le pitch</small>Ce que la salle regarde à 16h30</h3>
+<div class="mi-jury">
+<div><b>1</b><h4>Ça sert vraiment</h4><p>Quelqu'un de la salle s'en servirait dès demain.</p></div>
+<div><b>2</b><h4>Ça marche</h4><p>On voit la solution tourner, pas une promesse.</p></div>
+<div><b>3</b><h4>C'est clair</h4><p>Compris du premier coup par ceux qui ne l'ont pas construite.</p></div>
+<div><b>4</b><h4>Tout le monde a joué</h4><p>Chaque rôle sait dire ce qu'il a apporté.</p></div>
 </div>
-<div class="conseil" style="margin-top:22px"><b>Pourquoi cet atelier.</b> Dans trois semaines, vous animerez vous-mêmes. Laisser un groupe choisir son sujet et se répartir des rôles pour que chacun participe, c'est une technique d'animation que vous pourrez reprendre telle quelle.</div>
+<h3 class="mi-h"><small>Les règles d'or</small>Quatre règles, zéro exception</h3>
+<div class="mi-or">
+<div><b>Tout le monde joue</b>Vous n'avez rien à faire ? Dites-le au décideur.</div>
+<div><b>Petit mais fini</b>Une solution modeste qui marche bat un grand projet à moitié fait.</div>
+<div><b>Le décideur tranche</b>Deux minutes de débat, puis il décide. On avance.</div>
+<div><b>Rien de confidentiel</b>Aucune vraie donnée client ni personnelle.</div>
+</div>
+<p class="mi-fin"><b>Pourquoi cet atelier.</b> Dans trois semaines, vous animerez vous-mêmes. Laisser un groupe choisir son sujet, se répartir des rôles et se donner une contrainte, c'est une technique d'animation que vous pourrez reprendre telle quelle.</p>
+</div>
+<script>
+(function(){
+var IDEES=[["La FAQ du futur référent", "Les 15 questions que vos collègues vous poseront le premier mois, avec la réponse courte et le piège à éviter."], ["Un atelier de 45 minutes clé en main", "Un atelier IA pour une équipe commerciale, avec déroulé, consigne et exercice. Vous le jouez sur une partie de la salle."], ["Le client sceptique", "Un dirigeant qui ne croit pas à l'IA. L'équipe prépare l'argumentaire, les testeurs jouent le client et ne lâchent rien."], ["La charte IA d'une PME en une page", "Ce qu'on a le droit de faire, ce qui est interdit, qui valide. Lisible par un salarié en deux minutes."], ["Le guide anti-hallucination", "Reconnaître une réponse inventée et la vérifier, en affiche à coller à côté de l'écran."], ["Le diagnostic IA d'un métier", "Un métier réel de la salle : ses 5 tâches les plus chronophages, et ce que l'IA y change, outil par outil."], ["Le kit du nouveau salarié", "Tout ce qu'un nouvel arrivant doit savoir pour utiliser l'IA dès son premier jour : outils, règles, trois prompts."], ["Votre offre de référent IA", "Comment vous vendriez votre accompagnement à une entreprise : pour qui, quoi, en combien d'étapes."]];
+var CONTR=[["Zéro diapositive", "Le pitch se fait sans aucune slide : uniquement la démonstration et la parole."], ["Le client a 3 minutes", "Le pitch passe de 5 à 3 minutes. Chaque phrase doit compter."], ["Compréhensible par un novice", "Si une personne qui n'utilise jamais l'IA ne comprend pas, c'est raté."], ["Un piège en direct", "Pendant le pitch, la salle pose une question piège à la solution, et elle doit tenir."], ["Les rôles tournent", "À 15h50, les créateurs et les testeurs échangent leurs places."], ["Budget zéro euro", "Tout ce que vous utilisez doit être gratuit, et vous devez le montrer."], ["Utile dès demain", "La solution doit pouvoir servir dès demain à quelqu'un de la salle, pour de vrai."], ["Le chiffre qui compte", "Le pitch contient un chiffre concret : du temps gagné, une erreur évitée, une tâche supprimée."]];
+function tire(liste,avant){var i;do{i=Math.floor(Math.random()*liste.length)}while(liste.length>1&&i===avant);return i;}
+function esc(t){var d=document.createElement("div");d.textContent=t;return d.innerHTML;}
+var dA=-1,cA=-1;
+document.getElementById("mi-b-defi").addEventListener("click",function(){dA=tire(IDEES,dA);document.getElementById("mi-defi").innerHTML=esc(IDEES[dA][0])+"<small>"+esc(IDEES[dA][1])+"</small>";this.textContent="Tirer un autre défi";});
+document.getElementById("mi-b-contr").addEventListener("click",function(){cA=tire(CONTR,cA);document.getElementById("mi-contr").innerHTML=esc(CONTR[cA][0])+"<small>"+esc(CONTR[cA][1])+"</small>";this.textContent="Tirer une autre contrainte";});
+var cible=new Date(2026,8,15,16,30,0);
+function p(n){return (n<10?"0":"")+n;}
+function tick(){var ms=cible-new Date(),lab=document.getElementById("mi-lab");
+if(ms<=0){["mi-h","mi-m","mi-s"].forEach(function(id){document.getElementById(id).textContent="00"});lab.textContent="C'est l'heure du pitch.";return;}
+var t=Math.floor(ms/1000),h=Math.floor(t/3600),m=Math.floor(t%3600/60),sec=t%60;
+lab.textContent=h>23?"Le compte à rebours démarre le 15 septembre.":"avant le pitch de 16h30";
+document.getElementById("mi-h").textContent=p(Math.min(h,99));document.getElementById("mi-m").textContent=p(m);document.getElementById("mi-s").textContent=p(sec);}
+tick();setInterval(tick,1000);
+})();
+</script>
 </div>
 </section>
 
@@ -636,7 +692,7 @@ Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
 </table></div>
 <h3>Objectifs pédagogiques</h3><div class="tab"><table><tr><th>Objectif</th><th>Moment et preuve</th></tr>
 <tr><td>O1, construire une automatisation de bout en bout</td><td>Workflow déclencheur, traitement, réponse, exécuté en direct</td></tr>
-<tr><td>O2, identifier les processus automatisables</td><td>Idées sur post-it et vote de 15h00</td></tr>
+<tr><td>O2, identifier les processus automatisables</td><td>Tour de table des idées et vote à main levée de 15h00</td></tr>
 <tr><td>O3, choisir entre plateformes</td><td>n8n retenu pour sa nature auto-hébergée ; Make et Zapier cités ; choix de l'outil de base de connaissances par chacun</td></tr>
 <tr><td>O4, lire une donnée structurée</td><td>Le workflow collé est lu brique par brique</td></tr>
 <tr><td>O5, intégrer un LLM dans un workflow</td><td>Claude écrit, explique et corrige le workflow à partir d'une description en français</td></tr>
@@ -664,7 +720,7 @@ Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
 
 <script>
 (function(){
-  var PROG = [["09:00", "11:00", "Finir les présentations de Skills d'hier", "presentations"], ["11:00", "11:10", "Pause", "programme"], ["11:10", "12:30", "n8n : Claude le lance, vous jouez avec les briques", "nocode"], ["12:30", "13:30", "Déjeuner", "programme"], ["13:30", "15:00", "Base de connaissances : chacun choisit son outil", "rag"], ["15:00", "15:20", "Atelier libre : le sujet, le vote, les rôles", "atelier"], ["15:20", "16:30", "Atelier libre : on construit", "atelier"], ["16:30", "16:50", "Pitch et retour de chacun", "atelier"], ["16:50", "17:00", "Clôture : autopositionnement, évaluation à chaud", "programme"]];
+  var PROG = [["09:00", "11:00", "Finir les présentations de Skills d'hier", "presentations"], ["11:00", "11:10", "Pause", "programme"], ["11:10", "12:30", "n8n : Claude le lance, vous jouez avec les briques", "nocode"], ["12:30", "13:30", "Déjeuner", "programme"], ["13:30", "15:00", "Base de connaissances : chacun choisit son outil", "rag"], ["15:00", "15:20", "Atelier libre : le sujet, les rôles, la contrainte", "atelier"], ["15:20", "16:30", "Atelier libre : on construit", "atelier"], ["16:30", "16:50", "Pitch et retour de chacun", "atelier"], ["16:50", "17:00", "Clôture : autopositionnement, évaluation à chaud", "programme"]];
   function minutes(h){var p=h.split(":");return (+p[0])*60+(+p[1]);}
   function pad(n){return (n<10?"0":"")+n;}
   function maj(){
