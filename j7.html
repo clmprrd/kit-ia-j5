@@ -232,6 +232,39 @@ details.kb > .kb-corps{margin:0}
 .kb-jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
 .kb-jump a{font-size:13px;font-weight:700;padding:7px 13px;border-radius:999px;border:1px solid #E6E1E5;background:#fff;color:var(--encre);text-decoration:none;white-space:nowrap}
 .kb-jump a:hover{border-color:var(--marque-texte);color:var(--marque-texte)}
+
+.at-hero{position:relative;border-radius:22px;padding:34px 30px;margin:4px 0 26px;color:#fff;background:radial-gradient(120% 140% at 0% 0%,#E91FCB 0%,#A3128C 45%,#1A1A1A 100%);overflow:hidden}
+.at-hero:after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)}
+.at-hero .at-sur{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin:0 0 10px}
+.at-hero h3{font-family:Fraunces,Georgia,serif;font-weight:900;font-size:clamp(26px,4.4vw,38px);line-height:1.08;margin:0 0 12px;color:#fff}
+.at-hero p{margin:0;max-width:56ch;font-size:16px;line-height:1.55;opacity:.95}
+.at-regle{display:inline-flex;gap:8px;align-items:center;margin-top:18px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 16px;font-weight:700;font-size:14px}
+.at-temps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:8px 0 30px;counter-reset:t}
+.at-t{background:#fff;border:1px solid var(--gris-clair);border-radius:16px;padding:14px 14px 16px;position:relative}
+.at-t b{display:block;font-family:Fraunces,Georgia,serif;font-weight:900;font-size:22px;color:var(--marque-texte);line-height:1}
+.at-t span{display:block;font-size:13.5px;color:var(--gris);margin-top:6px;line-height:1.4}
+.at-t.fort{background:var(--encre);border-color:var(--encre)}.at-t.fort b{color:#FF7BE8}.at-t.fort span{color:#eee}
+.at-titre{font-family:Fraunces,Georgia,serif;font-weight:900;font-size:clamp(22px,3.4vw,28px);margin:34px 0 6px}
+.at-sous{color:var(--gris);margin:0 0 16px;max-width:62ch}
+.at-roles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.at-role{background:#fff;border:1px solid var(--gris-clair);border-radius:18px;padding:18px;box-shadow:var(--ombre)}
+.at-role .pastille-r{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;margin-bottom:12px}
+.at-role h4{margin:0 0 6px;font-size:17px;font-weight:800}
+.at-role p{margin:0;font-size:14px;color:var(--gris);line-height:1.5}
+.at-role .livre{margin-top:10px;font-size:12.5px;font-weight:700;color:var(--marque-texte)}
+.at-role.chef{grid-column:1/-1;background:linear-gradient(90deg,var(--rose) 0%,#fff 70%);border-color:#F4C6EC}
+.at-idees{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.at-idee{border-radius:18px;padding:18px;background:var(--fond);border:1px solid var(--gris-clair);transition:transform .15s,box-shadow .15s}
+.at-idee:hover{transform:translateY(-2px);box-shadow:var(--ombre);background:#fff}
+.at-idee .theme{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--marque-texte)}
+.at-idee h4{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:19px;line-height:1.2;margin:6px 0 8px}
+.at-idee p{margin:0;font-size:14px;color:var(--gris);line-height:1.5}
+.at-idee .livrable{margin-top:10px;font-size:13px;color:var(--encre)}
+.at-or{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+.at-or div{background:var(--encre);color:#fff;border-radius:16px;padding:16px;font-size:14.5px;line-height:1.45}
+.at-or b{display:block;color:#FF7BE8;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+@media (max-width:860px){.at-roles{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.at-temps,.at-roles,.at-idees,.at-or{grid-template-columns:1fr}.at-hero{padding:26px 20px}}
 </style></head>
 <body>
 <a class="saut" href="#contenu">Aller au contenu</a>
@@ -247,7 +280,7 @@ details.kb > .kb-corps{margin:0}
 </div>
 </div>
 </header>
-<nav class="nav" aria-label="Étapes de la journée"><ol><li><a href="#programme" data-cible="programme"><span class="n">0</span>Programme</a></li><li><a href="#presentations" data-cible="presentations"><span class="n">1</span>Finir hier</a></li><li><a href="#nocode" data-cible="nocode"><span class="n">2</span>n8n</a></li><li><a href="#rag" data-cible="rag"><span class="n">3</span>Base de connaissances</a></li><li><a href="#atelier" data-cible="atelier"><span class="n">4</span>Atelier libre</a></li><li><a href="#fiche" data-cible="fiche"><span class="n">5</span>Ma fiche</a></li></ol></nav>
+<nav class="nav" aria-label="Étapes de la journée"><ol><li><a href="#programme" data-cible="programme"><span class="n">0</span>Programme</a></li><li><a href="#presentations" data-cible="presentations"><span class="n">1</span>Finir hier</a></li><li><a href="#nocode" data-cible="nocode"><span class="n">2</span>n8n</a></li><li><a href="#rag" data-cible="rag"><span class="n">3</span>Base de connaissances</a></li><li><a href="#atelier" data-cible="atelier"><span class="n">4</span>Atelier libre</a></li></ol></nav>
 <main id="contenu" class="wrap">
 <section class="bloc" id="programme" aria-labelledby="t-programme">
 <header class="bloc-tete">
@@ -257,7 +290,7 @@ details.kb > .kb-corps{margin:0}
 </header>
 <div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Gardez cette page ouverte. La ligne en rose indique où on en est. Cliquez sur une ligne pour aller à la consigne.</p></div>
 <div class="bloc-corps">
-<ol class="frise"><li class="ligne t-vous" data-debut="09:00" data-fin="11:00"><span class="l-heure">09h00</span><span class="l-type">Vous</span><a class="l-texte" href="#presentations">Finir les présentations de Skills d'hier</a></li><li class="ligne t-pause" data-debut="11:00" data-fin="11:10"><span class="l-heure">11h00</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-mix" data-debut="11:10" data-fin="12:30"><span class="l-heure">11h10</span><span class="l-type">Démo puis vous</span><a class="l-texte" href="#nocode">n8n : Claude le lance, vous jouez avec les briques</a></li><li class="ligne t-pause" data-debut="12:30" data-fin="13:30"><span class="l-heure">12h30</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Déjeuner</a></li><li class="ligne t-vous" data-debut="13:30" data-fin="15:00"><span class="l-heure">13h30</span><span class="l-type">Vous</span><a class="l-texte" href="#rag">Base de connaissances : chacun choisit son outil</a></li><li class="ligne t-vous" data-debut="15:00" data-fin="15:20"><span class="l-heure">15h00</span><span class="l-type">Vous</span><a class="l-texte" href="#atelier">Atelier libre : le sujet, le vote, les rôles</a></li><li class="ligne t-vous" data-debut="15:20" data-fin="16:30"><span class="l-heure">15h20</span><span class="l-type">Vous</span><a class="l-texte" href="#atelier">Atelier libre : on construit</a></li><li class="ligne t-vous" data-debut="16:30" data-fin="16:50"><span class="l-heure">16h30</span><span class="l-type">Vous</span><a class="l-texte" href="#atelier">Pitch et retour de chacun</a></li><li class="ligne t-info" data-debut="16:50" data-fin="17:00"><span class="l-heure">16h50</span><span class="l-type">Info</span><a class="l-texte" href="#fiche">Clôture : autopositionnement, évaluation à chaud</a></li></ol>
+<ol class="frise"><li class="ligne t-vous" data-debut="09:00" data-fin="11:00"><span class="l-heure">09h00</span><span class="l-type">Vous</span><a class="l-texte" href="#presentations">Finir les présentations de Skills d'hier</a></li><li class="ligne t-pause" data-debut="11:00" data-fin="11:10"><span class="l-heure">11h00</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-mix" data-debut="11:10" data-fin="12:30"><span class="l-heure">11h10</span><span class="l-type">Démo puis vous</span><a class="l-texte" href="#nocode">n8n : Claude le lance, vous jouez avec les briques</a></li><li class="ligne t-pause" data-debut="12:30" data-fin="13:30"><span class="l-heure">12h30</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Déjeuner</a></li><li class="ligne t-vous" data-debut="13:30" data-fin="15:00"><span class="l-heure">13h30</span><span class="l-type">Vous</span><a class="l-texte" href="#rag">Base de connaissances : chacun choisit son outil</a></li><li class="ligne t-vous" data-debut="15:00" data-fin="15:20"><span class="l-heure">15h00</span><span class="l-type">Vous</span><a class="l-texte" href="#atelier">Atelier libre : le sujet, le vote, les rôles</a></li><li class="ligne t-vous" data-debut="15:20" data-fin="16:30"><span class="l-heure">15h20</span><span class="l-type">Vous</span><a class="l-texte" href="#atelier">Atelier libre : on construit</a></li><li class="ligne t-vous" data-debut="16:30" data-fin="16:50"><span class="l-heure">16h30</span><span class="l-type">Vous</span><a class="l-texte" href="#atelier">Pitch et retour de chacun</a></li><li class="ligne t-info" data-debut="16:50" data-fin="17:00"><span class="l-heure">16h50</span><span class="l-type">Info</span><a class="l-texte" href="#programme">Clôture : autopositionnement, évaluation à chaud</a></li></ol>
 <details><summary>Autopositionnement d'entrée (9h00) et de sortie (16h50) <span class="petit">· six questions, niveau de 1 à 4</span></summary>
 <p>Pour chaque phrase, notez-vous de 1 à 4 le matin, puis à nouveau en fin de journée. <b>1</b> : je ne sais pas faire. <b>2</b> : je sais faire avec de l'aide. <b>3</b> : je sais faire seul. <b>4</b> : je sais faire seul et l'expliquer à un collègue.</p>
 <ol>
@@ -546,64 +579,44 @@ Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
 <header class="bloc-tete">
 <span class="bloc-num" aria-hidden="true">4</span>
 <div class="bloc-titres"><p class="bloc-meta"><span class="heure">15h00 à 16h50</span><span class="type type-vous">Vous pratiquez</span></p>
-<h2 id="t-atelier">L'atelier libre : le sujet est à vous, chacun a un rôle</h2></div>
+<h2 id="t-atelier">L'atelier libre</h2></div>
 </header>
-<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Vous choisissez ensemble un sujet, vous vous répartissez les rôles, et toute la salle livre une solution à 16h30. Seule règle : tout le monde participe.</p></div>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Vous choisissez le sujet, vous vous répartissez les rôles, et vous livrez ensemble à 16h30.</p></div>
 <div class="bloc-corps">
-<p><b>Aucun outil imposé, aucun thème imposé.</b> Vous travaillez sur ce qui vous intéresse. La seule condition, c'est que ce soit un vrai travail collectif : chacun tient un rôle, et personne ne regarde les autres faire.</p>
+<div class="at-hero">
+<p class="at-sur">15h00 à 16h50 · toute la salle</p>
+<h3>Le sujet est à vous.<br>L'équipe aussi.</h3>
+<p>Pas d'outil imposé, pas de thème imposé. Vous choisissez ce qui vous donne envie, vous vous organisez seuls, et vous montrez le résultat à 16h30. Clément observe, vous pilotez.</p>
+<span class="at-regle">Une seule règle : tout le monde a un rôle</span>
+</div>
 
-<h3>15h00, choisir le sujet (10 min)</h3>
-<div class="etape"><span class="num">1</span><div><b>Chacun écrit une idée sur un post-it</b> : un problème à résoudre, un outil à créer, une question à trancher, ce que vous voulez.</div></div>
-<div class="etape"><span class="num">2</span><div><b>Les post-it vont au mur</b>, chacun vote pour deux idées. La plus votée devient le sujet de toute la salle.</div></div>
+<div class="at-temps">
+<div class="at-t"><b>15h00</b><span>Une idée par post-it, vote : deux voix chacun</span></div>
+<div class="at-t"><b>15h10</b><span>On nomme le décideur, il répartit les rôles</span></div>
+<div class="at-t fort"><b>15h20</b><span>On construit. Point d'étape à 15h50</span></div>
+<div class="at-t"><b>16h15</b><span>Stop aux ajouts, les testeurs passent</span></div>
+<div class="at-t"><b>16h30</b><span>Le pitch, puis chacun dit ce qu'il a apporté</span></div>
+</div>
 
-<h3>15h10, les rôles (10 min)</h3>
-<p>Chaque rôle est tenu par une ou plusieurs personnes. <b>Le décideur</b> est choisi en premier, puis c'est lui qui répartit les autres rôles, en fonction des forces de chacun.</p>
-<div class="tab"><table>
-<tr><th>Rôle</th><th>Ce qu'il fait</th></tr>
-<tr><td><b>Le décideur</b></td><td>Décide qui fait quoi selon les forces de chacun, tranche quand l'équipe hésite, tient le cap jusqu'à 16h30.</td></tr>
-<tr><td><b>Les créateurs</b></td><td>Construisent la solution, avec les outils de leur choix.</td></tr>
-<tr><td><b>Les testeurs</b></td><td>Essaient la solution comme un vrai utilisateur, cherchent ce qui ne marche pas et le remontent aux créateurs.</td></tr>
-<tr><td><b>Les pitcheurs</b></td><td>Préparent et présentent la solution en 5 minutes : le problème, la solution, la démonstration.</td></tr>
-<tr><td><b>Le gardien du temps</b></td><td>Annonce les étapes et fait respecter l'heure du point d'étape et de la fin.</td></tr>
-</table></div>
+<h3 class="at-titre">Les rôles</h3>
+<p class="at-sous">Chaque rôle peut être tenu par une ou plusieurs personnes. Le décideur les attribue en regardant qui est fort en quoi : l'organisation, la rédaction, la technique, l'oral, l'œil critique.</p>
+<div class="at-roles"><div class="at-role chef"><div class="pastille-r" style="background:#1A1A1A">D</div><h4>Le décideur</h4><p>Choisi en premier. Il répartit tous les autres rôles selon les forces de chacun, tranche quand l'équipe hésite, et tient le cap jusqu'à 16h30.</p><p class="livre">Ce qu'il porte : la répartition et les arbitrages</p></div><div class="at-role"><div class="pastille-r" style="background:#A3128C">C</div><h4>Les créateurs</h4><p>Construisent la solution, avec les outils de leur choix : Claude, un document, un tableau, n8n, un visuel, une page.</p><p class="livre">Ce qu'ils livrent : la solution qui marche</p></div><div class="at-role"><div class="pastille-r" style="background:#3D4A5C">T</div><h4>Les testeurs</h4><p>Essaient la solution comme un vrai utilisateur, cherchent ce qui coince, et le remontent aux créateurs avant 16h15.</p><p class="livre">Ce qu'ils livrent : les défauts trouvés, et corrigés</p></div><div class="at-role"><div class="pastille-r" style="background:#E91FCB">P</div><h4>Les pitcheurs</h4><p>Suivent le travail depuis le début et préparent le pitch : le problème, la solution, la démonstration, en 5 minutes.</p><p class="livre">Ce qu'ils livrent : un pitch qui donne envie</p></div><div class="at-role"><div class="pastille-r" style="background:#1F6E45">G</div><h4>Le gardien du temps</h4><p>Annonce chaque étape, lance le point d'étape de 15h50 et le stop de 16h15. Personne ne déborde.</p><p class="livre">Ce qu'il livre : une équipe à l'heure</p></div></div>
 
-<h3>15h20 à 16h30, on construit (70 min)</h3>
-<div class="etape"><span class="num">1</span><div><b>15h50, point d'étape de 5 minutes</b> : chaque rôle dit où il en est et ce qui bloque. Le décideur réajuste.</div></div>
-<div class="etape"><span class="num">2</span><div><b>16h15</b> : on arrête d'ajouter, les testeurs passent, les pitcheurs finalisent.</div></div>
+<h3 class="at-titre">Besoin d'une étincelle ?</h3>
+<p class="at-sous">Huit idées pour vous lancer. Prenez-en une telle quelle, mélangez-en deux, ou faites complètement autre chose : c'est votre atelier.</p>
+<div class="at-idees"><div class="at-idee"><span class="theme">Pour la promo</span><h4>La FAQ du futur référent</h4><p>Les 15 questions que vos collègues vous poseront le premier mois, avec la réponse courte et le piège à éviter.</p><p class="livrable"><b>À 16h30 : la FAQ, prête à imprimer</b></p></div><div class="at-idee"><span class="theme">Pour animer</span><h4>Un atelier de 45 minutes clé en main</h4><p>Un atelier IA pour une équipe commerciale, avec son déroulé, sa consigne et son exercice. Vous le testez sur l'autre moitié de la salle.</p><p class="livrable"><b>À 16h30 : le déroulé, et 5 minutes jouées en vrai</b></p></div><div class="at-idee"><span class="theme">Pour convaincre</span><h4>Le client sceptique</h4><p>Un jeu de rôle : un dirigeant qui ne croit pas à l'IA. L'équipe construit l'argumentaire, les testeurs jouent le client.</p><p class="livrable"><b>À 16h30 : la scène jouée devant la salle</b></p></div><div class="at-idee"><span class="theme">Pour une entreprise</span><h4>La charte IA d'une PME en une page</h4><p>Ce qu'on a le droit de faire, ce qui est interdit, qui valide. Lisible par un salarié en deux minutes.</p><p class="livrable"><b>À 16h30 : la charte, et 3 cas concrets tranchés</b></p></div><div class="at-idee"><span class="theme">Pour le quotidien</span><h4>Le guide anti-hallucination</h4><p>Comment reconnaître une réponse inventée et la vérifier, en affiche à coller à côté de l'écran.</p><p class="livrable"><b>À 16h30 : l'affiche, et la démonstration d'un piège</b></p></div><div class="at-idee"><span class="theme">Pour un vrai client</span><h4>Le diagnostic IA d'un métier</h4><p>Choisissez un métier réel de la salle : ses 5 tâches les plus chronophages, et ce que l'IA peut y changer, outil par outil.</p><p class="livrable"><b>À 16h30 : le diagnostic, présenté comme à un client</b></p></div><div class="at-idee"><span class="theme">Pour aller vite</span><h4>Le kit de démarrage d'un nouveau salarié</h4><p>Tout ce qu'un nouvel arrivant doit savoir pour utiliser l'IA dès son premier jour : outils, règles, trois prompts.</p><p class="livrable"><b>À 16h30 : le kit, testé par quelqu'un qui ne l'a pas écrit</b></p></div><div class="at-idee"><span class="theme">Pour se lancer</span><h4>Votre offre de référent IA</h4><p>Comment vous vendriez votre accompagnement à une entreprise : pour qui, quoi, en combien d'étapes.</p><p class="livrable"><b>À 16h30 : le pitch de l'offre, face à un « client »</b></p></div></div>
 
-<h3>16h30, le pitch et le retour (20 min)</h3>
-<p>Les pitcheurs présentent en 5 minutes. Puis chacun dit en une phrase ce qu'il a apporté dans son rôle, et ce qu'il ferait autrement.</p>
-<div class="conseil"><b>Pourquoi cet atelier.</b> Dans trois semaines, vous animerez vous-mêmes. Laisser le groupe choisir son sujet et répartir des rôles pour que chacun participe, c'est une technique d'animation que vous pourrez reprendre telle quelle.</div>
+<h3 class="at-titre">Les règles d'or</h3>
+<div class="at-or">
+<div><b>Tout le monde joue</b>Personne ne regarde les autres faire. Si vous n'avez rien à faire, dites-le au décideur.</div>
+<div><b>Petit mais fini</b>Mieux vaut une solution modeste qui marche à 16h30 qu'un grand projet à moitié fait.</div>
+<div><b>Le décideur tranche</b>On débat deux minutes, puis il décide. On avance.</div>
+<div><b>Rien de confidentiel</b>Pas de vraie donnée client ni personnelle dans ce que vous construisez.</div>
+</div>
+<div class="conseil" style="margin-top:22px"><b>Pourquoi cet atelier.</b> Dans trois semaines, vous animerez vous-mêmes. Laisser un groupe choisir son sujet et se répartir des rôles pour que chacun participe, c'est une technique d'animation que vous pourrez reprendre telle quelle.</div>
 </div>
 </section>
-<section class="bloc" id="fiche" aria-labelledby="t-fiche">
-<header class="bloc-tete">
-<span class="bloc-num" aria-hidden="true">5</span>
-<div class="bloc-titres"><p class="bloc-meta"><span class="heure">16h50</span><span class="type type-vous">Vous pratiquez</span></p>
-<h2 id="t-fiche">Ma fiche et mon plan d'action</h2></div>
-</header>
-<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Remplissez votre fiche et envoyez-la par mail.</p></div>
-<div class="bloc-corps">
-<p>Une seule fiche à remplir et à envoyer par mail, en fin de journée.</p>
-<label for="f-nom">Mon nom</label><input id="f-nom">
-<label for="f-tache">Les briques n8n que j'ai assemblées ce matin, en une phrase</label><textarea id="f-tache"></textarea>
-<label for="f-outil">Ma base de connaissances, et dans quel outil</label><textarea id="f-outil"></textarea>
-<label for="f-role">Mon rôle dans l'atelier libre, et ce que j'y ai apporté</label><textarea id="f-role"></textarea>
-<label for="f-integration">En quoi ils s'intègrent à mon travail</label><textarea id="f-integration"></textarea>
-<label for="f-pourquoi">Pourquoi ces choix plutôt que d'autres, en une phrase</label><textarea id="f-pourquoi"></textarea>
-<label for="f-risque">Le risque principal</label><textarea id="f-risque"></textarea>
-<label for="f-controle">Le contrôle humain prévu</label><textarea id="f-controle"></textarea>
-<label for="f-temps">Temps gagné estimé, vérification comprise</label><input id="f-temps">
-<h3>Mon plan d'action à 30 jours</h3>
-<label for="f-plan-t1">Première chose que je mets en œuvre pour de vrai</label><input id="f-plan-t1">
-<label for="f-plan-t2">Deuxième tâche à automatiser ou documenter</label><input id="f-plan-t2">
-<label for="f-plan-personne">Une personne que j'embarque</label><input id="f-plan-personne">
-<label for="f-plan-date">Ma date de contrôle</label><input id="f-plan-date" type="date">
-<label for="f-plan-indic">Mon indicateur simple</label><input id="f-plan-indic" placeholder="par exemple : 3 heures gagnées par semaine">
-<p style="margin-top:16px"><button class="bouton" onclick="envoyerFiche()">Envoyer ma fiche par mail</button> <button class="bouton sec" onclick="copierFiche()">Copier ma fiche</button></p>
-<p class="petit" id="f-msg">Une fiche sans risque identifié ni contrôle humain n'est pas terminée.</p>
-</div>
-</section>
+
 
 <details class="formateur"><summary>Pour le formateur et l'Agence Nikita : conformité au programme J7</summary>
 <p><b>Les contenus et objectifs du programme J7 sont traités</b>, avec des ajustements assumés : le matin s'ouvre par les présentations de Skills reportées de J6 (2 heures) ; la pratique du no-code se concentre sur <b>n8n auto-hébergé</b>, seule plateforme qui tourne réellement sur le poste du participant sans compte ni carte bancaire ; l'après-midi réunit un atelier base de connaissances, non traité la veille faute de temps, et un atelier libre dont le sujet est choisi par le groupe, avec des rôles pour que chacun participe.</p>
@@ -629,14 +642,14 @@ Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
 <tr><td>O5, intégrer un LLM dans un workflow</td><td>Claude écrit, explique et corrige le workflow à partir d'une description en français</td></tr>
 <tr><td>O6, sécuriser les secrets et les données</td><td>Consignes du prompt de lancement (confirmation avant chaque commande), règle « rien de confidentiel » des bases de connaissances</td></tr>
 <tr><td>O7, documenter pour un tiers</td><td>Pitch de l'atelier libre : présenter la solution à des personnes qui ne l'ont pas construite</td></tr>
-<tr><td>O8, estimer le coût de fonctionnement</td><td>Temps gagné estimé dans la fiche ; aucun montant cité dans le kit</td></tr>
+<tr><td>O8, estimer le coût de fonctionnement</td><td>Pitch de l'atelier libre : le bénéfice attendu de la solution ; aucun montant cité dans le kit</td></tr>
 </table></div>
 <h3>Évaluation et traçabilité</h3><div class="tab"><table><tr><th>Exigence</th><th>Comment</th></tr>
 <tr><td>Évaluation diagnostique</td><td>Autopositionnement d'entrée, 9h00</td></tr>
 <tr><td>Évaluations formatives</td><td>Coaching après chaque présentation, tests du piège et de la contradiction, point d'étape de 15h50, restitution de 16h30</td></tr>
-<tr><td>Évaluation sommative</td><td>Fiche de fin de journée : briques, base de connaissances, rôle tenu dans l'atelier libre, plan d'action</td></tr>
+<tr><td>Évaluation sommative</td><td>Pitch de l'atelier libre devant le groupe, et retour de chacun sur le rôle tenu ; autopositionnement de sortie</td></tr>
 <tr><td>Évaluation à chaud</td><td>Formulaire de l'Agence Nikita, 16h50</td></tr>
-<tr><td>Preuves conservées</td><td>Émargement, fiches reçues par mail, kit déposé dans le Drive</td></tr>
+<tr><td>Preuves conservées</td><td>Émargement, autopositionnements, kit déposé dans le Drive</td></tr>
 </table></div>
 <h3>Écarts assumés</h3>
 <ul>
@@ -648,57 +661,10 @@ Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
 </ul>
 </details>
 </main>
-<script>
-function champ(id){ var e=document.getElementById(id); return e ? e.value.trim() : ""; }
-function texteFiche(){
-  return "FICHE J7 Lyon\n\n"
-   + "Nom : " + champ("f-nom") + "\n"
-   + "Briques n8n assemblées : " + champ("f-tache") + "\n"
-   + "Base de connaissances et outil : " + champ("f-outil") + "\n"
-   + "Rôle dans l'atelier libre : " + champ("f-role") + "\n"
-   + "Intégration à mon travail : " + champ("f-integration") + "\n"
-   + "Pourquoi ces choix : " + champ("f-pourquoi") + "\n"
-   + "Risque principal : " + champ("f-risque") + "\n"
-   + "Contrôle humain : " + champ("f-controle") + "\n"
-   + "Temps gagné estimé : " + champ("f-temps") + "\n\n"
-   + "PLAN D'ACTION A 30 JOURS\n"
-   + "Première mise en œuvre : " + champ("f-plan-t1") + "\n"
-   + "Tâche 2 : " + champ("f-plan-t2") + "\n"
-   + "Personne embarquée : " + champ("f-plan-personne") + "\n"
-   + "Date de contrôle : " + champ("f-plan-date") + "\n"
-   + "Indicateur : " + champ("f-plan-indic") + "\n";
-}
-function ficheComplete(){
-  var m=document.getElementById("f-msg");
-  if(!champ("f-risque") || !champ("f-controle")){
-    m.textContent="Il manque le risque ou le contrôle humain : la fiche n'est pas terminée.";
-    m.style.color="#B3261E"; return false;
-  }
-  m.style.color=""; return true;
-}
-function copierFiche(){
-  if(!ficheComplete()) return;
-  var t=texteFiche(), m=document.getElementById("f-msg");
-  try{ navigator.clipboard.writeText(t); m.textContent="Fiche copiée."; m.style.color="#1F7A4D"; }
-  catch(e){ window.prompt("Copiez votre fiche :", t); }
-}
-function envoyerFiche(){
-  if(!ficheComplete()) return;
-  var u="https://mail.google.com/mail/?view=cm&fs=1&to=clem.pred%40gmail.com&su="
-    + encodeURIComponent("Fiche de cas d'usage J7, " + (champ("f-nom")||"participant"))
-    + "&body=" + encodeURIComponent(texteFiche());
-  var w=null; try{ w=window.open(u,"_blank"); }catch(e){}
-  if(!w){ window.location.href=u; }
-}
-["f-nom","f-tache","f-outil","f-role","f-integration","f-pourquoi","f-risque","f-controle","f-temps","f-plan-t1","f-plan-t2","f-plan-personne","f-plan-date","f-plan-indic"].forEach(function(id){
-  var e=document.getElementById(id);
-  try{ var v=localStorage.getItem("j7v2-"+id); if(v) e.value=v; }catch(x){}
-  e.addEventListener("input",function(){ try{ localStorage.setItem("j7v2-"+id,e.value); }catch(x){} });
-});
-</script>
+
 <script>
 (function(){
-  var PROG = [["09:00", "11:00", "Finir les présentations de Skills d'hier", "presentations"], ["11:00", "11:10", "Pause", "programme"], ["11:10", "12:30", "n8n : Claude le lance, vous jouez avec les briques", "nocode"], ["12:30", "13:30", "Déjeuner", "programme"], ["13:30", "15:00", "Base de connaissances : chacun choisit son outil", "rag"], ["15:00", "15:20", "Atelier libre : le sujet, le vote, les rôles", "atelier"], ["15:20", "16:30", "Atelier libre : on construit", "atelier"], ["16:30", "16:50", "Pitch et retour de chacun", "atelier"], ["16:50", "17:00", "Clôture : autopositionnement, évaluation à chaud", "fiche"]];
+  var PROG = [["09:00", "11:00", "Finir les présentations de Skills d'hier", "presentations"], ["11:00", "11:10", "Pause", "programme"], ["11:10", "12:30", "n8n : Claude le lance, vous jouez avec les briques", "nocode"], ["12:30", "13:30", "Déjeuner", "programme"], ["13:30", "15:00", "Base de connaissances : chacun choisit son outil", "rag"], ["15:00", "15:20", "Atelier libre : le sujet, le vote, les rôles", "atelier"], ["15:20", "16:30", "Atelier libre : on construit", "atelier"], ["16:30", "16:50", "Pitch et retour de chacun", "atelier"], ["16:50", "17:00", "Clôture : autopositionnement, évaluation à chaud", "programme"]];
   function minutes(h){var p=h.split(":");return (+p[0])*60+(+p[1]);}
   function pad(n){return (n<10?"0":"")+n;}
   function maj(){
@@ -713,7 +679,7 @@ function envoyerFiche(){
     }
     var m=d.getHours()*60+d.getMinutes();
     if(m<minutes("09:00")){lab.textContent="Bientôt";txt.textContent="On commence à 9h00, par les présentations.";btn.href="#presentations";return;}
-    if(m>=minutes("17:00")){lab.textContent="La journée est terminée";txt.textContent="Merci à tous. Pensez à envoyer votre fiche.";btn.href="#fiche";btn.textContent="Ma fiche";return;}
+    if(m>=minutes("17:00")){lab.textContent="La journée est terminée";txt.textContent="Merci à tous, et bravo pour l'atelier.";btn.href="#atelier";btn.textContent="Revoir l'atelier";return;}
     for(var i=0;i<PROG.length;i++){
       if(m>=minutes(PROG[i][0]) && m<minutes(PROG[i][1])){
         lab.textContent="En ce moment, jusqu'à "+PROG[i][1].replace(":","h");
