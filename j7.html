@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le kit de la journée J7, Lyon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marque:#E91FCB; --marque-fonce:#A3128C; --marque-texte:#9C0F86; --rose:#FCE4F7; --rose-clair:#FEF3FB;
+  --encre:#1A1A1A; --gris:#4A4A4A; --gris-clair:#E7E3E6; --fond:#FAF8F9; --blanc:#FFFFFF;
+  --vert:#1F6E45; --vert-fond:#E6F2EB; --bleu-gris:#3D4A5C; --bleu-gris-fond:#EEF1F5;
+  --rayon:14px; --ombre:0 1px 2px rgba(26,26,26,.06),0 6px 20px rgba(26,26,26,.06);
+  --nav-h:60px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--fond);color:var(--encre);font-family:Inter,system-ui,Arial,Helvetica,sans-serif;font-size:17px;line-height:1.6}
+a{color:var(--marque-texte);text-underline-offset:3px}
+a:hover{color:var(--marque-fonce)}
+:focus-visible{outline:3px solid var(--marque-fonce);outline-offset:3px;border-radius:6px}
+.saut{position:absolute;left:-999px;top:8px;background:var(--encre);color:#fff;padding:10px 14px;border-radius:8px;z-index:100}
+.saut:focus{left:8px}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px}
+b,strong{font-weight:700}
+.petit,.sources{font-size:14.5px;color:var(--gris)}
+
+/* en-tete */
+.hero{background:var(--blanc);border-bottom:1px solid var(--gris-clair)}
+.hero .wrap{padding-top:34px;padding-bottom:26px}
+.surtitre{margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--marque-texte)}
+h1{margin:0 0 8px;font-size:clamp(28px,5vw,40px);line-height:1.15;letter-spacing:-.01em}
+.hero-sous{margin:0 0 20px;color:var(--gris);font-size:18px;max-width:62ch}
+.maintenant{display:flex;gap:16px;align-items:center;background:var(--encre);color:#fff;border-radius:var(--rayon);padding:16px 18px;box-shadow:var(--ombre)}
+.maintenant .pastille{flex:0 0 auto;width:12px;height:12px;border-radius:50%;background:var(--marque);box-shadow:0 0 0 5px rgba(233,31,203,.25)}
+.maintenant p{margin:0}
+.maintenant .m-lab{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#E9CFE4;font-weight:700}
+.maintenant .m-txt{font-size:18px;font-weight:700}
+.maintenant a{color:#fff}
+.maintenant .m-btn{margin-left:auto;flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:10px;background:var(--marque-fonce);color:#fff;text-decoration:none;font-weight:700}
+.maintenant .m-btn:hover{background:var(--marque-texte)}
+
+/* navigation collante */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--gris-clair)}
+.nav ol{list-style:none;margin:0 auto;padding:8px 18px;max-width:880px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.nav ol::-webkit-scrollbar{display:none}
+.nav a{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 10px;border-radius:999px;text-decoration:none;color:var(--encre);white-space:nowrap;font-size:15.5px;border:1px solid transparent}
+.nav a .n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--gris-clair);font-size:13px;font-weight:700}
+.nav a:hover{background:var(--rose-clair)}
+.nav a.actif{background:var(--rose);border-color:#F3B9E8;font-weight:700}
+.nav a.actif .n{background:var(--marque-fonce);color:#fff}
+
+/* sections */
+main{padding:22px 0 90px}
+.bloc{background:var(--blanc);border:1px solid var(--gris-clair);border-radius:var(--rayon);box-shadow:var(--ombre);margin:0 0 22px;scroll-margin-top:calc(var(--nav-h) + 12px);overflow:hidden}
+.bloc-tete{display:flex;gap:14px;align-items:flex-start;padding:22px 22px 0}
+.bloc-num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;background:var(--marque-fonce);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px}
+.bloc-titres{min-width:0}
+.bloc-meta{margin:0 0 4px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.heure{font-weight:700;font-size:14px;color:var(--gris)}
+.type{font-size:12.5px;font-weight:700;padding:3px 9px;border-radius:999px}
+.type-vous{background:var(--vert-fond);color:var(--vert)}
+.type-info{background:#F1EEF0;color:var(--gris)}
+.type-demo,.type-mix{background:var(--bleu-gris-fond);color:var(--bleu-gris)}
+.bloc h2{margin:0;font-size:clamp(22px,3.4vw,27px);line-height:1.25}
+.afaire{margin:16px 22px 0;background:var(--rose);border-radius:12px;padding:12px 16px}
+.afaire-lab{display:block;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--marque-texte)}
+.afaire p{margin:2px 0 0;font-weight:700}
+.bloc-corps{padding:6px 22px 24px}
+.bloc-corps h3{font-size:19px;margin:28px 0 8px;line-height:1.3}
+.bloc-corps h3#idees{scroll-margin-top:calc(var(--nav-h) + 12px)}
+p{margin:10px 0}
+ol,ul{padding-left:24px}
+li{margin:5px 0}
+
+/* etapes */
+.etape{display:flex;gap:14px;margin:14px 0;align-items:flex-start}
+.etape .num{flex:0 0 32px;height:32px;border-radius:50%;background:var(--encre);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.etape > div{min-width:0}
+
+/* encarts */
+.encart{background:var(--rose-clair);border-left:4px solid var(--marque);border-radius:0 12px 12px 0;padding:12px 16px;margin:16px 0}
+.carte{border:1px solid var(--gris-clair);border-radius:12px;padding:14px 16px;background:var(--blanc)}
+.carte b:first-child{color:var(--marque-texte)}
+.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:12px 0}
+
+/* tableaux */
+.tab{overflow-x:auto;margin:12px 0;border:1px solid var(--gris-clair);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
+th{background:var(--encre);color:#fff;text-align:left;padding:10px;font-size:14px}
+td{border-top:1px solid var(--gris-clair);padding:10px;vertical-align:top}
+tr:nth-child(even) td{background:#FCFAFB}
+.h{white-space:nowrap;font-weight:700}
+
+/* depliants */
+details{border:1px solid var(--gris-clair);border-radius:12px;margin:10px 0;background:var(--blanc)}
+details[open]{box-shadow:var(--ombre)}
+summary{list-style:none;cursor:pointer;min-height:52px;padding:12px 44px 12px 16px;font-weight:700;position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:18px;top:50%;width:9px;height:9px;border-right:2.5px solid var(--encre);border-bottom:2.5px solid var(--encre);transform:translateY(-70%) rotate(45deg);transition:transform .2s ease-out}
+details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+summary:hover{background:var(--rose-clair);border-radius:12px}
+summary .petit{font-weight:400}
+details > *:not(summary){margin-left:16px;margin-right:16px}
+details > ol{padding-left:22px}
+details > p.petit{margin-bottom:14px}
+
+/* boutons et formulaire */
+.bouton{display:inline-flex;align-items:center;justify-content:center;min-height:48px;background:var(--marque-fonce);color:#fff;text-decoration:none;font-weight:700;padding:0 20px;border-radius:10px;border:2px solid var(--marque-fonce);font-size:16px;cursor:pointer;font-family:inherit;touch-action:manipulation;transition:background .15s ease-out}
+.bouton:hover{background:var(--marque-texte);color:#fff}
+.bouton.sec{background:#fff;color:var(--marque-texte)}
+.bouton.sec:hover{background:var(--rose-clair)}
+label{display:block;font-weight:700;margin:16px 0 6px}
+input,textarea{width:100%;border:1.5px solid #CFC7CD;border-radius:10px;padding:11px 12px;font-family:inherit;font-size:16px;background:#fff;color:var(--encre)}
+input:focus,textarea:focus{border-color:var(--marque-fonce);outline:none;box-shadow:0 0 0 3px rgba(163,18,140,.18)}
+textarea{min-height:72px;resize:vertical}
+#f-msg{font-weight:700}
+
+/* reassurance connecteurs */
+.lien-peur{background:var(--bleu-gris-fond);border-radius:10px;padding:10px 14px;font-weight:700}
+.rassure{margin:26px 0;border:2px solid var(--encre);border-radius:var(--rayon);padding:20px;scroll-margin-top:calc(var(--nav-h) + 12px)}
+.rassure-titre{margin:0 0 4px!important;font-size:22px!important}
+.qr-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:14px 0}
+.qr{background:var(--fond);border-radius:12px;padding:12px 14px}
+.qr .q{margin:0 0 4px;font-weight:700;color:var(--marque-texte)}
+.qr p{margin:0}
+.conseil{background:var(--vert-fond);color:#133F29;border-radius:12px;padding:12px 16px;margin:14px 0}
+
+/* frise du programme */
+.frise{list-style:none;padding:0;margin:14px 0 0;position:relative}
+.frise::before{content:"";position:absolute;left:60px;top:8px;bottom:8px;width:2px;background:var(--gris-clair)}
+.ligne{display:grid;grid-template-columns:52px 64px 1fr;gap:10px;align-items:center;margin:0;padding:6px 0;position:relative}
+.l-heure{font-weight:700;font-size:15px;color:var(--gris)}
+.l-type{justify-self:start;font-size:12px;font-weight:700;padding:3px 8px;border-radius:999px;position:relative;z-index:1}
+.t-vous .l-type{background:var(--vert-fond);color:var(--vert)}
+.t-demo .l-type{background:var(--bleu-gris-fond);color:var(--bleu-gris)}
+.t-info .l-type{background:#F1EEF0;color:var(--gris)}
+.t-pause .l-type{background:#F1EEF0;color:var(--gris)}
+.l-texte{color:var(--encre);text-decoration:none;min-height:44px;display:flex;align-items:center;border-radius:8px;padding:0 8px}
+.l-texte:hover{background:var(--rose-clair)}
+.t-pause .l-texte{color:var(--gris)}
+.ligne.encours .l-texte{background:var(--rose);font-weight:700}
+.ligne.encours .l-heure{color:var(--marque-texte)}
+.formateur{margin-top:10px}
+
+@media (max-width:600px){
+  body{font-size:16.5px}
+  .hero .wrap{padding-top:24px}
+  .maintenant{flex-wrap:wrap}
+  .maintenant .m-btn{margin-left:0;width:100%;justify-content:center}
+  .bloc-tete{padding:18px 16px 0}
+  .afaire{margin:14px 16px 0}
+  .bloc-corps{padding:4px 16px 20px}
+  .frise::before{left:50px}
+  .ligne{grid-template-columns:44px 58px 1fr;gap:8px}
+  .rassure{padding:16px}
+}
+
+/* ===== style bibliotheque ===== */
+body{background-color:var(--fond);background-image:linear-gradient(to right,rgba(26,26,26,.035) 1px,transparent 1px),linear-gradient(rgba(26,26,26,.035) 1px,transparent 1px);background-size:56px 56px}
+h1,.bloc h2,.rassure-titre,.cat-titre,.kb-nom{font-family:Fraunces,Georgia,"Times New Roman",serif;font-weight:900;letter-spacing:-.01em}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.05}
+.bloc h2{font-weight:800}
+.hero{background:transparent;border-bottom:0}
+.hero .wrap{text-align:left}
+.bloc{border-color:#ECE8EB;border-radius:18px;box-shadow:0 1px 2px rgba(26,26,26,.04)}
+.etape{border:1px solid #ECE8EB;border-radius:14px;padding:14px 16px;background:#fff}
+.etape .num{background:var(--marque-fonce)}
+.encart{border-left:0;border:1px solid #F3C6EA;border-radius:14px;background:var(--rose-clair)}
+.carte{border-radius:14px;border-color:#ECE8EB}
+
+/* categories */
+.cat{margin:34px 0 12px}
+.cat-lab{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--marque-texte);margin:0 0 4px}
+.cat-titre{font-size:clamp(22px,3.6vw,28px);margin:0 0 6px;line-height:1.15}
+.cat-expl{margin:0;color:var(--gris);max-width:62ch}
+
+/* cartes outils */
+.kb-grille{display:grid;grid-template-columns:1fr;gap:14px;margin:14px 0 6px}
+details.kb{border:1px solid #ECE8EB;border-radius:18px;background:#fff;margin:0;overflow:hidden}
+details.kb[open]{box-shadow:0 10px 30px rgba(26,26,26,.08);border-color:#E3D5E0}
+details.kb > summary{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start;padding:18px 20px;min-height:0}
+details.kb > summary::after{top:30px}
+details.kb > summary:hover{background:#FCFAFB;border-radius:0}
+.kb-tuile{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;color:#fff;font-family:Inter,sans-serif}
+.kb-tete{min-width:0;padding-right:18px}
+.kb-cat{display:block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gris);margin-bottom:2px}
+.kb-nom{display:block;font-size:22px;line-height:1.15;margin:0 0 4px;color:var(--encre)}
+.kb-accroche{display:block;font-weight:400;color:var(--gris);font-size:15.5px;line-height:1.5}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.badge{font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:999px;border:1px solid #E6E1E5;background:#fff;color:var(--encre)}
+.badge.prix-gratuit{background:var(--vert-fond);border-color:#CBE5D5;color:var(--vert)}
+.badge.prix-limite{background:#FFF6E0;border-color:#F0DFAE;color:#6B4E00}
+.badge.prix-payant{background:#F1EEF0;border-color:#E3DDE1;color:var(--gris)}
+.badge.prix-verifier{background:#FCE8E6;border-color:#F2C9C4;color:#8A2A1E}
+.kb-voir{display:inline-block;margin-top:10px;font-size:14.5px;font-weight:700;color:var(--marque-texte)}
+details.kb[open] .kb-voir{display:none}
+.kb-corps{padding:0 20px 20px;border-top:1px solid #F1EDF0}
+details.kb > .kb-corps{margin:0}
+.kb-corps h4{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:19px;margin:20px 0 10px}
+.pas{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;border:1px solid #ECE8EB;border-radius:14px;padding:12px 14px;margin:8px 0;background:#fff}
+.pas .n{width:28px;height:28px;border-radius:50%;background:var(--marque-fonce);color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.pas p{margin:0}
+.prompt{background:#16131A;color:#F4EEF3;border-radius:14px;margin:10px 0;overflow:hidden}
+.prompt-tete{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px 0 16px;flex-wrap:wrap}
+.prompt-lab{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#D9B8D2}
+.prompt pre{margin:0;padding:12px 16px 16px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;line-height:1.65}
+.prompt-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn-copier{min-height:44px;padding:0 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font-family:inherit;font-size:14.5px;font-weight:600;cursor:pointer}
+.btn-copier:hover{background:rgba(255,255,255,.16)}
+.btn-copier.ouvrir{background:var(--marque-fonce);border-color:var(--marque-fonce)}
+.btn-copier.ouvrir:hover{background:var(--marque-texte)}
+.btn-copier.ok{background:#1F6E45;border-color:#1F6E45}
+.ideal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:10px 0}
+.ideal div{border:1px solid #ECE8EB;border-radius:14px;padding:12px 14px;background:#FCFAFB}
+.ideal b{display:block;margin-bottom:2px}
+@media (min-width:760px){ .kb-grille{grid-template-columns:1fr} }
+@media (max-width:600px){ details.kb > summary{grid-template-columns:44px 1fr;padding:16px}.kb-tuile{width:44px;height:44px;font-size:15px}.kb-corps{padding:0 14px 16px}.kb-nom{font-size:20px} }
+
+.grille-choix td input{width:84px;text-align:center}
+.grille-choix th:nth-child(2),.grille-choix th:nth-child(3){width:110px}
+.bloc-corps h3{scroll-margin-top:calc(var(--nav-h) + 12px)}
+
+.connecteur{border:1px solid #ECE8EB;border-radius:16px;padding:16px 18px;background:#fff;margin:12px 0}
+.connecteur h4{margin:0 0 6px;font-family:Fraunces,Georgia,serif;font-weight:800;font-size:19px}
+.connecteur .role{color:var(--gris);margin:0 0 10px}
+.comparatif td.avantage{color:var(--vert)}
+.comparatif td.limite{color:#8A2A1E}
+</style></head>
+<body>
+<a class="saut" href="#contenu">Aller au contenu</a>
+<header class="hero">
+<div class="wrap">
+<p class="surtitre">Formation Référent IA · Agence Nikita · J7 · Lyon</p>
+<h1>Aujourd'hui, vous automatisez sans coder</h1>
+<p class="hero-sous">Mardi 15 septembre 2026, de 9h00 à 17h00. On commence par finir les présentations d'hier. Ensuite : les principes du no-code, une démonstration Zapier et Make à travers Claude, et un sprint où vous construisez une automatisation réelle sur votre propre poste.</p>
+<div class="maintenant" role="status" aria-live="polite">
+<span class="pastille" aria-hidden="true"></span>
+<div><p class="m-lab" id="m-lab">La journée</p><p class="m-txt" id="m-txt">Commence mardi 15 septembre à 9h00. On finit les présentations d'hier.</p></div>
+<a class="m-btn" id="m-btn" href="#presentations">Y aller</a>
+</div>
+</div>
+</header>
+<nav class="nav" aria-label="Étapes de la journée"><ol><li><a href="#programme" data-cible="programme"><span class="n">0</span>Programme</a></li><li><a href="#presentations" data-cible="presentations"><span class="n">1</span>Finir hier</a></li><li><a href="#nocode" data-cible="nocode"><span class="n">2</span>No-code</a></li><li><a href="#n8n" data-cible="n8n"><span class="n">3</span>n8n et LLM</a></li><li><a href="#sprint" data-cible="sprint"><span class="n">4</span>Sprint</a></li><li><a href="#securite" data-cible="securite"><span class="n">5</span>Sécuriser</a></li><li><a href="#fiche" data-cible="fiche"><span class="n">6</span>Ma fiche</a></li></ol></nav>
+<main id="contenu" class="wrap">
+<section class="bloc" id="programme" aria-labelledby="t-programme">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">0</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">09h00 à 17h00</span><span class="type type-info">Toute la journée</span></p>
+<h2 id="t-programme">Le programme de la journée</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Gardez cette page ouverte. La ligne en rose indique où on en est. Cliquez sur une ligne pour aller à la consigne.</p></div>
+<div class="bloc-corps">
+<ol class="frise"><li class="ligne t-vous" data-debut="09:00" data-fin="11:00"><span class="l-heure">09h00</span><span class="l-type">Vous</span><a class="l-texte" href="#presentations">Finir les présentations de skills d'hier</a></li><li class="ligne t-pause" data-debut="11:00" data-fin="11:10"><span class="l-heure">11h00</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-demo" data-debut="11:10" data-fin="12:30"><span class="l-heure">11h10</span><span class="l-type">Démo</span><a class="l-texte" href="#nocode">No-code : les principes, et les connecteurs Zapier et Make dans Claude</a></li><li class="ligne t-pause" data-debut="12:30" data-fin="13:30"><span class="l-heure">12h30</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Déjeuner</a></li><li class="ligne t-info" data-debut="13:30" data-fin="13:45"><span class="l-heure">13h30</span><span class="l-type">Info</span><a class="l-texte" href="#programme">Reprise, annonce du programme de l'après-midi</a></li><li class="ligne t-demo" data-debut="13:45" data-fin="14:15"><span class="l-heure">13h45</span><span class="l-type">Démo</span><a class="l-texte" href="#n8n">n8n en comparaison, et le module IA dans une automatisation</a></li><li class="ligne t-pause" data-debut="14:15" data-fin="14:30"><span class="l-heure">14h15</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-vous" data-debut="14:30" data-fin="16:00"><span class="l-heure">14h30</span><span class="l-type">Vous</span><a class="l-texte" href="#sprint">Sprint : chacun construit une automatisation réelle</a></li><li class="ligne t-vous" data-debut="16:00" data-fin="16:30"><span class="l-heure">16h00</span><span class="l-type">Vous</span><a class="l-texte" href="#securite">Sécuriser et documenter son automatisation</a></li><li class="ligne t-vous" data-debut="16:30" data-fin="16:50"><span class="l-heure">16h30</span><span class="l-type">Vous</span><a class="l-texte" href="#securite">Revue croisée entre pairs</a></li><li class="ligne t-info" data-debut="16:50" data-fin="17:00"><span class="l-heure">16h50</span><span class="l-type">Info</span><a class="l-texte" href="#fiche">Clôture : objectifs, autopositionnement, évaluation à chaud</a></li></ol>
+<details><summary>Autopositionnement d'entrée (9h00) et de sortie (16h50) <span class="petit">· six questions, niveau de 1 à 4</span></summary>
+<p>Pour chaque phrase, notez-vous de 1 à 4 le matin, puis à nouveau en fin de journée. <b>1</b> : je ne sais pas faire. <b>2</b> : je sais faire avec de l'aide. <b>3</b> : je sais faire seul. <b>4</b> : je sais faire seul et l'expliquer à un collègue.</p>
+<ol>
+<li>Je sais expliquer ce qu'est une automatisation no-code, et la différence avec un agent autonome.</li>
+<li>Je sais identifier, sur mon propre poste, une tâche qui mérite d'être automatisée.</li>
+<li>Je sais faire agir Claude à travers un connecteur comme Zapier ou Make, en langage naturel.</li>
+<li>Je sais lire une donnée structurée (JSON) qui circule entre deux applications.</li>
+<li>Je sais brancher un module IA dans une automatisation, avec un format de sortie imposé.</li>
+<li>Je sais sécuriser une automatisation : pas de clé en clair, pas de donnée réelle, une validation humaine avant tout envoi vers l'extérieur.</li>
+</ol>
+<p class="petit">Questions reformulées à partir des objectifs O1 à O8 du support J7 déposé.</p>
+</details>
+</div>
+</section>
+<section class="bloc" id="presentations" aria-labelledby="t-presentations">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">1</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">09h00 · 2 heures</span><span class="type type-vous">Vous pratiquez</span></p>
+<h2 id="t-presentations">Finir les présentations d'hier</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Reprenez votre skill, montrez-le en direct, dites en quoi il sert votre métier.</p></div>
+<div class="bloc-corps">
+<p>Hier, deux duos ont pu passer au tableau. <b>Ce matin, on continue avec tous ceux qui n'ont pas encore montré.</b></p>
+<div class="etape"><span class="num">1</span><div>Chaque duo reprend sa place, retrouve son skill de la veille dans <b>Personnaliser, Skills</b>, et vérifie qu'il tourne toujours.</div></div>
+<div class="etape"><span class="num">2</span><div><b>4 min par personne :</b> comment vous l'avez construit, démonstration en direct, en quoi il sert votre métier.</div></div>
+<div class="etape"><span class="num">3</span><div><b>2 min de coaching</b> de Clément après chaque duo.</div></div>
+<div class="encart"><b>Pourquoi on prend ce temps.</b> Un skill qui tourne vraiment vaut plus qu'une matinée de diaporama sur des outils que personne n'a encore. On reprend le programme du jour à 11h00.</div>
+</div>
+</section>
+<section class="bloc" id="nocode" aria-labelledby="t-nocode">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">2</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">11h10 · 80 min</span><span class="type type-demo">Clément montre</span></p>
+<h2 id="t-nocode">Le no-code, et les connecteurs Zapier et Make</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Suivez la démonstration. Si vous voulez pratiquer, connectez Claude à Zapier ou Make, c'est gratuit et sans carte.</p></div>
+<div class="bloc-corps">
+<h3>Les principes, en trois phrases</h3>
+<p>Une automatisation no-code, c'est un <b>déclencheur</b> (un formulaire rempli, un mail reçu), un <b>traitement</b> (trier, transformer, enrichir), et une <b>action</b> (envoyer un mail, créer une ligne). Elle tourne sans vous, sur une règle décidée à l'avance : c'est ce qui la différencie d'un agent, qui décide lui-même de l'enchaînement de ses actions.</p>
+<p>La donnée qui circule entre deux applications a presque toujours la même forme, un objet avec des clés et des valeurs :</p>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Exemple de donnée reçue par un webhook</span></div><pre>{&quot;prenom&quot;:&quot;Aline&quot;,&quot;demande&quot;:&quot;devis site vitrine&quot;,&quot;budget_estime&quot;:3200,&quot;source&quot;:&quot;formulaire_site&quot;}</pre></div>
+<p class="petit">Ici, <code>prenom</code> est une clé, <code>"Aline"</code> sa valeur.</p>
+<div class="conseil"><b>Aucun compte à créer pour suivre.</b> Zapier et Make sont gratuits, sans carte bancaire, et Claude s'y connecte directement : c'est Clément qui montre, en suivant les prompts ci-dessous. Si vous voulez pratiquer vous-même cet après-midi, un compte gratuit suffit, sans engagement.</div>
+<h3>Zapier et Make, dans Claude</h3>
+<div class="connecteur">
+<h4>Zapier, connecté à Claude</h4>
+<p class="role">Zapier relie plus de 9 000 applications. Une fois connecté, Claude peut agir directement dedans, en langage naturel : envoyer un mail, mettre à jour une fiche, chercher une information.</p>
+<h5>Comment se connecter, la première fois</h5>
+<div class="pas"><span class="n">1</span><p>Collez le prompt ci-dessous dans une conversation Claude.</p></div><div class="pas"><span class="n">2</span><p>Une carte Zapier apparaît, cliquez sur <b>Connect</b>.</p></div><div class="pas"><span class="n">3</span><p>Sur l'écran d'autorisation Zapier, copiez le code affiché et cliquez sur <b>Continue</b>.</p></div><div class="pas"><span class="n">4</span><p>Choisissez votre compte Zapier (ou créez-en un, gratuit, sans carte), cliquez sur <b>Allow</b>.</p></div><div class="pas"><span class="n">5</span><p>Revenez dans Claude et collez le code copié pour terminer.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller pour se connecter</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://claude.ai/new">Copier et ouvrir Claude</button></div></div><pre>Connecte-toi à Zapier MCP pour moi. Si je ne suis pas encore connecté à Zapier, propose-moi d&#x27;installer le connecteur.</pre></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Une fois connecté, un exemple à tester</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Cherche dans Zapier une action qui envoie un email. Prépare-en une qui envoie un mail de bienvenue à un nouveau contact, avec un objet et un corps que tu rédiges, puis montre-moi le résultat avant de l&#x27;envoyer pour de vrai.</pre></div>
+<p class="sources"><a href="https://docs.zapier.com/mcp/get-started/connect/claude" target="_blank" rel="noopener">Documentation officielle Zapier</a> · disponible sur toutes les offres Claude, y compris gratuite</p>
+</div>
+<div class="connecteur">
+<h4>Make, connecté à Claude</h4>
+<p class="role">Make exécute des scénarios que vous avez déjà construits dans son interface. Une fois connecté, vous pouvez demander à Claude de les déclencher en langage naturel, sans rouvrir Make.</p>
+<h5>Comment se connecter, la première fois</h5>
+<div class="pas"><span class="n">1</span><p>Dans Claude, cliquez sur votre nom en bas de la barre latérale, puis <b>Paramètres</b>.</p></div><div class="pas"><span class="n">2</span><p>Cliquez sur <b>Connecteurs</b>.</p></div><div class="pas"><span class="n">3</span><p>Cherchez <b>Make</b> et cliquez sur le signe plus.</p></div><div class="pas"><span class="n">4</span><p>Sur l'écran d'autorisation, choisissez votre organisation Make et cliquez sur <b>Allow</b>.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Une fois connecté, un exemple à tester</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Montre-moi les scénarios Make disponibles sur mon compte. Explique en une phrase ce que fait chacun, sans en exécuter aucun pour l&#x27;instant.</pre></div>
+<p class="sources"><a href="https://help.make.com/make-now-a-built-in-connector-on-anthropic-claude" target="_blank" rel="noopener">Documentation officielle Make</a></p>
+</div>
+<h3>Comment choisir entre les deux</h3>
+<div class="tab"><table class="comparatif">
+<tr><th>Question</th><th>Plutôt Zapier</th><th>Plutôt Make</th></tr>
+<tr><td>Ce que je veux faire</td><td class="avantage">Une action ponctuelle en langage naturel, sans ouvrir d'interface</td><td class="avantage">Un enchaînement visuel, avec plusieurs étapes et des branches</td></tr>
+<tr><td>Ce que je maîtrise déjà</td><td class="avantage">Rien à apprendre, je demande à Claude</td><td class="limite">Il faut construire le scénario une première fois dans Make</td></tr>
+<tr><td>Le nombre d'applications</td><td class="avantage">Plus de 9 000 applications</td><td>Large, avec un éditeur visuel très lisible</td></tr>
+</table></div>
+</div>
+</section>
+<section class="bloc" id="n8n" aria-labelledby="t-n8n">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">3</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">13h45 · 30 min</span><span class="type type-demo">Clément montre</span></p>
+<h2 id="t-n8n">n8n en comparaison, et le module IA</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Regardez la démonstration de l'échec provoqué : elle explique pourquoi on structure la sortie d'un modèle.</p></div>
+<div class="bloc-corps">
+<div class="connecteur">
+<h4>n8n, en comparaison</h4>
+<p class="role">n8n est la troisième plateforme prévue par le programme. Contrairement à Zapier et Make, elle demande qu'une instance existe déjà, hébergée par vous ou par un fournisseur, avant que Claude puisse s'y connecter. <b>Aucune instance n'a été mise à disposition pour cette session</b>, donc aujourd'hui n8n se regarde, il ne se pratique pas individuellement.</p>
+<p>Sa différence avec Zapier et Make : elle s'auto-héberge, ce qui veut dire que vos données ne transitent jamais par les serveurs d'un tiers. C'est le même principe de souveraineté que celui vu en Jour 1 et en Jour 3.</p>
+</div>
+<h3>Le module IA dans une automatisation</h3>
+<p>Ce qui change quand un modèle de langage répond à une machine plutôt qu'à un humain : sa sortie doit être une donnée exploitable, pas un texte libre. On lui impose un format, souvent du JSON, et l'étape suivante lit ce format pour agir.</p>
+<div class="encart"><b>La démonstration de l'échec provoqué.</b> Clément demande d'abord au modèle une réponse libre, sans contrainte : l'étape suivante casse, parce qu'elle attend un format précis et reçoit du texte. Puis il ajoute un prompt système qui impose la structure, et ça fonctionne. C'est la meilleure minute de la journée pour comprendre pourquoi on structure une sortie.</div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Le prompt système à montrer en démonstration</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Tu qualifies une demande entrante pour une petite entreprise.
+Reponds uniquement avec un objet JSON, exactement dans cette forme, sans texte autour :
+{&quot;categorie&quot;: &quot;devis&quot; ou &quot;support&quot; ou &quot;autre&quot;, &quot;urgence&quot;: &quot;haute&quot; ou &quot;normale&quot; ou &quot;basse&quot;, &quot;resume&quot;: &quot;une phrase&quot;}
+Si une information manque dans la demande, mets la valeur &quot;non precise&quot;, n&#x27;invente jamais.</pre></div>
+<p class="petit">Règle à retenir : toujours exiger un format précis, toujours prévoir ce qui se passe si une information manque, jamais laisser le modèle deviner.</p>
+</div>
+</section>
+<section class="bloc" id="sprint" aria-labelledby="t-sprint">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">4</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">14h30 · 90 min</span><span class="type type-vous">Vous pratiquez</span></p>
+<h2 id="t-sprint">Le sprint : votre automatisation réelle</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Connectez Claude à Zapier ou Make, puis construisez votre automatisation avec le prompt de cadrage.</p></div>
+<div class="bloc-corps">
+<div class="etape"><span class="num">1</span><div>Reprenez la tâche de votre poste que vous avez identifiée hier ou ce matin. Une tâche qui revient souvent, avec une règle de décision claire.</div></div>
+<div class="etape"><span class="num">2</span><div><b>Connectez Claude à Zapier ou à Make</b>, selon ce que votre tâche demande (voir la marche à suivre plus haut dans le kit).</div></div>
+<div class="etape"><span class="num">3</span><div><b>Construisez votre automatisation avec Claude</b>, en langage naturel. Décrivez le déclencheur, ce qui doit se passer, et l'action finale. Utilisez le prompt de cadrage ci-dessous pour démarrer.</div></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Le prompt de cadrage pour démarrer</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Je veux automatiser une tache de mon metier. Voici la situation : [decrivez le declencheur, par exemple un formulaire rempli ou un mail recu].
+Ce que je veux qu&#x27;il se passe ensuite : [decrivez le traitement et l&#x27;action].
+Pose-moi les questions necessaires pour construire ca, puis propose-moi une automatisation avec Zapier ou Make, en m&#x27;expliquant pourquoi ce choix.</pre></div>
+<div class="etape"><span class="num">4</span><div><b>Testez-la sur une donnée fictive</b>, jamais une donnée réelle de client ou de collègue. Regardez si elle produit le bon résultat.</div></div>
+<div class="etape"><span class="num">5</span><div>Si ça ne fonctionne pas du premier coup, dites à Claude ce qui ne va pas et laissez-le corriger. C'est normal, ça fait partie du travail.</div></div>
+<div class="encart"><b>Règle de sécurité :</b> aucune donnée personnelle réelle, aucune clé d'API en clair dans un message. Travaillez sur des exemples inventés.</div>
+</div>
+</section>
+<section class="bloc" id="securite" aria-labelledby="t-securite">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">5</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">16h00 à 16h50</span><span class="type type-vous">Vous pratiquez</span></p>
+<h2 id="t-securite">Sécuriser, documenter, revue croisée</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Passez votre automatisation à la check-list, puis échangez avec un binôme.</p></div>
+<div class="bloc-corps">
+<h3>La check-list, avant de considérer une automatisation prête</h3><ul><li>Aucune clé d'API n'apparaît en clair dans un champ de texte ou un message.</li><li>Aucune donnée personnelle réelle (client, collègue) n'a été utilisée pendant l'atelier.</li><li>Une étape de validation humaine existe avant tout envoi vers l'extérieur (mail, message, publication).</li><li>Je sais expliquer à un collègue ce que fait mon automatisation, sans qu'il ait besoin de l'ouvrir.</li></ul>
+<h3>La revue croisée</h3>
+<p>Formez un binôme avec quelqu'un qui n'a pas construit la même automatisation. Chacun montre la sienne à l'autre, en 5 minutes, et répond à trois questions :</p>
+<ol>
+<li>Est-ce que je comprends ce qu'elle fait, sans explication supplémentaire ?</li>
+<li>Est-ce que la check-list de sécurité est vraiment cochée, pas juste déclarée ?</li>
+<li>Une amélioration concrète à proposer.</li>
+</ol>
+</div>
+</section>
+<section class="bloc" id="fiche" aria-labelledby="t-fiche">
+<header class="bloc-tete">
+<span class="bloc-num" aria-hidden="true">6</span>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">16h50</span><span class="type type-vous">Vous pratiquez</span></p>
+<h2 id="t-fiche">Ma fiche et mon plan d'action</h2></div>
+</header>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Remplissez votre fiche et envoyez-la par mail.</p></div>
+<div class="bloc-corps">
+<p>Une seule fiche à remplir et à envoyer par mail, en fin de journée.</p>
+<label for="f-nom">Mon nom</label><input id="f-nom">
+<label for="f-tache">La tâche automatisée, en une phrase</label><textarea id="f-tache"></textarea>
+<label for="f-outil">L'automatisation construite, et avec quel connecteur (Zapier ou Make)</label><textarea id="f-outil"></textarea>
+<label for="f-integration">En quoi elle s'intègre à mon travail</label><textarea id="f-integration"></textarea>
+<label for="f-pourquoi">Pourquoi ce choix plutôt qu'un autre, en une phrase</label><textarea id="f-pourquoi"></textarea>
+<label for="f-risque">Le risque principal</label><textarea id="f-risque"></textarea>
+<label for="f-controle">Le contrôle humain prévu</label><textarea id="f-controle"></textarea>
+<label for="f-temps">Temps gagné estimé, vérification comprise</label><input id="f-temps">
+<h3>Mon plan d'action à 30 jours</h3>
+<label for="f-plan-t1">Première automatisation que je mets en œuvre pour de vrai</label><input id="f-plan-t1">
+<label for="f-plan-t2">Deuxième tâche à automatiser</label><input id="f-plan-t2">
+<label for="f-plan-personne">Une personne que j'embarque</label><input id="f-plan-personne">
+<label for="f-plan-date">Ma date de contrôle</label><input id="f-plan-date" type="date">
+<label for="f-plan-indic">Mon indicateur simple</label><input id="f-plan-indic" placeholder="par exemple : 3 heures gagnées par semaine">
+<p style="margin-top:16px"><button class="bouton" onclick="envoyerFiche()">Envoyer ma fiche par mail</button> <button class="bouton sec" onclick="copierFiche()">Copier ma fiche</button></p>
+<p class="petit" id="f-msg">Une fiche sans risque identifié ni contrôle humain n'est pas terminée.</p>
+</div>
+</section>
+
+<details class="formateur"><summary>Pour le formateur et l'Agence Nikita : conformité au programme J7</summary>
+<p><b>Les contenus et objectifs du programme J7 sont traités</b>, avec un ajustement assumé : le matin s'ouvre par les présentations de skills reportées de J6 (2 heures), et la pratique individuelle se fait avec Claude connecté à Zapier ou Make plutôt que dans l'interface propre de ces outils, faute de comptes créés en amont. n8n se présente en comparaison, faute d'instance disponible.</p>
+<h3>Contenus du programme</h3><div class="tab"><table><tr><th>Contenu</th><th>Où il est traité</th></tr><tr><td>Principes de l'automatisation no-code</td><td>Section « No-code », principes en trois phrases, 11h10</td></tr><tr><td>Make</td><td>Démonstration en direct via le connecteur Claude, 11h10 à 12h30</td></tr><tr><td>Zapier</td><td>Démonstration en direct via le connecteur Claude, même créneau</td></tr><tr><td>n8n, auto-hébergeable</td><td>Présenté en comparaison à 13h45, aucune instance disponible pour la pratique</td></tr><tr><td>Intégration des LLM dans les workflows</td><td>Démonstration de l'échec provoqué et du prompt structuré, 13h45</td></tr><tr><td>Cas d'usage d'automatisation métier</td><td>Sprint pratique, 14h30 à 16h00, sur la tâche réelle de chaque participant</td></tr></table></div>
+<h3>Livrables formateur de l'Annexe 1</h3><div class="tab"><table><tr><th>Livrable</th><th>Où il se trouve</th></tr><tr><td>Support</td><td>Kit de la journée, présent document</td></tr><tr><td>Scénarios Make et Zapier prêts à l'emploi</td><td>Remplacés par des prompts de connexion et de construction, adaptés à l'usage réel via Claude</td></tr><tr><td>Scénarios n8n prêts à l'emploi</td><td>Non applicable cette session, absence d'instance n8n</td></tr><tr><td>Atelier de construction guidé</td><td>Sprint pratique encadré, 14h30 à 16h00</td></tr></table></div>
+<h3>Objectifs pédagogiques</h3><div class="tab"><table><tr><th>Objectif</th><th>Moment et preuve</th></tr><tr><td>O1, construire une automatisation de bout en bout</td><td>Sprint pratique : déclencheur, traitement, action, testée sur une donnée fictive</td></tr><tr><td>O2, identifier les processus automatisables</td><td>Tâche reprise de la cartographie de skills de J6, prolongée ce matin</td></tr><tr><td>O3, choisir entre Make et Zapier</td><td>Tableau comparatif de la section No-code</td></tr><tr><td>O4, lire une donnée structurée</td><td>Exemple de payload commenté en section No-code</td></tr><tr><td>O5, intégrer un LLM dans un workflow</td><td>Démonstration de l'échec provoqué et prompt structuré, section n8n et module IA</td></tr><tr><td>O6, sécuriser les secrets et les données</td><td>Check-list de sécurité, section Sécuriser et documenter</td></tr><tr><td>O7, documenter pour un tiers</td><td>Rubrique « en quoi elle s'intègre » et « pourquoi ce choix » de la fiche</td></tr><tr><td>O8, estimer le coût de fonctionnement</td><td>Temps gagné estimé, rubrique de la fiche ; aucun montant n'est cité dans le kit</td></tr></table></div>
+<h3>Évaluation et traçabilité</h3><div class="tab"><table><tr><th>Exigence</th><th>Comment</th></tr><tr><td>Évaluation diagnostique</td><td>Autopositionnement d'entrée, 9h00</td></tr><tr><td>Évaluations formatives</td><td>Coaching après chaque présentation, démonstrations commentées, sprint supervisé</td></tr><tr><td>Évaluation sommative</td><td>Fiche de fin de journée avec cas d'usage, plan d'action, check-list signée</td></tr><tr><td>Évaluation à chaud</td><td>Formulaire de l'Agence Nikita, 16h50</td></tr><tr><td>Preuves conservées</td><td>Émargement, fiches reçues par mail</td></tr></table></div>
+<h3>Écarts assumés</h3>
+<ul>
+<li><b>2 heures du matin consacrées aux présentations de J6</b>, reportées la veille devant le groupe. Le contenu no-code du matin est en conséquence entièrement recentré sur la démonstration.</li>
+<li><b>Aucun compte Make, Zapier ou n8n n'a été créé en amont par les participants</b>, et aucune clé API de modèle de langage mutualisée n'a été fournie par l'Agence Nikita, malgré les décisions demandées au commanditaire dans le dossier de dépôt (ACCES-ET-LICENCES-J7.md, section 10). La pratique individuelle du sprint s'appuie donc sur les connecteurs Zapier et Make dans Claude, gratuits et sans carte bancaire, plutôt que sur des scénarios construits dans l'interface propre de ces plateformes.</li>
+<li><b>n8n n'est présenté qu'en comparaison</b>, faute d'instance auto-hébergée mise à disposition (modalité B recommandée dans le dossier de dépôt, jamais tranchée).</li>
+<li><b>Aucun montant n'est cité</b> dans ce kit : les tarifs des plateformes et des interfaces de programmation évoluent et se vérifient à la source.</li>
+</ul>
+</details>
+</main>
+<script>
+function champ(id){ var e=document.getElementById(id); return e ? e.value.trim() : ""; }
+function texteFiche(){
+  return "FICHE J7 Lyon\n\n"
+   + "Nom : " + champ("f-nom") + "\n"
+   + "Tâche automatisée : " + champ("f-tache") + "\n"
+   + "Automatisation et connecteur : " + champ("f-outil") + "\n"
+   + "Intégration à mon travail : " + champ("f-integration") + "\n"
+   + "Pourquoi ce choix : " + champ("f-pourquoi") + "\n"
+   + "Risque principal : " + champ("f-risque") + "\n"
+   + "Contrôle humain : " + champ("f-controle") + "\n"
+   + "Temps gagné estimé : " + champ("f-temps") + "\n\n"
+   + "PLAN D'ACTION A 30 JOURS\n"
+   + "Automatisation 1 : " + champ("f-plan-t1") + "\n"
+   + "Tâche 2 : " + champ("f-plan-t2") + "\n"
+   + "Personne embarquée : " + champ("f-plan-personne") + "\n"
+   + "Date de contrôle : " + champ("f-plan-date") + "\n"
+   + "Indicateur : " + champ("f-plan-indic") + "\n";
+}
+function ficheComplete(){
+  var m=document.getElementById("f-msg");
+  if(!champ("f-risque") || !champ("f-controle")){
+    m.textContent="Il manque le risque ou le contrôle humain : la fiche n'est pas terminée.";
+    m.style.color="#B3261E"; return false;
+  }
+  m.style.color=""; return true;
+}
+function copierFiche(){
+  if(!ficheComplete()) return;
+  var t=texteFiche(), m=document.getElementById("f-msg");
+  try{ navigator.clipboard.writeText(t); m.textContent="Fiche copiée."; m.style.color="#1F7A4D"; }
+  catch(e){ window.prompt("Copiez votre fiche :", t); }
+}
+function envoyerFiche(){
+  if(!ficheComplete()) return;
+  var u="https://mail.google.com/mail/?view=cm&fs=1&to=clem.pred%40gmail.com&su="
+    + encodeURIComponent("Fiche de cas d'usage J7, " + (champ("f-nom")||"participant"))
+    + "&body=" + encodeURIComponent(texteFiche());
+  var w=null; try{ w=window.open(u,"_blank"); }catch(e){}
+  if(!w){ window.location.href=u; }
+}
+["f-nom","f-tache","f-outil","f-integration","f-pourquoi","f-risque","f-controle","f-temps","f-plan-t1","f-plan-t2","f-plan-personne","f-plan-date","f-plan-indic"].forEach(function(id){
+  var e=document.getElementById(id);
+  try{ var v=localStorage.getItem("j7-"+id); if(v) e.value=v; }catch(x){}
+  e.addEventListener("input",function(){ try{ localStorage.setItem("j7-"+id,e.value); }catch(x){} });
+});
+</script>
+<script>
+(function(){
+  var PROG = [["09:00", "11:00", "Finir les présentations de skills d'hier", "presentations"], ["11:00", "11:10", "Pause", "programme"], ["11:10", "12:30", "No-code : les principes, et les connecteurs Zapier et Make dans Claude", "nocode"], ["12:30", "13:30", "Déjeuner", "programme"], ["13:30", "13:45", "Reprise, annonce du programme de l'après-midi", "programme"], ["13:45", "14:15", "n8n en comparaison, et le module IA dans une automatisation", "n8n"], ["14:15", "14:30", "Pause", "programme"], ["14:30", "16:00", "Sprint : chacun construit une automatisation réelle", "sprint"], ["16:00", "16:30", "Sécuriser et documenter son automatisation", "securite"], ["16:30", "16:50", "Revue croisée entre pairs", "securite"], ["16:50", "17:00", "Clôture : objectifs, autopositionnement, évaluation à chaud", "fiche"]];
+  function minutes(h){var p=h.split(":");return (+p[0])*60+(+p[1]);}
+  function pad(n){return (n<10?"0":"")+n;}
+  function maj(){
+    var d=new Date(), lab=document.getElementById("m-lab"), txt=document.getElementById("m-txt"), btn=document.getElementById("m-btn");
+    var jour=d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+    var lignes=document.querySelectorAll(".ligne");
+    lignes.forEach(function(l){l.classList.remove("encours");});
+    if(jour!=="2026-09-15"){
+      if(jour<"2026-09-15"){lab.textContent="La journée";txt.textContent="Commence mardi 15 septembre à 9h00. On finit les présentations d'hier.";btn.href="#presentations";}
+      else{lab.textContent="La journée est terminée";txt.textContent="Retrouvez toutes les consignes et ressources ci-dessous.";btn.href="#nocode";btn.textContent="Revoir les outils";}
+      return;
+    }
+    var m=d.getHours()*60+d.getMinutes();
+    if(m<minutes("09:00")){lab.textContent="Bientôt";txt.textContent="On commence à 9h00, par les présentations.";btn.href="#presentations";return;}
+    if(m>=minutes("17:00")){lab.textContent="La journée est terminée";txt.textContent="Merci à tous. Pensez à envoyer votre fiche.";btn.href="#fiche";btn.textContent="Ma fiche";return;}
+    for(var i=0;i<PROG.length;i++){
+      if(m>=minutes(PROG[i][0]) && m<minutes(PROG[i][1])){
+        lab.textContent="En ce moment, jusqu'à "+PROG[i][1].replace(":","h");
+        txt.textContent=PROG[i][2];
+        btn.href="#"+PROG[i][3]; btn.textContent="Voir la consigne";
+        if(lignes[i]) lignes[i].classList.add("encours");
+        return;
+      }
+    }
+  }
+  maj(); setInterval(maj, 30000);
+
+  var liens=document.querySelectorAll(".nav a");
+  function activer(id){
+    liens.forEach(function(a){
+      var on=a.getAttribute("data-cible")===id;
+      a.classList.toggle("actif",on);
+      if(on){ a.setAttribute("aria-current","true"); if(a.scrollIntoView && window.matchMedia("(max-width: 900px)").matches){ var ol=a.parentNode.parentNode; ol.scrollLeft = a.offsetLeft - 18; } }
+      else a.removeAttribute("aria-current");
+    });
+  }
+  if("IntersectionObserver" in window){
+    var obs=new IntersectionObserver(function(entrees){
+      entrees.forEach(function(e){ if(e.isIntersecting) activer(e.target.id); });
+    },{rootMargin:"-30% 0px -60% 0px"});
+    document.querySelectorAll("section.bloc").forEach(function(sec){obs.observe(sec);});
+  }
+})();
+</script>
+<script>
+(function(){
+  function copierAncien(texte){
+    return new Promise(function(ok,ko){
+      try{ var t=document.createElement("textarea"); t.value=texte; t.setAttribute("readonly",""); t.style.position="fixed"; t.style.top="0"; t.style.opacity="0";
+        document.body.appendChild(t); t.focus(); t.select(); t.setSelectionRange(0,texte.length); var r=document.execCommand("copy"); document.body.removeChild(t); r?ok():ko(new Error("execCommand")); }catch(e){ ko(e); }
+    });
+  }
+  function copier(texte){
+    if(navigator.clipboard && window.isSecureContext){
+      return navigator.clipboard.writeText(texte).catch(function(){ return copierAncien(texte); });
+    }
+    return copierAncien(texte);
+  }
+  document.addEventListener("click",function(ev){
+    var b=ev.target.closest("[data-copier]"); if(!b) return;
+    var pre=b.closest(".prompt").querySelector("pre"); var texte=pre.textContent;
+    var url=b.getAttribute("data-ouvrir");
+    var lab=b.textContent;
+    var w=null; if(url){ w=window.open("about:blank","_blank"); }
+    copier(texte).then(function(){
+      if(w){ try{ w.opener=null; w.location.href=url; }catch(e){ window.open(url,"_blank","noopener"); } }
+      b.classList.add("ok"); b.textContent= url ? "Copié, collez avec Cmd+V ou Ctrl+V" : "Copié";
+      setTimeout(function(){ b.classList.remove("ok"); b.textContent=lab; },2600);
+    },function(){
+      if(w){ try{ w.opener=null; w.location.href=url; }catch(e){} }
+      var r=document.createRange(); r.selectNodeContents(pre); var sel=window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      b.textContent="Sélectionné, copiez avec Cmd+C"; setTimeout(function(){ b.textContent=lab; },3000);
+    });
+  });
+})();
+</script>
+</body>
+</html>
