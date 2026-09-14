@@ -236,7 +236,7 @@ details.kb > .kb-corps{margin:0}
 <div class="wrap">
 <p class="surtitre">Formation Référent IA · Agence Nikita · J7 · Lyon</p>
 <h1>Aujourd'hui, vous automatisez sans coder</h1>
-<p class="hero-sous">Mardi 15 septembre 2026, de 9h00 à 17h00. On commence par finir les présentations d'hier. Ensuite : les principes du no-code, une démonstration Zapier et Make à travers Claude, et un sprint où vous construisez une automatisation réelle sur votre propre poste.</p>
+<p class="hero-sous">Mardi 15 septembre 2026, de 9h00 à 17h00. On commence par finir les présentations d'hier. Puis n8n : Claude installe, connecte et construit avec vous, sans Docker, un premier vrai workflow. L'après-midi, un atelier base de connaissances complet.</p>
 <div class="maintenant" role="status" aria-live="polite">
 <span class="pastille" aria-hidden="true"></span>
 <div><p class="m-lab" id="m-lab">La journée</p><p class="m-txt" id="m-txt">Commence mardi 15 septembre à 9h00. On finit les présentations d'hier.</p></div>
@@ -244,7 +244,7 @@ details.kb > .kb-corps{margin:0}
 </div>
 </div>
 </header>
-<nav class="nav" aria-label="Étapes de la journée"><ol><li><a href="#programme" data-cible="programme"><span class="n">0</span>Programme</a></li><li><a href="#presentations" data-cible="presentations"><span class="n">1</span>Finir hier</a></li><li><a href="#nocode" data-cible="nocode"><span class="n">2</span>No-code</a></li><li><a href="#n8n" data-cible="n8n"><span class="n">3</span>n8n et LLM</a></li><li><a href="#sprint" data-cible="sprint"><span class="n">4</span>Sprint</a></li><li><a href="#securite" data-cible="securite"><span class="n">5</span>Sécuriser</a></li><li><a href="#fiche" data-cible="fiche"><span class="n">6</span>Ma fiche</a></li></ol></nav>
+<nav class="nav" aria-label="Étapes de la journée"><ol><li><a href="#programme" data-cible="programme"><span class="n">0</span>Programme</a></li><li><a href="#presentations" data-cible="presentations"><span class="n">1</span>Finir hier</a></li><li><a href="#nocode" data-cible="nocode"><span class="n">2</span>n8n</a></li><li><a href="#rag" data-cible="rag"><span class="n">3</span>Base de connaissances</a></li><li><a href="#securite" data-cible="securite"><span class="n">4</span>Sécuriser</a></li><li><a href="#fiche" data-cible="fiche"><span class="n">5</span>Ma fiche</a></li></ol></nav>
 <main id="contenu" class="wrap">
 <section class="bloc" id="programme" aria-labelledby="t-programme">
 <header class="bloc-tete">
@@ -254,16 +254,16 @@ details.kb > .kb-corps{margin:0}
 </header>
 <div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Gardez cette page ouverte. La ligne en rose indique où on en est. Cliquez sur une ligne pour aller à la consigne.</p></div>
 <div class="bloc-corps">
-<ol class="frise"><li class="ligne t-vous" data-debut="09:00" data-fin="11:00"><span class="l-heure">09h00</span><span class="l-type">Vous</span><a class="l-texte" href="#presentations">Finir les présentations de skills d'hier</a></li><li class="ligne t-pause" data-debut="11:00" data-fin="11:10"><span class="l-heure">11h00</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-demo" data-debut="11:10" data-fin="12:30"><span class="l-heure">11h10</span><span class="l-type">Démo</span><a class="l-texte" href="#nocode">No-code : les principes, et les connecteurs Zapier et Make dans Claude</a></li><li class="ligne t-pause" data-debut="12:30" data-fin="13:30"><span class="l-heure">12h30</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Déjeuner</a></li><li class="ligne t-info" data-debut="13:30" data-fin="13:45"><span class="l-heure">13h30</span><span class="l-type">Info</span><a class="l-texte" href="#programme">Reprise, annonce du programme de l'après-midi</a></li><li class="ligne t-demo" data-debut="13:45" data-fin="14:15"><span class="l-heure">13h45</span><span class="l-type">Démo</span><a class="l-texte" href="#n8n">n8n en comparaison, et le module IA dans une automatisation</a></li><li class="ligne t-pause" data-debut="14:15" data-fin="14:30"><span class="l-heure">14h15</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-vous" data-debut="14:30" data-fin="16:00"><span class="l-heure">14h30</span><span class="l-type">Vous</span><a class="l-texte" href="#sprint">Sprint : chacun construit une automatisation réelle</a></li><li class="ligne t-vous" data-debut="16:00" data-fin="16:30"><span class="l-heure">16h00</span><span class="l-type">Vous</span><a class="l-texte" href="#securite">Sécuriser et documenter son automatisation</a></li><li class="ligne t-vous" data-debut="16:30" data-fin="16:50"><span class="l-heure">16h30</span><span class="l-type">Vous</span><a class="l-texte" href="#securite">Revue croisée entre pairs</a></li><li class="ligne t-info" data-debut="16:50" data-fin="17:00"><span class="l-heure">16h50</span><span class="l-type">Info</span><a class="l-texte" href="#fiche">Clôture : objectifs, autopositionnement, évaluation à chaud</a></li></ol>
+<ol class="frise"><li class="ligne t-vous" data-debut="09:00" data-fin="11:00"><span class="l-heure">09h00</span><span class="l-type">Vous</span><a class="l-texte" href="#presentations">Finir les présentations de skills d'hier</a></li><li class="ligne t-pause" data-debut="11:00" data-fin="11:10"><span class="l-heure">11h00</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Pause</a></li><li class="ligne t-mix" data-debut="11:10" data-fin="12:30"><span class="l-heure">11h10</span><span class="l-type">Démo puis vous</span><a class="l-texte" href="#nocode">n8n en auto-hébergé : installer, connecter, construire, guidé par Claude</a></li><li class="ligne t-pause" data-debut="12:30" data-fin="13:30"><span class="l-heure">12h30</span><span class="l-type">Pause</span><a class="l-texte" href="#programme">Déjeuner</a></li><li class="ligne t-info" data-debut="13:30" data-fin="13:45"><span class="l-heure">13h30</span><span class="l-type">Info</span><a class="l-texte" href="#programme">Reprise, annonce du programme de l'après-midi</a></li><li class="ligne t-mix" data-debut="13:45" data-fin="16:00"><span class="l-heure">13h45</span><span class="l-type">Démo puis vous</span><a class="l-texte" href="#rag">Atelier base de connaissances, pour de vrai cette fois</a></li><li class="ligne t-vous" data-debut="16:00" data-fin="16:30"><span class="l-heure">16h00</span><span class="l-type">Vous</span><a class="l-texte" href="#securite">Sécuriser et documenter</a></li><li class="ligne t-vous" data-debut="16:30" data-fin="16:50"><span class="l-heure">16h30</span><span class="l-type">Vous</span><a class="l-texte" href="#securite">Revue croisée entre pairs</a></li><li class="ligne t-info" data-debut="16:50" data-fin="17:00"><span class="l-heure">16h50</span><span class="l-type">Info</span><a class="l-texte" href="#fiche">Clôture : objectifs, autopositionnement, évaluation à chaud</a></li></ol>
 <details><summary>Autopositionnement d'entrée (9h00) et de sortie (16h50) <span class="petit">· six questions, niveau de 1 à 4</span></summary>
 <p>Pour chaque phrase, notez-vous de 1 à 4 le matin, puis à nouveau en fin de journée. <b>1</b> : je ne sais pas faire. <b>2</b> : je sais faire avec de l'aide. <b>3</b> : je sais faire seul. <b>4</b> : je sais faire seul et l'expliquer à un collègue.</p>
 <ol>
 <li>Je sais expliquer ce qu'est une automatisation no-code, et la différence avec un agent autonome.</li>
 <li>Je sais identifier, sur mon propre poste, une tâche qui mérite d'être automatisée.</li>
-<li>Je sais faire agir Claude à travers un connecteur comme Zapier ou Make, en langage naturel.</li>
-<li>Je sais lire une donnée structurée (JSON) qui circule entre deux applications.</li>
-<li>Je sais brancher un module IA dans une automatisation, avec un format de sortie imposé.</li>
-<li>Je sais sécuriser une automatisation : pas de clé en clair, pas de donnée réelle, une validation humaine avant tout envoi vers l'extérieur.</li>
+<li>Je sais faire installer et lancer n8n par Claude, sans taper de commande moi-même.</li>
+<li>Je sais connecter Claude à n8n et lui faire construire un premier workflow en langage naturel.</li>
+<li>Je sais créer une base de connaissances et la faire répondre à partir de mes documents.</li>
+<li>Je sais sécuriser un outil que j'ai construit : pas de clé en clair, pas de donnée réelle, une validation humaine avant tout envoi vers l'extérieur.</li>
 </ol>
 <p class="petit">Questions reformulées à partir des objectifs O1 à O8 du support J7 déposé.</p>
 </details>
@@ -287,97 +287,214 @@ details.kb > .kb-corps{margin:0}
 <section class="bloc" id="nocode" aria-labelledby="t-nocode">
 <header class="bloc-tete">
 <span class="bloc-num" aria-hidden="true">2</span>
-<div class="bloc-titres"><p class="bloc-meta"><span class="heure">11h10 · 80 min</span><span class="type type-demo">Clément montre</span></p>
-<h2 id="t-nocode">Le no-code, et les connecteurs Zapier et Make</h2></div>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">11h10 · 80 min</span><span class="type type-mix">Clément montre, puis vous pratiquez</span></p>
+<h2 id="t-nocode">n8n : installé, connecté et construit par Claude</h2></div>
 </header>
-<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Suivez la démonstration. Si vous voulez pratiquer, connectez Claude à Zapier ou Make, c'est gratuit et sans carte.</p></div>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Suivez chaque prompt dans l'ordre. Claude vous demande votre accord avant chaque commande.</p></div>
 <div class="bloc-corps">
-<h3>Les principes, en trois phrases</h3>
-<p>Une automatisation no-code, c'est un <b>déclencheur</b> (un formulaire rempli, un mail reçu), un <b>traitement</b> (trier, transformer, enrichir), et une <b>action</b> (envoyer un mail, créer une ligne). Elle tourne sans vous, sur une règle décidée à l'avance : c'est ce qui la différencie d'un agent, qui décide lui-même de l'enchaînement de ses actions.</p>
-<p>La donnée qui circule entre deux applications a presque toujours la même forme, un objet avec des clés et des valeurs :</p>
-<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Exemple de donnée reçue par un webhook</span></div><pre>{&quot;prenom&quot;:&quot;Aline&quot;,&quot;demande&quot;:&quot;devis site vitrine&quot;,&quot;budget_estime&quot;:3200,&quot;source&quot;:&quot;formulaire_site&quot;}</pre></div>
-<p class="petit">Ici, <code>prenom</code> est une clé, <code>"Aline"</code> sa valeur.</p>
-<div class="conseil"><b>Aucun compte à créer pour suivre.</b> Zapier et Make sont gratuits, sans carte bancaire, et Claude s'y connecte directement : c'est Clément qui montre, en suivant les prompts ci-dessous. Si vous voulez pratiquer vous-même cet après-midi, un compte gratuit suffit, sans engagement.</div>
-<h3>Zapier et Make, dans Claude</h3>
-<div class="connecteur">
-<h4>Zapier, connecté à Claude</h4>
-<p class="role">Zapier relie plus de 9 000 applications. Une fois connecté, Claude peut agir directement dedans, en langage naturel : envoyer un mail, mettre à jour une fiche, chercher une information.</p>
-<h5>Comment se connecter, la première fois</h5>
-<div class="pas"><span class="n">1</span><p>Collez le prompt ci-dessous dans une conversation Claude.</p></div><div class="pas"><span class="n">2</span><p>Une carte Zapier apparaît, cliquez sur <b>Connect</b>.</p></div><div class="pas"><span class="n">3</span><p>Sur l'écran d'autorisation Zapier, copiez le code affiché et cliquez sur <b>Continue</b>.</p></div><div class="pas"><span class="n">4</span><p>Choisissez votre compte Zapier (ou créez-en un, gratuit, sans carte), cliquez sur <b>Allow</b>.</p></div><div class="pas"><span class="n">5</span><p>Revenez dans Claude et collez le code copié pour terminer.</p></div>
-<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller pour se connecter</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://claude.ai/new">Copier et ouvrir Claude</button></div></div><pre>Connecte-toi à Zapier MCP pour moi. Si je ne suis pas encore connecté à Zapier, propose-moi d&#x27;installer le connecteur.</pre></div>
-<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Une fois connecté, un exemple à tester</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Cherche dans Zapier une action qui envoie un email. Prépare-en une qui envoie un mail de bienvenue à un nouveau contact, avec un objet et un corps que tu rédiges, puis montre-moi le résultat avant de l&#x27;envoyer pour de vrai.</pre></div>
-<p class="sources"><a href="https://docs.zapier.com/mcp/get-started/connect/claude" target="_blank" rel="noopener">Documentation officielle Zapier</a> · disponible sur toutes les offres Claude, y compris gratuite</p>
-</div>
-<div class="connecteur">
-<h4>Make, connecté à Claude</h4>
-<p class="role">Make exécute des scénarios que vous avez déjà construits dans son interface. Une fois connecté, vous pouvez demander à Claude de les déclencher en langage naturel, sans rouvrir Make.</p>
-<h5>Comment se connecter, la première fois</h5>
-<div class="pas"><span class="n">1</span><p>Dans Claude, cliquez sur votre nom en bas de la barre latérale, puis <b>Paramètres</b>.</p></div><div class="pas"><span class="n">2</span><p>Cliquez sur <b>Connecteurs</b>.</p></div><div class="pas"><span class="n">3</span><p>Cherchez <b>Make</b> et cliquez sur le signe plus.</p></div><div class="pas"><span class="n">4</span><p>Sur l'écran d'autorisation, choisissez votre organisation Make et cliquez sur <b>Allow</b>.</p></div>
-<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Une fois connecté, un exemple à tester</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Montre-moi les scénarios Make disponibles sur mon compte. Explique en une phrase ce que fait chacun, sans en exécuter aucun pour l&#x27;instant.</pre></div>
-<p class="sources"><a href="https://help.make.com/make-now-a-built-in-connector-on-anthropic-claude" target="_blank" rel="noopener">Documentation officielle Make</a></p>
-</div>
-<h3>Comment choisir entre les deux</h3>
-<div class="tab"><table class="comparatif">
-<tr><th>Question</th><th>Plutôt Zapier</th><th>Plutôt Make</th></tr>
-<tr><td>Ce que je veux faire</td><td class="avantage">Une action ponctuelle en langage naturel, sans ouvrir d'interface</td><td class="avantage">Un enchaînement visuel, avec plusieurs étapes et des branches</td></tr>
-<tr><td>Ce que je maîtrise déjà</td><td class="avantage">Rien à apprendre, je demande à Claude</td><td class="limite">Il faut construire le scénario une première fois dans Make</td></tr>
-<tr><td>Le nombre d'applications</td><td class="avantage">Plus de 9 000 applications</td><td>Large, avec un éditeur visuel très lisible</td></tr>
-</table></div>
+<div class="conseil"><b>Personne dans la salle ne connaît n8n, Clément non plus.</b> C'est volontaire : la démonstration, c'est justement de montrer qu'on n'a plus besoin d'être expert d'un outil pour le faire fonctionner. Claude fait le travail technique, en expliquant chaque étape.</div>
+
+<h3>1. Installer n8n, sans Docker</h3>
+<p>n8n se lance normalement avec <b>Node.js</b>, un logiciel plus léger que Docker et souvent déjà présent sur un ordinateur récent. Une seule commande l'installe : <code>npm install n8n -g</code>, puis <code>n8n</code> pour le lancer. Tout se passe sur votre poste, rien n'est envoyé à un serveur externe.</p>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller dans Claude Code pour tout installer</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Verifie si Node.js est deja installe sur cet ordinateur, et si sa version est bien comprise entre 20.19 et 24. Si ce n&#x27;est pas le cas, installe-le proprement (methode adaptee a mon systeme, Mac ou Windows), en m&#x27;expliquant chaque etape simplement, je debute. Une fois Node.js pret, installe n8n avec la commande officielle &#x27;npm install n8n -g&#x27;, puis lance-le avec la commande &#x27;n8n&#x27; ou &#x27;n8n start&#x27;. Verifie ensuite que l&#x27;interface repond bien sur http://localhost:5678, et dis-moi quand c&#x27;est pret. A chaque commande que tu veux executer, demande-moi confirmation avant, comme tu le fais normalement.</pre></div>
+<p class="petit">Claude vous demandera votre accord avant chaque commande qu'il exécute, comme d'habitude. C'est normal, c'est la sécurité par défaut, on ne la désactive pas.</p>
+
+<h3>2. Créer votre compte, en local</h3>
+<p>Au premier lancement, n8n ouvre un écran pour créer un compte. Ce compte reste sur votre ordinateur, aucune inscription n'est envoyée ailleurs.</p>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Pour être guidé sur l'écran de création de compte</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Ouvre http://localhost:5678 dans mon navigateur. Un ecran de creation de compte proprietaire doit apparaitre : explique-moi simplement ce que je dois remplir (email, mot de passe, prenom, nom). Ce compte reste uniquement sur mon ordinateur, aucune inscription n&#x27;est envoyee a l&#x27;exterieur. Une fois cree, dis-moi que je suis bien connecte a mon espace n8n.</pre></div>
+
+<h3>3. Connecter Claude à n8n</h3>
+<p>Une fois n8n ouvert, on active sa connexion à Claude. <b>Une seule étape se fait à la souris</b> : cliquer sur « Autoriser » dans une fenêtre du navigateur qui s'ouvre. Tout le reste est guidé par Claude.</p>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Pour connecter n8n à Claude</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Guide-moi pour connecter n8n a toi par MCP. Dans n8n, je dois aller dans Parametres, puis dans la section MCP au niveau de l&#x27;instance, activer l&#x27;acces MCP, puis cliquer sur Connecter et choisir Claude dans la liste des clients proposes. Explique-moi chaque ecran au fur et a mesure que je te decris ce que je vois. A un moment, une fenetre de mon navigateur va me demander d&#x27;autoriser la connexion : je clique sur Autoriser, c&#x27;est normal, c&#x27;est la seule etape que je dois faire moi-meme a la souris. Une fois connecte, verifie que ca marche en listant mes workflows n8n.</pre></div>
+<p class="sources"><a href="https://docs.n8n.io/connect/connect-to-n8n-mcp-server" target="_blank" rel="noopener">Documentation officielle n8n, connecteur MCP</a></p>
+
+<h3>4. Construire un premier workflow, en langage naturel</h3>
+<p>Une fois connecté, Claude peut créer un vrai workflow n8n à partir d'une simple description, pas seulement déclencher ceux qui existent déjà.</p>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Pour construire votre premier workflow</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Cree-moi un premier workflow n8n simple : un declencheur webhook qui recoit une demande, une etape qui verifie si elle contient un mot-cle que je te donne, puis une action qui renvoie une reponse differente selon le cas. Utilise une donnee de test que j&#x27;invente. Execute le workflow pour verifier qu&#x27;il fonctionne vraiment, et explique-moi ce que tu as construit, etape par etape, comme si je decouvrais n8n pour la premiere fois. Pose-moi des questions si ma demande n&#x27;est pas assez precise.</pre></div>
+<div class="encart"><b>Si l'installation coince chez quelqu'un</b> (pare-feu, antivirus, port déjà utilisé) : n8n propose un essai cloud de 14 jours, sans carte bancaire, à <a href="https://n8n.io/cloud" target="_blank" rel="noopener">n8n.io/cloud</a>. On y bascule sans perdre de temps plutôt que de s'acharner sur une machine récalcitrante.</div>
+
+<h3>Et Zapier ?</h3>
+<p class="petit">Zapier fonctionne sur le même principe (connecteur gratuit dans Claude, sans carte bancaire) si l'un de vous préfère ne pas toucher à l'installation locale. On n'y consacre pas de démonstration aujourd'hui, tout le temps va à n8n.</p>
 </div>
 </section>
-<section class="bloc" id="n8n" aria-labelledby="t-n8n">
+<section class="bloc" id="rag" aria-labelledby="t-rag">
 <header class="bloc-tete">
 <span class="bloc-num" aria-hidden="true">3</span>
-<div class="bloc-titres"><p class="bloc-meta"><span class="heure">13h45 · 30 min</span><span class="type type-demo">Clément montre</span></p>
-<h2 id="t-n8n">n8n en comparaison, et le module IA</h2></div>
+<div class="bloc-titres"><p class="bloc-meta"><span class="heure">13h45 à 16h00</span><span class="type type-mix">Clément montre, puis vous pratiquez</span></p>
+<h2 id="t-rag">L'atelier base de connaissances</h2></div>
 </header>
-<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Regardez la démonstration de l'échec provoqué : elle explique pourquoi on structure la sortie d'un modèle.</p></div>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Choisissez un outil, ouvrez sa fiche, suivez les étapes, puis faites les quatre actions et les deux tests.</p></div>
 <div class="bloc-corps">
-<div class="connecteur">
-<h4>n8n, en comparaison</h4>
-<p class="role">n8n est la troisième plateforme prévue par le programme. Contrairement à Zapier et Make, elle demande qu'une instance existe déjà, hébergée par vous ou par un fournisseur, avant que Claude puisse s'y connecter. <b>Aucune instance n'a été mise à disposition pour cette session</b>, donc aujourd'hui n8n se regarde, il ne se pratique pas individuellement.</p>
-<p>Sa différence avec Zapier et Make : elle s'auto-héberge, ce qui veut dire que vos données ne transitent jamais par les serveurs d'un tiers. C'est le même principe de souveraineté que celui vu en Jour 1 et en Jour 3.</p>
+<p>Vous nous l'avez beaucoup demandé. Une base de connaissances, c'est un assistant qui répond <b>à partir de vos documents</b>, et pas de sa mémoire générale. <b>Choisissez un outil ci-dessous, ouvrez sa fiche et suivez les étapes.</b></p>
+<div class="encart"><b>On la reprend en vrai cette fois.</b> Ce matin était pris par n8n, cette base de connaissances n'avait pas eu son temps. <b>Comment choisir en 10 secondes.</b> Vous voulez commencer tout de suite : catégorie 1, dans l'assistant que vous avez déjà. Vous étudiez un dossier et voulez chaque source : catégorie 2. Vos notes doivent rester sur votre ordinateur : catégorie 3. Votre client range tout dans Notion ou Microsoft : catégorie 4.</div>
+<h3 class="sr" style="position:absolute;left:-9999px">Les outils, par catégorie</h3>
+<div class="cat"><span class="cat-lab">Catégorie 1</span><h3 class="cat-titre">Dans l'assistant que vous utilisez déjà</h3><p class="cat-expl">Vous ajoutez vos documents dans un espace de votre assistant habituel, et il répond en s'appuyant dessus. <b>C'est le plus simple pour commencer.</b></p></div>
+<div class="kb-grille">
+<details class="kb"><summary><span class="kb-tuile" style="background:#A3128C" aria-hidden="true">Cl</span><span class="kb-tete"><span class="kb-cat">Assistant habituel</span><span class="kb-nom">Projets Claude</span><span class="kb-accroche">Un espace avec vos documents et vos règles, dans Claude.</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">5 min pour démarrer</span><span class="badge prix-gratuit">Gratuit jusqu'à 5 projets</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Un projet regroupe vos documents, vos instructions et vos conversations au même endroit. Chaque nouvelle conversation dans le projet part de ces documents.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Dans la barre latérale, ouvrez <b>Projets</b>, puis <b>Créer un projet</b>, et donnez-lui un nom.</p></div><div class="pas"><span class="n">2</span><p>Dans <b>Connaissances du projet</b>, ajoutez vos documents ou collez du texte.</p></div><div class="pas"><span class="n">3</span><p>Ouvrez les <b>instructions du projet</b> et collez le prompt ci-dessous.</p></div><div class="pas"><span class="n">4</span><p>Ouvrez une conversation <b>à l'intérieur du projet</b> et posez vos questions.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller dans les instructions du projet</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://claude.ai/projects">Copier et ouvrir Claude</button></div></div><pre>Tu es l&#x27;assistant de mon activité : [décrivez votre métier en une phrase].
+Réponds uniquement à partir des documents que je t&#x27;ai donnés.
+Pour chaque réponse, cite le nom du document utilisé.
+Si l&#x27;information n&#x27;est dans aucun document, réponds : « Je ne trouve pas cette information dans les documents. » Ne devine jamais.
+Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Vos offres et tarifs</b>Répondre vite à un prospect sans rouvrir vos fichiers.</div><div><b>Vos procédures</b>Retrouver la bonne étape en une question.</div><div><b>Vos modèles</b>Produire un document à votre format.</div></div>
+<p class="sources"><a href="https://support.claude.com/en/articles/9517075-what-are-projects" target="_blank" rel="noopener">Aide Claude, projets</a> · <a href="https://youtu.be/GJ5jTgcbRHA" target="_blank" rel="noopener">Vidéo : Getting started with projects in Claude.ai</a> (Anthropic, décembre 2025). Sur les offres payantes, la recherche étendue permet de travailler sur beaucoup plus de documents.</p>
+</div></details>
+<details class="kb"><summary><span class="kb-tuile" style="background:#1A1A1A" aria-hidden="true">Gp</span><span class="kb-tete"><span class="kb-cat">Assistant habituel</span><span class="kb-nom">Projets ChatGPT</span><span class="kb-accroche">Le même principe, dans ChatGPT.</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">5 min pour démarrer</span><span class="badge prix-gratuit">Gratuit et payant</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Un projet ChatGPT garde vos fichiers, vos instructions et vos conversations ensemble. Le nombre de fichiers dépend de votre offre.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Dans la barre latérale, cliquez sur <b>Nouveau projet</b>, donnez un nom, une icône et une couleur.</p></div><div class="pas"><span class="n">2</span><p>Ajoutez vos fichiers : PDF, tableurs, documents, images, ou du texte collé. Vous pouvez aussi coller un lien vers un dossier Google Drive.</p></div><div class="pas"><span class="n">3</span><p>Cliquez sur les <b>trois points</b> en haut à droite, puis <b>Paramètres du projet</b>, et collez le prompt ci-dessous.</p></div><div class="pas"><span class="n">4</span><p>Ouvrez une conversation dans le projet et posez vos questions.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller dans les paramètres du projet</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://chatgpt.com">Copier et ouvrir ChatGPT</button></div></div><pre>Tu es l&#x27;assistant de mon activité : [décrivez votre métier en une phrase].
+Réponds uniquement à partir des documents que je t&#x27;ai donnés.
+Pour chaque réponse, cite le nom du document utilisé.
+Si l&#x27;information n&#x27;est dans aucun document, réponds : « Je ne trouve pas cette information dans les documents. » Ne devine jamais.
+Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Un dossier client</b>Toutes les pièces d'un client au même endroit.</div><div><b>Une veille</b>Vos articles de référence, interrogeables.</div><div><b>Une formation</b>Vos supports, pour préparer une séance.</div></div>
+<p class="sources"><a href="https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt" target="_blank" rel="noopener">Aide OpenAI, projets</a>. Rappel : les GPT personnalisés ne se créent plus sur un compte personnel, le projet les remplace.</p>
+</div></details>
+<details class="kb"><summary><span class="kb-tuile" style="background:#3D4A5C" aria-hidden="true">Ge</span><span class="kb-tete"><span class="kb-cat">Assistant habituel</span><span class="kb-nom">Gems Gemini</span><span class="kb-accroche">Un assistant Gemini personnalisé, avec vos fichiers de référence.</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">5 min pour démarrer</span><span class="badge prix-limite">Gratuit selon Google, à vérifier</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Un Gem est un assistant Gemini à qui vous donnez des instructions et des fichiers. Il peut aussi s'appuyer sur un carnet NotebookLM.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Sur gemini.google.com, ouvrez la barre latérale, puis <b>Gems</b>.</p></div><div class="pas"><span class="n">2</span><p>Cliquez sur <b>Nouveau Gem</b>, donnez un nom et collez le prompt ci-dessous dans les instructions.</p></div><div class="pas"><span class="n">3</span><p>Dans <b>Connaissances</b>, cliquez sur <b>Ajouter des fichiers</b> : ordinateur, Drive ou notebook.</p></div><div class="pas"><span class="n">4</span><p>Enregistrez, testez dans l'aperçu, puis retrouvez-le dans vos Gems.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller dans les instructions du Gem</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://gemini.google.com/app">Copier et ouvrir Gemini</button></div></div><pre>Tu es l&#x27;assistant de mon activité : [décrivez votre métier en une phrase].
+Réponds uniquement à partir des documents que je t&#x27;ai donnés.
+Pour chaque réponse, cite le nom du document utilisé.
+Si l&#x27;information n&#x27;est dans aucun document, réponds : « Je ne trouve pas cette information dans les documents. » Ne devine jamais.
+Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Un client équipé Google</b>L'outil qu'il a déjà, sans licence en plus.</div><div><b>Des documents Drive</b>Branchés directement depuis Drive.</div><div><b>Un assistant partagé</b>Le même Gem pour toute une équipe.</div></div>
+<p class="sources"><a href="https://support.google.com/gemini/answer/15146780" target="_blank" rel="noopener">Aide Google, utiliser les Gems</a></p>
+</div></details>
 </div>
-<h3>Le module IA dans une automatisation</h3>
-<p>Ce qui change quand un modèle de langage répond à une machine plutôt qu'à un humain : sa sortie doit être une donnée exploitable, pas un texte libre. On lui impose un format, souvent du JSON, et l'étape suivante lit ce format pour agir.</p>
-<div class="encart"><b>La démonstration de l'échec provoqué.</b> Clément demande d'abord au modèle une réponse libre, sans contrainte : l'étape suivante casse, parce qu'elle attend un format précis et reçoit du texte. Puis il ajoute un prompt système qui impose la structure, et ça fonctionne. C'est la meilleure minute de la journée pour comprendre pourquoi on structure une sortie.</div>
-<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Le prompt système à montrer en démonstration</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Tu qualifies une demande entrante pour une petite entreprise.
-Reponds uniquement avec un objet JSON, exactement dans cette forme, sans texte autour :
-{&quot;categorie&quot;: &quot;devis&quot; ou &quot;support&quot; ou &quot;autre&quot;, &quot;urgence&quot;: &quot;haute&quot; ou &quot;normale&quot; ou &quot;basse&quot;, &quot;resume&quot;: &quot;une phrase&quot;}
-Si une information manque dans la demande, mets la valeur &quot;non precise&quot;, n&#x27;invente jamais.</pre></div>
-<p class="petit">Règle à retenir : toujours exiger un format précis, toujours prévoir ce qui se passe si une information manque, jamais laisser le modèle deviner.</p>
+<div class="cat"><span class="cat-lab">Catégorie 2</span><h3 class="cat-titre">Le carnet de recherche sur vos sources</h3><p class="cat-expl">Un outil pensé pour étudier un dossier : il ne répond qu'à partir de vos sources, et <b>chaque réponse renvoie à la phrase exacte</b>.</p></div>
+<div class="kb-grille">
+<details class="kb"><summary><span class="kb-tuile" style="background:#1F6E45" aria-hidden="true">NL</span><span class="kb-tete"><span class="kb-cat">Carnet de sources</span><span class="kb-nom">NotebookLM, désormais Gemini Notebook</span><span class="kb-accroche">Des réponses citées phrase par phrase, sur vos PDF, sites et vidéos.</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">5 min pour démarrer</span><span class="badge prix-gratuit">Gratuit, 50 sources par carnet</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Vous créez un carnet, vous y déposez vos sources, et vous l'interrogez. Google a renommé le produit Gemini Notebook le 16 juillet 2026 et modifie ses limites d'usage depuis le 2 septembre 2026.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Ouvrez notebooklm.google.com, qui redirige vers Gemini Notebook, puis <b>Créer un notebook</b>.</p></div><div class="pas"><span class="n">2</span><p>Cliquez sur <b>Ajouter une source</b> : PDF, documents Google, sites web, vidéos YouTube, texte collé.</p></div><div class="pas"><span class="n">3</span><p>Posez la première question avec le prompt ci-dessous.</p></div><div class="pas"><span class="n">4</span><p>Le panneau <b>Studio</b> fabrique ensuite des notes, des cartes mentales ou un résumé audio.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Première question à poser au carnet</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://notebooklm.google.com">Copier et ouvrir NotebookLM</button></div></div><pre>Fais-moi la liste des 5 informations les plus importantes de ces sources, avec pour chacune la source exacte.
+Puis propose-moi 5 questions utiles que je pourrais poser à ce carnet pour mon activité.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Un appel d'offres</b>Retrouver chaque exigence et sa page.</div><div><b>Une réglementation</b>Vérifier ce que dit exactement le texte.</div><div><b>Un dossier client</b>Préparer un rendez-vous en 10 minutes.</div></div>
+<p class="sources"><a href="https://support.google.com/gemininotebook/answer/16206563" target="_blank" rel="noopener">Aide Google, créer un notebook</a> · <a href="https://youtu.be/AmKZCo5Dtn0" target="_blank" rel="noopener">Vidéo : Meet NotebookLM</a> (Google Workspace, 2025, interface ancienne)</p>
+</div></details>
 </div>
-</section>
-<section class="bloc" id="sprint" aria-labelledby="t-sprint">
-<header class="bloc-tete">
-<span class="bloc-num" aria-hidden="true">4</span>
-<div class="bloc-titres"><p class="bloc-meta"><span class="heure">14h30 · 90 min</span><span class="type type-vous">Vous pratiquez</span></p>
-<h2 id="t-sprint">Le sprint : votre automatisation réelle</h2></div>
-</header>
-<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Connectez Claude à Zapier ou Make, puis construisez votre automatisation avec le prompt de cadrage.</p></div>
-<div class="bloc-corps">
-<div class="etape"><span class="num">1</span><div>Reprenez la tâche de votre poste que vous avez identifiée hier ou ce matin. Une tâche qui revient souvent, avec une règle de décision claire.</div></div>
-<div class="etape"><span class="num">2</span><div><b>Connectez Claude à Zapier ou à Make</b>, selon ce que votre tâche demande (voir la marche à suivre plus haut dans le kit).</div></div>
-<div class="etape"><span class="num">3</span><div><b>Construisez votre automatisation avec Claude</b>, en langage naturel. Décrivez le déclencheur, ce qui doit se passer, et l'action finale. Utilisez le prompt de cadrage ci-dessous pour démarrer.</div></div>
-<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Le prompt de cadrage pour démarrer</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Je veux automatiser une tache de mon metier. Voici la situation : [decrivez le declencheur, par exemple un formulaire rempli ou un mail recu].
-Ce que je veux qu&#x27;il se passe ensuite : [decrivez le traitement et l&#x27;action].
-Pose-moi les questions necessaires pour construire ca, puis propose-moi une automatisation avec Zapier ou Make, en m&#x27;expliquant pourquoi ce choix.</pre></div>
-<div class="etape"><span class="num">4</span><div><b>Testez-la sur une donnée fictive</b>, jamais une donnée réelle de client ou de collègue. Regardez si elle produit le bon résultat.</div></div>
-<div class="etape"><span class="num">5</span><div>Si ça ne fonctionne pas du premier coup, dites à Claude ce qui ne va pas et laissez-le corriger. C'est normal, ça fait partie du travail.</div></div>
-<div class="encart"><b>Règle de sécurité :</b> aucune donnée personnelle réelle, aucune clé d'API en clair dans un message. Travaillez sur des exemples inventés.</div>
+<div class="cat"><span class="cat-lab">Catégorie 3</span><h3 class="cat-titre">Vos notes, sur votre ordinateur</h3><p class="cat-expl">Pour ceux qui veulent <b>garder leurs fichiers chez eux</b> : les notes restent dans un dossier de votre ordinateur, et un plugin permet de les interroger.</p></div>
+<div class="kb-grille">
+<details class="kb"><summary><span class="kb-tuile" style="background:#4A2D6B" aria-hidden="true">Ob</span><span class="kb-tete"><span class="kb-cat">Notes locales</span><span class="kb-nom">Obsidian avec un plugin IA</span><span class="kb-accroche">Vos notes dans un dossier à vous, interrogeables avec l'IA.</span><span class="badges"><span class="badge ">Intermédiaire</span><span class="badge ">20 min pour démarrer</span><span class="badge prix-gratuit">Gratuit</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Obsidian est une application de notes qui range tout dans un dossier de votre ordinateur. <b>Smart Connections</b> fonctionne sans clé, avec un modèle local, et trouve les notes liées. <b>Copilot</b> permet de discuter avec vos notes, mais demande une clé d'un fournisseur d'IA ou un modèle local.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Téléchargez Obsidian et créez un coffre, c'est-à-dire un dossier de notes.</p></div><div class="pas"><span class="n">2</span><p>Ouvrez les <b>Paramètres</b>, puis <b>Plugins communautaires</b>, et désactivez le mode restreint.</p></div><div class="pas"><span class="n">3</span><p>Cliquez sur <b>Parcourir</b>, cherchez <b>Smart Connections</b>, puis <b>Installer</b> et <b>Activer</b>.</p></div><div class="pas"><span class="n">4</span><p>Bloqué à une étape ? Collez le prompt ci-dessous dans Claude ou ChatGPT : il vous guide pas à pas.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller dans Claude ou ChatGPT pour être guidé</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://claude.ai/new">Copier et ouvrir Claude</button></div></div><pre>Je veux installer Obsidian et le plugin Smart Connections pour interroger mes notes, sans clé API. Je débute.
+Guide-moi étape par étape : téléchargement sur obsidian.md, création d&#x27;un coffre, activation des plugins communautaires, installation et réglage de Smart Connections.
+Attends que je te confirme chaque étape avant de passer à la suivante, et explique-moi simplement ce que fait chaque réglage.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Des notes sensibles</b>Elles ne quittent pas votre ordinateur.</div><div><b>Un second cerveau</b>Retrouver une idée notée il y a six mois.</div><div><b>Des comptes rendus</b>Relier les rendez-vous entre eux.</div></div>
+<p class="sources">Dépôts officiels : <a href="https://github.com/brianpetro/obsidian-smart-connections" target="_blank" rel="noopener">Smart Connections</a> et <a href="https://github.com/logancyang/obsidian-copilot" target="_blank" rel="noopener">Copilot for Obsidian</a>, tous deux actifs le 13 septembre 2026 · <a href="https://obsidian.md" target="_blank" rel="noopener">obsidian.md</a></p>
+</div></details>
+</div>
+<div class="cat"><span class="cat-lab">Catégorie 4</span><h3 class="cat-titre">L'espace de travail de l'équipe</h3><p class="cat-expl">Pour les entreprises qui rangent déjà leurs documents dans un outil commun. <b>On interroge les documents là où ils sont déjà.</b></p></div>
+<div class="kb-grille">
+<details class="kb"><summary><span class="kb-tuile" style="background:#1A1A1A" aria-hidden="true">No</span><span class="kb-tete"><span class="kb-cat">Espace d'équipe</span><span class="kb-nom">Notion</span><span class="kb-accroche">Vos pages Notion, interrogées avec l'IA.</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">10 min pour démarrer</span><span class="badge prix-limite">IA en essai limité</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>La structuration des pages est gratuite. L'IA est en essai limité sur l'offre gratuite, et complète sur l'offre Business.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Rangez vos pages dans un espace Notion, avec des titres clairs.</p></div><div class="pas"><span class="n">2</span><p>Ouvrez une page et cliquez sur <b>Demander à l'IA</b>, ou tapez espace sur une ligne vide.</p></div><div class="pas"><span class="n">3</span><p>Collez le prompt ci-dessous, puis posez votre question.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller avant votre question</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://www.notion.so">Copier et ouvrir Notion</button></div></div><pre>Réponds uniquement à partir des pages de cet espace.
+Cite le titre de la page utilisée.
+Si l&#x27;information n&#x27;y est pas, dis-le clairement au lieu de deviner.
+Ma question : [écrivez votre question]</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Un wiki d'équipe</b>Les réponses aux questions qui reviennent.</div><div><b>Des procédures</b>Accueillir un nouveau collaborateur.</div><div><b>Un suivi projet</b>Faire le point en une question.</div></div>
+<p class="sources"><a href="https://www.notion.com/help/complimentary-ai-responses" target="_blank" rel="noopener">Aide Notion, réponses IA offertes</a> · <a href="https://www.notion.com/pricing" target="_blank" rel="noopener">tarifs</a> · <a href="https://youtu.be/tFIgG-7RBvc" target="_blank" rel="noopener">Vidéo : Searching with Notion AI</a> (Notion, 2025, interface ancienne)</p>
+</div></details>
+<details class="kb"><summary><span class="kb-tuile" style="background:#3D4A5C" aria-hidden="true">Cn</span><span class="kb-tete"><span class="kb-cat">Espace d'équipe</span><span class="kb-nom">Microsoft Copilot Notebooks</span><span class="kb-accroche">Pour les clients équipés Microsoft 365.</span><span class="badges"><span class="badge ">Intermédiaire</span><span class="badge ">10 min pour démarrer</span><span class="badge prix-payant">Licence Microsoft 365</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Un notebook rassemble fichiers, mails, réunions et liens, jusqu'à 300 éléments, et Copilot répond à partir de ce contenu. Il faut une licence Copilot ou un abonnement Microsoft 365 éligible, avec OneDrive ou SharePoint.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Sur m365.cloud.microsoft, ouvrez l'application <b>Copilot</b>, puis <b>Notebooks</b>.</p></div><div class="pas"><span class="n">2</span><p>Cliquez sur <b>Nouveau notebook</b> et donnez un nom.</p></div><div class="pas"><span class="n">3</span><p>Ajoutez fichiers, mails, réunions ou liens.</p></div><div class="pas"><span class="n">4</span><p>Posez la première question avec le prompt ci-dessous.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Première question à poser au notebook</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://m365.cloud.microsoft">Copier et ouvrir Microsoft 365</button></div></div><pre>En t&#x27;appuyant uniquement sur le contenu de ce notebook, fais-moi une synthèse en 5 points, avec pour chaque point l&#x27;élément source.
+Signale toute information qui se contredit entre deux éléments.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Un client Microsoft</b>L'outil qu'il paie déjà.</div><div><b>Un projet</b>Mails, réunions et fichiers réunis.</div><div><b>Une réunion</b>Préparer les points à trancher.</div></div>
+<p class="sources"><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-microsoft-365-copilot-notebooks" target="_blank" rel="noopener">Aide Microsoft, Copilot Notebooks</a></p>
+</div></details>
+</div>
+<div class="cat"><span class="cat-lab">Catégorie 5</span><h3 class="cat-titre">Les alternatives à connaître</h3><p class="cat-expl">Deux options à citer à un client, en vérifiant d'abord ce qu'offre son compte.</p></div>
+<div class="kb-grille">
+<details class="kb"><summary><span class="kb-tuile" style="background:#8A4B00" aria-hidden="true">Mi</span><span class="kb-tete"><span class="kb-cat">Alternative</span><span class="kb-nom">Bibliothèques Mistral</span><span class="kb-accroche">L'option européenne, dans Mistral Vibe (ex Le Chat).</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">10 min pour démarrer</span><span class="badge prix-payant">À partir de l'offre Pro</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Le Chat s'appelle Mistral Vibe depuis le 12 août 2026. Une bibliothèque rassemble vos fichiers, et vous l'attachez à une conversation.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Ouvrez chat.mistral.ai, puis le menu <b>Intelligence</b>, et <b>Bibliothèques</b>.</p></div><div class="pas"><span class="n">2</span><p>Cliquez sur <b>Nouvelle bibliothèque</b> et importez vos fichiers : PDF, Word, PowerPoint, Excel, CSV, texte.</p></div><div class="pas"><span class="n">3</span><p>Attendez la fin du traitement, attachez la bibliothèque à une conversation, et collez le prompt ci-dessous.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller dans la conversation</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button><button class="btn-copier ouvrir" type="button" data-copier data-ouvrir="https://chat.mistral.ai">Copier et ouvrir Mistral</button></div></div><pre>Tu es l&#x27;assistant de mon activité : [décrivez votre métier en une phrase].
+Réponds uniquement à partir des documents que je t&#x27;ai donnés.
+Pour chaque réponse, cite le nom du document utilisé.
+Si l&#x27;information n&#x27;est dans aucun document, réponds : « Je ne trouve pas cette information dans les documents. » Ne devine jamais.
+Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>Un client attaché à l'Europe</b>Un éditeur français.</div><div><b>Des documents variés</b>Word, Excel, PowerPoint, PDF.</div><div><b>Une équipe</b>Avec les offres Team et Enterprise.</div></div>
+<p class="sources"><a href="https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe" target="_blank" rel="noopener">Aide Mistral, Le Chat devient Vibe</a> · <a href="https://mistral.ai/pricing" target="_blank" rel="noopener">tarifs</a></p>
+</div></details>
+<details class="kb"><summary><span class="kb-tuile" style="background:#6B6B6B" aria-hidden="true">Px</span><span class="kb-tete"><span class="kb-cat">Alternative</span><span class="kb-nom">Perplexity</span><span class="kb-accroche">Des espaces de recherche avec vos fichiers, réservés aux abonnés.</span><span class="badges"><span class="badge prix-verifier">À vérifier</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Perplexity propose des espaces où l'on dépose fichiers et liens, réservés aux abonnés Pro. Sa page d'aide sur les Espaces n'existe plus : la fonction semble renommée en Projets.</p>
+<h4>Comment la créer</h4>
+<div class="pas"><span class="n">1</span><p>Vérifiez le nom actuel de la fonction dans votre compte avant de la conseiller à un client.</p></div>
+
+<h4>Ce que vous en faites concrètement</h4>
+<div class="ideal"><div><b>À citer</b>Si le client utilise déjà Perplexity pour ses recherches.</div></div>
+<p class="sources">Point non vérifié à la source le 13 septembre 2026</p>
+</div></details>
+</div>
+<h3>À ne pas confondre : la recherche approfondie</h3>
+<div class="encart"><b>Une recherche approfondie va chercher sur le web</b>, lit des dizaines de sources et vous rend un rapport. Elle ne garde pas vos documents. <b>Une base de connaissances, au contraire, se limite à ce que vous lui donnez.</b> Certaines recherches approfondies peuvent aussi fouiller vos outils connectés, comme Gmail ou Drive.</div>
+<div class="tab"><table>
+<tr><th>Outil</th><th>Comment la lancer</th><th>Offre</th><th>Source</th></tr>
+<tr><td><b>Claude</b></td><td><b>+</b> en bas à gauche, puis <b>Recherche</b>, avec la recherche web activée</td><td>Offres payantes</td><td><a href="https://support.claude.com/en/articles/11088861-use-research-on-claude" target="_blank" rel="noopener">Aide Claude</a></td></tr>
+<tr><td><b>ChatGPT</b></td><td><b>+</b> dans la zone de message, puis <b>Deep research</b>, ou tapez <b>@Deepresearch</b></td><td>Usage selon l'offre, un compteur dans l'interface indique ce qu'il reste</td><td><a href="https://help.openai.com/en/articles/10500283-deep-research-in-chatgpt" target="_blank" rel="noopener">Aide OpenAI</a></td></tr>
+<tr><td><b>Gemini</b></td><td><b>Ajouter</b>, puis <b>Deep Research</b>, choisissez les sources, puis lancez</td><td>Quota quotidien limité en gratuit</td><td><a href="https://support.google.com/gemini/answer/15719111" target="_blank" rel="noopener">Aide Google</a><br><a href="https://youtu.be/buwMJxvW7wI" target="_blank" rel="noopener">Vidéo : Gemini Deep Research Demo</a> <span class="petit">(chaîne Google, 2025)</span></td></tr>
+<tr><td><b>Perplexity</b></td><td>Sélecteur de mode, avant de poser la question</td><td>Limité en gratuit</td><td>Quotas non vérifiés à la source</td></tr>
+</table></div>
+
+<h3>La consigne, de 11h10 à 12h10</h3>
+<div class="etape"><span class="num">1</span><div><b>Choisissez 5 à 10 documents</b> de votre activité : offres, procédures, questions fréquentes, modèles. Rien de confidentiel.</div></div>
+<div class="etape"><span class="num">2</span><div><b>Créez la base</b> dans l'outil de votre choix, parmi ceux du tableau.</div></div>
+<div class="etape"><span class="num">3</span><div><b>Écrivez les instructions</b> : répondre uniquement à partir des documents, citer le document utilisé, et dire « je ne trouve pas cette information » quand elle n'y est pas.</div></div>
+<div class="encart"><b>Avant les tests, faites faire quatre actions à votre base :</b> rédiger un court texte à partir d'un document, résumer un document, extraire une liste d'informations, et retrouver une information précise.</div>
+<div class="piege-box"><div class="prompt"><div class="prompt-tete"><span class="prompt-lab">Le test du piège, à poser à votre base</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Quel est le numéro de téléphone de notre avocat ?
+(Si la réponse n&#x27;est dans aucun document, votre base doit répondre qu&#x27;elle ne trouve pas l&#x27;information.)</pre></div></div>
+<div class="etape"><span class="num">4</span><div><b>Test du piège :</b> posez une question dont la réponse n'est dans aucun document. Une bonne base avoue qu'elle ne sait pas. Si elle invente, reprenez vos instructions.</div></div>
+<div class="etape"><span class="num">5</span><div><b>Test de la contradiction :</b> ajoutez un document qui contredit un autre, et demandez laquelle des deux informations est la bonne. Observez si elle signale le conflit.</div></div>
+<div class="conseil"><b>Gardez votre base ouverte :</b> l'après-midi, vous pourrez la brancher sur le skill que vous allez créer.</div>
 </div>
 </section>
 <section class="bloc" id="securite" aria-labelledby="t-securite">
 <header class="bloc-tete">
-<span class="bloc-num" aria-hidden="true">5</span>
+<span class="bloc-num" aria-hidden="true">4</span>
 <div class="bloc-titres"><p class="bloc-meta"><span class="heure">16h00 à 16h50</span><span class="type type-vous">Vous pratiquez</span></p>
 <h2 id="t-securite">Sécuriser, documenter, revue croisée</h2></div>
 </header>
-<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Passez votre automatisation à la check-list, puis échangez avec un binôme.</p></div>
+<div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Passez ce que vous avez construit à la check-list, puis échangez avec un binôme.</p></div>
 <div class="bloc-corps">
-<h3>La check-list, avant de considérer une automatisation prête</h3><ul><li>Aucune clé d'API n'apparaît en clair dans un champ de texte ou un message.</li><li>Aucune donnée personnelle réelle (client, collègue) n'a été utilisée pendant l'atelier.</li><li>Une étape de validation humaine existe avant tout envoi vers l'extérieur (mail, message, publication).</li><li>Je sais expliquer à un collègue ce que fait mon automatisation, sans qu'il ait besoin de l'ouvrir.</li></ul>
+<h3>La check-list, avant de considérer un outil prêt</h3>
+<ul>
+<li>Aucune clé d'API n'apparaît en clair dans un champ de texte ou un message.</li>
+<li>Aucune donnée personnelle réelle (client, collègue) n'a été utilisée pendant l'atelier.</li>
+<li>Une étape de validation humaine existe avant tout envoi vers l'extérieur (mail, message, publication).</li>
+<li>Je sais expliquer à un collègue ce que fait mon workflow ou ma base de connaissances, sans qu'il ait besoin de l'ouvrir.</li>
+</ul>
 <h3>La revue croisée</h3>
-<p>Formez un binôme avec quelqu'un qui n'a pas construit la même automatisation. Chacun montre la sienne à l'autre, en 5 minutes, et répond à trois questions :</p>
+<p>Formez un binôme avec quelqu'un qui n'a pas construit la même chose. Chacun montre la sienne à l'autre, en 5 minutes, et répond à trois questions :</p>
 <ol>
 <li>Est-ce que je comprends ce qu'elle fait, sans explication supplémentaire ?</li>
 <li>Est-ce que la check-list de sécurité est vraiment cochée, pas juste déclarée ?</li>
@@ -387,7 +504,7 @@ Pose-moi les questions necessaires pour construire ca, puis propose-moi une auto
 </section>
 <section class="bloc" id="fiche" aria-labelledby="t-fiche">
 <header class="bloc-tete">
-<span class="bloc-num" aria-hidden="true">6</span>
+<span class="bloc-num" aria-hidden="true">5</span>
 <div class="bloc-titres"><p class="bloc-meta"><span class="heure">16h50</span><span class="type type-vous">Vous pratiquez</span></p>
 <h2 id="t-fiche">Ma fiche et mon plan d'action</h2></div>
 </header>
@@ -395,16 +512,16 @@ Pose-moi les questions necessaires pour construire ca, puis propose-moi une auto
 <div class="bloc-corps">
 <p>Une seule fiche à remplir et à envoyer par mail, en fin de journée.</p>
 <label for="f-nom">Mon nom</label><input id="f-nom">
-<label for="f-tache">La tâche automatisée, en une phrase</label><textarea id="f-tache"></textarea>
-<label for="f-outil">L'automatisation construite, et avec quel connecteur (Zapier ou Make)</label><textarea id="f-outil"></textarea>
-<label for="f-integration">En quoi elle s'intègre à mon travail</label><textarea id="f-integration"></textarea>
-<label for="f-pourquoi">Pourquoi ce choix plutôt qu'un autre, en une phrase</label><textarea id="f-pourquoi"></textarea>
+<label for="f-tache">Ce que j'ai construit ce matin avec n8n, en une phrase</label><textarea id="f-tache"></textarea>
+<label for="f-outil">Ma base de connaissances de l'après-midi, et dans quel outil</label><textarea id="f-outil"></textarea>
+<label for="f-integration">En quoi ils s'intègrent à mon travail</label><textarea id="f-integration"></textarea>
+<label for="f-pourquoi">Pourquoi ces choix plutôt que d'autres, en une phrase</label><textarea id="f-pourquoi"></textarea>
 <label for="f-risque">Le risque principal</label><textarea id="f-risque"></textarea>
 <label for="f-controle">Le contrôle humain prévu</label><textarea id="f-controle"></textarea>
 <label for="f-temps">Temps gagné estimé, vérification comprise</label><input id="f-temps">
 <h3>Mon plan d'action à 30 jours</h3>
-<label for="f-plan-t1">Première automatisation que je mets en œuvre pour de vrai</label><input id="f-plan-t1">
-<label for="f-plan-t2">Deuxième tâche à automatiser</label><input id="f-plan-t2">
+<label for="f-plan-t1">Première chose que je mets en œuvre pour de vrai</label><input id="f-plan-t1">
+<label for="f-plan-t2">Deuxième tâche à automatiser ou documenter</label><input id="f-plan-t2">
 <label for="f-plan-personne">Une personne que j'embarque</label><input id="f-plan-personne">
 <label for="f-plan-date">Ma date de contrôle</label><input id="f-plan-date" type="date">
 <label for="f-plan-indic">Mon indicateur simple</label><input id="f-plan-indic" placeholder="par exemple : 3 heures gagnées par semaine">
@@ -414,17 +531,18 @@ Pose-moi les questions necessaires pour construire ca, puis propose-moi une auto
 </section>
 
 <details class="formateur"><summary>Pour le formateur et l'Agence Nikita : conformité au programme J7</summary>
-<p><b>Les contenus et objectifs du programme J7 sont traités</b>, avec un ajustement assumé : le matin s'ouvre par les présentations de skills reportées de J6 (2 heures), et la pratique individuelle se fait avec Claude connecté à Zapier ou Make plutôt que dans l'interface propre de ces outils, faute de comptes créés en amont. n8n se présente en comparaison, faute d'instance disponible.</p>
-<h3>Contenus du programme</h3><div class="tab"><table><tr><th>Contenu</th><th>Où il est traité</th></tr><tr><td>Principes de l'automatisation no-code</td><td>Section « No-code », principes en trois phrases, 11h10</td></tr><tr><td>Make</td><td>Démonstration en direct via le connecteur Claude, 11h10 à 12h30</td></tr><tr><td>Zapier</td><td>Démonstration en direct via le connecteur Claude, même créneau</td></tr><tr><td>n8n, auto-hébergeable</td><td>Présenté en comparaison à 13h45, aucune instance disponible pour la pratique</td></tr><tr><td>Intégration des LLM dans les workflows</td><td>Démonstration de l'échec provoqué et du prompt structuré, 13h45</td></tr><tr><td>Cas d'usage d'automatisation métier</td><td>Sprint pratique, 14h30 à 16h00, sur la tâche réelle de chaque participant</td></tr></table></div>
-<h3>Livrables formateur de l'Annexe 1</h3><div class="tab"><table><tr><th>Livrable</th><th>Où il se trouve</th></tr><tr><td>Support</td><td>Kit de la journée, présent document</td></tr><tr><td>Scénarios Make et Zapier prêts à l'emploi</td><td>Remplacés par des prompts de connexion et de construction, adaptés à l'usage réel via Claude</td></tr><tr><td>Scénarios n8n prêts à l'emploi</td><td>Non applicable cette session, absence d'instance n8n</td></tr><tr><td>Atelier de construction guidé</td><td>Sprint pratique encadré, 14h30 à 16h00</td></tr></table></div>
-<h3>Objectifs pédagogiques</h3><div class="tab"><table><tr><th>Objectif</th><th>Moment et preuve</th></tr><tr><td>O1, construire une automatisation de bout en bout</td><td>Sprint pratique : déclencheur, traitement, action, testée sur une donnée fictive</td></tr><tr><td>O2, identifier les processus automatisables</td><td>Tâche reprise de la cartographie de skills de J6, prolongée ce matin</td></tr><tr><td>O3, choisir entre Make et Zapier</td><td>Tableau comparatif de la section No-code</td></tr><tr><td>O4, lire une donnée structurée</td><td>Exemple de payload commenté en section No-code</td></tr><tr><td>O5, intégrer un LLM dans un workflow</td><td>Démonstration de l'échec provoqué et prompt structuré, section n8n et module IA</td></tr><tr><td>O6, sécuriser les secrets et les données</td><td>Check-list de sécurité, section Sécuriser et documenter</td></tr><tr><td>O7, documenter pour un tiers</td><td>Rubrique « en quoi elle s'intègre » et « pourquoi ce choix » de la fiche</td></tr><tr><td>O8, estimer le coût de fonctionnement</td><td>Temps gagné estimé, rubrique de la fiche ; aucun montant n'est cité dans le kit</td></tr></table></div>
-<h3>Évaluation et traçabilité</h3><div class="tab"><table><tr><th>Exigence</th><th>Comment</th></tr><tr><td>Évaluation diagnostique</td><td>Autopositionnement d'entrée, 9h00</td></tr><tr><td>Évaluations formatives</td><td>Coaching après chaque présentation, démonstrations commentées, sprint supervisé</td></tr><tr><td>Évaluation sommative</td><td>Fiche de fin de journée avec cas d'usage, plan d'action, check-list signée</td></tr><tr><td>Évaluation à chaud</td><td>Formulaire de l'Agence Nikita, 16h50</td></tr><tr><td>Preuves conservées</td><td>Émargement, fiches reçues par mail</td></tr></table></div>
+<p><b>Les contenus et objectifs du programme J7 sont traités</b>, avec deux ajustements assumés : le matin s'ouvre par les présentations de skills reportées de J6 (2 heures), et la pratique du no-code se concentre sur <b>n8n en auto-hébergé</b> plutôt que sur les trois plateformes, parce que c'est la seule qui se héberge réellement sur le poste du participant, sans compte ni carte bancaire, et qu'elle illustre mieux l'esprit « auto-hébergeable » de l'Annexe. L'après-midi ajoute un atelier base de connaissances complet, non traité la veille faute de temps.</p>
+<h3>Contenus du programme</h3><div class="tab"><table><tr><th>Contenu</th><th>Où il est traité</th></tr><tr><td>Principes de l'automatisation no-code</td><td>Section n8n, dès 11h10</td></tr><tr><td>n8n, auto-hébergeable</td><td>Pratique réelle en direct, 11h10 à 12h30, installation via npm sans Docker, guidée de bout en bout par Claude</td></tr><tr><td>Make et Zapier</td><td>Mentionnés comme alternatives équivalentes (connecteur Claude gratuit), sans démonstration dédiée</td></tr><tr><td>Intégration des LLM dans les workflows</td><td>Le module IA n8n est justement Claude lui-même, qui construit le workflow en langage naturel, section n8n</td></tr><tr><td>Notion AI et gestion des connaissances</td><td>Atelier base de connaissances, 13h45 à 16h00, Notion parmi les neuf outils</td></tr><tr><td>Cas d'usage d'automatisation métier</td><td>Fiche de fin de journée, sur le workflow n8n réellement construit</td></tr></table></div>
+<h3>Livrables formateur de l'Annexe 1</h3><div class="tab"><table><tr><th>Livrable</th><th>Où il se trouve</th></tr><tr><td>Support</td><td>Kit de la journée, présent document</td></tr><tr><td>Scénarios Make et Zapier prêts à l'emploi</td><td>Remplacés par la pratique réelle sur n8n, jugée plus proche de l'esprit « auto-hébergeable » de l'Annexe et de ce que la salle peut réellement faire tourner</td></tr><tr><td>Scénarios n8n prêts à l'emploi</td><td>Remplacés par une construction en direct, guidée par Claude, sur une instance que chaque participant installe lui-même</td></tr><tr><td>Atelier de construction guidé</td><td>11h10 à 12h30, de l'installation au premier workflow fonctionnel</td></tr></table></div>
+<h3>Objectifs pédagogiques</h3><div class="tab"><table><tr><th>Objectif</th><th>Moment et preuve</th></tr><tr><td>O1, construire une automatisation de bout en bout</td><td>n8n : déclencheur webhook, traitement, action, exécuté et vérifié en direct</td></tr><tr><td>O2, identifier les processus automatisables</td><td>Tâche reprise de la cartographie de skills de J6, prolongée ce matin</td></tr><tr><td>O3, choisir entre plateformes</td><td>n8n retenu pour sa nature auto-hébergée, cohérente avec la souveraineté vue en J1 et J3 ; Make et Zapier mentionnés en équivalents</td></tr><tr><td>O4, lire une donnée structurée</td><td>Donnée de test du workflow n8n, commentée en construisant</td></tr><tr><td>O5, intégrer un LLM dans un workflow</td><td>Claude est le module IA : il construit et explique le workflow en langage naturel</td></tr><tr><td>O6, sécuriser les secrets et les données</td><td>Check-list de sécurité, section Sécuriser et documenter</td></tr><tr><td>O7, documenter pour un tiers</td><td>Rubrique « en quoi ils s'intègrent » et « pourquoi ces choix » de la fiche</td></tr><tr><td>O8, estimer le coût de fonctionnement</td><td>Temps gagné estimé, rubrique de la fiche ; aucun montant n'est cité dans le kit</td></tr></table></div>
+<h3>Évaluation et traçabilité</h3><div class="tab"><table><tr><th>Exigence</th><th>Comment</th></tr><tr><td>Évaluation diagnostique</td><td>Autopositionnement d'entrée, 9h00</td></tr><tr><td>Évaluations formatives</td><td>Coaching après chaque présentation, installation et premier workflow n8n supervisés, atelier base de connaissances accompagné</td></tr><tr><td>Évaluation sommative</td><td>Fiche de fin de journée avec cas d'usage, plan d'action, check-list signée</td></tr><tr><td>Évaluation à chaud</td><td>Formulaire de l'Agence Nikita, 16h50</td></tr><tr><td>Preuves conservées</td><td>Émargement, fiches reçues par mail</td></tr></table></div>
 <h3>Écarts assumés</h3>
 <ul>
-<li><b>2 heures du matin consacrées aux présentations de J6</b>, reportées la veille devant le groupe. Le contenu no-code du matin est en conséquence entièrement recentré sur la démonstration.</li>
-<li><b>Aucun compte Make, Zapier ou n8n n'a été créé en amont par les participants</b>, et aucune clé API de modèle de langage mutualisée n'a été fournie par l'Agence Nikita, malgré les décisions demandées au commanditaire dans le dossier de dépôt (ACCES-ET-LICENCES-J7.md, section 10). La pratique individuelle du sprint s'appuie donc sur les connecteurs Zapier et Make dans Claude, gratuits et sans carte bancaire, plutôt que sur des scénarios construits dans l'interface propre de ces plateformes.</li>
-<li><b>n8n n'est présenté qu'en comparaison</b>, faute d'instance auto-hébergée mise à disposition (modalité B recommandée dans le dossier de dépôt, jamais tranchée).</li>
-<li><b>Aucun montant n'est cité</b> dans ce kit : les tarifs des plateformes et des interfaces de programmation évoluent et se vérifient à la source.</li>
+<li><b>2 heures du matin consacrées aux présentations de J6</b>, reportées la veille devant le groupe.</li>
+<li><b>Aucun compte Make, Zapier ou n8n n'a été créé en amont par les participants</b>, et aucune clé API de modèle de langage mutualisée n'a été fournie par l'Agence Nikita, malgré les décisions demandées au commanditaire dans le dossier de dépôt (ACCES-ET-LICENCES-J7.md, section 10). Chaque participant installe n8n en local sur son propre poste, gratuitement, sans compte ni carte bancaire, guidé par Claude.</li>
+<li><b>Make et Zapier ne font pas l'objet d'une démonstration dédiée</b> : ils sont mentionnés comme équivalents disponibles, tout le budget de pratique va à n8n.</li>
+<li><b>L'atelier base de connaissances de l'après-midi remplace le sprint métier initialement prévu</b>, parce qu'il n'avait pas eu de vrai temps de pratique la veille.</li>
+<li><b>Aucun montant n'est cité</b> dans ce kit : les tarifs des plateformes évoluent et se vérifient à la source.</li>
 </ul>
 </details>
 </main>
@@ -433,15 +551,15 @@ function champ(id){ var e=document.getElementById(id); return e ? e.value.trim()
 function texteFiche(){
   return "FICHE J7 Lyon\n\n"
    + "Nom : " + champ("f-nom") + "\n"
-   + "Tâche automatisée : " + champ("f-tache") + "\n"
-   + "Automatisation et connecteur : " + champ("f-outil") + "\n"
+   + "Workflow n8n construit : " + champ("f-tache") + "\n"
+   + "Base de connaissances et outil : " + champ("f-outil") + "\n"
    + "Intégration à mon travail : " + champ("f-integration") + "\n"
-   + "Pourquoi ce choix : " + champ("f-pourquoi") + "\n"
+   + "Pourquoi ces choix : " + champ("f-pourquoi") + "\n"
    + "Risque principal : " + champ("f-risque") + "\n"
    + "Contrôle humain : " + champ("f-controle") + "\n"
    + "Temps gagné estimé : " + champ("f-temps") + "\n\n"
    + "PLAN D'ACTION A 30 JOURS\n"
-   + "Automatisation 1 : " + champ("f-plan-t1") + "\n"
+   + "Première mise en œuvre : " + champ("f-plan-t1") + "\n"
    + "Tâche 2 : " + champ("f-plan-t2") + "\n"
    + "Personne embarquée : " + champ("f-plan-personne") + "\n"
    + "Date de contrôle : " + champ("f-plan-date") + "\n"
@@ -471,13 +589,13 @@ function envoyerFiche(){
 }
 ["f-nom","f-tache","f-outil","f-integration","f-pourquoi","f-risque","f-controle","f-temps","f-plan-t1","f-plan-t2","f-plan-personne","f-plan-date","f-plan-indic"].forEach(function(id){
   var e=document.getElementById(id);
-  try{ var v=localStorage.getItem("j7-"+id); if(v) e.value=v; }catch(x){}
-  e.addEventListener("input",function(){ try{ localStorage.setItem("j7-"+id,e.value); }catch(x){} });
+  try{ var v=localStorage.getItem("j7v2-"+id); if(v) e.value=v; }catch(x){}
+  e.addEventListener("input",function(){ try{ localStorage.setItem("j7v2-"+id,e.value); }catch(x){} });
 });
 </script>
 <script>
 (function(){
-  var PROG = [["09:00", "11:00", "Finir les présentations de skills d'hier", "presentations"], ["11:00", "11:10", "Pause", "programme"], ["11:10", "12:30", "No-code : les principes, et les connecteurs Zapier et Make dans Claude", "nocode"], ["12:30", "13:30", "Déjeuner", "programme"], ["13:30", "13:45", "Reprise, annonce du programme de l'après-midi", "programme"], ["13:45", "14:15", "n8n en comparaison, et le module IA dans une automatisation", "n8n"], ["14:15", "14:30", "Pause", "programme"], ["14:30", "16:00", "Sprint : chacun construit une automatisation réelle", "sprint"], ["16:00", "16:30", "Sécuriser et documenter son automatisation", "securite"], ["16:30", "16:50", "Revue croisée entre pairs", "securite"], ["16:50", "17:00", "Clôture : objectifs, autopositionnement, évaluation à chaud", "fiche"]];
+  var PROG = [["09:00", "11:00", "Finir les présentations de skills d'hier", "presentations"], ["11:00", "11:10", "Pause", "programme"], ["11:10", "12:30", "n8n en auto-hébergé : installer, connecter, construire, guidé par Claude", "nocode"], ["12:30", "13:30", "Déjeuner", "programme"], ["13:30", "13:45", "Reprise, annonce du programme de l'après-midi", "programme"], ["13:45", "16:00", "Atelier base de connaissances, pour de vrai cette fois", "rag"], ["16:00", "16:30", "Sécuriser et documenter", "securite"], ["16:30", "16:50", "Revue croisée entre pairs", "securite"], ["16:50", "17:00", "Clôture : objectifs, autopositionnement, évaluation à chaud", "fiche"]];
   function minutes(h){var p=h.split(":");return (+p[0])*60+(+p[1]);}
   function pad(n){return (n<10?"0":"")+n;}
   function maj(){
