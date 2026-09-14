@@ -229,6 +229,9 @@ details.kb > .kb-corps{margin:0}
 .connecteur .role{color:var(--gris);margin:0 0 10px}
 .comparatif td.avantage{color:var(--vert)}
 .comparatif td.limite{color:#8A2A1E}
+.kb-jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
+.kb-jump a{font-size:13px;font-weight:700;padding:7px 13px;border-radius:999px;border:1px solid #E6E1E5;background:#fff;color:var(--encre);text-decoration:none;white-space:nowrap}
+.kb-jump a:hover{border-color:var(--marque-texte);color:var(--marque-texte)}
 </style></head>
 <body>
 <a class="saut" href="#contenu">Aller au contenu</a>
@@ -326,9 +329,42 @@ details.kb > .kb-corps{margin:0}
 <div class="afaire"><span class="afaire-lab">Ce que vous faites</span><p>Choisissez un outil, ouvrez sa fiche, suivez les étapes, puis faites les quatre actions et les deux tests.</p></div>
 <div class="bloc-corps">
 <p>Vous nous l'avez beaucoup demandé. Une base de connaissances, c'est un assistant qui répond <b>à partir de vos documents</b>, et pas de sa mémoire générale. <b>Choisissez un outil ci-dessous, ouvrez sa fiche et suivez les étapes.</b></p>
-<div class="encart"><b>On la reprend en vrai cette fois.</b> Ce matin était pris par n8n, cette base de connaissances n'avait pas eu son temps. <b>Comment choisir en 10 secondes.</b> Vous voulez commencer tout de suite : catégorie 1, dans l'assistant que vous avez déjà. Vous étudiez un dossier et voulez chaque source : catégorie 2. Vos notes doivent rester sur votre ordinateur : catégorie 3. Votre client range tout dans Notion ou Microsoft : catégorie 4.</div>
+<div class="encart"><b>On la reprend en vrai cette fois.</b> Ce matin était pris par n8n, cette base de connaissances n'avait pas eu son temps. <b>Comment choisir en 10 secondes.</b> Envie de rester dans l'esprit auto-hébergé de ce matin : catégorie 1. Vous voulez commencer tout de suite dans l'assistant que vous avez déjà : catégorie 2. Vous voulez commencer tout de suite : catégorie 1, dans l'assistant que vous avez déjà. Vous étudiez un dossier et voulez chaque source : catégorie 2. Vos notes doivent rester sur votre ordinateur : catégorie 3. Votre client range tout dans Notion ou Microsoft : catégorie 4.</div>
 <h3 class="sr" style="position:absolute;left:-9999px">Les outils, par catégorie</h3>
-<div class="cat"><span class="cat-lab">Catégorie 1</span><h3 class="cat-titre">Dans l'assistant que vous utilisez déjà</h3><p class="cat-expl">Vous ajoutez vos documents dans un espace de votre assistant habituel, et il répond en s'appuyant dessus. <b>C'est le plus simple pour commencer.</b></p></div>
+<div class="kb-jump">
+<a href="#cat-1">1 · Auto-hébergé</a>
+<a href="#cat-2">2 · Assistant habituel</a>
+<a href="#cat-3">3 · Carnet de recherche</a>
+<a href="#cat-4">4 · Notes locales</a>
+<a href="#cat-5">5 · Équipe</a>
+<a href="#cat-6">6 · Alternatives</a>
+</div>
+<div class="cat" id="cat-1"><span class="cat-lab">Catégorie 1</span><h3 class="cat-titre">Auto-hébergé et open source, comme n8n ce matin</h3><p class="cat-expl">Ces deux outils tournent entièrement sur votre ordinateur, sans compte à créer, avec des modèles gratuits. <b>C'est la suite logique de ce que vous avez installé ce matin.</b></p></div>
+<div class="kb-grille">
+<details class="kb"><summary><span class="kb-tuile" style="background:#1A1A1A" aria-hidden="true">Al</span><span class="kb-tete"><span class="kb-cat">Auto-hébergé, open source</span><span class="kb-nom">AnythingLLM</span><span class="kb-accroche">Une application de bureau tout-en-un, avec sa propre base vectorielle intégrée.</span><span class="badges"><span class="badge">Débutant</span><span class="badge">20 min pour démarrer</span><span class="badge prix-gratuit">Gratuit avec un modèle local</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>AnythingLLM s'installe comme une application classique, sans Docker et sans ligne de commande pour l'application elle-même. Licence MIT, code source public. Elle embarque sa propre base vectorielle : pas d'outil supplémentaire à installer pour le stockage.</p>
+<h4>Comment la mettre en route</h4>
+<div class="pas"><span class="n">1</span><p>Laissez Claude installer Ollama, le moteur de modèles gratuits qui tourne en local, et télécharger un petit modèle adapté à un ordinateur portable.</p></div><div class="pas"><span class="n">2</span><p>Laissez Claude installer l'application de bureau AnythingLLM (Mac ou Windows), et la connecter à Ollama.</p></div><div class="pas"><span class="n">3</span><p>Créez un espace de travail et déposez deux ou trois de vos documents réels.</p></div><div class="pas"><span class="n">4</span><p>Posez une question et vérifiez que la réponse cite bien vos documents.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller dans Claude Code pour tout installer</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Aide-moi a installer une base de connaissances open source et auto-hebergee, AnythingLLM, en local sur mon ordinateur, comme n8n ce matin. D&#x27;abord, installe Ollama (le moteur de modeles locaux et gratuits), adapte a mon systeme Mac ou Windows, puis telecharge un petit modele leger avec lui, adapte a un ordinateur portable. Ensuite, installe l&#x27;application de bureau AnythingLLM, gratuite et open source, sans Docker. Connecte-la a Ollama comme fournisseur de modele. Cree un espace de travail, et guide-moi pour y deposer deux ou trois de mes documents reels. Une fois pret, pose-moi une question sur ces documents et explique-moi comment verifier que la reponse vient bien d&#x27;eux et pas de la memoire generale du modele. Demande-moi confirmation avant chaque installation, comme d&#x27;habitude.</pre></div>
+<p class="petit">Envie de comparer avec Claude plutôt qu'un modèle local ? C'est possible, mais ça change la nature du prix : une clé API séparée de votre abonnement Claude.ai, facturée à l'usage.</p>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller ensuite, pour essayer avec l'API Claude</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Dans AnythingLLM, je veux aussi essayer de le connecter a l&#x27;API Claude plutot qu&#x27;a un modele local, pour comparer la qualite des reponses. Explique-moi clairement, avant que je clique quoi que ce soit, que cela demande une cle API creee sur console.anthropic.com, separee de mon abonnement Claude.ai, et facturee a l&#x27;usage au nombre de mots echanges, pas d&#x27;abonnement mensuel fixe. Si je suis d&#x27;accord, guide-moi pour creer cette cle et l&#x27;ajouter dans AnythingLLM, sans jamais l&#x27;ecrire en clair ailleurs que dans le champ prevu.</pre></div>
+<p class="sources"><a href="https://anythingllm.com" target="_blank" rel="noopener">Site officiel AnythingLLM</a> · <a href="https://github.com/Mintplex-Labs/anything-llm" target="_blank" rel="noopener">Code source, licence MIT</a> · <a href="https://ollama.com" target="_blank" rel="noopener">Ollama, le moteur de modèles locaux</a></p>
+</div>
+</details>
+<details class="kb"><summary><span class="kb-tuile" style="background:#4A4A4A" aria-hidden="true">Ow</span><span class="kb-tete"><span class="kb-cat">Auto-hébergé, open source</span><span class="kb-nom">Open WebUI</span><span class="kb-accroche">Par le terminal, comme n8n ce matin, avec sa propre indexation de documents.</span><span class="badges"><span class="badge">Intermédiaire</span><span class="badge">30 min pour démarrer</span><span class="badge prix-gratuit">Gratuit avec un modèle local</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
+<div class="kb-corps">
+<p>Open WebUI s'installe par le terminal, exactement dans l'esprit de n8n ce matin : <code>pip install open-webui</code> puis <code>open-webui serve</code>. Il faut Python 3.11 et Ollama pour lui fournir un modèle. Plus technique que AnythingLLM, mais tout aussi gratuit et open source.</p>
+<h4>Comment le mettre en route</h4>
+<div class="pas"><span class="n">1</span><p>Laissez Claude vérifier Python 3.11 et Ollama, les installer si besoin.</p></div><div class="pas"><span class="n">2</span><p>Laissez Claude installer et lancer Open WebUI par le terminal.</p></div><div class="pas"><span class="n">3</span><p>Ouvrez l'interface dans votre navigateur, déposez un document.</p></div><div class="pas"><span class="n">4</span><p>Posez une question dessus, et vérifiez la réponse.</p></div>
+<div class="prompt"><div class="prompt-tete"><span class="prompt-lab">À coller dans Claude Code pour tout installer</span><div class="prompt-actions"><button class="btn-copier" type="button" data-copier>Copier</button></div></div><pre>Guide-moi pour installer Open WebUI, une autre base de connaissances open source et auto-hebergee, cette fois par le terminal, comme n8n ce matin. Verifie que Python 3.11 est disponible, installe-le si besoin, puis installe Open WebUI avec &#x27;pip install open-webui&#x27; et lance-le avec &#x27;open-webui serve&#x27;. Verifie qu&#x27;Ollama tourne deja pour lui fournir un modele local et un modele d&#x27;indexation. Une fois l&#x27;interface ouverte dans mon navigateur, guide-moi pour deposer un document et lui poser une question dessus. Previens-moi si mon ordinateur semble trop juste en memoire pour faire tourner un modele local correctement, et propose-moi de reduire a un modele plus leger dans ce cas.</pre></div>
+<p class="petit">Si votre ordinateur est ancien ou peu de mémoire disponible, un modèle local peut être lent : Claude vous le signalera et proposera un modèle plus léger.</p>
+<p class="sources"><a href="https://docs.openwebui.com" target="_blank" rel="noopener">Documentation officielle Open WebUI</a> · <a href="https://ollama.com" target="_blank" rel="noopener">Ollama, le moteur de modèles locaux</a></p>
+</div>
+</details>
+</div>
+
+<div class="cat" id="cat-2"><span class="cat-lab">Catégorie 2</span><h3 class="cat-titre">Dans l'assistant que vous utilisez déjà</h3><p class="cat-expl">Vous ajoutez vos documents dans un espace de votre assistant habituel, et il répond en s'appuyant dessus. <b>C'est le plus simple pour commencer.</b></p></div>
 <div class="kb-grille">
 <details class="kb"><summary><span class="kb-tuile" style="background:#A3128C" aria-hidden="true">Cl</span><span class="kb-tete"><span class="kb-cat">Assistant habituel</span><span class="kb-nom">Projets Claude</span><span class="kb-accroche">Un espace avec vos documents et vos règles, dans Claude.</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">5 min pour démarrer</span><span class="badge prix-gratuit">Gratuit jusqu'à 5 projets</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
 <div class="kb-corps">
@@ -373,7 +409,7 @@ Si ma question est floue, pose-moi une question avant de répondre.</pre></div>
 <p class="sources"><a href="https://support.google.com/gemini/answer/15146780" target="_blank" rel="noopener">Aide Google, utiliser les Gems</a></p>
 </div></details>
 </div>
-<div class="cat"><span class="cat-lab">Catégorie 2</span><h3 class="cat-titre">Le carnet de recherche sur vos sources</h3><p class="cat-expl">Un outil pensé pour étudier un dossier : il ne répond qu'à partir de vos sources, et <b>chaque réponse renvoie à la phrase exacte</b>.</p></div>
+<div class="cat" id="cat-3"><span class="cat-lab">Catégorie 3</span><h3 class="cat-titre">Le carnet de recherche sur vos sources</h3><p class="cat-expl">Un outil pensé pour étudier un dossier : il ne répond qu'à partir de vos sources, et <b>chaque réponse renvoie à la phrase exacte</b>.</p></div>
 <div class="kb-grille">
 <details class="kb"><summary><span class="kb-tuile" style="background:#1F6E45" aria-hidden="true">NL</span><span class="kb-tete"><span class="kb-cat">Carnet de sources</span><span class="kb-nom">NotebookLM, désormais Gemini Notebook</span><span class="kb-accroche">Des réponses citées phrase par phrase, sur vos PDF, sites et vidéos.</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">5 min pour démarrer</span><span class="badge prix-gratuit">Gratuit, 50 sources par carnet</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
 <div class="kb-corps">
@@ -387,7 +423,7 @@ Puis propose-moi 5 questions utiles que je pourrais poser à ce carnet pour mon 
 <p class="sources"><a href="https://support.google.com/gemininotebook/answer/16206563" target="_blank" rel="noopener">Aide Google, créer un notebook</a> · <a href="https://youtu.be/AmKZCo5Dtn0" target="_blank" rel="noopener">Vidéo : Meet NotebookLM</a> (Google Workspace, 2025, interface ancienne)</p>
 </div></details>
 </div>
-<div class="cat"><span class="cat-lab">Catégorie 3</span><h3 class="cat-titre">Vos notes, sur votre ordinateur</h3><p class="cat-expl">Pour ceux qui veulent <b>garder leurs fichiers chez eux</b> : les notes restent dans un dossier de votre ordinateur, et un plugin permet de les interroger.</p></div>
+<div class="cat" id="cat-4"><span class="cat-lab">Catégorie 4</span><h3 class="cat-titre">Vos notes, sur votre ordinateur</h3><p class="cat-expl">Pour ceux qui veulent <b>garder leurs fichiers chez eux</b> : les notes restent dans un dossier de votre ordinateur, et un plugin permet de les interroger.</p></div>
 <div class="kb-grille">
 <details class="kb"><summary><span class="kb-tuile" style="background:#4A2D6B" aria-hidden="true">Ob</span><span class="kb-tete"><span class="kb-cat">Notes locales</span><span class="kb-nom">Obsidian avec un plugin IA</span><span class="kb-accroche">Vos notes dans un dossier à vous, interrogeables avec l'IA.</span><span class="badges"><span class="badge ">Intermédiaire</span><span class="badge ">20 min pour démarrer</span><span class="badge prix-gratuit">Gratuit</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
 <div class="kb-corps">
@@ -402,7 +438,7 @@ Attends que je te confirme chaque étape avant de passer à la suivante, et expl
 <p class="sources">Dépôts officiels : <a href="https://github.com/brianpetro/obsidian-smart-connections" target="_blank" rel="noopener">Smart Connections</a> et <a href="https://github.com/logancyang/obsidian-copilot" target="_blank" rel="noopener">Copilot for Obsidian</a>, tous deux actifs le 13 septembre 2026 · <a href="https://obsidian.md" target="_blank" rel="noopener">obsidian.md</a></p>
 </div></details>
 </div>
-<div class="cat"><span class="cat-lab">Catégorie 4</span><h3 class="cat-titre">L'espace de travail de l'équipe</h3><p class="cat-expl">Pour les entreprises qui rangent déjà leurs documents dans un outil commun. <b>On interroge les documents là où ils sont déjà.</b></p></div>
+<div class="cat" id="cat-5"><span class="cat-lab">Catégorie 5</span><h3 class="cat-titre">L'espace de travail de l'équipe</h3><p class="cat-expl">Pour les entreprises qui rangent déjà leurs documents dans un outil commun. <b>On interroge les documents là où ils sont déjà.</b></p></div>
 <div class="kb-grille">
 <details class="kb"><summary><span class="kb-tuile" style="background:#1A1A1A" aria-hidden="true">No</span><span class="kb-tete"><span class="kb-cat">Espace d'équipe</span><span class="kb-nom">Notion</span><span class="kb-accroche">Vos pages Notion, interrogées avec l'IA.</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">10 min pour démarrer</span><span class="badge prix-limite">IA en essai limité</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
 <div class="kb-corps">
@@ -429,7 +465,7 @@ Signale toute information qui se contredit entre deux éléments.</pre></div>
 <p class="sources"><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-microsoft-365-copilot-notebooks" target="_blank" rel="noopener">Aide Microsoft, Copilot Notebooks</a></p>
 </div></details>
 </div>
-<div class="cat"><span class="cat-lab">Catégorie 5</span><h3 class="cat-titre">Les alternatives à connaître</h3><p class="cat-expl">Deux options à citer à un client, en vérifiant d'abord ce qu'offre son compte.</p></div>
+<div class="cat" id="cat-6"><span class="cat-lab">Catégorie 6</span><h3 class="cat-titre">Les alternatives à connaître</h3><p class="cat-expl">Deux options à citer à un client, en vérifiant d'abord ce qu'offre son compte.</p></div>
 <div class="kb-grille">
 <details class="kb"><summary><span class="kb-tuile" style="background:#8A4B00" aria-hidden="true">Mi</span><span class="kb-tete"><span class="kb-cat">Alternative</span><span class="kb-nom">Bibliothèques Mistral</span><span class="kb-accroche">L'option européenne, dans Mistral Vibe (ex Le Chat).</span><span class="badges"><span class="badge ">Débutant</span><span class="badge ">10 min pour démarrer</span><span class="badge prix-payant">À partir de l'offre Pro</span></span><span class="kb-voir">Voir la fiche</span></span></summary>
 <div class="kb-corps">
